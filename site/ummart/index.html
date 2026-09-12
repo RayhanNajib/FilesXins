@@ -1,9 +1,28 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>UM-MART — static demo · FilesXins</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UM-MART — interactive demo | FilesXins</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="0; url=./demo/home.html">
-<style>body{margin:0;background:#07080d;color:#e6ecff;font:400 15px/1.6 Inter,system-ui,sans-serif;
-display:grid;place-items:center;height:100vh;text-align:center}a{color:#00e5ff}</style>
-</head><body><div><p>Redirecting to the UM-MART demo…</p>
-<p><a href="./demo/home.html">Open the demo →</a></p></div></body></html>
+<link rel="canonical" href="./demo/home.html">
+<style>
+  html,body{margin:0;height:100%;background:#07070c;color:#e9e9f2;
+    font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+    display:grid;place-items:center;text-align:center}
+  a{color:#00e5c0;text-decoration:none}
+  .box{max-width:520px;padding:28px}
+  h1{font-size:22px;margin:0 0 8px;letter-spacing:-.01em}
+  p{color:#9a9ab0;margin:0 0 18px;font-size:14.5px}
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>UM-MART — interactive demo</h1>
+    <p>The PHP backend can’t run on Vercel, so this deployment ships the real front end with its
+       API responses served from snapshots. Redirecting you to the demo…</p>
+    <p><a href="./demo/home.html">Open the demo →</a></p>
+  </div>
+  <script>location.replace('./demo/home.html');</script>
+</body>
+</html>
