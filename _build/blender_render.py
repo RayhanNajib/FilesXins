@@ -132,10 +132,9 @@ def flatten_world():
             n.inputs[1].default_value = 1.0
 
 
-def render_one(blend, out_png):
-    bpy.ops.wm.open_mainfile(filepath=blend)
-    scene = bpy.context.scene
-
+def prepare(scene):
+    """Engine, resolution and format — shared by both render paths so the normal
+    and retry renders cannot drift apart."""
     for engine in ("BLENDER_EEVEE_NEXT", "BLENDER_EEVEE"):
         try:
             scene.render.engine = engine
@@ -152,9 +151,25 @@ def render_one(blend, out_png):
     scene.render.image_settings.file_format = "PNG"
     scene.render.film_transparent = False
 
+
+def shoot(scene, out_png):
+    os.makedirs(os.path.dirname(out_png), exist_ok=True)
+    scene.render.filepath = out_png
+    bpy.ops.render.render(write_still=True)
+
+
+def open_scene(blend):
+    bpy.ops.wm.open_mainfile(filepath=blend)
+    scene = bpy.context.scene
+    prepare(scene)
     lo, hi = scene_bounds()
     if lo is None:
         raise RuntimeError("no renderable geometry in %s" % blend)
+    return scene, lo, hi
+
+
+def render_one(blend, out_png):
+    scene, lo, hi = open_scene(blend)
 
     if scene_is_dark():
         flatten_world()
@@ -165,10 +180,29 @@ def render_one(blend, out_png):
         cam = make_camera(lo, hi)
     fit_camera(cam, lo, hi)
 
-    os.makedirs(os.path.dirname(out_png), exist_ok=True)
-    scene.render.filepath = out_png
-    bpy.ops.render.render(write_still=True)
+    shoot(scene, out_png)
     print("RENDERED %s -> %s" % (blend, out_png))
+
+
+def render_light_retry(blend, out_png, outside_camera=False):
+    """Second attempt for a shot the QA rejected, driven by BLENDER_RENDER_MODE.
+
+    * flat  -> the scene camera sits inside the mesh or aims at nothing, so put a
+               camera outside the bounding box as well as relighting.
+    * dark  -> the framing is fine, only the lighting cannot read; keep the
+               artist's camera and replace the lights.
+    """
+    scene, lo, hi = open_scene(blend)
+    flatten_world()
+    add_light_rig(lo, hi)
+
+    cam = scene.camera
+    if outside_camera or cam is None:
+        cam = make_camera(lo, hi)
+    fit_camera(cam, lo, hi)
+
+    shoot(scene, out_png)
+    print("RETRIED %s -> %s (outside_camera=%s)" % (blend, out_png, outside_camera))
 
 
 def main():
