@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rayhan Najib — Web Developer &amp; Information Systems | FilesXins</title>
+<meta name="description" content="Portfolio of Muhammad Rayhan Najib (Rayhan Najib) — web developer from Kediri, Indonesia. PHP, Laravel, MySQL, JavaScript. Shipped e-commerce and clinic management systems, two registered intellectual properties.">
+<meta name="author" content="Muhammad Rayhan Najib">
+<meta name="keywords" content="Rayhan Najib, FilesXins, web developer, PHP, Laravel, MySQL, JavaScript, portfolio, Universitas Negeri Malang">
+<meta name="theme-color" content="#080B14">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rayhan Najib — Web Developer &amp; Information Systems">
+<meta property="og:description" content="Shipped e-commerce and clinic management systems in PHP/Laravel/MySQL. Two registered IPs. Based in Kediri, Indonesia.">
+<meta property="og:image" content="assets/profile/portrait.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/profile/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/profile/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<noscript>
+  <style>
+    /* Without JavaScript the reveal animations never fire — show everything. */
+    .reveal{ opacity:1 !important; transform:none !important; }
+    .nav__burger{ display:none !important; }
+    .nav__links{ position:static; transform:none !important; flex-direction:row; }
+  </style>
+</noscript>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__brand-logo" aria-hidden="true"><img src="assets/logo/logo-mark.png" alt=""></span>
+    <span class="nav__brand-text"><b>Rayhan</b> Najib</span>
+  </a>
+  <nav class="nav__links" aria-label="Section navigation">
+    <a href="#about"><span class="nav__num">01</span>About</a>
+    <a href="#projects"><span class="nav__num">02</span>Projects</a>
+    <a href="#certs"><span class="nav__num">03</span>Certificates</a>
+    <a href="#stack"><span class="nav__num">04</span>Skills</a>
+    <a href="#contact" class="nav__cta"><span class="nav__num">05</span>Contact</a>
+  </nav>
+  <button class="nav__burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav__progress" aria-hidden="true"><span id="progressBar"></span></div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero__grid">
+
+    <div class="hero__copy reveal">
+      <p class="hero__eyebrow mono">{{icon:lucide:terminal}} web developer · information systems</p>
+      <h1 class="hero__title">
+        Rayhan <span class="neon">Najib</span>
+      </h1>
+      <p class="hero__role">
+        Information Technology student at Universitas Negeri Malang.
+        I build e-commerce platforms and management systems that ship and get used.
+      </p>
+
+      <ul class="hero__facts">
+        <li>{{icon:lucide:map-pin}} Kediri, East Java, Indonesia</li>
+        <li>{{icon:lucide:graduation-cap}} Universitas Negeri Malang</li>
+        <li>{{icon:lucide:badge-check}} Available for internships &amp; freelance</li>
+      </ul>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">{{icon:lucide:layers}} View projects</a>
+        <a class="btn btn--ghost" href="https://github.com/RayhanNajib" target="_blank" rel="noopener">
+          {{icon:lucide:github}} GitHub {{icon:lucide:external-link}}</a>
+      </div>
+
+      <dl class="hero__stats">
+        <div><dt>Shipped apps</dt><dd>3</dd></div>
+        <div><dt>Registered IP</dt><dd>2</dd></div>
+        <div><dt>Certifications</dt><dd>12</dd></div>
+        <div><dt>Design work</dt><dd>5</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__avatar reveal">
+      <div class="holo">
+        <div class="holo__ring" aria-hidden="true"></div>
+        <div class="holo__ring holo__ring--2" aria-hidden="true"></div>
+        <div class="holo__frame">
+          <img src="assets/profile/portrait-holo.webp" alt="Muhammad Rayhan Najib" class="holo__img" width="440" height="550">
+          <div class="holo__scan" aria-hidden="true"></div>
+          <div class="holo__glare" aria-hidden="true"></div>
+        </div>
+        <span class="holo__chip holo__chip--tl mono">ID · 2405336</span>
+        <span class="holo__chip holo__chip--br mono">UTC+7</span>
+      </div>
+      <p class="holo__caption mono">Kediri, Indonesia</p>
+    </div>
+
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>PHP</span><i>◆</i><span>Laravel</span><i>◆</i><span>MySQL</span><i>◆</i>
+      <span>JavaScript</span><i>◆</i><span>HTML5</span><i>◆</i><span>CSS3</span><i>◆</i>
+      <span>REST API</span><i>◆</i><span>Google OAuth</span><i>◆</i>
+      <span>Blade</span><i>◆</i><span>Vite</span><i>◆</i><span>Figma</span><i>◆</i>
+      <span>Blender</span><i>◆</i><span>Git</span><i>◆</i><span>PhpSpreadsheet</span><i>◆</i>
+      <span>PHP</span><i>◆</i><span>Laravel</span><i>◆</i><span>MySQL</span><i>◆</i>
+      <span>JavaScript</span><i>◆</i><span>HTML5</span><i>◆</i><span>CSS3</span><i>◆</i>
+      <span>REST API</span><i>◆</i><span>Google OAuth</span><i>◆</i>
+      <span>Blade</span><i>◆</i><span>Vite</span><i>◆</i><span>Figma</span><i>◆</i>
+      <span>Blender</span><i>◆</i><span>Git</span><i>◆</i><span>PhpSpreadsheet</span><i>◆</i>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROFILE SUMMARY (ATS) ================= -->
+<section class="section" id="about">
+  <h2 class="section__title reveal"><span class="mono">01</span>Profile</h2>
+
+  <div class="summary reveal">
+    <p class="summary__lede">
+      Information Technology student and web developer with hands-on delivery of three production
+      web applications — a full grocery e-commerce platform, a role-based clinic management system,
+      and a public village portal currently serving live traffic. Comfortable across the stack:
+      PHP and Laravel on the server, MySQL for data modelling, and hand-written JavaScript on the
+      front end. Two works registered as intellectual property with the Ministry of Law of Indonesia.
+    </p>
+  </div>
+
+  <div class="facts reveal">
+    <div class="facts__col">
+      <h3 class="mono">{{icon:lucide:briefcase}} Core competency</h3>
+      <ul class="facts__list">
+        <li>{{icon:lucide:check}} Back-end development — PHP 8, Laravel 12, REST endpoints, authentication</li>
+        <li>{{icon:lucide:check}} Database design — normalised MySQL schemas, queries, reporting</li>
+        <li>{{icon:lucide:check}} Front-end — semantic HTML, modern CSS, vanilla JavaScript, responsive layout</li>
+        <li>{{icon:lucide:check}} Interface design — Figma wireframes, design systems, prototyped flows</li>
+        <li>{{icon:lucide:check}} 3D &amp; game assets — Blender modelling, rigging and rendering</li>
+      </ul>
+    </div>
+    <aside class="facts__card">
+      <h3 class="mono">{{icon:lucide:file-text}} Details</h3>
+      <dl>
+        <dt>Full name</dt><dd>Muhammad Rayhan Najib</dd>
+        <dt>Brand</dt><dd>FilesXins</dd>
+        <dt>Location</dt><dd>Kediri, East Java, Indonesia</dd>
+        <dt>Education</dt><dd>Information Technology, Universitas Negeri Malang</dd>
+        <dt>Languages</dt><dd>Indonesian (native), English (professional reading)</dd>
+        <dt>Availability</dt><dd>Internships · freelance web work · collaboration</dd>
+        <dt>Interests</dt><dd>Game systems, 3D modelling, interface design</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="section" id="projects">
+  <h2 class="section__title reveal"><span class="mono">02</span>Selected projects</h2>
+  <p class="section__lede reveal">
+    Each entry lists the problem, what was built, and the measurable result. Screenshots are taken
+    from the running applications; click any of them to open the full gallery.
+  </p>
+
+  <div class="filters reveal" role="tablist">
+    <button class="chip is-active" data-filter="all">All</button>
+    <button class="chip" data-filter="web">Web applications</button>
+    <button class="chip" data-filter="live">In production</button>
+    <button class="chip" data-filter="design">Design</button>
+  </div>
+
+  <div class="projects">
+
+    <!-- ---------- UM-MART ---------- -->
+    <article class="project reveal" data-tags="web live">
+      <header class="project__head">
+        <span class="project__index mono">01</span>
+        <div class="project__heading">
+          <h3 class="project__title">UM-MART <span class="badge badge--live">{{icon:lucide:circle-check}} In production</span></h3>
+          <p class="project__sub">Food &amp; grocery e-commerce platform — campus market</p>
+        </div>
+      </header>
+
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">Problem</h4>
+            <p>A campus market selling groceries had no online ordering, no stock visibility for staff,
+               and no transaction records — every order was handled by hand.</p>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">What I built</h4>
+            <ul class="project__bullets">
+              <li>Product catalogue with categories, live search and filter combinations</li>
+              <li>Persistent cart and a complete checkout flow</li>
+              <li>Four payment methods — OVO, GoPay, DANA and card</li>
+              <li>Printable invoices and per-customer transaction history</li>
+              <li>Admin dashboard: statistics, charts, banner &amp; voucher CRUD, Excel export</li>
+              <li>Dual authentication — password and Google Sign-In</li>
+            </ul>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>11 tables and a working multi-role system delivered end to end, with <b>2 works registered
+               as intellectual property</b>. The full front end is deployed as a live demo.</p>
+          </div>
+          <ul class="project__stack">
+            <li>{{icon:simple-icons:php}} PHP 8.3</li>
+            <li>{{icon:simple-icons:mysql}} MySQL</li>
+            <li>{{icon:simple-icons:javascript}} JavaScript</li>
+            <li>{{icon:simple-icons:html5}} HTML5</li>
+            <li>{{icon:simple-icons:css3}} CSS3</li>
+            <li>{{icon:simple-icons:googlechrome}} Google OAuth</li>
+            <li>{{icon:simple-icons:composer}} Composer</li>
+          </ul>
+          <ul class="project__links">
+            <li><a class="link" href="/site/ummart/" target="_blank" rel="noopener">
+              {{icon:lucide:external-link}} Live demo</a></li>
+            <li><a class="link" href="https://github.com/RayhanNajib/UM-MART" target="_blank" rel="noopener">
+              {{icon:lucide:github}} Source code</a></li>
+          </ul>
+        </div>
+
+        <div class="project__shots">
+          <button class="shot" data-gallery="ummart" data-i="0"><img src="assets/shots/ummart-home.webp" alt="UM-MART storefront" loading="lazy"></button>
+          <button class="shot" data-gallery="ummart" data-i="1"><img src="assets/shots/ummart-shop.webp" alt="Product catalogue with filters" loading="lazy"></button>
+          <button class="shot" data-gallery="ummart" data-i="7"><img src="assets/shots/ummart-admin-dashboard.webp" alt="Admin dashboard" loading="lazy"></button>
+          <button class="shot" data-gallery="ummart" data-i="2"><img src="assets/shots/ummart-checkout.webp" alt="Checkout" loading="lazy"></button>
+          <button class="shot" data-gallery="ummart" data-i="10"><img src="assets/shots/ummart-login.webp" alt="Login" loading="lazy"></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- KLINIK PRATAMA ---------- -->
+    <article class="project reveal" data-tags="web">
+      <header class="project__head">
+        <span class="project__index mono">02</span>
+        <div class="project__heading">
+          <h3 class="project__title">Klinik Pratama UM <span class="badge">Laravel 12</span></h3>
+          <p class="project__sub">Clinic management system with role-based access control</p>
+        </div>
+      </header>
+
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">Problem</h4>
+            <p>A primary clinic ran schedules, patient records, billing and medical certificates on paper,
+               with no consistent access control between administrative staff, doctors and patients.</p>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">What I built</h4>
+            <ul class="project__bullets">
+              <li>Three role dashboards — admin, doctor and patient — from one codebase</li>
+              <li>Admin: doctor, patient and schedule CRUD, plus cashiering and payment reports</li>
+              <li>Doctor: appointment queue, diagnosis entry, printable medical certificates</li>
+              <li>Patient: schedule browsing, appointment booking and cancellation, history</li>
+              <li>Accounting and payment records over a normalised MySQL schema</li>
+            </ul>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>16 tables, 6 users and 3 doctor profiles modelled with full role separation.
+               A working replacement for the paper process, with printable output at every step.</p>
+          </div>
+          <ul class="project__stack">
+            <li>{{icon:logos:laravel}} Laravel 12</li>
+            <li>{{icon:simple-icons:php}} PHP 8.2+</li>
+            <li>{{icon:simple-icons:mysql}} MySQL</li>
+            <li>{{icon:vscode-icons:file-type-blade}} Blade</li>
+            <li>{{icon:simple-icons:vite}} Vite</li>
+            <li>{{icon:lucide:shield-check}} RBAC</li>
+          </ul>
+          <ul class="project__links">
+            <li><a class="link" href="https://github.com/RayhanNajib/KlinikUM" target="_blank" rel="noopener">
+              {{icon:lucide:github}} Source code</a></li>
+            <li><a class="link" href="#contact">{{icon:lucide:mail}} Demo on request</a></li>
+          </ul>
+        </div>
+
+        <div class="project__shots">
+          <button class="shot" data-gallery="klinik" data-i="1"><img src="assets/shots/klinik-dashboard-admin.webp" alt="Admin dashboard" loading="lazy"></button>
+          <button class="shot" data-gallery="klinik" data-i="2"><img src="assets/shots/klinik-admin-dokter.webp" alt="Doctor management" loading="lazy"></button>
+          <button class="shot" data-gallery="klinik" data-i="4"><img src="assets/shots/klinik-admin-pembayaran.webp" alt="Payments" loading="lazy"></button>
+          <button class="shot" data-gallery="klinik" data-i="5"><img src="assets/shots/klinik-dokter-pasien.webp" alt="Doctor patients" loading="lazy"></button>
+          <button class="shot" data-gallery="klinik" data-i="7"><img src="assets/shots/klinik-pasien-jadwal.webp" alt="Patient schedule" loading="lazy"></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- NANGGUNGAN ---------- -->
+    <article class="project reveal" data-tags="web live">
+      <header class="project__head">
+        <span class="project__index mono">03</span>
+        <div class="project__heading">
+          <h3 class="project__title">Nanggungan Digdaya <span class="badge badge--live">{{icon:lucide:circle-check}} In production</span></h3>
+          <p class="project__sub">Public information portal — Desa Nanggungan, Kayen Kidul</p>
+        </div>
+      </header>
+
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">Problem</h4>
+            <p>The village had no digital presence — announcements, profile documents and the village
+               market ran entirely through word of mouth and printed sheets.</p>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">What I built</h4>
+            <ul class="project__bullets">
+              <li>Village profile, history and administrative information</li>
+              <li>Interactive map of the area and its facilities</li>
+              <li>Village market section for local sellers</li>
+              <li>News and article publishing with an admin area</li>
+              <li>Responsive layout for the phones most residents actually use</li>
+            </ul>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>Deployed to a public domain and in active use by village staff and residents —
+               the only project in this list serving an audience beyond campus.</p>
+          </div>
+          <ul class="project__stack">
+            <li>{{icon:logos:laravel}} Laravel</li>
+            <li>{{icon:simple-icons:php}} PHP</li>
+            <li>{{icon:simple-icons:mysql}} MySQL</li>
+            <li>{{icon:vscode-icons:file-type-blade}} Blade</li>
+            <li>{{icon:lucide:monitor-smartphone}} Responsive</li>
+          </ul>
+          <ul class="project__links">
+            <li><a class="link" href="https://nanggungan-digdaya.page.gd/" target="_blank" rel="noopener">
+              {{icon:lucide:external-link}} Visit live site</a></li>
+          </ul>
+        </div>
+
+        <div class="project__shots">
+          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/thirdparty/nanggungan-home.webp" alt="Village portal homepage" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="1"><img src="assets/thirdparty/nanggungan-profil-desa.webp" alt="Village profile" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="2"><img src="assets/thirdparty/nanggungan-pasar-desa.webp" alt="Village market" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="3"><img src="assets/thirdparty/nanggungan-berita.webp" alt="News and articles" loading="lazy"></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- DESIGN WORK ---------- -->
+    <article class="project project--compact reveal" data-tags="design">
+      <header class="project__head">
+        <span class="project__index mono">04</span>
+        <div class="project__heading">
+          <h3 class="project__title">Interface design — Figma <span class="badge">{{icon:simple-icons:figma}} Figma</span></h3>
+          <p class="project__sub">Product interfaces designed before a line of code was written</p>
+        </div>
+      </header>
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">What I designed</h4>
+            <ul class="project__bullets">
+              <li><b>UM-MART</b> — the e-commerce interface this portfolio deploys as a live demo</li>
+              <li><b>UI VIAR UM</b> — interface exploration for a campus virtual/augmented reality workspace</li>
+              <li><b>SMARTIPEN</b> — product interface concept</li>
+              <li><b>KKN Design</b> — layout system for the village portal</li>
+              <li><b>UI/UX Bootcamp project</b> — end-to-end flow from research to prototype</li>
+            </ul>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>Five documented design files covering wireframes, component libraries and clickable
+               prototypes. The UM-MART design went into production unchanged in structure.</p>
+          </div>
+          <ul class="project__stack">
+            <li>{{icon:simple-icons:figma}} Figma</li>
+            <li>{{icon:lucide:pen-tool}} Wireframing</li>
+            <li>{{icon:lucide:layers}} Design systems</li>
+            <li>{{icon:lucide:monitor-smartphone}} Prototyping</li>
+          </ul>
+          <ul class="project__links">
+            <li><a class="link" href="https://www.figma.com/design/zzxG3IjW4QJTRoRDe80iEl/UM-Mart--Copy-" target="_blank" rel="noopener">
+              {{icon:lucide:external-link}} UM-MART design file</a></li>
+            <li><a class="link" href="https://www.figma.com/design/l9SUecPLZFrhvQQzyPIdCw/Projek-Bootcamp-UI-UX" target="_blank" rel="noopener">
+              {{icon:lucide:external-link}} Bootcamp project</a></li>
+            <li><a class="link" href="https://www.figma.com/design/WI6tu8OXGu3SKkPib8LVYc/UI-VIAR-UM" target="_blank" rel="noopener">
+              {{icon:lucide:external-link}} UI VIAR UM</a></li>
+            <li><a class="link" href="https://www.figma.com/design/Lydu6XRZF8IMW8sxO4jwuQ/SMARTIPEN" target="_blank" rel="noopener">
+              {{icon:lucide:external-link}} SMARTIPEN</a></li>
+            <li><a class="link" href="https://www.figma.com/design/qerg4OzMBf9jaiNZIaDtyQ/KKN-DESIGN" target="_blank" rel="noopener">
+              {{icon:lucide:external-link}} KKN Design</a></li>
+          </ul>
+        </div>
+        <div class="project__shots project__shots--certs">
+          <div class="soon-card__cert soon-card__cert--duo" style="grid-column:1/-1">
+            <img src="assets/certs/bootcamp-uiux.webp" alt="UI/UX Design Intensive Camp certificate" loading="lazy">
+            <img src="assets/certs/bootcamp-figma.webp" alt="Figma Camp certificate" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- 3D / BLENDER ---------- -->
+    <article class="project project--compact reveal" data-tags="design">
+      <header class="project__head">
+        <span class="project__index mono">05</span>
+        <div class="project__heading">
+          <h3 class="project__title">3D &amp; game work <span class="badge">{{icon:simple-icons:blender}} Blender</span></h3>
+          <p class="project__sub">Modelling, rigging and rendering — plus a published itch.io build</p>
+        </div>
+      </header>
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">What I work on</h4>
+            <ul class="project__bullets">
+              <li>Character and prop modelling, rigging and rendering in Blender</li>
+              <li>Game systems and mechanics prototyped as playable builds</li>
+              <li><b>TEXUM</b> — a build published publicly on itch.io</li>
+              <li>Asset pipelines that feed both the 3D work and the web interfaces</li>
+            </ul>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>A public itch.io release, with the render gallery being documented for this page.</p>
+          </div>
+          <ul class="project__stack">
+            <li>{{icon:simple-icons:blender}} Blender</li>
+            <li>{{icon:lucide:box}} Hard-surface modelling</li>
+            <li>{{icon:lucide:gamepad-2}} Game systems</li>
+            <li>{{icon:lucide:sparkles}} Rendering</li>
+          </ul>
+          <ul class="project__links">
+            <li><a class="link" href="https://filesxinss.itch.io/texum" target="_blank" rel="noopener">
+              {{icon:lucide:external-link}} TEXUM on itch.io</a></li>
+            <li><a class="link" href="#contact">{{icon:lucide:mail}} Request render gallery</a></li>
+          </ul>
+        </div>
+        <div class="project__shots project__shots--certs">
+          <div class="soon-card__ph mono">
+            <span>{{icon:lucide:box}} render gallery — in progress</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= CERTIFICATES ================= -->
+<section class="section" id="certs">
+  <h2 class="section__title reveal"><span class="mono">03</span>Certificates &amp; achievements</h2>
+  <p class="section__lede reveal">
+    Twelve documents backing the work above. Open any card to read it full size — each entry states
+    what it verifies and which capability it evidences.
+  </p>
+  <p class="certs__legend mono reveal">
+    <span class="dot dot--hki"></span>Intellectual property
+    <span class="dot dot--award"></span>Campus award
+    <span class="dot dot--course"></span>Certified course
+  </p>
+  <div class="certs" id="certGrid"></div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="section" id="stack">
+  <h2 class="section__title reveal"><span class="mono">04</span>Skills &amp; tools</h2>
+
+  <div class="skills reveal">
+    <div class="skills__group">
+      <h3 class="mono">{{icon:lucide:server}} Back end</h3>
+      <ul class="skills__list">
+        <li><span>{{icon:simple-icons:php}} PHP 8</span><em>Production</em></li>
+        <li><span>{{icon:logos:laravel}} Laravel 12</span><em>Production</em></li>
+        <li><span>{{icon:vscode-icons:file-type-blade}} Blade templating</span><em>Production</em></li>
+        <li><span>{{icon:simple-icons:composer}} Composer</span><em>Daily use</em></li>
+        <li><span>{{icon:lucide:shield-check}} Auth &amp; RBAC</span><em>Production</em></li>
+        <li><span>{{icon:lucide:cloud}} REST endpoints &amp; OAuth</span><em>Production</em></li>
+      </ul>
+    </div>
+    <div class="skills__group">
+      <h3 class="mono">{{icon:simple-icons:mysql}} Data</h3>
+      <ul class="skills__list">
+        <li><span>{{icon:simple-icons:mysql}} MySQL 8</span><em>Production</em></li>
+        <li><span>{{icon:lucide:database}} Schema normalisation (3NF)</span><em>Production</em></li>
+        <li><span>{{icon:lucide:chart-column}} Reporting queries</span><em>Production</em></li>
+        <li><span>{{icon:lucide:file-text}} Excel export</span><em>Production</em></li>
+      </ul>
+    </div>
+    <div class="skills__group">
+      <h3 class="mono">{{icon:lucide:code-2}} Front end</h3>
+      <ul class="skills__list">
+        <li><span>{{icon:simple-icons:html5}} HTML5</span><em>Production</em></li>
+        <li><span>{{icon:simple-icons:css3}} CSS3</span><em>Production</em></li>
+        <li><span>{{icon:simple-icons:javascript}} JavaScript</span><em>Production</em></li>
+        <li><span>{{icon:simple-icons:vite}} Vite</span><em>Working</em></li>
+        <li><span>{{icon:simple-icons:apache}} Apache / Laragon</span><em>Daily use</em></li>
+      </ul>
+    </div>
+    <div class="skills__group">
+      <h3 class="mono">{{icon:simple-icons:figma}} Design &amp; 3D</h3>
+      <ul class="skills__list">
+        <li><span>{{icon:simple-icons:figma}} Figma</span><em>Daily use</em></li>
+        <li><span>{{icon:lucide:pen-tool}} Wireframes &amp; prototypes</span><em>Project work</em></li>
+        <li><span>{{icon:simple-icons:blender}} Blender</span><em>Project work</em></li>
+        <li><span>{{icon:simple-icons:git}} Git &amp; GitHub</span><em>Daily use</em></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section section--contact" id="contact">
+  <h2 class="section__title reveal"><span class="mono">05</span>Contact</h2>
+  <p class="section__lede reveal">
+    Open to internships, freelance web work and collaboration. The fastest way to reach me is email
+    or WhatsApp — I reply within a day.
+  </p>
+
+  <div class="contact reveal">
+    <a class="contact__card" href="mailto:muhammad.rayhan.2405336@students.um.ac.id">
+      <span class="contact__ico">{{icon:lucide:mail}}</span>
+      <span class="mono">Email</span>
+      <b>muhammad.rayhan.2405336@students.um.ac.id</b>
+    </a>
+    <a class="contact__card" href="https://wa.me/6285755538488" target="_blank" rel="noopener">
+      <span class="contact__ico">{{icon:simple-icons:whatsapp}}</span>
+      <span class="mono">WhatsApp</span>
+      <b>+62 857-5553-8488</b>
+    </a>
+    <a class="contact__card" href="https://github.com/RayhanNajib" target="_blank" rel="noopener">
+      <span class="contact__ico">{{icon:simple-icons:github}}</span>
+      <span class="mono">GitHub</span>
+      <b>github.com/RayhanNajib</b>
+    </a>
+    <a class="contact__card" href="https://filesxinss.itch.io/texum" target="_blank" rel="noopener">
+      <span class="contact__ico">{{icon:lucide:gamepad-2}}</span>
+      <span class="mono">itch.io</span>
+      <b>filesxinss.itch.io/texum</b>
+    </a>
+  </div>
+
+  <p class="contact__loc mono reveal">{{icon:lucide:map-pin}} Kediri, East Java, Indonesia · UTC+7</p>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__brand">
+    <img src="assets/logo/logo-mark.png" alt="" width="26" height="26">
+    <span><b>Rayhan Najib</b> · FilesXins</span>
+  </div>
+  <p class="mono">Designed &amp; built by Muhammad Rayhan Najib</p>
+  <p class="mono footer__note">
+    Icons by <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>,
+    <a href="https://simpleicons.org" target="_blank" rel="noopener">Simple Icons</a> and
+    <a href="https://iconify.design" target="_blank" rel="noopener">Iconify</a>.
+  </p>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" aria-label="Close">{{icon:lucide:x}}</button>
+  <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous">{{icon:lucide:chevron-left}}</button>
+  <figure class="lightbox__fig">
+    <img id="lightboxImg" alt="">
+    <figcaption id="lightboxCap" class="mono"></figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" aria-label="Next">{{icon:lucide:chevron-right}}</button>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
