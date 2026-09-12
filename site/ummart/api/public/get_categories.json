@@ -1,0 +1,103 @@
+{
+ "success": true,
+ "data": [
+  {
+   "id": "1",
+   "name": "Fruit & Vegetables",
+   "slug": "fruit-vegetables",
+   "icon_path": "../assets/icon/Sayur.png",
+   "item_count": "1"
+  },
+  {
+   "id": "2",
+   "name": "Stationery",
+   "slug": "stationery",
+   "icon_path": "../assets/icon/Stationery.png",
+   "item_count": "1"
+  },
+  {
+   "id": "3",
+   "name": "Accessories",
+   "slug": "accessories",
+   "icon_path": "../assets/icon/Accessories.png",
+   "item_count": "1"
+  },
+  {
+   "id": "4",
+   "name": "Breakfast & Diary",
+   "slug": "breakfast-diary",
+   "icon_path": "../assets/icon/Breakfast.png",
+   "item_count": "1"
+  },
+  {
+   "id": "5",
+   "name": "Meats & Frozen Food",
+   "slug": "meats-frozen-food",
+   "icon_path": "../assets/icon/Meat.png",
+   "item_count": "1"
+  },
+  {
+   "id": "7",
+   "name": "Household Appliances",
+   "slug": "household-appliances",
+   "icon_path": "../assets/icon/Houseold.png",
+   "item_count": "1"
+  },
+  {
+   "id": "8",
+   "name": "Sport",
+   "slug": "sport",
+   "icon_path": "../assets/icon/Sport.png",
+   "item_count": "1"
+  },
+  {
+   "id": "9",
+   "name": "Gadget",
+   "slug": "gadget",
+   "icon_path": "../assets/icon/Gadget.png",
+   "item_count": "1"
+  },
+  {
+   "id": "10",
+   "name": "Fruit",
+   "slug": "fruit",
+   "icon_path": "../assets/icon/Fruit.png",
+   "item_count": "1"
+  },
+  {
+   "id": "11",
+   "name": "Snack",
+   "slug": "snack",
+   "icon_path": "../assets/icon/Biscuit.png",
+   "item_count": "1"
+  },
+  {
+   "id": "12",
+   "name": "Beauty",
+   "slug": "beauty",
+   "icon_path": "../assets/icon/Beauty.png",
+   "item_count": "1"
+  },
+  {
+   "id": "13",
+   "name": "Cosmetic",
+   "slug": "cosmetic",
+   "icon_path": "../assets/icon/cosmetic.png",
+   "item_count": "1"
+  },
+  {
+   "id": "14",
+   "name": "Drink",
+   "slug": "drink",
+   "icon_path": "../assets/icon/Drink.png",
+   "item_count": "1"
+  },
+  {
+   "id": "20",
+   "name": "Drug & Medicines",
+   "slug": "drug-medicines",
+   "icon_path": "../assets/icon/68b7a9429217d-Drug.png",
+   "item_count": "1"
+  }
+ ]
+}

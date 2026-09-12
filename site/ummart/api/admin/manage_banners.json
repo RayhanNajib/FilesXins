@@ -1,0 +1,30 @@
+{
+ "success": true,
+ "message": "Banner berhasil diambil.",
+ "data": [
+  {
+   "id": "11",
+   "title": "Stationery Collection",
+   "description": "Everything you need for school and office",
+   "image_path": "../assets/images/Banner/Banner3.png",
+   "link_url": "../Latihan HTML LIBURAN/Latihan106_UM_MART_FILTER.html",
+   "is_active": "1"
+  },
+  {
+   "id": "10",
+   "title": "Seasonal Fruits",
+   "description": "Enjoy the freshest fruits with amazing discounts",
+   "image_path": "../assets/images/Banner/Banner2.png",
+   "link_url": "../Latihan HTML LIBURAN/Latihan106_UM_MART_FILTER.html",
+   "is_active": "1"
+  },
+  {
+   "id": "9",
+   "title": "Fresh Vegetables",
+   "description": "Get the best quality vegetables directly from local farmers",
+   "image_path": "../assets/images/Banner/Banner1.png",
+   "link_url": "../Latihan HTML LIBURAN/Latihan106_UM_MART_FILTER.html",
+   "is_active": "1"
+  }
+ ]
+}

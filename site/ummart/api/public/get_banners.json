@@ -1,0 +1,23 @@
+{
+ "success": true,
+ "data": [
+  {
+   "image_path": "../assets/images/Banner/Banner1.png",
+   "title": "Fresh Vegetables",
+   "description": "Get the best quality vegetables directly from local farmers",
+   "link_url": "../Latihan HTML LIBURAN/Latihan106_UM_MART_FILTER.html"
+  },
+  {
+   "image_path": "../assets/images/Banner/Banner2.png",
+   "title": "Seasonal Fruits",
+   "description": "Enjoy the freshest fruits with amazing discounts",
+   "link_url": "../Latihan HTML LIBURAN/Latihan106_UM_MART_FILTER.html"
+  },
+  {
+   "image_path": "../assets/images/Banner/Banner3.png",
+   "title": "Stationery Collection",
+   "description": "Everything you need for school and office",
+   "link_url": "../Latihan HTML LIBURAN/Latihan106_UM_MART_FILTER.html"
+  }
+ ]
+}

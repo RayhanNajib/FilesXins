@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - UM Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/components.css">
+
+    <link rel="icon" type="image/png" href="../assets/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="UMMART" />
+    <link rel="manifest" href="../assets/images/site.webmanifest" />
+
+  <!-- ============ FilesXins static demo runtime ============ -->
+  <script>
+  (function () {
+    var NOTE = 'This is a static demo \u2014 the PHP/MySQL backend is not part of this deployment.';
+
+    /* ---- seed the client state the checkout flow expects ---- */
+    try {
+      var seed = {"cartItems": [{"id": 1, "name": "Yogurt Drink Strawberry", "price": 18000, "image": "../assets/images/Product/691593424a933-Produk1.png", "quantity": 2}, {"id": 2, "name": "Mie Sedap Cup", "price": 6500, "image": "../assets/images/Product/69159a889199a-Produk2.png", "quantity": 3}, {"id": 3, "name": "Ice Cream Lokarasa", "price": 12000, "image": "../assets/images/Product/Produk3.png", "quantity": 1}], "lastOrder": {"orderCode": "UMMART-1763456789123", "orderDate": "12 Sep 2026", "orderTotal": 67500, "paymentMethod": "ovo", "products": [{"id": 1, "name": "Yogurt Drink Strawberry", "price": 18000, "image": "../assets/images/Product/691593424a933-Produk1.png", "quantity": 2}, {"id": 2, "name": "Mie Sedap Cup", "price": 6500, "image": "../assets/images/Product/69159a889199a-Produk2.png", "quantity": 3}, {"id": 3, "name": "Ice Cream Lokarasa", "price": 12000, "image": "../assets/images/Product/Produk3.png", "quantity": 1}], "status": "Pending"}, "finalPaymentAmount": "67500", "paymentMethod": "ovo"};
+      Object.keys(seed).forEach(function (k) {
+        if (!localStorage.getItem(k)) localStorage.setItem(k, typeof seed[k] === 'string' ? seed[k] : JSON.stringify(seed[k]));
+      });
+    } catch (e) {}
+
+    /* ---- serve GET api/* from the snapshot, neutralise writes ---- */
+    function fixtureName(url) {
+      // ../api/public/get_products.php?x=1  ->  api/public/get_products.php
+      var m = String(url).match(/api\/[A-Za-z0-9_\/.\-]+\.php/);
+      return m ? m[0] : null;
+    }
+    var _fetch = window.fetch;
+    window.fetch = function (url, opts) {
+      var name = fixtureName(url);
+      if (!name) return _fetch.apply(this, arguments);
+      var method = ((opts && opts.method) || 'GET').toUpperCase();
+      if (method !== 'GET') {
+        console.info('[FilesXins demo] write call skipped:', name);
+        return Promise.resolve(new Response(JSON.stringify({
+          success: false, demo: true, message: NOTE
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
+      }
+      // GET -> the snapshot file (stored as .json, so parse it ourselves).
+      // Keep the original ../ prefix so it resolves exactly like the .php call did.
+      var target = String(url).replace(/\.php(\?[^#]*)?$/, '.json');
+      return _fetch(target, { cache: 'force-cache' })
+        .then(function (r) { return r.text(); })
+        .then(function (t) { return new Response(t, { status: 200, headers: { 'Content-Type': 'application/json' } }); })
+        .catch(function () {
+          return new Response(JSON.stringify({ success: false, demo: true, message: NOTE }),
+            { status: 200, headers: { 'Content-Type': 'application/json' } });
+        });
+    };
+
+    /* ---- neutralise XHR writes too ---- */
+    var _open = XMLHttpRequest.prototype.open, _send = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.open = function (m, u) {
+      this.__fx = m && String(m).toUpperCase() !== 'GET' && String(u).indexOf('api/') !== -1;
+      return _open.apply(this, arguments);
+    };
+    XMLHttpRequest.prototype.send = function () { if (this.__fx) return; return _send.apply(this, arguments); };
+
+    /* ---- keep navigation inside the demo ---- */
+    function notice(msg) {
+      var old = document.getElementById('fx-note');
+      if (old) old.remove();
+      var d = document.createElement('div');
+      d.id = 'fx-note';
+      d.setAttribute('style', 'position:fixed;left:50%;top:3.4rem;transform:translateX(-50%);z-index:99999;' +
+        'font:500 13px/1.45 Inter,system-ui,sans-serif;color:#e6ecff;background:rgba(14,18,32,.97);' +
+        'border:1px solid #2a3350;border-radius:10px;padding:.7rem 1.1rem;max-width:92vw;text-align:center;' +
+        'box-shadow:0 18px 50px -18px rgba(0,229,255,.55)');
+      d.textContent = msg;
+      document.body.appendChild(d);
+      setTimeout(function () { d.remove(); }, 4500);
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var h = a.getAttribute('href') || '';
+      if (/^#|^https?:|^mailto:|^tel:|^\//.test(h) || !h) return;
+      if (/login\.html|signup\.html/i.test(h)) {
+        e.preventDefault();
+        notice('Sign-in is disabled here \u2014 authentication needs the PHP backend (see the code on GitHub).');
+      }
+    }, true);
+
+    /* ---- Google Identity is unavailable on a demo origin ---- */
+    if (!window.google) {
+      Object.defineProperty(window, 'google', { configurable: true, writable: true, value: {
+        accounts: { id: {
+          initialize: function () {}, renderButton: function () {}, prompt: function () {},
+          disableAutoSelect: function () {}, cancel: function () {}
+        } }
+      } });
+    }
+
+    /* ---- let the demo work when opened straight from disk (file://) ---- */
+    if (location.protocol === 'file:') {
+      try { arch = null; } catch (e) {}
+    }
+    try {
+      if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+        navigator.serviceWorker.register((location.pathname.indexOf('/demo/') > -1 ? '../' : './') + 'sw.js')
+          .catch(function () {});
+      }
+    } catch (e) {}
+
+    /* ---- demo chrome ---- */
+    document.addEventListener('DOMContentLoaded', function () {
+      var s = document.createElement('style');
+      s.textContent = 'body{padding-top:2.7rem!important}';
+      document.head.appendChild(s);
+      var bar = document.createElement('div');
+      bar.setAttribute('style', 'position:fixed;left:0;right:0;top:0;z-index:99998;display:flex;align-items:center;' +
+        'gap:.3rem;overflow-x:auto;padding:.5rem .8rem;background:rgba(7,8,13,.95);backdrop-filter:blur(10px);' +
+        'border-bottom:1px solid #1c2338;font:500 12px/1 Inter,system-ui,sans-serif;white-space:nowrap');
+      bar.innerHTML = "<a href=\"/\" style=\"color:#00e5ff;text-decoration:none;font-weight:700;margin-right:.4rem\">FILESXINS</a><span style=\"color:#2a3350\">|</span><span style=\"color:#5b6488;margin:0 .3rem\">UM-MART demo</span><span style=\"color:#2a3350\">|</span><a href=\"./home.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Home</a><a href=\"./filter.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Shop</a><a href=\"./about.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">About</a><a href=\"./contact.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Contact</a><a href=\"./checkout.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Checkout</a><a href=\"./payment-ovo.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">OVO</a><a href=\"./payment-gopay.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">GoPay</a><a href=\"./payment-dana.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">DANA</a><a href=\"./payment-card.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Card</a><a href=\"./order-complete.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Order complete</a><a href=\"./location.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Location</a><a href=\"./login.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Login</a><a href=\"./signup.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Sign up</a><a href=\"./transactions.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Transactions</a><a href=\"./invoice.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Invoice</a><a href=\"./admin-dashboard.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Admin dashboard</a>";
+      document.body.appendChild(bar);
+    });
+  })();
+  </script>
+</head>
+
+<body>
+
+    <div class="container glass-effect">
+        <a href="home.html"><span class="close-btn" >&times;</span></a>
+        <div class="header">
+            <h1>Login First</h1>
+            <p>See more products from UM Mart</p>
+        </div>
+        
+        <form class="login-form" id="login-form">
+            <div class="input-group">
+                <input type="text" id="email" placeholder="Input your email or username">
+                <i class="fas fa-envelope"></i>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Input your password here">
+                <i class="fas fa-eye" id="togglePassword""></i>
+
+            </div>
+            
+            <button type="submit" class="login-button">Login</button>
+            
+            <div class="remember-forgot">
+                <div class="remember">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me?</label>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+            
+            <div class="divider">
+                <span class="divider-text">Or Log In With</span>
+            </div>
+            <div class="google-login-container">
+                <div id="googleLoginButton" class="google-login-btn"></div>
+            </div>
+
+                <div class="login-link">
+                    <p>Don't have an account? <a href="signup.html">Sign Up here</a></p>
+                </div>
+            </form>
+    </div>
+    <div class="notification-container" id="notification-container">
+    </div>
+    <script src="../scripts/notifications.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+    // Load Google API script dynamically
+    function loadGoogleSignIn() {
+        const script = document.createElement('script');
+        script.src = 'https://accounts.google.com/gsi/client';
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+    }
+    loadGoogleSignIn();
+</script>
+
+</body>
+</html>

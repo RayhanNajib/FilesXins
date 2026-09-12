@@ -1,0 +1,523 @@
+
+.main-header .search-bar {
+    position: relative;
+}
+
+
+/* Wrapper untuk dropdown, diposisikan relatif terhadap search-bar */
+.search-results-dropdown {
+    position: absolute;
+    top: 100%; /* Muncul tepat di bawah search bar */
+    left: 0;
+    width: 100%; /* Lebar akan diatur oleh JS agar pas */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 998; /* Di bawah sidebar (999) tapi di atas konten lain */
+    max-height: 400px;
+    overflow-y: auto;
+    display: none; /* Sembunyi secara default */
+}
+
+/* Setiap item di dalam dropdown */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Gambar produk di dropdown */
+.dropdown-item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+/* Info (nama & harga) */
+.dropdown-item-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dropdown-item-name {
+    font-weight: 600;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-item-price {
+    font-size: 14px;
+    color: #0066cc;
+    font-weight: 500;
+}
+
+/* =================================================
+--- STYLES UNTUK FITUR REKOMENDASI (VERSI BARU) ---
+=================================================
+*/
+
+/* 1. Tombol FAB (Floating Action Button) - Bentuk Lingkaran */
+#recommend-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px; /* Kembali ke lingkaran */
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0066cc; /* Warna primer */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 998;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#recommend-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* 2. Ikon 'lightbulb' di dalam FAB */
+#recommend-fab i {
+    font-size: 24px;
+    color: #FFFFFF; /* Ikon warna putih */
+}
+
+/* 3. Modal Overlay (Latar belakang gelap) */
+.recommend-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.recommend-modal-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 4. Konten Modal (Kotak Pop-up) */
+.recommend-modal-content {
+    background: #fff;
+    width: 450px;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.recommend-modal-overlay.visible .recommend-modal-content {
+    transform: scale(1);
+}
+
+/* 5. Header Modal */
+.recommend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.recommend-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #003366;
+    margin: 0;
+}
+
+#recommend-close-btn {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+#recommend-close-btn:hover {
+    color: #333;
+}
+
+/* 6. List Container (Tempat Chat & Produk) */
+.recommend-product-list {
+    padding: 0; /* Padding akan diatur oleh elemen di dalamnya */
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* 7. STYLE BARU: Chat Bubble Cakra */
+.cakra-chat-bubble {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f8f9fa; /* Latar belakang abu-abu muda */
+    border-bottom: 1px solid #eee;
+}
+
+/* 8. STYLE BARU: Avatar Cakra */
+.cakra-avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: #e9ecef; /* Latar belakang untuk ikon jika transparan */
+    padding: 5px;
+}
+
+/* 9. STYLE DIPERBARUI: Pesan Cakra (Bubble) */
+.recommend-message {
+    padding: 12px 15px;
+    margin: 0;
+    border-bottom: none;
+    text-align: left;
+    color: #333;
+    font-style: normal;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background: #e9ecef;
+    border-radius: 0 15px 15px 15px; /* Bentuk chat bubble */
+}
+
+.recommend-message strong {
+    color: #0066cc;
+    font-weight: 700;
+}
+
+/* 10. Item Produk Rekomendasi */
+.recommend-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease;
+    margin: 10px 20px 0 20px; /* Beri jarak dari pinggir */
+}
+
+.recommend-item:hover {
+    background-color: #f8f9fa;
+}
+
+.recommend-item:last-child {
+    margin-bottom: 20px;
+}
+
+.recommend-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-right: 15px;
+    border: 1px solid #eee;
+}
+
+.recommend-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.recommend-item-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.recommend-item-price {
+    font-size: 14px;
+    color: #0066cc;
+    font-weight: 500;
+}
+
+/* 11. (Opsional) Pesan jika tidak ada item baru */
+.recommend-message-empty {
+    padding: 20px;
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* --- PERBAIKAN STATUS PRODUK --- */
+
+/* 1. Ikon Status (Available Dot) - Gaya Lama dengan Warna Dinamis */
+.available-dot {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: #28A745; /* Hijau Default */
+    border: 2px solid #28A745;
+    border-radius: 30%;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.available-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background: #28A745;
+    border-radius: 50%;
+}
+
+.available-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 30%;
+}
+
+/* Variasi Merah untuk Out of Stock */
+.unavailable-dot {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: #dc3545; /* Merah */
+    border: 2px solid #dc3545;
+    border-radius: 30%;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.unavailable-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background: #dc3545; /* Merah */
+    border-radius: 50%;
+}
+
+.unavailable-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 30%;
+}
+
+/* 2. Teks Status di Bawah Gambar */
+.stock-status {
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Tengahkan teks */
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.stock-status.in-stock {
+    color: #28a745; /* Hijau */
+}
+
+.stock-status.in-stock i {
+    color: #28a745;
+}
+
+.stock-status.out-of-stock {
+    color: #dc3545; /* Merah */
+}
+
+.stock-status.out-of-stock i {
+    color: #dc3545;
+}
+
+/* 3. Tombol Add to Cart (Habis) - Lebih Kontras */
+button.add-to-cart-btn:disabled {
+    background: #e9ecef !important; /* Abu-abu terang */
+    cursor: not-allowed;
+    transform: none;
+    color: #dc3545 !important; /* Teks Merah */
+    font-weight: 800; /* Lebih tebal */
+    border: 2px solid #dc3545; /* Border Merah */
+    opacity: 0.8;
+}
+
+button.add-to-cart-btn:disabled:hover {
+    background: #e9ecef !important;
+    transform: none;
+}
+
+/* Overlay gambar saat habis (Opsional - membuat gambar agak pudar) */
+.product-card.is-out-of-stock .product-image img {
+    opacity: 0.5;
+    filter: grayscale(100%); /* Hitam putih */
+}
+
+
+/* =========================================
+   REVISI SISTEM NOTIFIKASI KUSTOM (UM MART STYLE)
+   ========================================= */
+
+.notification-container {
+    position: fixed;
+    top: 20px;
+    
+    /* REVISI: Pindah ke tengah */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    z-index: 9999;
+    width: 100%;
+    max-width: 400px; /* Lebar maksimum notifikasi */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.um-notification {
+    display: flex;
+    /* REVISI: 'align-items' diubah ke 'flex-start' agar gambar tidak gepeng */
+    align-items: flex-start; 
+    width: 90%; /* Sedikit margin di HP */
+    margin: 0 auto;
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #0066cc; /* Default: Info (Biru) */
+    font-family: 'Poppins', sans-serif;
+    transform: translateY(-150%); /* Animasi dari atas */
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    animation: notification-slide-in 0.5s forwards;
+}
+
+/* Animasi Muncul dari Atas */
+@keyframes notification-slide-in {
+    from {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animasi Hilang ke Atas */
+.um-notification.fade-out {
+    animation: notification-slide-out 0.5s forwards;
+}
+@keyframes notification-slide-out {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+}
+
+/* REVISI: Ganti ikon dengan gambar Cakra */
+.notification-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 15px;
+    flex-shrink: 0; /* Agar gambar tidak mengecil */
+}
+
+.notification-message {
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+    padding-right: 10px; /* Jarak dari tombol close */
+}
+
+/* REVISI: Tombol Close lebih besar dan jelas (UX) */
+.notification-close {
+    font-size: 24px; /* Lebih besar */
+    font-weight: 600;
+    color: #888; /* Lebih terlihat */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px; /* Area klik lebih besar */
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+.notification-close:hover {
+    color: #000;
+}
+
+/* --- Tipe Notifikasi --- */
+/* ERROR (Merah) */
+.um-notification.error {
+    border-left-color: #dc3545;
+}
+
+/* SUCCESS (Hijau) */
+.um-notification.success {
+    border-left-color: #28a745;
+}
+
+/* INFO (Biru - Default) */
+.um-notification.info {
+    border-left-color: #0066cc;
+}
+
+/* WARNING (Kuning) */
+.um-notification.warning {
+    border-left-color: #FFD700;
+}

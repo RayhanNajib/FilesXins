@@ -1,0 +1,21 @@
+{
+ "success": true,
+ "message": "Status berhasil diambil.",
+ "data": [
+  {
+   "id": "1",
+   "name": "In Stock",
+   "slug": "in-stock"
+  },
+  {
+   "id": "2",
+   "name": "On Sale",
+   "slug": "sale"
+  },
+  {
+   "id": "3",
+   "name": "New Arrival",
+   "slug": "new"
+  }
+ ]
+}

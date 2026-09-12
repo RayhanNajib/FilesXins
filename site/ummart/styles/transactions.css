@@ -1,0 +1,455 @@
+@import url('contact.css');
+@import url('base.css');
+@import url('checkout.css');
+
+/* Main Layout Overrides */
+body {
+    background-color: #ffffff; /* Sesuai permintaan: latar belakang putih */
+    color: #333;
+}
+
+.main-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Transaction List Container */
+.transaction-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Bayangan di belakang */
+    padding: 30px;
+}
+
+/* Filter Bar */
+.transaction-filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+    position: relative;
+    width: 300px;
+}
+
+.transaction-settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px dashed #eee; /* Garis pemisah */
+    margin-top: 15px;
+    margin-bottom: 30px; /* REVISI: Menambah jarak ke bawah agar "lega" */
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.setting-item label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.setting-item select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-delete-all {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-delete-all:hover {
+    background-color: #e60000;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    padding-right: 40px; /* Ruang untuk ikon */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.filter-dropdown-menu {
+    position: absolute;
+    top: 100%; /* Posisikan tepat di bawah tombol */
+    left: 0;
+    z-index: 10;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; /* Sudut lebih membulat */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan lebih halus dan nyata */
+    min-width: 220px;
+    display: none;
+    flex-direction: column;
+    margin-top: 10px; /* Jarak dari tombol */
+    overflow: hidden; /* Memastikan sudut yang membulat tidak terpotong */
+}
+
+/* Tombol Dropdown */
+.filter-dropdown-btn {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f8ff; /* Warna hover lebih lembut */
+    color: #0066cc; /* Warna teks menjadi biru UM Mart */
+}
+
+.filter-dropdown-btn:hover {
+    border-color: #0066cc;
+    color: #0066cc;
+}
+
+.filter-group.right-filters {
+    position: relative; /* Menambahkan positioning untuk menu dropdown */
+}
+
+.filter-dropdown-menu.visible {
+    display: flex;
+}
+
+/* Dropdown Menu Item */
+.dropdown-item {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease; /* Transisi lebih halus */
+    font-weight: 500;
+    display: block; /* Pastikan setiap item mengisi lebar penuh */
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.date-picker-wrapper {
+    position: relative;
+}
+
+.date-input {
+    padding: 10px 15px;
+    padding-right: 40px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    color: #555;
+    cursor: pointer;
+}
+
+.date-input:hover{
+    border-color: #0066cc;
+    color: #0066cc;
+}
+
+.date-input:focus {
+    outline: none;
+    border-color: #0066cc;
+    color: #0066cc;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+}
+
+/* Status Bar */
+.transaction-status-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.status-label {
+    font-weight: 600;
+    color: #003366;
+    margin-right: 10px;
+}
+
+.status-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.status-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.status-btn.active, .status-btn:hover {
+    background-color: #0066cc;
+    color: #fff;
+    border-color: #0066cc;
+}
+
+.reset-filter {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: auto; /* Mendorong ke sisi kanan */
+}
+
+/* Transaction List Item */
+.transaction-list-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.transaction-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+/* Transaksi Header Status */
+.transaction-header-status {
+    display: flex; /* Menggunakan flexbox untuk mengatur posisi item */
+    align-items: center; /* Meratakan item secara vertikal */
+    gap: 20px; /* Memberikan jarak 10px antara status dan kode pesanan */
+    margin-right: 38%;
+}
+
+.transaction-header-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.shopping-icon {
+    font-size: 1.5rem;
+    color: #0066cc;
+}
+
+.transaction-status-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.transaction-date {
+    font-size: 14px;
+    color: #999;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+/* Gaya untuk Status "Complete" */
+.transaction-status.complete {
+    color: white; /* Warna teks hijau */
+    font-weight: 600;
+    padding: 2px 10px; /* Padding di sekeliling teks */
+    border: 1px solid #00cc66; /* Border hijau di sekeliling teks */
+    background-color: #00cc66;
+    border-radius: 5px; /* Membulatkan sudut border */
+}
+
+.transaction-status.pending {
+    color: white; /* Warna teks hijau */
+    font-weight: 600;
+    padding: 2px 10px; /* Padding di sekeliling teks */
+    border: 1px solid #ffc107; /* Border hijau di sekeliling teks */
+    background-color: #ffc107;
+    border-radius: 5px; /* Membulatkan sudut border */
+}
+
+.order-code {
+    font-weight: 600;
+    color: #003366;
+}
+
+.transaction-details {
+    display: flex;
+    gap: 20px;
+}
+
+.product-info-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item.hidden {
+    display: none;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.product-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.product-item-details {
+    flex-grow: 1;
+}
+
+.product-item-details h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.product-item-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+.see-more-btn {
+    background: none;
+    border: none;
+    color: #0066cc;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.total-summary-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 20px;
+    border-left: 1px dashed #ddd;
+    flex-shrink: 0;
+}
+
+.total-label {
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.total-price {
+    font-size: 24px;
+    font-weight: 800;
+    color: #00cc66; /* Hijau */
+    margin-bottom: 10px;
+}
+
+.check-invoice-btn {
+    background-color: #FFC107;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.check-invoice-btn:hover {
+    background-color: #ffcd38;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .transaction-container {
+        padding: 20px;
+    }
+
+    .transaction-filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .right-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .search-input-wrapper {
+        width: 100%;
+    }
+
+
+    .transaction-details {
+        flex-direction: column;
+    }
+    
+    .total-summary-wrapper {
+        border-left: none;
+        border-top: 1px dashed #ddd;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+}

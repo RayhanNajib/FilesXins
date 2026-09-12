@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UM Mart - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="../styles/admin-dashboard.css">
+    <link rel="icon" type="image/png" href="../assets/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="apple-mobile-web-app-title" content="UMMART" />
+    <link rel="manifest" href="../assets/images/site.webmanifest" />
+    <style>
+        .image-preview {
+            margin-top: 10px;
+            border: 1px dashed #ccc;
+            padding: 10px;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+        }
+        .image-preview img {
+            max-width: 200px;
+            max-height: 150px;
+        }
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        /* --- Style untuk Sub-Navigasi (Tabs) --- */
+        .sub-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .sub-nav-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-light);
+            border-bottom: 3px solid transparent;
+            transform: translateY(2px);
+        }
+        .sub-nav-btn.active {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+        .sub-management-section {
+            display: none; /* Sembunyikan semua tab content by default */
+        }
+        .sub-management-section.active {
+            display: block; /* Tampilkan hanya yang aktif */
+        }
+        .form-group-checkbox {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+        .form-group-checkbox label { margin-bottom: 0; }
+        .form-group-checkbox input[type="checkbox"] { width: auto; height: 20px; width: 20px; }
+        
+        /* Preview untuk Banner Bawah */
+        .settings-image-preview {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .settings-image-preview img {
+            height: 60px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+  <!-- ============ FilesXins static demo runtime ============ -->
+  <script>
+  (function () {
+    var NOTE = 'This is a static demo \u2014 the PHP/MySQL backend is not part of this deployment.';
+
+    /* ---- seed the client state the checkout flow expects ---- */
+    try {
+      var seed = {"cartItems": [{"id": 1, "name": "Yogurt Drink Strawberry", "price": 18000, "image": "../assets/images/Product/691593424a933-Produk1.png", "quantity": 2}, {"id": 2, "name": "Mie Sedap Cup", "price": 6500, "image": "../assets/images/Product/69159a889199a-Produk2.png", "quantity": 3}, {"id": 3, "name": "Ice Cream Lokarasa", "price": 12000, "image": "../assets/images/Product/Produk3.png", "quantity": 1}], "lastOrder": {"orderCode": "UMMART-1763456789123", "orderDate": "12 Sep 2026", "orderTotal": 67500, "paymentMethod": "ovo", "products": [{"id": 1, "name": "Yogurt Drink Strawberry", "price": 18000, "image": "../assets/images/Product/691593424a933-Produk1.png", "quantity": 2}, {"id": 2, "name": "Mie Sedap Cup", "price": 6500, "image": "../assets/images/Product/69159a889199a-Produk2.png", "quantity": 3}, {"id": 3, "name": "Ice Cream Lokarasa", "price": 12000, "image": "../assets/images/Product/Produk3.png", "quantity": 1}], "status": "Pending"}, "finalPaymentAmount": "67500", "paymentMethod": "ovo"};
+      Object.keys(seed).forEach(function (k) {
+        if (!localStorage.getItem(k)) localStorage.setItem(k, typeof seed[k] === 'string' ? seed[k] : JSON.stringify(seed[k]));
+      });
+    } catch (e) {}
+
+    /* ---- serve GET api/* from the snapshot, neutralise writes ---- */
+    function fixtureName(url) {
+      // ../api/public/get_products.php?x=1  ->  api/public/get_products.php
+      var m = String(url).match(/api\/[A-Za-z0-9_\/.\-]+\.php/);
+      return m ? m[0] : null;
+    }
+    var _fetch = window.fetch;
+    window.fetch = function (url, opts) {
+      var name = fixtureName(url);
+      if (!name) return _fetch.apply(this, arguments);
+      var method = ((opts && opts.method) || 'GET').toUpperCase();
+      if (method !== 'GET') {
+        console.info('[FilesXins demo] write call skipped:', name);
+        return Promise.resolve(new Response(JSON.stringify({
+          success: false, demo: true, message: NOTE
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
+      }
+      // GET -> the snapshot file (stored as .json, so parse it ourselves).
+      // Keep the original ../ prefix so it resolves exactly like the .php call did.
+      var target = String(url).replace(/\.php(\?[^#]*)?$/, '.json');
+      return _fetch(target, { cache: 'force-cache' })
+        .then(function (r) { return r.text(); })
+        .then(function (t) { return new Response(t, { status: 200, headers: { 'Content-Type': 'application/json' } }); })
+        .catch(function () {
+          return new Response(JSON.stringify({ success: false, demo: true, message: NOTE }),
+            { status: 200, headers: { 'Content-Type': 'application/json' } });
+        });
+    };
+
+    /* ---- neutralise XHR writes too ---- */
+    var _open = XMLHttpRequest.prototype.open, _send = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.open = function (m, u) {
+      this.__fx = m && String(m).toUpperCase() !== 'GET' && String(u).indexOf('api/') !== -1;
+      return _open.apply(this, arguments);
+    };
+    XMLHttpRequest.prototype.send = function () { if (this.__fx) return; return _send.apply(this, arguments); };
+
+    /* ---- keep navigation inside the demo ---- */
+    function notice(msg) {
+      var old = document.getElementById('fx-note');
+      if (old) old.remove();
+      var d = document.createElement('div');
+      d.id = 'fx-note';
+      d.setAttribute('style', 'position:fixed;left:50%;top:3.4rem;transform:translateX(-50%);z-index:99999;' +
+        'font:500 13px/1.45 Inter,system-ui,sans-serif;color:#e6ecff;background:rgba(14,18,32,.97);' +
+        'border:1px solid #2a3350;border-radius:10px;padding:.7rem 1.1rem;max-width:92vw;text-align:center;' +
+        'box-shadow:0 18px 50px -18px rgba(0,229,255,.55)');
+      d.textContent = msg;
+      document.body.appendChild(d);
+      setTimeout(function () { d.remove(); }, 4500);
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var h = a.getAttribute('href') || '';
+      if (/^#|^https?:|^mailto:|^tel:|^\//.test(h) || !h) return;
+      if (/login\.html|signup\.html/i.test(h)) {
+        e.preventDefault();
+        notice('Sign-in is disabled here \u2014 authentication needs the PHP backend (see the code on GitHub).');
+      }
+    }, true);
+
+    /* ---- Google Identity is unavailable on a demo origin ---- */
+    if (!window.google) {
+      Object.defineProperty(window, 'google', { configurable: true, writable: true, value: {
+        accounts: { id: {
+          initialize: function () {}, renderButton: function () {}, prompt: function () {},
+          disableAutoSelect: function () {}, cancel: function () {}
+        } }
+      } });
+    }
+
+    /* ---- let the demo work when opened straight from disk (file://) ---- */
+    if (location.protocol === 'file:') {
+      try { arch = null; } catch (e) {}
+    }
+    try {
+      if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+        navigator.serviceWorker.register((location.pathname.indexOf('/demo/') > -1 ? '../' : './') + 'sw.js')
+          .catch(function () {});
+      }
+    } catch (e) {}
+
+    /* ---- demo chrome ---- */
+    document.addEventListener('DOMContentLoaded', function () {
+      var s = document.createElement('style');
+      s.textContent = 'body{padding-top:2.7rem!important}';
+      document.head.appendChild(s);
+      var bar = document.createElement('div');
+      bar.setAttribute('style', 'position:fixed;left:0;right:0;top:0;z-index:99998;display:flex;align-items:center;' +
+        'gap:.3rem;overflow-x:auto;padding:.5rem .8rem;background:rgba(7,8,13,.95);backdrop-filter:blur(10px);' +
+        'border-bottom:1px solid #1c2338;font:500 12px/1 Inter,system-ui,sans-serif;white-space:nowrap');
+      bar.innerHTML = "<a href=\"/\" style=\"color:#00e5ff;text-decoration:none;font-weight:700;margin-right:.4rem\">FILESXINS</a><span style=\"color:#2a3350\">|</span><span style=\"color:#5b6488;margin:0 .3rem\">UM-MART demo</span><span style=\"color:#2a3350\">|</span><a href=\"./home.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Home</a><a href=\"./filter.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Shop</a><a href=\"./about.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">About</a><a href=\"./contact.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Contact</a><a href=\"./checkout.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Checkout</a><a href=\"./payment-ovo.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">OVO</a><a href=\"./payment-gopay.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">GoPay</a><a href=\"./payment-dana.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">DANA</a><a href=\"./payment-card.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Card</a><a href=\"./order-complete.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Order complete</a><a href=\"./location.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Location</a><a href=\"./login.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Login</a><a href=\"./signup.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Sign up</a><a href=\"./transactions.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Transactions</a><a href=\"./invoice.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Invoice</a><a href=\"./admin-dashboard.html\" style=\"color:#8b96b8;text-decoration:none;padding:.3rem .55rem;border-radius:6px\">Admin dashboard</a>";
+      document.body.appendChild(bar);
+    });
+  })();
+  </script>
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/images/Lambang-UM.png" alt="UM Mart Logo">
+                <h3>UM Mart Admin</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-target="dashboard"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="#" class="nav-link" data-target="product-management"><i class="fas fa-box-open"></i> Product Management</a></li>
+                    <li><a href="#" class="nav-link" data-target="category-management"><i class="fas fa-tags"></i> Category Management</a></li>
+                    <li><a href="#" class="nav-link" data-target="horizontal-category-management"><i class="fas fa-list-ul"></i> Horizontal Categories</a></li>
+                    <li><a href="#" class="nav-link" data-target="banner-management"><i class="fas fa-images"></i> Banner Management</a></li>
+                    <li><a href="#" class="nav-link" data-target="voucher-management"><i class="fas fa-ticket-alt"></i> Voucher Management</a></li>
+                    <li><a href="#" class="nav-link" data-target="filter-management"><i class="fas fa-filter"></i> Filter Management</a></li>
+                    <li><a href="#" class="nav-link" data-target="site-settings"><i class="fas fa-cog"></i> Site Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Dashboard</h1>
+                <a href="home.html" id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </header>
+
+            <section id="dashboard" class="management-section" style="display: flex;">
+                <div class="dashboard-header">
+                    <h2>Ringkasan Statistik</h2>
+
+                    <div class="filter-controls">
+                        <select id="stats-filter" class="form-control">
+                            <option value="today">Hari Ini</option>
+                            <option value="week">7 Hari Terakhir</option>
+                            <option value="month">30 Hari Terakhir</option>
+                            <option value="year">1 Tahun Terakhir</option>
+                        </select>
+                        <button id="export-excel-btn" class="btn btn-primary">
+                            <i class="fas fa-file-excel"></i> Export ke Excel
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card blue">
+                        <h4>Total Penjualan</h4>
+                        <p id="stat-total-sales">Rp 0</p>
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-card green">
+                        <h4>Total Pesanan</h4>
+                        <p id="stat-total-orders">0</p>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-card yellow">
+                        <h4>Pengguna Baru</h4>
+                        <p id="stat-total-new-users">0</p>
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="stat-card red">
+                        <h4>Produk Paling Laris</h4>
+                        <p id="stat-top-product">N/A</p>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h3 id="chart-title">Grafik Penjualan</h3>
+                    
+                    <div class.="chart-container" style="position: relative; height: 350px; width: 100%;">
+                        
+                        <canvas id="salesChart"></canvas>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="product-management" class="management-section">
+                <h2>Product Management</h2>
+                <div class="card">
+                    <h3>Add/Edit Product</h3>
+                    <form id="product-form" class="data-form" enctype="multipart/form-data">
+                        <input type="hidden" name="id">
+                        <div class="form-group">
+                            <label for="product-name">Product Name *</label>
+                            <input type="text" id="product-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-category">Category *</label>
+                            <select id="product-category" name="category" required>
+                                <option value="">-- Pilih Kategori --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-price">Price (Rp) *</label>
+                            <input type="number" id="product-price" name="price" min="0" step="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-discount">Discount (%)</label>
+                            <input type="number" id="product-discount" name="discount" min="0" max="100" placeholder="0" value="0">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product-status">Status *</label>
+                            <select id="product-status" name="status" required>
+                                <option value="in-stock">In Stock</option>
+                                <option value="sale">On Sale</option>
+                                <option value="new">New Arrival</option>
+                                <option value="out-of-stock">Out of Stock</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-unit">Unit *</label>
+                            <input type="text" id="product-unit" name="unit" placeholder="e.g., 1 pc, 1 kg" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="product-image">Product Image *</label>
+                            <input type="file" id="product-image" name="image" accept="image/*">
+                            <div class="image-preview" id="image-preview">
+                                <p>Pratinjau gambar akan muncul di sini</p>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="submit-product-btn">
+                                <span class="btn-text">Save Product</span>
+                            </button>
+                            <button type="reset" class="btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3>Existing Products</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th> <th>Image</th> <th>Name</th> <th>Category</th> <th>Price</th> <th>Status</th> <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="product-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="category-management" class="management-section" style="display: none;">
+                <h2>Category Management</h2>
+                <div class="card">
+                    <h3>Add/Edit Category</h3>
+                    <form id="category-form" class="data-form" enctype="multipart/form-data">
+                        <input type="hidden" name="id">
+                        <div class="form-group">
+                            <label for="category-name">Category Name</label>
+                            <input type="text" id="category-name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="category-icon">Category Icon</label>
+                            <input type="file" id="category-icon" name="icon" accept="image/*">
+                        </div>
+
+                        <!-- 1. TAMBAHKAN BLOK CHECKBOX INI -->
+                        <div class="form-group form-group-checkbox">
+                            <label for="category-featured">Tampilkan di Homepage?</label>
+                            <input type="checkbox" id="category-featured" name="is_featured" value="1">
+                        </div>
+                        <!-- AKHIR BLOK TAMBAHAN -->
+
+                        <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Category</button>
+                        <button type="reset" class="btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                 <div class="card">
+                    <h3>Existing Categories</h3>
+                    <table>
+                        <thead>
+                            <tr><th>ID</th><th>Icon</th><th>Name</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody id="category-table-body"></tbody>
+                    </table>
+                 </div>
+            </section>
+
+            <section id="horizontal-category-management" class="management-section" style="display: none;">
+                <h2>Horizontal Category Management</h2>
+                <div class="card">
+                    <h3>Add New Horizontal Category</h3>
+                    <form id="horizontal-category-form" class="data-form" enctype="multipart/form-data">
+                        <input type="hidden" name="id">
+                        <input type="hidden" name="is_featured" value="1"> 
+                        
+                        <div class="form-group">
+                            <label for="h-category-name">Category Name</label>
+                            <input type="text" id="h-category-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="h-category-icon">Category Icon</label>
+                            <input type="file" id="h-category-icon" name="icon" accept="image/*">
+                            <div class="image-preview" id="horizontal-category-image-preview">
+                                <p>Pratinjau gambar akan muncul di sini</p>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                           <button type="submit" class="btn btn-primary">Save Horizontal Category</button>
+                           <button type="reset" class="btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                 <div class="card">
+                    <h3>Existing Horizontal Categories</h3>
+                    <table>
+                        <thead>
+                            <tr><th>ID</th><th>Icon</th><th>Name</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody id="horizontal-category-table-body"></tbody>
+                    </table>
+                 </div>
+            </section>
+
+            <section id="banner-management" class="management-section" style="display: none;">
+                <h2>Banner Management</h2>
+                
+                <div class="sub-nav">
+                    <button class="sub-nav-btn active" data-target="sub-banner-atas">Banner Atas (Slider)</button>
+                    <button class="sub-nav-btn" data-target="sub-banner-showcase">Banner Showcase (Galeri)</button>
+                    <button class="sub-nav-btn" data-target="sub-banner-bawah">Banner Bawah (Promo Statis)</button>
+                </div>
+
+                <div id="sub-banner-atas" class="sub-management-section active">
+                    <div class="card">
+                        <h3>Add/Edit Banner Atas (Slider)</h3>
+                        <form id="main-banner-form" class="data-form" enctype="multipart/form-data">
+                            <input type="hidden" name="id">
+                            <div class="form-group">
+                                <label for="main-banner-title">Judul</label>
+                                <input type="text" id="main-banner-title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="main-banner-link">Link URL (Tujuan Klik)</label>
+                                <input type="text" id="main-banner-link" name="link_url" placeholder="Contoh: filter.html">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="main-banner-description">Deskripsi</label>
+                                <input type="text" id="main-banner-description" name="description">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="main-banner-image">Gambar Banner *</label>
+                                <input type="file" id="main-banner-image" name="image" accept="image/*">
+                                <div class="image-preview" id="main-banner-image-preview">
+                                    <p>Pratinjau gambar akan muncul di sini</p>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                               <button type="submit" class="btn btn-primary">Save Banner</button>
+                               <button type="reset" class="btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                     <div class="card">
+                        <h3>Existing Banners (Atas)</h3>
+                        <table>
+                            <thead>
+                                <tr><th>ID</th><th>Image</th><th>Title</th><th>Description</th><th>Actions</th></tr>
+                            </thead>
+                            <tbody id="main-banner-table-body"></tbody>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="sub-banner-showcase" class="sub-management-section">
+                    <div class="card">
+                        <h3>Add/Edit Banner Showcase (Galeri)</h3>
+                        <form id="showcase-banner-form" class="data-form" enctype="multipart/form-data">
+                            <input type="hidden" name="id">
+                            <div class="form-group">
+                                <label for="showcase-banner-title">Judul</label>
+                                <input type="text" id="showcase-banner-title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="showcase-banner-link">Link URL (Tujuan Klik)</label>
+                                <input type="text" id="showcase-banner-link" name="link_url" placeholder="#">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="showcase-banner-description">Deskripsi</label>
+                                <input type="text" id="showcase-banner-description" name="description">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="showcase-banner-image">Gambar Banner *</label>
+                                <input type="file" id="showcase-banner-image" name="image" accept="image/*">
+                                <div class="image-preview" id="showcase-banner-image-preview">
+                                    <p>Pratinjau gambar akan muncul di sini</p>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                               <button type="submit" class="btn btn-primary">Save Showcase Banner</button>
+                               <button type="reset" class="btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                     <div class="card">
+                        <h3>Existing Showcase Banners</h3>
+                        <table>
+                            <thead>
+                                <tr><th>ID</th><th>Image</th><th>Title</th><th>Description</th><th>Actions</th></tr>
+                            </thead>
+                            <tbody id="showcase-banner-table-body"></tbody>
+                        </table>
+                     </div>
+                </div>
+
+                <div id="sub-banner-bawah" class="sub-management-section">
+                    <div class="card">
+                        <h3>Edit Banner Bawah (Promo Statis)</h3>
+                        <form id="promo-banner-form" class="data-form">
+                            
+                            <div class="form-group">
+                                <label for="setting-promo-banner-1-img">Promo Banner 1 (Kiri)</label>
+                                <input type="file" id="setting-promo-banner-1-img" name="promo_banner_1_img" accept="image/*">
+                                <div class="settings-image-preview" id="promo-banner-1-preview"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="setting-promo-banner-1-link">Link Promo Banner 1</label>
+                                <input type="text" id="setting-promo-banner-1-link" name="promo_banner_1_link">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="setting-promo-banner-2-img">Promo Banner 2 (Kanan)</label>
+                                <input type="file" id="setting-promo-banner-2-img" name="promo_banner_2_img" accept="image/*">
+                                <div class="settings-image-preview" id="promo-banner-2-preview"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="setting-promo-banner-2-link">Link Promo Banner 2</label>
+                                <input type="text" id="setting-promo-banner-2-link" name="promo_banner_2_link">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="setting-policy-banner-img">Policy Banner (Bawah)</label>
+                                <input type="file" id="setting-policy-banner-img" name="policy_banner_img" accept="image/*">
+                                <div class="settings-image-preview" id="policy-banner-preview"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="setting-policy-banner-link">Link Policy Banner</label>
+                                <input type="text" id="setting-policy-banner-link" name="policy_banner_link">
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Simpan Banner Bawah</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="voucher-management" class="management-section" style="display: none;">
+                <h2>Voucher Management</h2>
+                <div class="card">
+                    <h3>Add/Edit Voucher</h3>
+                    <form id="voucher-form" class="data-form">
+                        <input type="hidden" name="id">
+                        <div class="form-group">
+                            <label for="voucher-code">Kode Voucher *</label>
+                            <input type="text" id="voucher-code" name="code" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="voucher-value">Nilai Diskon (Rp) *</label>
+                            <input type="number" id="voucher-value" name="discount_value" required placeholder="Contoh: 2000">
+                        </div>
+                        <div class="form-group">
+                            <label for="voucher-description">Deskripsi (Teks di Top Bar)</label>
+                            <input type="text" id="voucher-description" name="description" placeholder="Contoh: Cashback 40% | Kode : UMMART40">
+                        </div>
+                        <div class="form-group form-group-checkbox">
+                            <label for="voucher-active">Aktif?</label>
+                            <input type="checkbox" id="voucher-active" name="is_active" value="1" checked>
+                        </div>
+                        <div class="form-actions">
+                           <button type="submit" class="btn btn-primary">Save Voucher</button>
+                           <button type="reset" class="btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                 <div class="card">
+                    <h3>Existing Vouchers</h3>
+                    <table>
+                        <thead>
+                            <tr><th>ID</th><th>Kode</th><th>Deskripsi</th><th>Status</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody id="voucher-table-body"></tbody>
+                    </table>
+                 </div>
+            </section>
+
+            <section id="filter-management" class="management-section" style="display: none;">
+                <h2>Filter Management (Product Statuses)</h2>
+                <div class="card">
+                    <h3>Add/Edit Status</h3>
+                    <form id="status-form" class="data-form">
+                        <input type="hidden" name="id">
+                        <div class="form-group">
+                            <label for="status-name">Nama Status (Tampilan)</label>
+                            <input type="text" id="status-name" name="name" required placeholder="Contoh: On Sale">
+                        </div>
+                        <div class="form-group">
+                            <label for="status-slug">Slug (Nilai di DB)</label>
+                            <input type="text" id="status-slug" name="slug" required placeholder="Contoh: sale">
+                        </div>
+                        <div class="form-actions">
+                           <button type="submit" class="btn btn-primary">Save Status</button>
+                           <button type="reset" class="btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                 <div class="card">
+                    <h3>Existing Statuses</h3>
+                    <table>
+                        <thead>
+                            <tr><th>ID</th><th>Name</th><th>Slug</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody id="status-table-body"></tbody>
+                    </table>
+                 </div>
+            </section>
+
+            <section id="site-settings" class="management-section" style="display: none;">
+                <h2>Site Settings</h2>
+                <div class="card">
+                    <h3>Pengaturan Umum Website</h3>
+                    <form id="site-settings-form" class="data-form">
+                        
+                        <div class="form-group full-width">
+                            <label for="setting-promo-text">Teks Promo (di Top Bar)</label>
+                            <input type="text" id="setting-promo-text" name="promo_text">
+                            <small>Contoh: <span>Cashback 40%</span> | Kode : <b>UMMART40</b></small>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="setting-contact-email">Email Kontak</label>
+                            <input type="email" id="setting-contact-email" name="contact_email">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="setting-contact-phone">Telepon Kontak</label>
+                            <input type="text" id="setting-contact-phone" name="contact_phone">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="setting-contact-address">Alamat Kontak</label>
+                            <textarea id="setting-contact-address" name="contact_address" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Simpan Pengaturan Teks</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../scripts/admin-dashboard.js"></script>
+    <script>
+        // Tambahkan fungsi untuk preview gambar sebelum upload
+        document.addEventListener('DOMContentLoaded', function() {
+            function setupImagePreview(inputId, previewId) {
+                const imageInput = document.getElementById(inputId);
+                const imagePreview = document.getElementById(previewId);
+                
+                if (imageInput && imagePreview) {
+                    imageInput.addEventListener('change', function() {
+                        const file = this.files[0];
+                        if (file) {
+                            const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'image/webp'];
+                            if (!allowedTypes.includes(file.type)) {
+                                UINotification.show('Hanya file gambar (JPG, JPEG, PNG, GIF, WEBP) yang diizinkan.');
+                                this.value = '';
+                                imagePreview.innerHTML = '<p>Pratinjau gambar akan muncul di sini</p>';
+                                return;
+                            }
+                            if (file.size > 2 * 1024 * 1024) { // Max 2MB
+                                UINotification.show('Ukuran file terlalu besar. Maksimal 2MB.');
+                                this.value = '';
+                                imagePreview.innerHTML = '<p>Pratinjau gambar akan muncul di sini</p>';
+                                return;
+                            }
+                            const reader = new FileReader();
+                            reader.onload = function(e) {
+                                imagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview" style="max-width: 200px; max-height: 150px;">`;
+                            }
+                            reader.readAsDataURL(file);
+                        } else {
+                            imagePreview.innerHTML = '<p>Pratinjau gambar akan muncul di sini</p>';
+                        }
+                    });
+                }
+            }
+            
+            // Terapkan preview untuk Form Produk
+            setupImagePreview('product-image', 'image-preview');
+            // Terapkan preview untuk Form Banner Atas
+            setupImagePreview('main-banner-image', 'main-banner-image-preview');
+            // Terapkan preview untuk Form Banner Showcase
+            setupImagePreview('showcase-banner-image', 'showcase-banner-image-preview');
+            
+            // Terapkan preview untuk Banner Bawah (Promo)
+            setupImagePreview('setting-promo-banner-1-img', 'promo-banner-1-preview');
+            setupImagePreview('setting-promo-banner-2-img', 'promo-banner-2-preview');
+            setupImagePreview('setting-policy-banner-img', 'policy-banner-preview');
+
+            // Tambahkan event listener untuk form reset
+            function setupFormReset(formId, previewId) {
+                const form = document.getElementById(formId);
+                if (form) {
+                    form.addEventListener('reset', function() {
+                        const preview = document.getElementById(previewId);
+                        if (preview) {
+                            preview.innerHTML = '<p>Pratinjau gambar akan muncul di sini</p>';
+                        }
+                        // Hapus semua input tersembunyi
+                        form.querySelectorAll('input[type="hidden"]').forEach(input => {
+                             input.value = '';
+                        });
+                        const fileInput = form.querySelector('input[type="file"]');
+                        if (fileInput) {
+                            // REVISI: Hanya set 'required' jika itu adalah form produk
+                            if (formId === 'product-form') {
+                                fileInput.required = true;
+                            }
+                        }
+                    });
+                }
+            }
+            
+            setupFormReset('product-form', 'image-preview');
+            setupFormReset('main-banner-form', 'main-banner-image-preview');
+            setupFormReset('showcase-banner-form', 'showcase-banner-image-preview');
+            // Tidak perlu reset untuk form promo-banner karena itu bagian dari site-settings
+        });
+    </script>
+        <div class="notification-container" id="notification-container">
+    </div>
+  <script src="../scripts/notifications.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+ "success": true,
+ "data": {
+  "total_sales": 0,
+  "total_orders": 0,
+  "total_new_users": 0,
+  "total_products": 29,
+  "top_product": "N/A"
+ }
+}

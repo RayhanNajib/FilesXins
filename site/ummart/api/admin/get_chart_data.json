@@ -1,0 +1,23 @@
+{
+ "success": true,
+ "data": {
+  "labels": [
+   "06 Sep",
+   "07 Sep",
+   "08 Sep",
+   "09 Sep",
+   "10 Sep",
+   "11 Sep",
+   "12 Sep"
+  ],
+  "data": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ }
+}

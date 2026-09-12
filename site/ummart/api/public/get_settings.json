@@ -1,0 +1,15 @@
+{
+ "success": true,
+ "data": {
+  "contact_address": "Jl. Cakrawala No.5, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145",
+  "contact_email": "rektor@um.ac.id",
+  "contact_phone": "+82 (0341) 58132",
+  "policy_banner_img": "",
+  "policy_banner_link": "#",
+  "promo_banner_1_img": "../assets/images/Banner/69149ac445568-Banner4.png",
+  "promo_banner_1_link": "#123",
+  "promo_banner_2_img": "",
+  "promo_banner_2_link": "#",
+  "promo_text": "Cashback 40% Untuk Semua Pelanggan | Kode : <b>UMMART40</b>"
+ }
+}

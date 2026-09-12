@@ -1,0 +1,610 @@
+{
+ "success": true,
+ "data": {
+  "products": [
+   {
+    "id": 1,
+    "name": "Yogurt Drink Strawberry",
+    "image": "../assets/images/Product/691593424a933-Produk1.png",
+    "category": "drink",
+    "status": "out-of-stock",
+    "discount": "20%",
+    "price": 18000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 2,
+    "name": "Mie Sedap Cup",
+    "image": "../assets/images/Product/69159a889199a-Produk2.png",
+    "category": "meats-frozen-food",
+    "status": "out-of-stock",
+    "discount": "22%",
+    "price": 6500,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 3,
+    "name": "Ice Cream Lokarasa",
+    "image": "../assets/images/Product/Produk3.png",
+    "category": "meats-frozen-food",
+    "status": "sale",
+    "discount": "18%",
+    "price": 13000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 4,
+    "name": "Chicken Nugget Royal",
+    "image": "../assets/images/Product/Produk4.png",
+    "category": "meats-frozen-food",
+    "status": "sale",
+    "discount": "18%",
+    "price": 28000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 5,
+    "name": "Roti Cokelat",
+    "image": "../assets/images/Product/Produk5.png",
+    "category": "meats-frozen-food",
+    "status": "sale",
+    "discount": "20%",
+    "price": 8000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 6,
+    "name": "Pepsodent",
+    "image": "../assets/images/Product/Produk6.png",
+    "category": "beauty",
+    "status": "sale",
+    "discount": "22%",
+    "price": 5000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 7,
+    "name": "Bumbu Bubur Ayam",
+    "image": "../assets/images/Product/Produk7.png",
+    "category": "meats-frozen-food",
+    "status": "sale",
+    "discount": "18%",
+    "price": 8500,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 8,
+    "name": "Apel",
+    "image": "../assets/images/Product/Produk8.png",
+    "category": "fruit",
+    "status": "sale",
+    "discount": "18%",
+    "price": 7000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 9,
+    "name": "Susu UHT Full Cream",
+    "image": "../assets/images/Product/Produk9.png",
+    "category": "breakfast-diary",
+    "status": "new",
+    "discount": "0%",
+    "price": 9500,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 10,
+    "name": "Telur Ayam Omega 3",
+    "image": "../assets/images/Product/Produk10.png",
+    "category": "meats-frozen-food",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 25000,
+    "inStock": true,
+    "unit": "10 pcs"
+   },
+   {
+    "id": 11,
+    "name": "Beras Cap Ayam Jago",
+    "image": "../assets/images/Product/Produk11.png",
+    "category": "meats-frozen-food",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 60000,
+    "inStock": true,
+    "unit": "5 kg"
+   },
+   {
+    "id": 12,
+    "name": "Minyak Goreng Sania",
+    "image": "../assets/images/Product/Produk12.png",
+    "category": "meats-frozen-food",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 23000,
+    "inStock": true,
+    "unit": "2 L"
+   },
+   {
+    "id": 13,
+    "name": "Sabun Cuci Piring",
+    "image": "../assets/images/Product/Produk13.png",
+    "category": "household-appliances",
+    "status": "sale",
+    "discount": "15%",
+    "price": 18000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 14,
+    "name": "Shampoo Pantene",
+    "image": "../assets/images/Product/Produk14.png",
+    "category": "beauty",
+    "status": "sale",
+    "discount": "10%",
+    "price": 22000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 15,
+    "name": "Gula Pasir Rose Brand",
+    "image": "../assets/images/Product/Produk15.png",
+    "category": "meats-frozen-food",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 17000,
+    "inStock": true,
+    "unit": "1 kg"
+   },
+   {
+    "id": 16,
+    "name": "Kopi Hitam Kapal Api",
+    "image": "../assets/images/Product/Produk16.png",
+    "category": "drink",
+    "status": "sale",
+    "discount": "5%",
+    "price": 12000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 17,
+    "name": "Teh Celup SariWangi",
+    "image": "../assets/images/Product/Produk17.png",
+    "category": "drink",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 8000,
+    "inStock": true,
+    "unit": "1 box"
+   },
+   {
+    "id": 18,
+    "name": "Roti Tawar Gandum",
+    "image": "../assets/images/Product/Produk18.png",
+    "category": "meats-frozen-food",
+    "status": "new",
+    "discount": "0%",
+    "price": 10000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 19,
+    "name": "Keju Kraft Cheddar",
+    "image": "../assets/images/Product/Produk19.png",
+    "category": "breakfast-diary",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 20000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 20,
+    "name": "Margarin Blue Band",
+    "image": "../assets/images/Product/Produk20.png",
+    "category": "breakfast-diary",
+    "status": "sale",
+    "discount": "12%",
+    "price": 9000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 21,
+    "name": "Pasta Gigi Pepsodent",
+    "image": "../assets/images/Product/Produk21.png",
+    "category": "beauty",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 7500,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 22,
+    "name": "Deterjen Rinso",
+    "image": "../assets/images/Product/Produk22.png",
+    "category": "household-appliances",
+    "status": "sale",
+    "discount": "15%",
+    "price": 25000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 23,
+    "name": "Sabun Mandi Lux",
+    "image": "../assets/images/Product/Produk23.png",
+    "category": "beauty",
+    "status": "new",
+    "discount": "0%",
+    "price": 6000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 24,
+    "name": "Sosis Kanzler",
+    "image": "../assets/images/Product/Produk24.png",
+    "category": "meats-frozen-food",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 35000,
+    "inStock": true,
+    "unit": "1 pack"
+   },
+   {
+    "id": 25,
+    "name": "Wortel",
+    "image": "../assets/images/Product/Produk25.png",
+    "category": "fruit-vegetables",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 5000,
+    "inStock": true,
+    "unit": "1 kg"
+   },
+   {
+    "id": 26,
+    "name": "Brokoli",
+    "image": "../assets/images/Product/Produk26.png",
+    "category": "fruit-vegetables",
+    "status": "new",
+    "discount": "0%",
+    "price": 8000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 27,
+    "name": "Bayam",
+    "image": "../assets/images/Product/Produk27.png",
+    "category": "fruit-vegetables",
+    "status": "in-stock",
+    "discount": "0%",
+    "price": 5000,
+    "inStock": true,
+    "unit": "1 ikat"
+   },
+   {
+    "id": 36,
+    "name": "Deodoran NIVEA",
+    "image": "../assets/images/Product/691593129263e-Produk28.png",
+    "category": "beauty",
+    "status": "sale",
+    "discount": "12%",
+    "price": 10000,
+    "inStock": true,
+    "unit": "1 pc"
+   },
+   {
+    "id": 37,
+    "name": "Ganja",
+    "image": "../assets/images/Product/691d76d6cb776-ganja.jpg",
+    "category": "drug-medicines",
+    "status": "in-stock",
+    "discount": "12%",
+    "price": 10000,
+    "inStock": true,
+    "unit": "100"
+   }
+  ],
+  "categories": [
+   {
+    "id": "1",
+    "name": "Fruit & Vegetables",
+    "slug": "fruit-vegetables",
+    "icon_path": "../assets/icon/Sayur.png",
+    "item_count": "3"
+   },
+   {
+    "id": "2",
+    "name": "Stationery",
+    "slug": "stationery",
+    "icon_path": "../assets/icon/Stationery.png",
+    "item_count": "0"
+   },
+   {
+    "id": "3",
+    "name": "Accessories",
+    "slug": "accessories",
+    "icon_path": "../assets/icon/Accessories.png",
+    "item_count": "0"
+   },
+   {
+    "id": "4",
+    "name": "Breakfast & Diary",
+    "slug": "breakfast-diary",
+    "icon_path": "../assets/icon/Breakfast.png",
+    "item_count": "3"
+   },
+   {
+    "id": "5",
+    "name": "Meats & Frozen Food",
+    "slug": "meats-frozen-food",
+    "icon_path": "../assets/icon/Meat.png",
+    "item_count": "11"
+   },
+   {
+    "id": "7",
+    "name": "Household Appliances",
+    "slug": "household-appliances",
+    "icon_path": "../assets/icon/Houseold.png",
+    "item_count": "2"
+   },
+   {
+    "id": "8",
+    "name": "Sport",
+    "slug": "sport",
+    "icon_path": "../assets/icon/Sport.png",
+    "item_count": "0"
+   },
+   {
+    "id": "9",
+    "name": "Gadget",
+    "slug": "gadget",
+    "icon_path": "../assets/icon/Gadget.png",
+    "item_count": "0"
+   },
+   {
+    "id": "10",
+    "name": "Fruit",
+    "slug": "fruit",
+    "icon_path": "../assets/icon/Fruit.png",
+    "item_count": "1"
+   },
+   {
+    "id": "11",
+    "name": "Snack",
+    "slug": "snack",
+    "icon_path": "../assets/icon/Biscuit.png",
+    "item_count": "0"
+   },
+   {
+    "id": "12",
+    "name": "Beauty",
+    "slug": "beauty",
+    "icon_path": "../assets/icon/Beauty.png",
+    "item_count": "5"
+   },
+   {
+    "id": "13",
+    "name": "Cosmetic",
+    "slug": "cosmetic",
+    "icon_path": "../assets/icon/cosmetic.png",
+    "item_count": "0"
+   },
+   {
+    "id": "14",
+    "name": "Drink",
+    "slug": "drink",
+    "icon_path": "../assets/icon/Drink.png",
+    "item_count": "3"
+   },
+   {
+    "id": "20",
+    "name": "Drug & Medicines",
+    "slug": "drug-medicines",
+    "icon_path": "../assets/icon/68b7a9429217d-Drug.png",
+    "item_count": "1"
+   }
+  ],
+  "featured_categories": [
+   {
+    "id": "2",
+    "name": "Daging",
+    "slug": "daging",
+    "icon_path": "../assets/icon/6915c319d37f5-6915b8828a417-Meat.png"
+   },
+   {
+    "id": "3",
+    "name": "Drug & Medicines",
+    "slug": "drug-medicines",
+    "icon_path": "../assets/icon/6915c3f313f90-Drug.png"
+   },
+   {
+    "id": "4",
+    "name": "Cosmetic",
+    "slug": "cosmetic",
+    "icon_path": "../assets/icon/6915c40fe4a74-Cosmetic.png"
+   },
+   {
+    "id": "5",
+    "name": "Merchandise",
+    "slug": "merchandise",
+    "icon_path": "../assets/icon/6915c421a427f-Merchandise.png"
+   },
+   {
+    "id": "6",
+    "name": "Drink",
+    "slug": "drink",
+    "icon_path": "../assets/icon/6915c4287c705-Drink.png"
+   },
+   {
+    "id": "7",
+    "name": "Accessories",
+    "slug": "accessories",
+    "icon_path": "../assets/icon/6915c42f79371-Accessories.png"
+   },
+   {
+    "id": "8",
+    "name": "Beauty",
+    "slug": "beauty",
+    "icon_path": "../assets/icon/6915c4368f115-Beauty.png"
+   },
+   {
+    "id": "9",
+    "name": "Breakfast",
+    "slug": "breakfast",
+    "icon_path": "../assets/icon/6915c44f291e6-Breakfast.png"
+   },
+   {
+    "id": "10",
+    "name": "Stationery",
+    "slug": "stationery",
+    "icon_path": "../assets/icon/6915c456e92e3-Stationery.png"
+   }
+  ],
+  "main_banners": [
+   {
+    "id": "9",
+    "title": "Fresh Vegetables",
+    "description": "Get the best quality vegetables directly from local farmers",
+    "image_path": "../assets/images/Banner/Banner1.png",
+    "link_url": "../Latihan HTML LIBURAN/Latihan106_UM_MART_FILTER.html",
+    "is_active": "1"
+   },
+   {
+    "id": "10",
+    "title": "Seasonal Fruits",
+    "description": "Enjoy the freshest fruits with amazing discounts",
+    "image_path": "../assets/images/Banner/Banner2.png",
+    "link_url": "../Latihan HTML LIBURAN/Latihan106_UM_MART_FILTER.html",
+    "is_active": "1"
+   },
+   {
+    "id": "11",
+    "title": "Stationery Collection",
+    "description": "Everything you need for school and office",
+    "image_path": "../assets/images/Banner/Banner3.png",
+    "link_url": "../Latihan HTML LIBURAN/Latihan106_UM_MART_FILTER.html",
+    "is_active": "1"
+   }
+  ],
+  "showcase_banners": [
+   {
+    "id": "1",
+    "title": "Masjid Al Hikmah UM",
+    "description": "Pusat kegiatan keagamaan dan dakwah yang vital di lingkungan kampus...",
+    "image_path": "../assets/images/Banner/Foto1.jpg",
+    "link_url": "#",
+    "is_active": "1"
+   },
+   {
+    "id": "2",
+    "title": "Klinik Pratama UM",
+    "description": "Pusat pelayanan kesehatan yang berdedikasi untuk seluruh civitas academica...",
+    "image_path": "../assets/images/Banner/Foto2.jpg",
+    "link_url": "#",
+    "is_active": "1"
+   },
+   {
+    "id": "3",
+    "title": "Gedung Bersama",
+    "description": "Menjadi pusat kegiatan akademik yang terintegrasi dan modern...",
+    "image_path": "../assets/images/Banner/Foto3.jpg",
+    "link_url": "#",
+    "is_active": "1"
+   },
+   {
+    "id": "4",
+    "title": "Tugu Tembaga FT UM",
+    "description": "Simbol kebanggaan dan semangat juang Fakultas Teknik...",
+    "image_path": "../assets/images/Banner/Foto4.jpg",
+    "link_url": "#",
+    "is_active": "1"
+   },
+   {
+    "id": "5",
+    "title": "Graha Cakrawala UM",
+    "description": "Landmark megah dan pusat berbagai acara besar di Universitas Negeri Malang...",
+    "image_path": "../assets/images/Banner/Foto5.jpg",
+    "link_url": "#",
+    "is_active": "1"
+   },
+   {
+    "id": "6",
+    "title": "Gedung Rektorat UM",
+    "description": "Menjadi jantung operasional yang mengelola seluruh kegiatan kampus...",
+    "image_path": "../assets/images/Banner/Foto6.png",
+    "link_url": "#",
+    "is_active": "1"
+   },
+   {
+    "id": "7",
+    "title": "Asrama Tulip UM",
+    "description": "Menyediakan fasilitas hunian yang nyaman dan kondusif bagi mahasiswa...",
+    "image_path": "../assets/images/Banner/Foto7.jpg",
+    "link_url": "#",
+    "is_active": "1"
+   },
+   {
+    "id": "8",
+    "title": "Fakultas Teknik UM",
+    "description": "Pusat pendidikan dan penelitian di bidang rekayasa dan teknologi...",
+    "image_path": "../assets/images/Banner/Foto8.jpg",
+    "link_url": "#",
+    "is_active": "1"
+   }
+  ],
+  "product_statuses": [
+   {
+    "id": "1",
+    "name": "In Stock",
+    "slug": "in-stock"
+   },
+   {
+    "id": "2",
+    "name": "On Sale",
+    "slug": "sale"
+   },
+   {
+    "id": "3",
+    "name": "New Arrival",
+    "slug": "new"
+   }
+  ],
+  "site_settings": {
+   "contact_address": "Jl. Cakrawala No.5, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145",
+   "contact_email": "rektor@um.ac.id",
+   "contact_phone": "+82 (0341) 58132",
+   "policy_banner_img": "",
+   "policy_banner_link": "#",
+   "promo_banner_1_img": "../assets/images/Banner/69149ac445568-Banner4.png",
+   "promo_banner_1_link": "#123",
+   "promo_banner_2_img": "",
+   "promo_banner_2_link": "#",
+   "promo_text": "Cashback 40% Untuk Semua Pelanggan | Kode : <b>UMMART40</b>"
+  },
+  "active_vouchers": [
+   {
+    "code": "UMMART40",
+    "description": "Cashback 40% Untuk Semua Pelanggan",
+    "discount_value": 2000
+   }
+  ]
+ }
+}

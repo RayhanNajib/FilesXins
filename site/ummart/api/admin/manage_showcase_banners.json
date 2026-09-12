@@ -1,0 +1,70 @@
+{
+ "success": true,
+ "message": "Showcase banner berhasil diambil.",
+ "data": [
+  {
+   "id": "8",
+   "title": "Fakultas Teknik UM",
+   "description": "Pusat pendidikan dan penelitian di bidang rekayasa dan teknologi...",
+   "image_path": "../assets/images/Banner/Foto8.jpg",
+   "link_url": "#",
+   "is_active": "1"
+  },
+  {
+   "id": "7",
+   "title": "Asrama Tulip UM",
+   "description": "Menyediakan fasilitas hunian yang nyaman dan kondusif bagi mahasiswa...",
+   "image_path": "../assets/images/Banner/Foto7.jpg",
+   "link_url": "#",
+   "is_active": "1"
+  },
+  {
+   "id": "6",
+   "title": "Gedung Rektorat UM",
+   "description": "Menjadi jantung operasional yang mengelola seluruh kegiatan kampus...",
+   "image_path": "../assets/images/Banner/Foto6.png",
+   "link_url": "#",
+   "is_active": "1"
+  },
+  {
+   "id": "5",
+   "title": "Graha Cakrawala UM",
+   "description": "Landmark megah dan pusat berbagai acara besar di Universitas Negeri Malang...",
+   "image_path": "../assets/images/Banner/Foto5.jpg",
+   "link_url": "#",
+   "is_active": "1"
+  },
+  {
+   "id": "4",
+   "title": "Tugu Tembaga FT UM",
+   "description": "Simbol kebanggaan dan semangat juang Fakultas Teknik...",
+   "image_path": "../assets/images/Banner/Foto4.jpg",
+   "link_url": "#",
+   "is_active": "1"
+  },
+  {
+   "id": "3",
+   "title": "Gedung Bersama",
+   "description": "Menjadi pusat kegiatan akademik yang terintegrasi dan modern...",
+   "image_path": "../assets/images/Banner/Foto3.jpg",
+   "link_url": "#",
+   "is_active": "1"
+  },
+  {
+   "id": "2",
+   "title": "Klinik Pratama UM",
+   "description": "Pusat pelayanan kesehatan yang berdedikasi untuk seluruh civitas academica...",
+   "image_path": "../assets/images/Banner/Foto2.jpg",
+   "link_url": "#",
+   "is_active": "1"
+  },
+  {
+   "id": "1",
+   "title": "Masjid Al Hikmah UM",
+   "description": "Pusat kegiatan keagamaan dan dakwah yang vital di lingkungan kampus...",
+   "image_path": "../assets/images/Banner/Foto1.jpg",
+   "link_url": "#",
+   "is_active": "1"
+  }
+ ]
+}

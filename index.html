@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FilesXins — Muhammad Rayhan Najib | Web Developer &amp; 3D Tinkerer</title>
+<meta name="description" content="FilesXins — portfolio of Muhammad Rayhan Najib. Web developer from Kediri, Indonesia. PHP, Laravel, MySQL, JavaScript, Blender, Figma.">
+<meta name="author" content="Muhammad Rayhan Najib">
+<meta name="theme-color" content="#07080d">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="FilesXins — Muhammad Rayhan Najib">
+<meta property="og:description" content="Web developer from Kediri, Indonesia. PHP · Laravel · MySQL · JavaScript · Blender · Figma">
+<meta property="og:image" content="assets/profile/avatar.webp">
+
+<link rel="icon" href="assets/profile/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__brand-mark">FX</span>
+    <span class="nav__brand-text">Files<em>Xins</em></span>
+  </a>
+  <nav class="nav__links" aria-label="Section navigation">
+    <a href="#about"><span class="nav__num">01.</span>About</a>
+    <a href="#projects"><span class="nav__num">02.</span>Projects</a>
+    <a href="#certs"><span class="nav__num">03.</span>Certificates</a>
+    <a href="#stack"><span class="nav__num">04.</span>Stack</a>
+    <a href="#contact" class="nav__cta"><span class="nav__num">05.</span>Contact</a>
+  </nav>
+  <button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav__progress"><span id="progressBar"></span></div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__grid">
+    <div class="hero__copy reveal">
+      <p class="hero__eyebrow"><span class="mono">$</span> whoami</p>
+      <h1 class="hero__title">
+        Muhammad Rayhan<br><span class="neon">Najib</span>
+      </h1>
+      <p class="hero__alias mono">alias <strong>FilesXins</strong></p>
+      <p class="hero__lede">
+        I build <span class="hl">e-commerce</span> and <span class="hl">management systems</span> that actually ship —
+        then spend my nights in <span class="hl">Blender</span> or in a game lobby.
+        Information Technology student at Universitas Negeri Malang, based in Kediri, Indonesia.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">View my work</a>
+        <a class="btn btn--ghost" href="https://github.com/RayhanNajib" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn btn--ghost" href="https://filesxinss.itch.io/texum" target="_blank" rel="noopener">itch.io ↗</a>
+      </div>
+      <ul class="hero__stats">
+        <li><b>3</b><span>deployed apps</span></li>
+        <li><b>12</b><span>certifications</span></li>
+        <li><b>2</b><span>HKI registrations</span></li>
+        <li><b>∞</b><span>unfinished .blend files</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__avatar reveal">
+      <div class="holo">
+        <div class="holo__ring"></div>
+        <div class="holo__ring holo__ring--2"></div>
+        <img src="assets/profile/avatar.webp" alt="Muhammad Rayhan Najib" class="holo__img" width="440" height="440">
+        <div class="holo__scan" aria-hidden="true"></div>
+        <div class="holo__glare" aria-hidden="true"></div>
+      </div>
+      <p class="holo__caption mono">Kediri, ID · UTC+7</p>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>PHP</span><span>·</span><span>MySQL</span><span>·</span><span>Laravel</span><span>·</span>
+      <span>JavaScript</span><span>·</span><span>HTML5</span><span>·</span><span>CSS3</span><span>·</span>
+      <span>Figma</span><span>·</span><span>Blender</span><span>·</span><span>Git</span><span>·</span>
+      <span>REST API</span><span>·</span><span>Google OAuth</span><span>·</span>
+      <span>PHP</span><span>·</span><span>MySQL</span><span>·</span><span>Laravel</span><span>·</span>
+      <span>JavaScript</span><span>·</span><span>HTML5</span><span>·</span><span>CSS3</span><span>·</span>
+      <span>Figma</span><span>·</span><span>Blender</span><span>·</span><span>Git</span><span>·</span>
+      <span>REST API</span><span>·</span><span>Google OAuth</span><span>·</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <h2 class="section__title reveal"><span class="mono">01.</span> About me</h2>
+  <div class="about">
+    <div class="about__text reveal">
+      <p>
+        I'm a <b>Information Technology</b> student at Universitas Negeri Malang who likes the part of
+        software where the pixels finally move. Most of what I build is <b>PHP/MySQL</b> on the back end
+        with hand-written HTML, CSS and JavaScript on the front — no framework between me and the DOM.
+      </p>
+      <p>
+        I've shipped a full <b>grocery e-commerce platform</b> (catalog, cart, four payment flows, admin
+        dashboard with charts and Excel export) and a <b>clinic management system</b> in Laravel with
+        admin / doctor / patient roles and printable medical records. I also built the
+        <b>village portal for Desa Nanggungan</b>, which is live on the public internet right now.
+      </p>
+      <p>
+        Away from the keyboard I'm either <b>gaming</b> or tinkering in <b>Blender</b> — modelling,
+        rigging, and rendering the 3D ideas that don't fit inside a browser tab. I also do
+        <b>UI/UX design in Figma</b>, which is where most of my web work starts.
+      </p>
+      <p class="about__note mono">
+        Currently: open to freelance web work &amp; internships.
+      </p>
+    </div>
+
+    <aside class="about__facts reveal">
+      <h3 class="mono">// quick facts</h3>
+      <dl>
+        <dt>Name</dt><dd>Muhammad Rayhan Najib</dd>
+        <dt>Alias</dt><dd>FilesXins</dd>
+        <dt>Based in</dt><dd>Kediri, East Java, ID</dd>
+        <dt>Study</dt><dd>Information Technology, Universitas Negeri Malang</dd>
+        <dt>Focus</dt><dd>Web apps · e-commerce · information systems</dd>
+        <dt>Side quests</dt><dd>Blender 3D · game dev · Figma UI/UX</dd>
+        <dt>Hobbies</dt><dd>Gaming · 3D modelling · design</dd>
+      </dl>
+      <div class="about__tags">
+        <span>🎮 Gamer</span><span>🧊 Blender</span><span>🎨 Figma</span><span>💻 Web dev</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <h2 class="section__title reveal"><span class="mono">02.</span> Projects</h2>
+
+  <div class="filters reveal" role="tablist">
+    <button class="chip is-active" data-filter="all">All</button>
+    <button class="chip" data-filter="web">Web apps</button>
+    <button class="chip" data-filter="live">Live</button>
+    <button class="chip" data-filter="soon">Coming soon</button>
+  </div>
+
+  <div class="projects">
+
+    <!-- ---- UM-MART ---- -->
+    <article class="project reveal" data-tags="web live">
+      <div class="project__head">
+        <p class="project__index mono">01</p>
+        <div>
+          <h3 class="project__title">UM-MART <span class="badge badge--live">Live</span></h3>
+          <p class="project__sub">Food &amp; grocery e-commerce platform</p>
+        </div>
+      </div>
+      <div class="project__body">
+        <div class="project__info">
+          <p>
+            A complete online grocery store for a campus market. Product catalog with categories and
+            filters, live search, a persistent cart, checkout, <b>four payment flows</b> (OVO, GoPay,
+            DANA, card), printable invoices and a full admin dashboard with statistics charts, banner
+            and voucher management, plus Excel export. Accounts support both password login and
+            <b>Google Sign-In</b>.
+          </p>
+          <ul class="project__stack">
+            <li>PHP 8.3</li><li>MySQL</li><li>JavaScript</li><li>HTML/CSS</li><li>Google OAuth</li><li>PhpSpreadsheet</li>
+          </ul>
+          <ul class="project__links">
+            <li><a class="link" href="https://github.com/RayhanNajib/UM-MART" target="_blank" rel="noopener">Source code ↗</a></li>
+            <li><a class="link" href="/site/ummart/" target="_blank" rel="noopener">Live demo ↗</a></li>
+          </ul>
+        </div>
+        <div class="project__shots">
+          <button class="shot" data-gallery="ummart" data-i="0"><img src="assets/shots/ummart-home.webp" alt="UM-MART storefront" loading="lazy"></button>
+          <button class="shot" data-gallery="ummart" data-i="1"><img src="assets/shots/ummart-shop.webp" alt="UM-MART shop with filters" loading="lazy"></button>
+          <button class="shot" data-gallery="ummart" data-i="2"><img src="assets/shots/ummart-checkout.webp" alt="UM-MART checkout" loading="lazy"></button>
+          <button class="shot" data-gallery="ummart" data-i="3"><img src="assets/shots/ummart-home.webp" alt="UM-MART storefront" loading="lazy" hidden></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---- KLINIK ---- -->
+    <article class="project reveal" data-tags="web">
+      <div class="project__head">
+        <p class="project__index mono">02</p>
+        <div>
+          <h3 class="project__title">Klinik Pratama UM <span class="badge">Laravel</span></h3>
+          <p class="project__sub">Clinic management system with role-based access</p>
+        </div>
+      </div>
+      <div class="project__body">
+        <div class="project__info">
+          <p>
+            A clinic back office built on <b>Laravel 12</b> with three separate experiences:
+            an <b>admin</b> managing doctors, patients, schedules and cashiering; a <b>doctor</b>
+            taking appointments, writing diagnoses and issuing printable medical certificates; and a
+            <b>patient</b> portal for browsing schedules, booking appointments and viewing history.
+            Payments, schedules and records all live in a normalised MySQL schema.
+          </p>
+          <ul class="project__stack">
+            <li>Laravel 12</li><li>PHP 8.2+</li><li>MySQL</li><li>Blade</li><li>Vite</li><li>RBAC</li>
+          </ul>
+          <ul class="project__links">
+            <li><a class="link" href="https://github.com/RayhanNajib/KlinikUM" target="_blank" rel="noopener">Source code ↗</a></li>
+            <li><a class="link" href="#contact">Live demo — on request</a></li>
+          </ul>
+        </div>
+        <div class="project__shots">
+          <button class="shot" data-gallery="klinik" data-i="0"><img src="assets/shots/klinik-dashboard-admin.webp" alt="Klinik admin dashboard" loading="lazy"></button>
+          <button class="shot" data-gallery="klinik" data-i="1"><img src="assets/shots/klinik-admin-dokter.webp" alt="Doctor management" loading="lazy"></button>
+          <button class="shot" data-gallery="klinik" data-i="2"><img src="assets/shots/klinik-admin-pembayaran.webp" alt="Cashier and payments" loading="lazy"></button>
+          <button class="shot" data-gallery="klinik" data-i="3"><img src="assets/shots/klinik-dokter-pasien.webp" alt="Doctor appointment list" loading="lazy"></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---- NANGGUNGAN ---- -->
+    <article class="project reveal" data-tags="web live">
+      <div class="project__head">
+        <p class="project__index mono">03</p>
+        <div>
+          <h3 class="project__title">Nanggungan Digdaya <span class="badge badge--live">Live</span></h3>
+          <p class="project__sub">Official village portal · Desa Nanggungan, Kayen Kidul</p>
+        </div>
+      </div>
+      <div class="project__body">
+        <div class="project__info">
+          <p>
+            The public information portal for Desa Nanggungan, built during KKN and deployed to
+            shared hosting. Village history and profile, an interactive map, a village market section,
+            news and articles, plus an admin area for staff to publish updates. This one is used by
+            real people — it's reachable at its own public domain.
+          </p>
+          <ul class="project__stack">
+            <li>Laravel</li><li>PHP</li><li>MySQL</li><li>Blade</li><li>Responsive</li>
+          </ul>
+          <ul class="project__links">
+            <li><a class="link" href="https://nanggungan-digdaya.page.gd/" target="_blank" rel="noopener">Visit the live site ↗</a></li>
+          </ul>
+        </div>
+        <div class="project__shots">
+          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/thirdparty/nanggungan-home.webp" alt="Nanggungan Digdaya homepage" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="1"><img src="assets/thirdparty/nanggungan-profil-desa.webp" alt="Village profile page" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="2"><img src="assets/thirdparty/nanggungan-pasar-desa.webp" alt="Village market" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="3"><img src="assets/thirdparty/nanggungan-berita.webp" alt="News and articles" loading="lazy"></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---- COMING SOON ---- -->
+    <div class="soon-grid">
+      <article class="soon-card reveal" data-tags="soon">
+        <p class="soon-card__tag mono">coming soon</p>
+        <h3>Smart Rakaat</h3>
+        <p class="soon-card__sub">HKI-registered innovation</p>
+        <p>A registered intellectual-property work. Case study and gallery on the way.</p>
+        <div class="soon-card__cert">
+          <img src="assets/certs/hki-smart-rakaat.webp" alt="HKI certificate — Smart Rakaat" loading="lazy">
+        </div>
+      </article>
+      <article class="soon-card reveal" data-tags="soon">
+        <p class="soon-card__tag mono">coming soon</p>
+        <h3>Blender 3D work</h3>
+        <p class="soon-card__sub">Modelling · rigging · rendering</p>
+        <p>Characters, props and scenes I model and render in Blender. Renders coming soon.</p>
+        <div class="soon-card__ph mono">{ .blend → .png }</div>
+      </article>
+      <article class="soon-card reveal" data-tags="soon">
+        <p class="soon-card__tag mono">coming soon</p>
+        <h3>Figma &amp; UI/UX</h3>
+        <p class="soon-card__sub">Design systems · prototypes</p>
+        <p>Interface explorations and prototypes from my UI/UX bootcamps. Boards coming soon.</p>
+        <div class="soon-card__cert soon-card__cert--duo">
+          <img src="assets/certs/bootcamp-uiux.webp" alt="UI/UX Design Intensive Camp certificate" loading="lazy">
+          <img src="assets/certs/bootcamp-figma.webp" alt="Figma Camp certificate" loading="lazy">
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CERTIFICATES ============ -->
+<section class="section" id="certs">
+  <h2 class="section__title reveal"><span class="mono">03.</span> Certificates &amp; achievements</h2>
+  <p class="section__lede reveal">
+    A selection of the certifications behind the work — intellectual property registrations,
+    bootcamps, vendor certifications and competitions.
+  </p>
+  <div class="certs" id="certGrid"></div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section class="section" id="stack">
+  <h2 class="section__title reveal"><span class="mono">04.</span> Tech &amp; tools</h2>
+  <div class="stack">
+    <div class="stack__col reveal">
+      <h3 class="mono">// daily drivers</h3>
+      <ul class="stack__list">
+        <li><span>PHP</span><i style="--v:88%"></i></li>
+        <li><span>MySQL</span><i style="--v:82%"></i></li>
+        <li><span>JavaScript</span><i style="--v:78%"></i></li>
+        <li><span>HTML &amp; CSS</span><i style="--v:90%"></i></li>
+        <li><span>Laravel</span><i style="--v:70%"></i></li>
+      </ul>
+    </div>
+    <div class="stack__col reveal">
+      <h3 class="mono">// also use</h3>
+      <div class="stack__cloud">
+        <span>Figma</span><span>Blender</span><span>Git &amp; GitHub</span><span>REST APIs</span>
+        <span>Google OAuth</span><span>Blade</span><span>Vite</span><span>Composer</span>
+        <span>Excel</span><span>Laragon</span><span>VS Code</span><span>phpMyAdmin</span>
+      </div>
+      <h3 class="mono" style="margin-top:2rem">// what I'm into</h3>
+      <p class="stack__note">
+        Web apps with real users · information systems · 3D and game dev on the side ·
+        interface design before a single line of code.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section--contact" id="contact">
+  <h2 class="section__title reveal"><span class="mono">05.</span> Get in touch</h2>
+  <p class="section__lede reveal">
+    I'm open to freelance web work, internships and collaboration — or just talking about
+    Blender, games, or why your SQL query is slow.
+  </p>
+  <div class="contact reveal">
+    <a class="contact__card" href="mailto:muhammad.rayhan.2405336@students.um.ac.id">
+      <span class="mono">email</span>
+      <b>muhammad.rayhan.2405336@students.um.ac.id</b>
+    </a>
+    <a class="contact__card" href="https://wa.me/6285755538488" target="_blank" rel="noopener">
+      <span class="mono">whatsapp</span>
+      <b>+62 857-5553-8488</b>
+    </a>
+    <a class="contact__card" href="https://github.com/RayhanNajib" target="_blank" rel="noopener">
+      <span class="mono">github</span>
+      <b>@RayhanNajib</b>
+    </a>
+    <a class="contact__card" href="https://filesxinss.itch.io/texum" target="_blank" rel="noopener">
+      <span class="mono">itch.io</span>
+      <b>filesxinss.itch.io</b>
+    </a>
+  </div>
+  <p class="contact__loc mono reveal">Kediri, East Java, Indonesia · UTC+7</p>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p class="mono">Designed &amp; built by <b>Muhammad Rayhan Najib</b> · FilesXins</p>
+  <p class="mono footer__note">Layout &amp; palette are original — inspired by the general aesthetic of developer portfolios.</p>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" aria-label="Close">✕</button>
+  <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous">‹</button>
+  <figure class="lightbox__fig">
+    <img id="lightboxImg" alt="">
+    <figcaption id="lightboxCap" class="mono"></figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" aria-label="Next">›</button>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

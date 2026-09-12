@@ -1,0 +1,13 @@
+{
+ "success": true,
+ "message": "Voucher berhasil diambil.",
+ "data": [
+  {
+   "id": "1",
+   "code": "UMMART40",
+   "description": "Cashback 40% Untuk Semua Pelanggan",
+   "discount_value": "2000.00",
+   "is_active": "1"
+  }
+ ]
+}

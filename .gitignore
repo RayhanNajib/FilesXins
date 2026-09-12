@@ -1,0 +1,8 @@
+# build scratch
+_build/_api-fixtures/
+_build/_orphans.json
+assets-manifest.json
+
+# OS
+Thumbs.db
+.DS_Store

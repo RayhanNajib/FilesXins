@@ -1,0 +1,60 @@
+{
+ "success": true,
+ "message": "Data berhasil diambil.",
+ "data": [
+  {
+   "id": "10",
+   "name": "Stationery",
+   "slug": "stationery",
+   "icon_path": "../assets/icon/6915c456e92e3-Stationery.png"
+  },
+  {
+   "id": "9",
+   "name": "Breakfast",
+   "slug": "breakfast",
+   "icon_path": "../assets/icon/6915c44f291e6-Breakfast.png"
+  },
+  {
+   "id": "8",
+   "name": "Beauty",
+   "slug": "beauty",
+   "icon_path": "../assets/icon/6915c4368f115-Beauty.png"
+  },
+  {
+   "id": "7",
+   "name": "Accessories",
+   "slug": "accessories",
+   "icon_path": "../assets/icon/6915c42f79371-Accessories.png"
+  },
+  {
+   "id": "6",
+   "name": "Drink",
+   "slug": "drink",
+   "icon_path": "../assets/icon/6915c4287c705-Drink.png"
+  },
+  {
+   "id": "5",
+   "name": "Merchandise",
+   "slug": "merchandise",
+   "icon_path": "../assets/icon/6915c421a427f-Merchandise.png"
+  },
+  {
+   "id": "4",
+   "name": "Cosmetic",
+   "slug": "cosmetic",
+   "icon_path": "../assets/icon/6915c40fe4a74-Cosmetic.png"
+  },
+  {
+   "id": "3",
+   "name": "Drug & Medicines",
+   "slug": "drug-medicines",
+   "icon_path": "../assets/icon/6915c3f313f90-Drug.png"
+  },
+  {
+   "id": "2",
+   "name": "Daging",
+   "slug": "daging",
+   "icon_path": "../assets/icon/6915c319d37f5-6915b8828a417-Meat.png"
+  }
+ ]
+}

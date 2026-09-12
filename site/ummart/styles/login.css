@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: url('../assets/images/Background/Background.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative; /* Penting untuk positioning karakter */
+    overflow: hidden; /* Mencegah scroll jika karakter keluar */
+
+    /* Properti untuk membuat background bergerak dinamis */
+    animation: panBackground 20s linear infinite;
+}
+
+.character {
+    position: absolute; /* Posisi absolut terhadap body */
+    width: 200px; /* Sesuaikan ukuran gambar Cakra */
+    height: 200px; /* Sesuaikan ukuran gambar Cakra */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1; /* Pastikan di belakang kontainer login */
+    top: 50%; /* Posisikan vertikal di tengah */
+    transform: translateY(-50%); /* Penyesuaian agar benar-benar di tengah */
+    transition: transform 0.3s ease-in-out; /* Menambahkan transisi untuk efek hover yang halus */
+    transform: translateY(-50%) scale(1.6);
+}
+
+/* Efek membesar saat kursor mouse menyentuh */
+.character:hover {
+    transform: translateY(-50%) scale(2);
+}
+
+.left-character {
+    background-image: url('../assets/images/Cakra_left.png'); /* Ganti dengan path gambar Cakra kiri */
+    left: 19%; /* Sesuaikan posisi agar sedikit keluar atau masuk */
+    
+}
+
+.right-character {
+    background-image: url('../assets/images/Cakra_right.png'); /* Ganti dengan path gambar Cakra kanan */
+    right: 17.6%; /* Sesuaikan posisi agar sedikit keluar atau masuk */
+}
+
+
+.container {
+    z-index: 2; 
+    width: 100%;
+    max-width: 752px;
+    background: rgba(255, 255, 255, 0.2); /* Transparan */
+    backdrop-filter: blur(10px); /* Efek kaca */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 50px 80px 40px 80px;
+    position: relative;
+    color: white; /* Atur warna teks utama menjadi putih */
+    text-decoration: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 38px;
+    cursor: pointer;
+    color: white;
+    font-weight: 100;
+    transition: 0.3s ease-in-out; /* Menambahkan transisi untuk efek hover yang halus */;
+}
+
+.close-btn a {
+    text-decoration: none;
+}
+.close-btn:hover {
+    color: #FFC107; /* Kuning */
+    transform: scale(1.3);  
+    font-weight: 300;
+}
+
+.header {
+    background: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.login-form {
+    padding: 0;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 80px 15px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.input-group input:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+
+.input-group .fas {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: white;
+    opacity: 0.7;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background: #FFC107; /* Kuning */
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background: #ffcd38;
+    transform: scale(1.05);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+}
+
+.remember input {
+    margin-right: 8px;
+}
+
+.forgot-password {
+    color: white;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.divider-text {
+   padding: 0 10px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    margin: 25px 0;
+    font-weight: 300;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider:not(:empty)::before {
+    margin-right: .20em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .20em;
+}
+
+/* Google Login Button Styles */
+.google-login-container {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.google-login-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Custom styling for Google button */
+.g_id_signin {
+    width: 100% !important;
+}
+
+.g_id_signin > div {
+    width: 100% !important;
+    border-radius: 8px !important;
+}
+
+/* Hover effect for Google button */
+.g_id_signin > div:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-link p {
+    color: white;
+    opacity: 0.9;
+}
+
+.login-link a {
+    color: #FFC107; 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+@keyframes panBackground {
+    from {
+        background-position: 10% 0%;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hide the Cakra characters on mobile */
+    .character {
+        display: none;
+    }
+
+    body {
+        padding: 10px;
+        animation: none; /* Menonaktifkan animasi background di mobile untuk performa */
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 40px 20px 30px;
+        margin: 0 10px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .header p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .close-btn {
+        font-size: 28px;
+        top: 10px;
+        right: 15px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    .input-group input {
+        padding: 12px 35px 12px 12px;
+        font-size: 14px;
+    }
+
+    .login-button,
+    .google-login {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .remember-forgot {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .forgot-password {
+        margin-left: auto;
+    }
+}

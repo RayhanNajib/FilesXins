@@ -1,0 +1,42 @@
+{
+ "success": true,
+ "title": "Rekomendasi Teratas",
+ "message": "Hai! Cakra di sini. Berikut adalah produk yang paling laris di UM Mart!",
+ "data": [
+  {
+   "id": 25,
+   "name": "Wortel",
+   "image": "../assets/images/Product/Produk25.png",
+   "price": "5000.00",
+   "total_sold": 3
+  },
+  {
+   "id": 27,
+   "name": "Bayam",
+   "image": "../assets/images/Product/Produk27.png",
+   "price": "5000.00",
+   "total_sold": 2
+  },
+  {
+   "id": 8,
+   "name": "Apel",
+   "image": "../assets/images/Product/Produk8.png",
+   "price": "7000.00",
+   "total_sold": 2
+  },
+  {
+   "id": 22,
+   "name": "Deterjen Rinso",
+   "image": "../assets/images/Product/Produk22.png",
+   "price": "25000.00",
+   "total_sold": 2
+  },
+  {
+   "id": 5,
+   "name": "Roti Cokelat",
+   "image": "../assets/images/Product/Produk5.png",
+   "price": "8000.00",
+   "total_sold": 1
+  }
+ ]
+}

@@ -1,0 +1,194 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.invoice-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.logo-um {
+    display: flex;
+    align-items: center;
+}
+
+.logo-um img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-um h2 {
+    font-family: "FinalSix";
+    font-size: 24px;
+    color: #003366;
+    margin: 0;
+}
+
+.logo-um p {
+    font-size: 12px;
+    color: #555;
+    margin: 0;
+}
+
+.invoice-title h1 {
+    font-size: 32px;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.invoice-title p {
+    font-size: 14px;
+    color: #777;
+    text-align: right;
+}
+
+.invoice-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.meta-block h3 {
+    font-size: 16px;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.meta-block p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.invoice-body h2 {
+    font-size: 20px;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+#product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+#product-table th, #product-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#product-table thead th {
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: 600;
+}
+
+.invoice-summary {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.summary-details {
+    width: 100%;
+    max-width: 350px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.summary-item.total-row {
+    font-size: 20px;
+    font-weight: 700;
+    color: #003366;
+    border-top: 2px solid #003366;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.summary-item.discount-row.hidden {
+    display: none;
+}
+
+.invoice-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 14px;
+}
+
+.button-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.print-btn, .back-btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.print-btn {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.print-btn:hover {
+    background-color: #004488;
+}
+
+.back-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    margin-left: 10px;
+}
+
+.back-btn:hover {
+    background-color: #e0e0e0;
+}
+
+@media print {
+    body {
+        background-color: #fff;
+    }
+    .button-actions, .top-bar, .main-header, .nav-bar, footer {
+        display: none;
+    }
+    .invoice-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+}
