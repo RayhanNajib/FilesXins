@@ -75,3 +75,5 @@ Layout, palette and motion are original work. The dark-neon direction and the ho
 of the hero portrait take inspiration from the developer-portfolio aesthetic popularised by
 [bchiang7/v4](https://github.com/bchiang7/v4) — a different palette and a different layout,
 same typographic pairing. No code was copied.
+
+Deployments are wired to GitHub: pushing to `main` builds automatically.
