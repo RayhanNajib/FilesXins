@@ -1,1 +1,1 @@
-trigger auto-deploy test
+trigger 2
