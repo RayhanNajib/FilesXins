@@ -552,21 +552,7 @@ main{ position:relative; z-index:2; }
 .project__shots + .edits,
 .edits + .project__shots{ margin-top:.55rem; }
 
-/* wide (16:9) clips should not be forced into a phone frame */
-.edit__v[data-wide]{ aspect-ratio:16 / 9; max-height:260px; }
-.edits--wide{ grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); margin-top:.7rem; }
-.edit--wide{ width:100%; }
-.edit__v--yt{ width:100%; aspect-ratio:16 / 9; border:0; border-radius:10px; display:block; min-height:200px; }
-
-.project__shots-label{ font-size:.72rem; color:var(--ink-3); margin:.8rem 0 .3rem; display:flex; align-items:center; gap:.4rem; }
-
-.shots-scroll{ position:relative; }
-.shots-scroll .project__shots{ display:flex; gap:.5rem; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
-.shots-scroll .shot{ flex:0 0 280px; scroll-snap-align:start; }
-.shots-scroll__btn{ position:absolute; top:50%; transform:translateY(-50%); z-index:2; width:32px; height:32px; border-radius:50%; border:1px solid var(--line); background:rgba(15,23,42,.85); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); transition:border-color .2s, color .2s, background .2s; }
-.shots-scroll__btn:hover{ border-color:var(--primary); color:var(--primary); }
-.shots-scroll__btn--prev{ left:-16px; }
-.shots-scroll__btn--next{ right:-16px; }
+/* (media-block and rail styles live in the 'Widescreen media block' section at the end) */
 
 /* a non-link note in a links list (keeps the row rhythm without a dead anchor) */
 .link--note{
@@ -581,3 +567,83 @@ main{ position:relative; z-index:2; }
   display:flex; gap:.4rem; align-items:flex-start;
 }
 .project__note .ico{ flex:0 0 auto; margin-top:.15rem; }
+
+/* ============================================================
+   Widescreen media block
+   Portrait clips (9:16 reels) and landscape pieces (16:9 trailers,
+   idents, YouTube embeds) need different frames; forcing them into one
+   grid leaves the landscape pieces in a phone-shaped box.
+   One column at any container width, so a size container (the project
+   body is a ~570px grid cell) cannot silently pick 2 columns and leave
+   an empty track.
+   ============================================================ */
+.edits--wide{
+  grid-template-columns:1fr;
+  margin-top:.8rem;
+}
+.edit__v--yt{
+  aspect-ratio:16 / 9; max-height:none; border:0; background:#05070c;
+}
+.edit--wide .edit__v{ aspect-ratio:16 / 9; max-height:none; }
+
+.project__shots-label{
+  font-size:.7rem; color:var(--ink-3); margin:.9rem 0 .35rem;
+  display:flex; align-items:center; gap:.4rem; letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.project__shots-label .ico{ --ico:13px; }
+
+/* ------------------------------------------------------------
+   Horizontal strip with prev/next buttons
+   A 4-up grid shrinks each tile until the detail is unreadable, so the
+   stills become a scroll-snapping rail at a legible fixed width.
+   ------------------------------------------------------------ */
+.shots-scroll{ position:relative; }
+.shots-scroll .project__shots{
+  display:flex; gap:.5rem; overflow-x:auto; padding:.15rem 0 .35rem;
+  scroll-snap-type:x mandatory; scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.shots-scroll .project__shots::-webkit-scrollbar{ display:none; }
+.shots-scroll .shot{ flex:0 0 360px; scroll-snap-align:start; }
+.shots-scroll__btn{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+  width:32px; height:32px; border-radius:50%; padding:0; cursor:pointer;
+  border:1px solid var(--line); background:rgba(15,23,42,.86); color:var(--ink);
+  display:flex; align-items:center; justify-content:center;
+  backdrop-filter:blur(4px);
+  transition:border-color .25s, background .25s, opacity .25s;
+}
+.shots-scroll__btn .ico{ --ico:16px; }
+.shots-scroll__btn:hover{ border-color:var(--primary); background:rgba(15,23,42,.96); }
+.shots-scroll__btn[disabled]{ opacity:.3; cursor:default; }
+.shots-scroll.is-static .shots-scroll__btn{ display:none; }
+.shots-scroll__btn--prev{ left:-14px; }
+.shots-scroll__btn--next{ right:-14px; }
+@media (max-width: 720px){
+  .shots-scroll__btn--prev{ left:2px; }
+  .shots-scroll__btn--next{ right:2px; }
+  .shots-scroll .shot{ flex:0 0 250px; }
+}
+
+/* the language switch sits with the nav links, not in the CTA slot */
+.nav__lang{
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.1em;
+  padding:.3rem .55rem; border-radius:6px; cursor:pointer;
+  border:1px solid var(--line-2); background:transparent; color:var(--ink-2);
+  transition:border-color .25s, color .25s, background .25s;
+}
+.nav__lang:hover{ border-color:var(--primary); color:var(--primary); }
+.nav__lang:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+
+/* A grid item defaults to min-width:auto (= min-content), so the scroll rail's
+   full content width was stretching its track instead of scrolling inside it.
+   That also collapsed the sibling widescreen block to a 0px track. */
+.project__body > *{ min-width:0; }
+.shots-scroll{ min-width:0; }
+.shots-scroll .project__shots{ min-width:0; }
+
+/* A 9:16 box with a max-height clamps the height but not the width, so the clip
+   pillarboxes inside a 0.72 box. Capping the width (420 * 9/16 = 236) keeps the
+   frame truly vertical; object-fit then has nothing to letterbox. */
+.edits:not(.edits--wide) .edit__v{ max-width:236px; margin-inline:auto; }
