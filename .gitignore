@@ -6,3 +6,4 @@ assets-manifest.json
 # OS
 Thumbs.db
 .DS_Store
+.vercel
