@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rayhan Najib — Web Developer &amp; Information Systems | FilesXins</title>
-<meta name="description" content="Portfolio of Muhammad Rayhan Najib (Rayhan Najib) — web developer from Kediri, Indonesia. PHP, Laravel, MySQL, JavaScript. Shipped e-commerce and clinic management systems, two registered intellectual properties.">
+<title>Rayhan Najib  -  Web Developer &amp; Information Systems | FilesXins</title>
+<meta name="description" content="Portfolio of Muhammad Rayhan Najib (Rayhan Najib)  -  web developer from Kediri, Indonesia. PHP, Laravel, MySQL, JavaScript. Shipped e-commerce and clinic management systems, two registered intellectual properties.">
 <meta name="author" content="Muhammad Rayhan Najib">
 <meta name="keywords" content="Rayhan Najib, FilesXins, web developer, PHP, Laravel, MySQL, JavaScript, portfolio, Universitas Negeri Malang">
 <meta name="theme-color" content="#080B14">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Rayhan Najib — Web Developer &amp; Information Systems">
+<meta property="og:title" content="Rayhan Najib  -  Web Developer &amp; Information Systems">
 <meta property="og:description" content="Shipped e-commerce and clinic management systems in PHP/Laravel/MySQL. Two registered IPs. Based in Kediri, Indonesia.">
 <meta property="og:image" content="assets/profile/portrait.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <noscript>
   <style>
-    /* Without JavaScript the reveal animations never fire — show everything. */
+    /* Without JavaScript the reveal animations never fire  -  show everything. */
     .reveal{ opacity:1 !important; transform:none !important; }
     .nav__burger{ display:none !important; }
     .nav__links{ position:static; transform:none !important; flex-direction:row; }
@@ -43,12 +43,13 @@
     <span class="nav__brand-text">Rayhan&nbsp;Najib</span>
   </a>
   <nav class="nav__links" aria-label="Section navigation">
-    <a href="#about"><span class="nav__num">01</span>About</a>
-    <a href="#projects"><span class="nav__num">02</span>Projects</a>
-    <a href="#certs"><span class="nav__num">03</span>Certificates</a>
-    <a href="#stack"><span class="nav__num">04</span>Skills</a>
-    <a href="#contact" class="nav__cta"><span class="nav__num">05</span>Contact</a>
+    <a href="#about"><span class="nav__num">01</span><span data-id="Tentang" data-en="About">Tentang</span></a>
+    <a href="#projects"><span class="nav__num">02</span><span data-id="Proyek" data-en="Projects">Proyek</span></a>
+    <a href="#certs"><span class="nav__num">03</span><span data-id="Sertifikasi" data-en="Certifications">Sertifikasi</span></a>
+    <a href="#stack"><span class="nav__num">04</span><span data-id="Keahlian" data-en="Skills">Keahlian</span></a>
+    <a href="#contact" class="nav__cta"><span class="nav__num">05</span><span data-id="Kontak" data-en="Contact">Kontak</span></a>
   </nav>
+  <button class="nav__lang" id="langToggle" aria-label="Ganti bahasa">EN</button>
   <button class="nav__burger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -62,33 +63,30 @@
   <div class="hero__grid">
 
     <div class="hero__copy reveal">
-      <p class="hero__eyebrow mono">{{icon:lucide:terminal}} web developer</p>
+      <p class="hero__eyebrow mono">{{icon:lucide:terminal}} <span data-id="web developer &amp; desainer" data-en="web developer &amp; designer">web developer &amp; desainer</span></p>
       <h1 class="hero__title">
         Rayhan <span class="neon">Najib</span>
       </h1>
-      <p class="hero__role">
-        Information Technology student at Universitas Negeri Malang. I build e-commerce platforms
-        and management systems that ship and get used — and design, render and edit the media
-        around them.
-      </p>
+      <p class="hero__role" data-id="Mahasiswa Teknologi Informasi di Universitas Negeri Malang. Saya membangun platform e-commerce dan sistem manajemen yang dipakai nyata, serta mendesain, merender, dan mengedit media pendukungnya." data-en="Information Technology student at Universitas Negeri Malang. I build e-commerce platforms and management systems that ship and get used - and design, render and edit the media around them.">Mahasiswa Teknologi Informasi di Universitas Negeri Malang. Saya membangun platform e-commerce dan sistem manajemen yang dipakai nyata, serta mendesain, merender, dan mengedit media pendukungnya.</p>
 
       <ul class="hero__facts">
-        <li>{{icon:lucide:map-pin}} Kediri, East Java, Indonesia</li>
-        <li>{{icon:lucide:graduation-cap}} Universitas Negeri Malang</li>
-        <li>{{icon:lucide:badge-check}} Available for internships &amp; freelance</li>
+        <li>{{icon:lucide:map-pin}} <span data-id="Kediri, Jawa Timur, Indonesia" data-en="Kediri, East Java, Indonesia">Kediri, Jawa Timur, Indonesia</span></li>
+        <li>{{icon:lucide:graduation-cap}} <span data-id="Universitas Negeri Malang" data-en="Universitas Negeri Malang">Universitas Negeri Malang</span></li>
+        <li>{{icon:lucide:badge-check}} <span data-id="Tersedia untuk magang &amp; lepas" data-en="Available for internships &amp; freelance">Tersedia untuk magang &amp; lepas</span></li>
+        <li>{{icon:lucide:book-open}} <span data-id="Hobi: membaca" data-en="Hobby: reading">Hobi: membaca</span></li>
       </ul>
 
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#projects">{{icon:lucide:layers}} View projects</a>
+        <a class="btn btn--primary" href="#projects">{{icon:lucide:layers}} <span data-id="Lihat proyek" data-en="View projects">Lihat proyek</span></a>
         <a class="btn btn--ghost" href="https://github.com/RayhanNajib" target="_blank" rel="noopener">
           {{icon:lucide:github}} GitHub {{icon:lucide:external-link}}</a>
       </div>
 
       <dl class="hero__stats">
-        <div><dt>Shipped apps</dt><dd>3</dd></div>
-        <div><dt>Registered IP</dt><dd>2</dd></div>
-        <div><dt>Projects</dt><dd>8</dd></div>
-        <div><dt>Certifications</dt><dd>12</dd></div>
+        <div><dt data-id="Aplikasi terkirim" data-en="Shipped apps">Aplikasi terkirim</dt><dd>3</dd></div>
+        <div><dt data-id="HKI terdaftar" data-en="Registered IP">HKI terdaftar</dt><dd>2</dd></div>
+        <div><dt data-id="Proyek" data-en="Projects">Proyek</dt><dd>8</dd></div>
+        <div><dt data-id="Sertifikasi" data-en="Certifications">Sertifikasi</dt><dd>12</dd></div>
       </dl>
     </div>
 
@@ -127,12 +125,12 @@
 
 <!-- ================= PROFILE SUMMARY (ATS) ================= -->
 <section class="section" id="about">
-  <h2 class="section__title reveal"><span class="mono">01</span>Profile</h2>
+  <h2 class="section__title reveal"><span class="mono">01</span><span data-id="Profil" data-en="Profile">Profil</span></h2>
 
   <div class="summary reveal">
     <p class="summary__lede">
       Information Technology student and web developer with hands-on delivery of three production
-      web applications — a full grocery e-commerce platform, a role-based clinic management system,
+      web applications  -  a full grocery e-commerce platform, a role-based clinic management system,
       and a public village portal currently serving live traffic. Comfortable across the stack:
       PHP and Laravel on the server, MySQL for data modelling, and hand-written JavaScript on the
       front end. Two works registered as intellectual property with the Ministry of Law of Indonesia.
@@ -141,25 +139,25 @@
 
   <div class="facts reveal">
     <div class="facts__col">
-      <h3 class="mono">{{icon:lucide:briefcase}} Core competency</h3>
+      <h3 class="mono">{{icon:lucide:briefcase}} <span data-id="Kompetensi utama" data-en="Core competency">Kompetensi utama</span></h3>
       <ul class="facts__list">
-        <li>{{icon:lucide:check}} Back-end development — PHP 8, Laravel 12, REST endpoints, authentication</li>
-        <li>{{icon:lucide:check}} Database design — normalised MySQL schemas, queries, reporting</li>
-        <li>{{icon:lucide:check}} Front-end — semantic HTML, modern CSS, vanilla JavaScript, responsive layout</li>
-        <li>{{icon:lucide:check}} Interface design — Figma wireframes, design systems, prototyped flows</li>
-        <li>{{icon:lucide:check}} 3D &amp; game assets — Blender modelling, rigging and rendering</li>
+        <li>{{icon:lucide:check}} Back-end development  -  PHP 8, Laravel 12, REST endpoints, authentication</li>
+        <li>{{icon:lucide:check}} Database design  -  normalised MySQL schemas, queries, reporting</li>
+        <li>{{icon:lucide:check}} Front-end  -  semantic HTML, modern CSS, vanilla JavaScript, responsive layout</li>
+        <li>{{icon:lucide:check}} Interface design  -  Figma wireframes, design systems, prototyped flows</li>
+        <li>{{icon:lucide:check}} 3D &amp; game assets  -  Blender modelling, rigging and rendering</li>
       </ul>
     </div>
     <aside class="facts__card">
-      <h3 class="mono">{{icon:lucide:file-text}} Details</h3>
+      <h3 class="mono">{{icon:lucide:file-text}} <span data-id="Detail" data-en="Details">Detail</span></h3>
       <dl>
-        <dt>Full name</dt><dd>Muhammad Rayhan Najib</dd>
-        <dt>Brand</dt><dd>FilesXins</dd>
-        <dt>Location</dt><dd>Kediri, East Java, Indonesia</dd>
-        <dt>Education</dt><dd>Information Technology, Universitas Negeri Malang</dd>
-        <dt>Languages</dt><dd>Indonesian (native), English (professional reading)</dd>
-        <dt>Availability</dt><dd>Internships · freelance web work · collaboration</dd>
-        <dt>Interests</dt><dd>Game systems, 3D modelling, interface design</dd>
+        <dt data-id="Nama lengkap" data-en="Full name">Nama lengkap</dt><dd>Muhammad Rayhan Najib</dd>
+        <dt data-id="Merek" data-en="Brand">Merek</dt><dd>FilesXins</dd>
+        <dt data-id="Lokasi" data-en="Location">Lokasi</dt><dd data-id="Kediri, Jawa Timur, Indonesia" data-en="Kediri, East Java, Indonesia">Kediri, Jawa Timur, Indonesia</dd>
+        <dt data-id="Pendidikan" data-en="Education">Pendidikan</dt><dd data-id="Teknologi Informasi, Universitas Negeri Malang" data-en="Information Technology, Universitas Negeri Malang">Teknologi Informasi, Universitas Negeri Malang</dd>
+        <dt data-id="Bahasa" data-en="Languages">Bahasa</dt><dd data-id="Indonesia (penutur asli), Inggris (membaca profesional)" data-en="Indonesian (native), English (professional reading)">Indonesia (penutur asli), Inggris (membaca profesional)</dd>
+        <dt data-id="Ketersediaan" data-en="Availability">Ketersediaan</dt><dd data-id="Magang · kerja web lepas · kolaborasi" data-en="Internships · freelance web work · collaboration">Magang · kerja web lepas · kolaborasi</dd>
+        <dt data-id="Minat" data-en="Interests">Minat</dt><dd data-id="Sistem game, pemodelan 3D, desain antarmuka" data-en="Game systems, 3D modelling, interface design">Sistem game, pemodelan 3D, desain antarmuka</dd>
       </dl>
     </aside>
   </div>
@@ -167,19 +165,18 @@
 
 <!-- ================= PROJECTS ================= -->
 <section class="section" id="projects">
-  <h2 class="section__title reveal"><span class="mono">02</span>Selected projects</h2>
-  <p class="section__lede reveal">
-    Each entry lists the problem, what was built, and the measurable result. Screenshots are taken
-    from the running applications; click any of them to open the full gallery.
+  <h2 class="section__title reveal"><span class="mono">02</span><span data-id="Proyek pilihan" data-en="Selected projects">Proyek pilihan</span></h2>
+  <p class="section__lede reveal" data-id="Setiap entri mencantumkan masalah, apa yang dibangun, dan hasil yang terukur. Tangkapan layar diambil dari aplikasi yang berjalan; klik mana saja untuk membuka galeri penuh." data-en="Each entry lists the problem, what was built, and the measurable result. Screenshots are taken from the running applications; click any of them to open the full gallery.">
+    Setiap entri mencantumkan masalah, apa yang dibangun, dan hasil yang terukur. Tangkapan layar diambil dari aplikasi yang berjalan; klik mana saja untuk membuka galeri penuh.
   </p>
 
   <div class="filters reveal" role="tablist">
-    <button class="chip is-active" data-filter="all">All</button>
-    <button class="chip" data-filter="web">Web applications</button>
-    <button class="chip" data-filter="live">In production</button>
-    <button class="chip" data-filter="design">Design &amp; 3D</button>
-    <button class="chip" data-filter="media">Video &amp; media</button>
-    <button class="chip" data-filter="iot">IoT &amp; hardware</button>
+    <button class="chip is-active" data-filter="all" data-id="Semua" data-en="All">Semua</button>
+    <button class="chip" data-filter="web" data-id="Aplikasi web" data-en="Web applications">Aplikasi web</button>
+    <button class="chip" data-filter="live" data-id="Di produksi" data-en="In production">Di produksi</button>
+    <button class="chip" data-filter="design" data-id="Desain &amp; 3D" data-en="Design &amp; 3D">Desain &amp; 3D</button>
+    <button class="chip" data-filter="media" data-id="Video &amp; media" data-en="Video &amp; media">Video &amp; media</button>
+    <button class="chip" data-filter="iot" data-id="IoT &amp; perangkat keras" data-en="IoT &amp; hardware">IoT &amp; perangkat keras</button>
   </div>
 
   <div class="projects">
@@ -190,7 +187,7 @@
         <span class="project__index mono">01</span>
         <div class="project__heading">
           <h3 class="project__title">UM-MART <span class="badge badge--live">{{icon:lucide:circle-check}} In production</span></h3>
-          <p class="project__sub">Food &amp; grocery e-commerce platform — campus market</p>
+          <p class="project__sub">Food &amp; grocery e-commerce platform  -  campus market</p>
         </div>
       </header>
 
@@ -199,17 +196,17 @@
           <div class="project__block">
             <h4 class="mono">Problem</h4>
             <p>A campus market selling groceries had no online ordering, no stock visibility for staff,
-               and no transaction records — every order was handled by hand.</p>
+               and no transaction records  -  every order was handled by hand.</p>
           </div>
           <div class="project__block">
             <h4 class="mono">What I built</h4>
             <ul class="project__bullets">
               <li>Product catalogue with categories, live search and filter combinations</li>
               <li>Persistent cart and a complete checkout flow</li>
-              <li>Four payment methods — OVO, GoPay, DANA and card</li>
+              <li>Four payment methods  -  OVO, GoPay, DANA and card</li>
               <li>Printable invoices and per-customer transaction history</li>
               <li>Admin dashboard: statistics, charts, banner &amp; voucher CRUD, Excel export</li>
-              <li>Dual authentication — password and Google Sign-In</li>
+              <li>Dual authentication  -  password and Google Sign-In</li>
             </ul>
           </div>
           <div class="project__block">
@@ -264,7 +261,7 @@
           <div class="project__block">
             <h4 class="mono">What I built</h4>
             <ul class="project__bullets">
-              <li>Three role dashboards — admin, doctor and patient — from one codebase</li>
+              <li>Three role dashboards  -  admin, doctor and patient  -  from one codebase</li>
               <li>Admin: doctor, patient and schedule CRUD, plus cashiering and payment reports</li>
               <li>Doctor: appointment queue, diagnosis entry, printable medical certificates</li>
               <li>Patient: schedule browsing, appointment booking and cancellation, history</li>
@@ -310,7 +307,7 @@
         <span class="project__index mono">03</span>
         <div class="project__heading">
           <h3 class="project__title">Nanggungan Digdaya <span class="badge badge--live">{{icon:lucide:circle-check}} In production</span></h3>
-          <p class="project__sub">Public information portal — Desa Nanggungan, Kayen Kidul</p>
+          <p class="project__sub">Public information portal  -  Desa Nanggungan, Kayen Kidul</p>
         </div>
       </header>
 
@@ -318,7 +315,7 @@
         <div class="project__info">
           <div class="project__block">
             <h4 class="mono">Problem</h4>
-            <p>The village had no digital presence — announcements, profile documents and the village
+            <p>The village had no digital presence  -  announcements, profile documents and the village
                market ran entirely through word of mouth and printed sheets.</p>
           </div>
           <div class="project__block">
@@ -333,7 +330,7 @@
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>Deployed to a public domain and in active use by village staff and residents —
+            <p>Deployed to a public domain and in active use by village staff and residents  - 
                the only project in this list serving an audience beyond campus.</p>
           </div>
           <ul class="project__stack">
@@ -350,7 +347,7 @@
         </div>
 
         <div class="project__shots">
-          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/projects/desa/MENU_BERANDA_DESA_NANGGUNGAN.webp" alt="Village portal homepage — full page" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/projects/desa/MENU_BERANDA_DESA_NANGGUNGAN.webp" alt="Village portal homepage  -  full page" loading="lazy"></button>
           <button class="shot" data-gallery="nanggungan" data-i="1"><img src="assets/projects/desa/DASHBOARD_ADMIN_DESA_NANGGUNGAN.webp" alt="Admin dashboard" loading="lazy"></button>
           <button class="shot" data-gallery="nanggungan" data-i="2"><img src="assets/projects/desa/MENU_PASAR_DESA_DESA_NANGGUNGAN.webp" alt="Village market" loading="lazy"></button>
           <button class="shot" data-gallery="nanggungan" data-i="3"><img src="assets/projects/desa/MENU_PERATURAN_DESA_NANGGUNGAN.webp" alt="Village regulations" loading="lazy"></button>
@@ -364,7 +361,7 @@
       <header class="project__head">
         <span class="project__index mono">04</span>
         <div class="project__heading">
-          <h3 class="project__title">Interface design — Figma <span class="badge">{{icon:simple-icons:figma}} Figma</span></h3>
+          <h3 class="project__title">Interface design  -  Figma <span class="badge">{{icon:simple-icons:figma}} Figma</span></h3>
           <p class="project__sub">Product interfaces designed before a line of code was written</p>
         </div>
       </header>
@@ -373,17 +370,17 @@
           <div class="project__block">
             <h4 class="mono">What I designed</h4>
             <ul class="project__bullets">
-              <li><b>UM-MART</b> — the e-commerce interface this portfolio deploys as a live demo</li>
-              <li><b>UI VIAR UM</b> — interface exploration for a campus virtual/augmented reality workspace</li>
-              <li><b>SMARTIPEN</b> — product interface concept</li>
-              <li><b>KKN Design</b> — layout system for the village portal</li>
-              <li><b>UI/UX Bootcamp project</b> — end-to-end flow from research to prototype</li>
+              <li><b>UM-MART</b>  -  the e-commerce interface this portfolio deploys as a live demo</li>
+              <li><b>UI VIAR UM</b>  -  interface exploration for a campus virtual/augmented reality workspace</li>
+              <li><b>SMARTIPEN</b>  -  product interface concept</li>
+              <li><b>KKN Design</b>  -  layout system for the village portal</li>
+              <li><b>UI/UX Bootcamp project</b>  -  end-to-end flow from research to prototype</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
             <p>Five documented design files covering wireframes, component libraries and clickable
-               prototypes — screens below are rendered straight out of the files. The UM-MART design
+               prototypes  -  screens below are rendered straight out of the files. The UM-MART design
                went into production unchanged in structure.</p>
           </div>
           <ul class="project__stack">
@@ -421,7 +418,7 @@
       <header class="project__head">
         <span class="project__index mono">05</span>
         <div class="project__heading">
-          <h3 class="project__title">TEXUM — 3D &amp; game work <span class="badge">{{icon:simple-icons:blender}} Blender</span></h3>
+          <h3 class="project__title">TEXUM  -  3D &amp; game work <span class="badge">{{icon:simple-icons:blender}} Blender</span></h3>
           <p class="project__sub">A fantasy RPG built and released publicly, from models to script</p>
         </div>
       </header>
@@ -430,21 +427,21 @@
           <div class="project__block">
             <h4 class="mono">Problem</h4>
             <p>A game needs a world before it needs code: characters, creatures, maps and interface
-               that hold together as one visual language — all authored from scratch.</p>
+               that hold together as one visual language  -  all authored from scratch.</p>
           </div>
           <div class="project__block">
             <h4 class="mono">What I made</h4>
             <ul class="project__bullets">
-              <li><b>20 hand-built maps</b> plus a full UI set — menus, status, item, battle and mini-game screens</li>
+              <li><b>20 hand-built maps</b> plus a full UI set  -  menus, status, item, battle and mini-game screens</li>
               <li><b>8 creature models</b> and 4 character designs with front/side turnaround sheets</li>
               <li><b>A 16-page bilingual script</b> (Indonesian and English) covering the story and cutscene directions</li>
               <li><b>Released publicly on itch.io</b> with a trailer, so the build is playable by anyone</li>
-              <li>Separately: hard-surface props and interiors — PC build, keyboard, classroom, laboratory, product mock-ups</li>
+              <li>Separately: hard-surface props and interiors  -  PC build, keyboard, classroom, laboratory, product mock-ups</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>A finished, published game build with its own story world — <b>documented and playable</b>,
+            <p>A finished, published game build with its own story world  -  <b>documented and playable</b>,
                not a still frame. Everything below is my own render or game asset.</p>
           </div>
           <ul class="project__stack">
@@ -457,7 +454,7 @@
           <ul class="project__links">
             <li><a class="link" href="https://youtu.be/baYgIYsq3VU" target="_blank" rel="noopener">
               {{icon:lucide:play}} Watch the trailer</a></li>
-            <li><span class="link link--note">{{icon:lucide:gamepad-2}} Playable build on itch.io — store link on request</span></li>
+            <li><span class="link link--note">{{icon:lucide:gamepad-2}} Playable build on itch.io  -  store link on request</span></li>
           </ul>
         </div>
 
@@ -485,16 +482,16 @@
           <div class="project__block">
             <h4 class="mono">What these are</h4>
             <ul class="project__bullets">
-              <li><b>PC build &amp; cooling</b> — component-accurate hard-surface models</li>
-              <li><b>Classroom &amp; laboratory</b> — full interior scenes with lighting</li>
-              <li><b>Product mock-ups</b> — Smartipen internals, packaging and print covers</li>
-              <li><b>Props</b> — keyboard, nail clipper, chain weapon, mascot character</li>
+              <li><b>PC build &amp; cooling</b>  -  component-accurate hard-surface models</li>
+              <li><b>Classroom &amp; laboratory</b>  -  full interior scenes with lighting</li>
+              <li><b>Product mock-ups</b>  -  Smartipen internals, packaging and print covers</li>
+              <li><b>Props</b>  -  keyboard, nail clipper, chain weapon, mascot character</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>Every image here is rendered out of my own <b>.blend</b> files. The two hardest scenes —
-               Smartipen and the classroom — were shot by hand in Blender: their cameras sit inside
+            <p>Every image here is rendered out of my own <b>.blend</b> files. The two hardest scenes  - 
+               Smartipen and the classroom  -  were shot by hand in Blender: their cameras sit inside
                the geometry, so the portfolio shows the renders I framed myself.</p>
           </div>
           <ul class="project__stack">
@@ -522,7 +519,7 @@
         <span class="project__index mono">07</span>
         <div class="project__heading">
           <h3 class="project__title">Video editing &amp; media production <span class="badge">{{icon:simple-icons:adobepremierepro}} Premiere Pro</span></h3>
-          <p class="project__sub">Trailers, learning media and print design — edited, graded and delivered</p>
+          <p class="project__sub">Trailers, learning media and print design  -  edited, graded and delivered</p>
         </div>
       </header>
       <div class="project__body">
@@ -530,15 +527,15 @@
           <div class="project__block">
             <h4 class="mono">What I produced</h4>
             <ul class="project__bullets">
-              <li><b>Sate Meraja teaser</b> — vertical 9:16 food trailer, fully cut, paced and graded</li>
-              <li><b>Learning media video</b> — merged CapCut and Premiere Pro edits for coursework</li>
-              <li><b>Motion logo ident</b> — animated logo for the KKN village programme</li>
-              <li><b>Print &amp; identity</b> — posters, banners and packaging designed in Photoshop</li>
+              <li><b>Sate Meraja teaser</b>  -  vertical 9:16 food trailer, fully cut, paced and graded</li>
+              <li><b>Learning media video</b>  -  merged CapCut and Premiere Pro edits for coursework</li>
+              <li><b>Motion logo ident</b>  -  animated logo for the KKN village programme</li>
+              <li><b>Print &amp; identity</b>  -  posters, banners and packaging designed in Photoshop</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>Delivered pieces that were actually published — a public trailer, a programme ident and
+            <p>Delivered pieces that were actually published  -  a public trailer, a programme ident and
                printed material. Each clip below is a short excerpt; the frames are real output from
                the edit timeline.</p>
           </div>
@@ -552,11 +549,11 @@
         <div class="edits">
           <figure class="edit reveal">
             <video class="edit__v" src="assets/video/teaser-sate-meraja.mp4" poster="assets/video/posters/teaser-sate-meraja.webp" controls muted playsinline preload="none"></video>
-            <figcaption><b>Sate Meraja — teaser</b><em>Food trailer, 1080×1920, cut in Premiere Pro</em></figcaption>
+            <figcaption><b>Sate Meraja  -  teaser</b><em>Food trailer, 1080×1920, cut in Premiere Pro</em></figcaption>
           </figure>
           <figure class="edit reveal">
             <video class="edit__v" src="assets/video/texum-mockup.mp4" poster="assets/video/posters/texum-mockup.webp" controls muted playsinline preload="none"></video>
-            <figcaption><b>TEXUM — trailer</b><em>Game trailer cut</em></figcaption>
+            <figcaption><b>TEXUM  -  trailer</b><em>Game trailer cut</em></figcaption>
           </figure>
           <figure class="edit reveal">
             <video class="edit__v" src="assets/video/revisi-media-pembelajaran.mp4" poster="assets/video/posters/revisi-media-pembelajaran.webp" controls muted playsinline preload="none"></video>
@@ -582,7 +579,7 @@
         <span class="project__index mono">08</span>
         <div class="project__heading">
           <h3 class="project__title">IoT &amp; embedded <span class="badge badge--live">{{icon:lucide:award}} Registered IP</span></h3>
-          <p class="project__sub">Smart Rakaat — a prayer counter using ESP32, ultrasound and audio</p>
+          <p class="project__sub">Smart Rakaat  -  a prayer counter using ESP32, ultrasound and audio</p>
         </div>
       </header>
       <div class="project__body">
@@ -595,8 +592,8 @@
           <div class="project__block">
             <h4 class="mono">What I built</h4>
             <ul class="project__bullets">
-              <li><b>ESP32 firmware</b> — HC-SR04 ultrasound detects the bowing and prostration motion</li>
-              <li><b>Movement logic</b> — a prostration sequence increments the rakaat counter</li>
+              <li><b>ESP32 firmware</b>  -  HC-SR04 ultrasound detects the bowing and prostration motion</li>
+              <li><b>Movement logic</b>  -  a prostration sequence increments the rakaat counter</li>
               <li><b>SSD1306 OLED</b> shows current rakaat against the target; DFPlayer gives audio cues</li>
               <li><b>Built-in Wi-Fi access point</b> with a web page to set 2, 3 or 4 rakaat and reset</li>
               <li><b>Circuit drawn in Fritzing</b>, plus a second project: a radar object-detection sensor</li>
@@ -615,7 +612,7 @@
             <li>{{icon:lucide:circuit-board}} Fritzing</li>
           </ul>
           <ul class="project__links">
-            <li><span class="link link--note">{{icon:lucide:file-text}} Firmware, schematic and enclosure documented — files on request</span></li>
+            <li><span class="link link--note">{{icon:lucide:file-text}} Firmware, schematic and enclosure documented  -  files on request</span></li>
           </ul>
         </div>
         <div class="edits">
@@ -635,27 +632,27 @@
 
 <!-- ================= CERTIFICATES ================= -->
 <section class="section" id="certs">
-  <h2 class="section__title reveal"><span class="mono">03</span>Certificates &amp; achievements</h2>
+  <h2 class="section__title reveal"><span class="mono">03</span><span data-id="Sertifikat &amp; pencapaian" data-en="Certificates &amp; achievements">Sertifikat &amp; pencapaian</span></h2>
   <p class="section__lede reveal">
-    Twelve documents backing the work above. Open any card to read it full size — each entry states
+    Twelve documents backing the work above. Open any card to read it full size  -  each entry states
     what it verifies and which capability it evidences.
   </p>
   <p class="certs__legend mono reveal">
-    <span class="dot dot--hki"></span>Intellectual property
-    <span class="dot dot--award"></span>Campus award
-    <span class="dot dot--course"></span>Certified course
+    <span class="dot dot--hki"></span><span data-id="Kekayaan intelektual" data-en="Intellectual property">Kekayaan intelektual</span>
+    <span class="dot dot--award"></span><span data-id="Penghargaan kampus" data-en="Campus award">Penghargaan kampus</span>
+    <span class="dot dot--course"></span><span data-id="Kursus bersertifikat" data-en="Certified course">Kursus bersertifikat</span>
   </p>
   <div class="certs" id="certGrid"></div>
 </section>
 
 <!-- ================= SKILLS ================= -->
 <section class="section" id="stack">
-  <h2 class="section__title reveal"><span class="mono">04</span>Skills &amp; tools</h2>
-  <p class="section__lede reveal">Each entry names the technology and the project that proves it — no self-assessed levels.</p>
+  <h2 class="section__title reveal"><span class="mono">04</span><span data-id="Keahlian &amp; alat" data-en="Skills &amp; tools">Keahlian &amp; alat</span></h2>
+  <p class="section__lede reveal">Each entry names the technology and the project that proves it  -  no self-assessed levels.</p>
 
   <div class="skills reveal">
     <div class="skills__group">
-      <h3 class="mono">{{icon:lucide:server}} Back end</h3>
+      <h3 class="mono">{{icon:lucide:server}} <span data-id="Back end" data-en="Back end">Back end</span></h3>
       <ul class="skills__list">
         <li><span>{{icon:simple-icons:php}} PHP 8</span><em>UM-MART · KlinikUM</em></li>
         <li><span>{{icon:logos:laravel}} Laravel 12</span><em>KlinikUM</em></li>
@@ -666,7 +663,7 @@
       </ul>
     </div>
     <div class="skills__group">
-      <h3 class="mono">{{icon:simple-icons:mysql}} Data</h3>
+      <h3 class="mono">{{icon:simple-icons:mysql}} <span data-id="Data" data-en="Data">Data</span></h3>
       <ul class="skills__list">
         <li><span>{{icon:simple-icons:mysql}} MySQL 8</span><em>29 products · 16 tables</em></li>
         <li><span>{{icon:lucide:database}} Schema normalisation (3NF)</span><em>Both projects</em></li>
@@ -675,7 +672,7 @@
       </ul>
     </div>
     <div class="skills__group">
-      <h3 class="mono">{{icon:lucide:code-2}} Front end</h3>
+      <h3 class="mono">{{icon:lucide:code-2}} <span data-id="Front end" data-en="Front end">Front end</span></h3>
       <ul class="skills__list">
         <li><span>{{icon:simple-icons:html5}} HTML5</span><em>Every page</em></li>
         <li><span>{{icon:simple-icons:css3}} CSS3</span><em>Every page</em></li>
@@ -685,7 +682,7 @@
       </ul>
     </div>
     <div class="skills__group">
-      <h3 class="mono">{{icon:simple-icons:figma}} Design &amp; 3D</h3>
+      <h3 class="mono">{{icon:simple-icons:figma}} <span data-id="Desain &amp; 3D" data-en="Design &amp; 3D">Desain &amp; 3D</span></h3>
       <ul class="skills__list">
         <li><span>{{icon:simple-icons:figma}} Figma</span><em>5 design files</em></li>
         <li><span>{{icon:lucide:pen-tool}} Wireframes &amp; prototypes</span><em>UM-MART · VIAR UM</em></li>
@@ -696,7 +693,7 @@
       </ul>
     </div>
     <div class="skills__group">
-      <h3 class="mono">{{icon:lucide:film}} Video &amp; IoT</h3>
+      <h3 class="mono">{{icon:lucide:film}} <span data-id="Video &amp; IoT" data-en="Video &amp; IoT">Video &amp; IoT</span></h3>
       <ul class="skills__list">
         <li><span>{{icon:simple-icons:adobepremierepro}} Premiere Pro</span><em>Sate Meraja teaser</em></li>
         <li><span>{{icon:lucide:film}} Editing &amp; grading</span><em>9:16 and 16:9 delivery</em></li>
@@ -710,10 +707,10 @@
 
 <!-- ================= CONTACT ================= -->
 <section class="section section--contact" id="contact">
-  <h2 class="section__title reveal"><span class="mono">05</span>Contact</h2>
+  <h2 class="section__title reveal"><span class="mono">05</span><span data-id="Kontak" data-en="Contact">Kontak</span></h2>
   <p class="section__lede reveal">
     Open to internships, freelance web work and collaboration. The fastest way to reach me is email
-    or WhatsApp — I reply within a day.
+    or WhatsApp  -  I reply within a day.
   </p>
 
   <div class="contact reveal">
@@ -739,7 +736,7 @@
     </a>
   </div>
 
-  <p class="contact__loc mono reveal">{{icon:lucide:map-pin}} Kediri, East Java, Indonesia · UTC+7</p>
+  <p class="contact__loc mono reveal">{{icon:lucide:map-pin}} <span data-id="Kediri, Jawa Timur, Indonesia · UTC+7" data-en="Kediri, East Java, Indonesia · UTC+7">Kediri, Jawa Timur, Indonesia · UTC+7</span></p>
 </section>
 
 </main>
@@ -749,10 +746,10 @@
     <img src="assets/logo/logo-mark.png" alt="" width="26" height="26">
     <span>Rayhan Najib</span>
   </div>
-  <p class="mono">Designed &amp; built by Muhammad Rayhan Najib</p>
+  <p class="mono" data-id="Dirancang &amp; dibangun oleh Muhammad Rayhan Najib" data-en="Designed &amp; built by Muhammad Rayhan Najib">Dirancang &amp; dibangun oleh Muhammad Rayhan Najib</p>
   <p class="mono footer__note">
-    Icons by <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>,
-    <a href="https://simpleicons.org" target="_blank" rel="noopener">Simple Icons</a> and
+    <span data-id="Ikon oleh" data-en="Icons by">Ikon oleh</span> <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>,
+    <a href="https://simpleicons.org" target="_blank" rel="noopener">Simple Icons</a> <span data-id="dan" data-en="and">dan</span>
     <a href="https://iconify.design" target="_blank" rel="noopener">Iconify</a>.
   </p>
 </footer>

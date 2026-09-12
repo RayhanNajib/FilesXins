@@ -41,7 +41,7 @@ ICONS = [
     "lucide:lock", "lucide:zap", "lucide:menu", "lucide:x", "lucide:chevron-left",
     "lucide:chevron-right", "lucide:search", "lucide:clock", "lucide:calendar-check",
     "lucide:cpu", "lucide:radio", "lucide:wifi", "lucide:film", "lucide:circuit-board",
-    "lucide:play", "lucide:info",
+    "lucide:play", "lucide:info", "lucide:book-open",
     # --- technology marks --------------------------------------------------
     "simple-icons:php", "simple-icons:mysql", "simple-icons:javascript",
     "simple-icons:html5", "simple-icons:css3", "simple-icons:figma",

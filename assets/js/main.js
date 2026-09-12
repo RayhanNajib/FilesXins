@@ -337,4 +337,38 @@
       el.style.display = match ? '' : 'none';
     });
   }));
+
+  /* ---------------------------------------------------------
+     Horizontal scroll for workspace shots
+     --------------------------------------------------------- */
+  document.querySelectorAll('.shots-scroll').forEach((wrap) => {
+    const strip = wrap.querySelector('.project__shots');
+    const prev = wrap.querySelector('.shots-scroll__btn--prev');
+    const next = wrap.querySelector('.shots-scroll__btn--next');
+    prev?.addEventListener('click', () => strip?.scrollBy({ left: -280, behavior: 'smooth' }));
+    next?.addEventListener('click', () => strip?.scrollBy({ left: 280, behavior: 'smooth' }));
+  });
+
+  /* ---------------------------------------------------------
+     i18n (ID / EN language toggle)
+     --------------------------------------------------------- */
+  const langToggle = document.getElementById('langToggle');
+  let currentLang = localStorage.getItem('lang') || 'id';
+
+  const setLanguage = (lang) => {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    if (langToggle) langToggle.textContent = lang === 'id' ? 'EN' : 'ID';
+    document.querySelectorAll('[data-id][data-en]').forEach((el) => {
+      el.textContent = lang === 'en' ? el.dataset.en : el.dataset.id;
+    });
+  };
+
+  langToggle?.addEventListener('click', () => {
+    const nextLang = currentLang === 'id' ? 'en' : 'id';
+    localStorage.setItem('lang', nextLang);
+    setLanguage(nextLang);
+  });
+
+  setLanguage(currentLang);
 })();

@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rayhan Najib — Web Developer &amp; Information Systems | FilesXins</title>
-<meta name="description" content="Portfolio of Muhammad Rayhan Najib (Rayhan Najib) — web developer from Kediri, Indonesia. PHP, Laravel, MySQL, JavaScript. Shipped e-commerce and clinic management systems, two registered intellectual properties.">
+<title>Rayhan Najib  -  Web Developer &amp; Information Systems | FilesXins</title>
+<meta name="description" content="Portfolio of Muhammad Rayhan Najib (Rayhan Najib)  -  web developer from Kediri, Indonesia. PHP, Laravel, MySQL, JavaScript. Shipped e-commerce and clinic management systems, two registered intellectual properties.">
 <meta name="author" content="Muhammad Rayhan Najib">
 <meta name="keywords" content="Rayhan Najib, FilesXins, web developer, PHP, Laravel, MySQL, JavaScript, portfolio, Universitas Negeri Malang">
 <meta name="theme-color" content="#080B14">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Rayhan Najib — Web Developer &amp; Information Systems">
+<meta property="og:title" content="Rayhan Najib  -  Web Developer &amp; Information Systems">
 <meta property="og:description" content="Shipped e-commerce and clinic management systems in PHP/Laravel/MySQL. Two registered IPs. Based in Kediri, Indonesia.">
 <meta property="og:image" content="assets/profile/portrait.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <noscript>
   <style>
-    /* Without JavaScript the reveal animations never fire — show everything. */
+    /* Without JavaScript the reveal animations never fire  -  show everything. */
     .reveal{ opacity:1 !important; transform:none !important; }
     .nav__burger{ display:none !important; }
     .nav__links{ position:static; transform:none !important; flex-direction:row; }
@@ -43,12 +43,13 @@
     <span class="nav__brand-text">Rayhan&nbsp;Najib</span>
   </a>
   <nav class="nav__links" aria-label="Section navigation">
-    <a href="#about"><span class="nav__num">01</span>About</a>
-    <a href="#projects"><span class="nav__num">02</span>Projects</a>
-    <a href="#certs"><span class="nav__num">03</span>Certificates</a>
-    <a href="#stack"><span class="nav__num">04</span>Skills</a>
-    <a href="#contact" class="nav__cta"><span class="nav__num">05</span>Contact</a>
+    <a href="#about"><span class="nav__num">01</span><span data-id="Tentang" data-en="About">Tentang</span></a>
+    <a href="#projects"><span class="nav__num">02</span><span data-id="Proyek" data-en="Projects">Proyek</span></a>
+    <a href="#certs"><span class="nav__num">03</span><span data-id="Sertifikasi" data-en="Certifications">Sertifikasi</span></a>
+    <a href="#stack"><span class="nav__num">04</span><span data-id="Keahlian" data-en="Skills">Keahlian</span></a>
+    <a href="#contact" class="nav__cta"><span class="nav__num">05</span><span data-id="Kontak" data-en="Contact">Kontak</span></a>
   </nav>
+  <button class="nav__lang" id="langToggle" aria-label="Ganti bahasa">EN</button>
   <button class="nav__burger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -62,33 +63,30 @@
   <div class="hero__grid">
 
     <div class="hero__copy reveal">
-      <p class="hero__eyebrow mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19h8M4 17l6-6l-6-6"/></svg> web developer</p>
+      <p class="hero__eyebrow mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19h8M4 17l6-6l-6-6"/></svg> <span data-id="web developer &amp; desainer" data-en="web developer &amp; designer">web developer &amp; desainer</span></p>
       <h1 class="hero__title">
         Rayhan <span class="neon">Najib</span>
       </h1>
-      <p class="hero__role">
-        Information Technology student at Universitas Negeri Malang. I build e-commerce platforms
-        and management systems that ship and get used — and design, render and edit the media
-        around them.
-      </p>
+      <p class="hero__role" data-id="Mahasiswa Teknologi Informasi di Universitas Negeri Malang. Saya membangun platform e-commerce dan sistem manajemen yang dipakai nyata, serta mendesain, merender, dan mengedit media pendukungnya." data-en="Information Technology student at Universitas Negeri Malang. I build e-commerce platforms and management systems that ship and get used - and design, render and edit the media around them.">Mahasiswa Teknologi Informasi di Universitas Negeri Malang. Saya membangun platform e-commerce dan sistem manajemen yang dipakai nyata, serta mendesain, merender, dan mengedit media pendukungnya.</p>
 
       <ul class="hero__facts">
-        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g></svg> Kediri, East Java, Indonesia</li>
-        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></g></svg> Universitas Negeri Malang</li>
-        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1-4.77 4.78a4 4 0 0 1-6.75 0a4 4 0 0 1-4.78-4.77a4 4 0 0 1 0-6.76"/><path d="m16 9l-5.5 5.5L8 12"/></g></svg> Available for internships &amp; freelance</li>
+        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g></svg> <span data-id="Kediri, Jawa Timur, Indonesia" data-en="Kediri, East Java, Indonesia">Kediri, Jawa Timur, Indonesia</span></li>
+        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></g></svg> <span data-id="Universitas Negeri Malang" data-en="Universitas Negeri Malang">Universitas Negeri Malang</span></li>
+        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1-4.77 4.78a4 4 0 0 1-6.75 0a4 4 0 0 1-4.78-4.77a4 4 0 0 1 0-6.76"/><path d="m16 9l-5.5 5.5L8 12"/></g></svg> <span data-id="Tersedia untuk magang &amp; lepas" data-en="Available for internships &amp; freelance">Tersedia untuk magang &amp; lepas</span></li>
+        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v16m8.001-2A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2a5 5 0 0 1 4-2z"/></svg> <span data-id="Hobi: membaca" data-en="Hobby: reading">Hobi: membaca</span></li>
       </ul>
 
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#projects"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></g></svg> View projects</a>
+        <a class="btn btn--primary" href="#projects"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></g></svg> <span data-id="Lihat proyek" data-en="View projects">Lihat proyek</span></a>
         <a class="btn btn--ghost" href="https://github.com/RayhanNajib" target="_blank" rel="noopener">
           <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5c.08-1.25-.27-2.48-1-3.5c.28-1.15.28-2.35 0-3.5c0 0-1 0-3 1.5c-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5c-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></g></svg> GitHub <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
       </div>
 
       <dl class="hero__stats">
-        <div><dt>Shipped apps</dt><dd>3</dd></div>
-        <div><dt>Registered IP</dt><dd>2</dd></div>
-        <div><dt>Projects</dt><dd>8</dd></div>
-        <div><dt>Certifications</dt><dd>12</dd></div>
+        <div><dt data-id="Aplikasi terkirim" data-en="Shipped apps">Aplikasi terkirim</dt><dd>3</dd></div>
+        <div><dt data-id="HKI terdaftar" data-en="Registered IP">HKI terdaftar</dt><dd>2</dd></div>
+        <div><dt data-id="Proyek" data-en="Projects">Proyek</dt><dd>8</dd></div>
+        <div><dt data-id="Sertifikasi" data-en="Certifications">Sertifikasi</dt><dd>12</dd></div>
       </dl>
     </div>
 
@@ -127,12 +125,12 @@
 
 <!-- ================= PROFILE SUMMARY (ATS) ================= -->
 <section class="section" id="about">
-  <h2 class="section__title reveal"><span class="mono">01</span>Profile</h2>
+  <h2 class="section__title reveal"><span class="mono">01</span><span data-id="Profil" data-en="Profile">Profil</span></h2>
 
   <div class="summary reveal">
     <p class="summary__lede">
       Information Technology student and web developer with hands-on delivery of three production
-      web applications — a full grocery e-commerce platform, a role-based clinic management system,
+      web applications  -  a full grocery e-commerce platform, a role-based clinic management system,
       and a public village portal currently serving live traffic. Comfortable across the stack:
       PHP and Laravel on the server, MySQL for data modelling, and hand-written JavaScript on the
       front end. Two works registered as intellectual property with the Ministry of Law of Indonesia.
@@ -141,25 +139,25 @@
 
   <div class="facts reveal">
     <div class="facts__col">
-      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></g></svg> Core competency</h3>
+      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></g></svg> <span data-id="Kompetensi utama" data-en="Core competency">Kompetensi utama</span></h3>
       <ul class="facts__list">
-        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> Back-end development — PHP 8, Laravel 12, REST endpoints, authentication</li>
-        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> Database design — normalised MySQL schemas, queries, reporting</li>
-        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> Front-end — semantic HTML, modern CSS, vanilla JavaScript, responsive layout</li>
-        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> Interface design — Figma wireframes, design systems, prototyped flows</li>
-        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> 3D &amp; game assets — Blender modelling, rigging and rendering</li>
+        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> Back-end development  -  PHP 8, Laravel 12, REST endpoints, authentication</li>
+        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> Database design  -  normalised MySQL schemas, queries, reporting</li>
+        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> Front-end  -  semantic HTML, modern CSS, vanilla JavaScript, responsive layout</li>
+        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> Interface design  -  Figma wireframes, design systems, prototyped flows</li>
+        <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg> 3D &amp; game assets  -  Blender modelling, rigging and rendering</li>
       </ul>
     </div>
     <aside class="facts__card">
-      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"/></g></svg> Details</h3>
+      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"/></g></svg> <span data-id="Detail" data-en="Details">Detail</span></h3>
       <dl>
-        <dt>Full name</dt><dd>Muhammad Rayhan Najib</dd>
-        <dt>Brand</dt><dd>FilesXins</dd>
-        <dt>Location</dt><dd>Kediri, East Java, Indonesia</dd>
-        <dt>Education</dt><dd>Information Technology, Universitas Negeri Malang</dd>
-        <dt>Languages</dt><dd>Indonesian (native), English (professional reading)</dd>
-        <dt>Availability</dt><dd>Internships · freelance web work · collaboration</dd>
-        <dt>Interests</dt><dd>Game systems, 3D modelling, interface design</dd>
+        <dt data-id="Nama lengkap" data-en="Full name">Nama lengkap</dt><dd>Muhammad Rayhan Najib</dd>
+        <dt data-id="Merek" data-en="Brand">Merek</dt><dd>FilesXins</dd>
+        <dt data-id="Lokasi" data-en="Location">Lokasi</dt><dd data-id="Kediri, Jawa Timur, Indonesia" data-en="Kediri, East Java, Indonesia">Kediri, Jawa Timur, Indonesia</dd>
+        <dt data-id="Pendidikan" data-en="Education">Pendidikan</dt><dd data-id="Teknologi Informasi, Universitas Negeri Malang" data-en="Information Technology, Universitas Negeri Malang">Teknologi Informasi, Universitas Negeri Malang</dd>
+        <dt data-id="Bahasa" data-en="Languages">Bahasa</dt><dd data-id="Indonesia (penutur asli), Inggris (membaca profesional)" data-en="Indonesian (native), English (professional reading)">Indonesia (penutur asli), Inggris (membaca profesional)</dd>
+        <dt data-id="Ketersediaan" data-en="Availability">Ketersediaan</dt><dd data-id="Magang · kerja web lepas · kolaborasi" data-en="Internships · freelance web work · collaboration">Magang · kerja web lepas · kolaborasi</dd>
+        <dt data-id="Minat" data-en="Interests">Minat</dt><dd data-id="Sistem game, pemodelan 3D, desain antarmuka" data-en="Game systems, 3D modelling, interface design">Sistem game, pemodelan 3D, desain antarmuka</dd>
       </dl>
     </aside>
   </div>
@@ -167,19 +165,18 @@
 
 <!-- ================= PROJECTS ================= -->
 <section class="section" id="projects">
-  <h2 class="section__title reveal"><span class="mono">02</span>Selected projects</h2>
-  <p class="section__lede reveal">
-    Each entry lists the problem, what was built, and the measurable result. Screenshots are taken
-    from the running applications; click any of them to open the full gallery.
+  <h2 class="section__title reveal"><span class="mono">02</span><span data-id="Proyek pilihan" data-en="Selected projects">Proyek pilihan</span></h2>
+  <p class="section__lede reveal" data-id="Setiap entri mencantumkan masalah, apa yang dibangun, dan hasil yang terukur. Tangkapan layar diambil dari aplikasi yang berjalan; klik mana saja untuk membuka galeri penuh." data-en="Each entry lists the problem, what was built, and the measurable result. Screenshots are taken from the running applications; click any of them to open the full gallery.">
+    Setiap entri mencantumkan masalah, apa yang dibangun, dan hasil yang terukur. Tangkapan layar diambil dari aplikasi yang berjalan; klik mana saja untuk membuka galeri penuh.
   </p>
 
   <div class="filters reveal" role="tablist">
-    <button class="chip is-active" data-filter="all">All</button>
-    <button class="chip" data-filter="web">Web applications</button>
-    <button class="chip" data-filter="live">In production</button>
-    <button class="chip" data-filter="design">Design &amp; 3D</button>
-    <button class="chip" data-filter="media">Video &amp; media</button>
-    <button class="chip" data-filter="iot">IoT &amp; hardware</button>
+    <button class="chip is-active" data-filter="all" data-id="Semua" data-en="All">Semua</button>
+    <button class="chip" data-filter="web" data-id="Aplikasi web" data-en="Web applications">Aplikasi web</button>
+    <button class="chip" data-filter="live" data-id="Di produksi" data-en="In production">Di produksi</button>
+    <button class="chip" data-filter="design" data-id="Desain &amp; 3D" data-en="Design &amp; 3D">Desain &amp; 3D</button>
+    <button class="chip" data-filter="media" data-id="Video &amp; media" data-en="Video &amp; media">Video &amp; media</button>
+    <button class="chip" data-filter="iot" data-id="IoT &amp; perangkat keras" data-en="IoT &amp; hardware">IoT &amp; perangkat keras</button>
   </div>
 
   <div class="projects">
@@ -190,7 +187,7 @@
         <span class="project__index mono">01</span>
         <div class="project__heading">
           <h3 class="project__title">UM-MART <span class="badge badge--live"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16 9l-5.5 5.5L8 12"/></g></svg> In production</span></h3>
-          <p class="project__sub">Food &amp; grocery e-commerce platform — campus market</p>
+          <p class="project__sub">Food &amp; grocery e-commerce platform  -  campus market</p>
         </div>
       </header>
 
@@ -199,17 +196,17 @@
           <div class="project__block">
             <h4 class="mono">Problem</h4>
             <p>A campus market selling groceries had no online ordering, no stock visibility for staff,
-               and no transaction records — every order was handled by hand.</p>
+               and no transaction records  -  every order was handled by hand.</p>
           </div>
           <div class="project__block">
             <h4 class="mono">What I built</h4>
             <ul class="project__bullets">
               <li>Product catalogue with categories, live search and filter combinations</li>
               <li>Persistent cart and a complete checkout flow</li>
-              <li>Four payment methods — OVO, GoPay, DANA and card</li>
+              <li>Four payment methods  -  OVO, GoPay, DANA and card</li>
               <li>Printable invoices and per-customer transaction history</li>
               <li>Admin dashboard: statistics, charts, banner &amp; voucher CRUD, Excel export</li>
-              <li>Dual authentication — password and Google Sign-In</li>
+              <li>Dual authentication  -  password and Google Sign-In</li>
             </ul>
           </div>
           <div class="project__block">
@@ -264,7 +261,7 @@
           <div class="project__block">
             <h4 class="mono">What I built</h4>
             <ul class="project__bullets">
-              <li>Three role dashboards — admin, doctor and patient — from one codebase</li>
+              <li>Three role dashboards  -  admin, doctor and patient  -  from one codebase</li>
               <li>Admin: doctor, patient and schedule CRUD, plus cashiering and payment reports</li>
               <li>Doctor: appointment queue, diagnosis entry, printable medical certificates</li>
               <li>Patient: schedule browsing, appointment booking and cancellation, history</li>
@@ -310,7 +307,7 @@
         <span class="project__index mono">03</span>
         <div class="project__heading">
           <h3 class="project__title">Nanggungan Digdaya <span class="badge badge--live"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16 9l-5.5 5.5L8 12"/></g></svg> In production</span></h3>
-          <p class="project__sub">Public information portal — Desa Nanggungan, Kayen Kidul</p>
+          <p class="project__sub">Public information portal  -  Desa Nanggungan, Kayen Kidul</p>
         </div>
       </header>
 
@@ -318,7 +315,7 @@
         <div class="project__info">
           <div class="project__block">
             <h4 class="mono">Problem</h4>
-            <p>The village had no digital presence — announcements, profile documents and the village
+            <p>The village had no digital presence  -  announcements, profile documents and the village
                market ran entirely through word of mouth and printed sheets.</p>
           </div>
           <div class="project__block">
@@ -333,7 +330,7 @@
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>Deployed to a public domain and in active use by village staff and residents —
+            <p>Deployed to a public domain and in active use by village staff and residents  - 
                the only project in this list serving an audience beyond campus.</p>
           </div>
           <ul class="project__stack">
@@ -350,7 +347,7 @@
         </div>
 
         <div class="project__shots">
-          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/projects/desa/MENU_BERANDA_DESA_NANGGUNGAN.webp" alt="Village portal homepage — full page" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/projects/desa/MENU_BERANDA_DESA_NANGGUNGAN.webp" alt="Village portal homepage  -  full page" loading="lazy"></button>
           <button class="shot" data-gallery="nanggungan" data-i="1"><img src="assets/projects/desa/DASHBOARD_ADMIN_DESA_NANGGUNGAN.webp" alt="Admin dashboard" loading="lazy"></button>
           <button class="shot" data-gallery="nanggungan" data-i="2"><img src="assets/projects/desa/MENU_PASAR_DESA_DESA_NANGGUNGAN.webp" alt="Village market" loading="lazy"></button>
           <button class="shot" data-gallery="nanggungan" data-i="3"><img src="assets/projects/desa/MENU_PERATURAN_DESA_NANGGUNGAN.webp" alt="Village regulations" loading="lazy"></button>
@@ -364,7 +361,7 @@
       <header class="project__head">
         <span class="project__index mono">04</span>
         <div class="project__heading">
-          <h3 class="project__title">Interface design — Figma <span class="badge"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg> Figma</span></h3>
+          <h3 class="project__title">Interface design  -  Figma <span class="badge"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg> Figma</span></h3>
           <p class="project__sub">Product interfaces designed before a line of code was written</p>
         </div>
       </header>
@@ -373,17 +370,17 @@
           <div class="project__block">
             <h4 class="mono">What I designed</h4>
             <ul class="project__bullets">
-              <li><b>UM-MART</b> — the e-commerce interface this portfolio deploys as a live demo</li>
-              <li><b>UI VIAR UM</b> — interface exploration for a campus virtual/augmented reality workspace</li>
-              <li><b>SMARTIPEN</b> — product interface concept</li>
-              <li><b>KKN Design</b> — layout system for the village portal</li>
-              <li><b>UI/UX Bootcamp project</b> — end-to-end flow from research to prototype</li>
+              <li><b>UM-MART</b>  -  the e-commerce interface this portfolio deploys as a live demo</li>
+              <li><b>UI VIAR UM</b>  -  interface exploration for a campus virtual/augmented reality workspace</li>
+              <li><b>SMARTIPEN</b>  -  product interface concept</li>
+              <li><b>KKN Design</b>  -  layout system for the village portal</li>
+              <li><b>UI/UX Bootcamp project</b>  -  end-to-end flow from research to prototype</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
             <p>Five documented design files covering wireframes, component libraries and clickable
-               prototypes — screens below are rendered straight out of the files. The UM-MART design
+               prototypes  -  screens below are rendered straight out of the files. The UM-MART design
                went into production unchanged in structure.</p>
           </div>
           <ul class="project__stack">
@@ -421,7 +418,7 @@
       <header class="project__head">
         <span class="project__index mono">05</span>
         <div class="project__heading">
-          <h3 class="project__title">TEXUM — 3D &amp; game work <span class="badge"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender</span></h3>
+          <h3 class="project__title">TEXUM  -  3D &amp; game work <span class="badge"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender</span></h3>
           <p class="project__sub">A fantasy RPG built and released publicly, from models to script</p>
         </div>
       </header>
@@ -430,21 +427,21 @@
           <div class="project__block">
             <h4 class="mono">Problem</h4>
             <p>A game needs a world before it needs code: characters, creatures, maps and interface
-               that hold together as one visual language — all authored from scratch.</p>
+               that hold together as one visual language  -  all authored from scratch.</p>
           </div>
           <div class="project__block">
             <h4 class="mono">What I made</h4>
             <ul class="project__bullets">
-              <li><b>20 hand-built maps</b> plus a full UI set — menus, status, item, battle and mini-game screens</li>
+              <li><b>20 hand-built maps</b> plus a full UI set  -  menus, status, item, battle and mini-game screens</li>
               <li><b>8 creature models</b> and 4 character designs with front/side turnaround sheets</li>
               <li><b>A 16-page bilingual script</b> (Indonesian and English) covering the story and cutscene directions</li>
               <li><b>Released publicly on itch.io</b> with a trailer, so the build is playable by anyone</li>
-              <li>Separately: hard-surface props and interiors — PC build, keyboard, classroom, laboratory, product mock-ups</li>
+              <li>Separately: hard-surface props and interiors  -  PC build, keyboard, classroom, laboratory, product mock-ups</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>A finished, published game build with its own story world — <b>documented and playable</b>,
+            <p>A finished, published game build with its own story world  -  <b>documented and playable</b>,
                not a still frame. Everything below is my own render or game asset.</p>
           </div>
           <ul class="project__stack">
@@ -457,7 +454,7 @@
           <ul class="project__links">
             <li><a class="link" href="https://youtu.be/baYgIYsq3VU" target="_blank" rel="noopener">
               <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg> Watch the trailer</a></li>
-            <li><span class="link link--note"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 11h4M8 9v4m7-1h.01M18 10h.01m-.69-5H6.68a4 4 0 0 0-3.978 3.59l-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258q-.01-.075-.017-.151A4 4 0 0 0 17.32 5"/></svg> Playable build on itch.io — store link on request</span></li>
+            <li><span class="link link--note"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 11h4M8 9v4m7-1h.01M18 10h.01m-.69-5H6.68a4 4 0 0 0-3.978 3.59l-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258q-.01-.075-.017-.151A4 4 0 0 0 17.32 5"/></svg> Playable build on itch.io  -  store link on request</span></li>
           </ul>
         </div>
 
@@ -485,16 +482,16 @@
           <div class="project__block">
             <h4 class="mono">What these are</h4>
             <ul class="project__bullets">
-              <li><b>PC build &amp; cooling</b> — component-accurate hard-surface models</li>
-              <li><b>Classroom &amp; laboratory</b> — full interior scenes with lighting</li>
-              <li><b>Product mock-ups</b> — Smartipen internals, packaging and print covers</li>
-              <li><b>Props</b> — keyboard, nail clipper, chain weapon, mascot character</li>
+              <li><b>PC build &amp; cooling</b>  -  component-accurate hard-surface models</li>
+              <li><b>Classroom &amp; laboratory</b>  -  full interior scenes with lighting</li>
+              <li><b>Product mock-ups</b>  -  Smartipen internals, packaging and print covers</li>
+              <li><b>Props</b>  -  keyboard, nail clipper, chain weapon, mascot character</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>Every image here is rendered out of my own <b>.blend</b> files. The two hardest scenes —
-               Smartipen and the classroom — were shot by hand in Blender: their cameras sit inside
+            <p>Every image here is rendered out of my own <b>.blend</b> files. The two hardest scenes  - 
+               Smartipen and the classroom  -  were shot by hand in Blender: their cameras sit inside
                the geometry, so the portfolio shows the renders I framed myself.</p>
           </div>
           <ul class="project__stack">
@@ -522,7 +519,7 @@
         <span class="project__index mono">07</span>
         <div class="project__heading">
           <h3 class="project__title">Video editing &amp; media production <span class="badge"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M10.15 8.42a2.9 2.9 0 0 0-1.18-.2a14 14 0 0 0-1.09.02v3.36l.39.02h.53c.39 0 .78-.06 1.15-.18c.32-.09.6-.28.82-.53c.21-.25.31-.59.31-1.03a1.45 1.45 0 0 0-.93-1.46M19.75.3H4.25A4.25 4.25 0 0 0 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3m-7.09 11.65c-.4.56-.96.98-1.61 1.22c-.68.25-1.43.34-2.25.34l-.5-.01l-.43-.01v3.21a.12.12 0 0 1-.11.14H5.82c-.08 0-.12-.04-.12-.13V6.42c0-.07.03-.11.1-.11l.56-.01l.76-.02l.87-.02l.91-.01c.82 0 1.5.1 2.06.31c.5.17.96.45 1.34.82c.32.32.57.71.73 1.14c.15.42.23.85.23 1.3q0 1.29-.6 2.13m6.82-3.15v1.95c0 .08-.05.11-.16.11a4.35 4.35 0 0 0-1.92.37c-.19.09-.37.21-.51.37v5.1c0 .1-.04.14-.13.14h-1.97a.14.14 0 0 1-.16-.12v-5.58l-.01-.75l-.02-.78c0-.23-.02-.45-.04-.68a.1.1 0 0 1 .07-.11h1.78c.1 0 .18.07.2.16a3 3 0 0 1 .13.92c.3-.35.67-.64 1.08-.86a3.1 3.1 0 0 1 1.52-.39c.07-.01.13.04.14.11z"/></svg> Premiere Pro</span></h3>
-          <p class="project__sub">Trailers, learning media and print design — edited, graded and delivered</p>
+          <p class="project__sub">Trailers, learning media and print design  -  edited, graded and delivered</p>
         </div>
       </header>
       <div class="project__body">
@@ -530,15 +527,15 @@
           <div class="project__block">
             <h4 class="mono">What I produced</h4>
             <ul class="project__bullets">
-              <li><b>Sate Meraja teaser</b> — vertical 9:16 food trailer, fully cut, paced and graded</li>
-              <li><b>Learning media video</b> — merged CapCut and Premiere Pro edits for coursework</li>
-              <li><b>Motion logo ident</b> — animated logo for the KKN village programme</li>
-              <li><b>Print &amp; identity</b> — posters, banners and packaging designed in Photoshop</li>
+              <li><b>Sate Meraja teaser</b>  -  vertical 9:16 food trailer, fully cut, paced and graded</li>
+              <li><b>Learning media video</b>  -  merged CapCut and Premiere Pro edits for coursework</li>
+              <li><b>Motion logo ident</b>  -  animated logo for the KKN village programme</li>
+              <li><b>Print &amp; identity</b>  -  posters, banners and packaging designed in Photoshop</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>Delivered pieces that were actually published — a public trailer, a programme ident and
+            <p>Delivered pieces that were actually published  -  a public trailer, a programme ident and
                printed material. Each clip below is a short excerpt; the frames are real output from
                the edit timeline.</p>
           </div>
@@ -552,11 +549,11 @@
         <div class="edits">
           <figure class="edit reveal">
             <video class="edit__v" src="assets/video/teaser-sate-meraja.mp4" poster="assets/video/posters/teaser-sate-meraja.webp" controls muted playsinline preload="none"></video>
-            <figcaption><b>Sate Meraja — teaser</b><em>Food trailer, 1080×1920, cut in Premiere Pro</em></figcaption>
+            <figcaption><b>Sate Meraja  -  teaser</b><em>Food trailer, 1080×1920, cut in Premiere Pro</em></figcaption>
           </figure>
           <figure class="edit reveal">
             <video class="edit__v" src="assets/video/texum-mockup.mp4" poster="assets/video/posters/texum-mockup.webp" controls muted playsinline preload="none"></video>
-            <figcaption><b>TEXUM — trailer</b><em>Game trailer cut</em></figcaption>
+            <figcaption><b>TEXUM  -  trailer</b><em>Game trailer cut</em></figcaption>
           </figure>
           <figure class="edit reveal">
             <video class="edit__v" src="assets/video/revisi-media-pembelajaran.mp4" poster="assets/video/posters/revisi-media-pembelajaran.webp" controls muted playsinline preload="none"></video>
@@ -582,7 +579,7 @@
         <span class="project__index mono">08</span>
         <div class="project__heading">
           <h3 class="project__title">IoT &amp; embedded <span class="badge badge--live"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m15.477 12.89l1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></g></svg> Registered IP</span></h3>
-          <p class="project__sub">Smart Rakaat — a prayer counter using ESP32, ultrasound and audio</p>
+          <p class="project__sub">Smart Rakaat  -  a prayer counter using ESP32, ultrasound and audio</p>
         </div>
       </header>
       <div class="project__body">
@@ -595,8 +592,8 @@
           <div class="project__block">
             <h4 class="mono">What I built</h4>
             <ul class="project__bullets">
-              <li><b>ESP32 firmware</b> — HC-SR04 ultrasound detects the bowing and prostration motion</li>
-              <li><b>Movement logic</b> — a prostration sequence increments the rakaat counter</li>
+              <li><b>ESP32 firmware</b>  -  HC-SR04 ultrasound detects the bowing and prostration motion</li>
+              <li><b>Movement logic</b>  -  a prostration sequence increments the rakaat counter</li>
               <li><b>SSD1306 OLED</b> shows current rakaat against the target; DFPlayer gives audio cues</li>
               <li><b>Built-in Wi-Fi access point</b> with a web page to set 2, 3 or 4 rakaat and reset</li>
               <li><b>Circuit drawn in Fritzing</b>, plus a second project: a radar object-detection sensor</li>
@@ -615,7 +612,7 @@
             <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M11 9h4a2 2 0 0 0 2-2V3"/><circle cx="9" cy="9" r="2"/><path d="M7 21v-4a2 2 0 0 1 2-2h4"/><circle cx="15" cy="15" r="2"/></g></svg> Fritzing</li>
           </ul>
           <ul class="project__links">
-            <li><span class="link link--note"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"/></g></svg> Firmware, schematic and enclosure documented — files on request</span></li>
+            <li><span class="link link--note"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"/></g></svg> Firmware, schematic and enclosure documented  -  files on request</span></li>
           </ul>
         </div>
         <div class="edits">
@@ -635,27 +632,27 @@
 
 <!-- ================= CERTIFICATES ================= -->
 <section class="section" id="certs">
-  <h2 class="section__title reveal"><span class="mono">03</span>Certificates &amp; achievements</h2>
+  <h2 class="section__title reveal"><span class="mono">03</span><span data-id="Sertifikat &amp; pencapaian" data-en="Certificates &amp; achievements">Sertifikat &amp; pencapaian</span></h2>
   <p class="section__lede reveal">
-    Twelve documents backing the work above. Open any card to read it full size — each entry states
+    Twelve documents backing the work above. Open any card to read it full size  -  each entry states
     what it verifies and which capability it evidences.
   </p>
   <p class="certs__legend mono reveal">
-    <span class="dot dot--hki"></span>Intellectual property
-    <span class="dot dot--award"></span>Campus award
-    <span class="dot dot--course"></span>Certified course
+    <span class="dot dot--hki"></span><span data-id="Kekayaan intelektual" data-en="Intellectual property">Kekayaan intelektual</span>
+    <span class="dot dot--award"></span><span data-id="Penghargaan kampus" data-en="Campus award">Penghargaan kampus</span>
+    <span class="dot dot--course"></span><span data-id="Kursus bersertifikat" data-en="Certified course">Kursus bersertifikat</span>
   </p>
   <div class="certs" id="certGrid"></div>
 </section>
 
 <!-- ================= SKILLS ================= -->
 <section class="section" id="stack">
-  <h2 class="section__title reveal"><span class="mono">04</span>Skills &amp; tools</h2>
-  <p class="section__lede reveal">Each entry names the technology and the project that proves it — no self-assessed levels.</p>
+  <h2 class="section__title reveal"><span class="mono">04</span><span data-id="Keahlian &amp; alat" data-en="Skills &amp; tools">Keahlian &amp; alat</span></h2>
+  <p class="section__lede reveal">Each entry names the technology and the project that proves it  -  no self-assessed levels.</p>
 
   <div class="skills reveal">
     <div class="skills__group">
-      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><path d="M6 6h.01M6 18h.01"/></g></svg> Back end</h3>
+      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><path d="M6 6h.01M6 18h.01"/></g></svg> <span data-id="Back end" data-en="Back end">Back end</span></h3>
       <ul class="skills__list">
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M7.01 10.207h-.944l-.515 2.648h.838q.834 0 1.242-.314q.408-.315.55-1.049q.137-.705-.124-.995q-.262-.29-1.047-.29M12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12s-5.373-6.312-12-6.312m-3.26 7.451c-.261.25-.575.438-.917.551q-.505.163-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65q1.195 0 1.744.628q.549.627.33 1.752a2.8 2.8 0 0 1-.305.847q-.215.383-.561.703m4.024.715l.543-2.799q.094-.478-.068-.651q-.16-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218q1.15 0 1.586.401c.436.401.378.7.263 1.299l-.572 2.944zm7.597-2.265a2.8 2.8 0 0 1-.305.847q-.214.383-.561.703a2.44 2.44 0 0 1-.917.551q-.504.163-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649q1.195 0 1.744.628q.55.626.331 1.751m-2.595-1.382h-.943l-.516 2.648h.838q.835 0 1.242-.314q.407-.315.551-1.049q.137-.705-.125-.995c-.262-.29-.524-.29-1.047-.29"/></svg> PHP 8</span><em>UM-MART · KlinikUM</em></li>
         <li><span><svg class="ico" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 264"><path fill="#ff2d20" d="M255.856 59.62c.095.351.144.713.144 1.077v56.568c0 1.478-.79 2.843-2.073 3.578L206.45 148.18v54.18a4.14 4.14 0 0 1-2.062 3.579l-99.108 57.053c-.227.128-.474.21-.722.299c-.093.03-.18.087-.278.113a4.15 4.15 0 0 1-2.114 0c-.114-.03-.217-.093-.325-.134c-.227-.083-.464-.155-.68-.278L2.073 205.938A4.13 4.13 0 0 1 0 202.36V32.656c0-.372.052-.733.144-1.083c.031-.119.103-.227.145-.346c.077-.216.15-.438.263-.639c.077-.134.19-.242.283-.366c.119-.165.227-.335.366-.48c.119-.118.274-.206.408-.309c.15-.124.283-.258.453-.356h.005L51.613.551a4.14 4.14 0 0 1 4.125 0l49.546 28.526h.01c.165.104.305.232.454.351c.134.103.284.196.402.31c.145.149.248.32.371.484c.088.124.207.232.279.366c.118.206.185.423.268.64c.041.118.113.226.144.35c.095.351.144.714.145 1.078V138.65l41.286-23.773V60.692c0-.36.052-.727.145-1.072c.036-.124.103-.232.144-.35c.083-.217.155-.44.268-.64c.077-.134.19-.242.279-.366c.123-.165.226-.335.37-.48c.12-.118.269-.206.403-.309c.155-.124.289-.258.454-.356h.005l49.551-28.526a4.13 4.13 0 0 1 4.125 0l49.546 28.526c.175.103.309.232.464.35c.128.104.278.197.397.31c.144.15.247.32.37.485c.094.124.207.232.28.366c.118.2.185.423.267.64c.047.118.114.226.145.35m-8.115 55.258v-47.04l-17.339 9.981l-23.953 13.792v47.04l41.297-23.773zm-49.546 85.095V152.9l-23.562 13.457l-67.281 38.4v47.514zM8.259 39.796v160.177l90.833 52.294v-47.505L51.64 177.906l-.015-.01l-.02-.01c-.16-.093-.295-.227-.444-.34c-.13-.104-.279-.186-.392-.3l-.01-.015c-.134-.129-.227-.289-.34-.433c-.104-.14-.227-.258-.31-.402l-.005-.016c-.093-.154-.15-.34-.217-.515c-.067-.155-.154-.3-.196-.464v-.005c-.051-.196-.061-.403-.082-.604c-.02-.154-.062-.309-.062-.464V63.57L25.598 49.772l-17.339-9.97zM53.681 8.893L12.399 32.656l41.272 23.762L94.947 32.65L53.671 8.893zm21.468 148.298l23.948-13.786V39.796L81.76 49.778L57.805 63.569v103.608zM202.324 36.935l-41.276 23.762l41.276 23.763l41.271-23.768zm-4.13 54.676l-23.953-13.792l-17.338-9.981v47.04l23.948 13.787l17.344 9.986zm-94.977 106.006l60.543-34.564l30.264-17.272l-41.246-23.747l-47.489 27.34l-43.282 24.918z"/></svg> Laravel 12</span><em>KlinikUM</em></li>
@@ -666,7 +663,7 @@
       </ul>
     </div>
     <div class="skills__group">
-      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273c.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333c-.04-.047-.046-.094-.08-.14c-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a51 51 0 0 0-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a73 73 0 0 0-.195 4.41H0q.083-2.95.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095q.363 3.024.428 5.53zm4.017-4.08q-.567 3.069-1.492 4.46q-.723 1.074-1.583 1.073q-.228 0-.566-.138v-.494q.166.026.386.026q.402 0 .647-.222q.295-.27.295-.605q0-.233-.23-.944L6.23 14.615h.91l.727 2.36q.247.804.205 1.123q.6-1.598.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5q.136-.113.255-.25q.649-.76.648-2.253q0-2.745-2.155-2.746q-1.056 0-1.65.697q-.646.762-.646 2.245q-.001 1.459.574 2.14q.524.615 1.583.615q.396 0 .725-.098l1.325.772l.36-.622zM15.5 17.588q-.337-.541-.337-1.736q0-2.09 1.27-2.09q.666 0 .977.5q.336.543.336 1.723q0 2.107-1.27 2.108q-.667 0-.978-.5zm-1.658-.425q0 .706-.516 1.156q-.514.45-1.384.45c-.543 0-1.064-.172-1.573-.515l.237-.476q.656.329 1.19.328q.498 0 .783-.22a.75.75 0 0 0 .3-.615c0-.33-.23-.61-.648-.845c-.388-.213-1.163-.657-1.163-.657c-.422-.307-.632-.636-.632-1.177q0-.674.47-1.085q.471-.416 1.22-.415q.769 0 1.4.41l-.213.476a2.7 2.7 0 0 0-1.064-.23q-.425 0-.654.206a.69.69 0 0 0-.248.524c0 .328.234.61.666.85c.393.215 1.187.67 1.187.67c.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188c-.1.04-.26.04-.274.167c.055.053.063.14.11.214c.08.134.218.313.346.407q.208.167.427.31c.26.16.555.255.81.416c.145.094.293.213.44.313c.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214c-.067-.067-.134-.127-.2-.193a3.2 3.2 0 0 0-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106c.227-.06.435-.047.67-.106q.16-.042.32-.094v-.06c-.12-.12-.21-.283-.334-.395a9 9 0 0 0-1.104-.823c-.21-.134-.476-.22-.697-.334c-.08-.04-.214-.06-.26-.127c-.12-.146-.19-.34-.275-.514a18 18 0 0 1-.547-1.163c-.12-.262-.193-.523-.34-.763c-.69-1.137-1.437-1.826-2.586-2.5c-.247-.14-.543-.2-.856-.274c-.167-.008-.334-.02-.5-.027c-.11-.047-.216-.174-.31-.235c-.38-.24-1.364-.76-1.644-.072c-.18.434.267.862.422 1.082c.115.153.26.328.34.5c.047.116.06.235.107.356c.106.294.207.622.347.897c.073.14.153.287.247.413c.054.073.146.107.167.227c-.094.136-.1.334-.154.5c-.24.757-.146 1.693.194 2.25c.107.166.362.534.703.393c.3-.12.234-.5.32-.835c.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555c.206.328.566.668.867.895c.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.5 3.5 0 0 1-.35-.4a9 9 0 0 1-.747-1.218c-.11-.21-.202-.436-.29-.643c-.04-.08-.04-.2-.107-.24c-.1.146-.247.273-.32.453c-.127.288-.14.642-.188 1.01c-.027.007-.014 0-.027.014c-.214-.052-.287-.274-.367-.46c-.2-.475-.233-1.238-.06-1.785c.047-.14.247-.582.167-.716c-.042-.127-.174-.2-.247-.303a2.5 2.5 0 0 1-.24-.427c-.16-.374-.24-.788-.414-1.162c-.08-.173-.22-.354-.334-.513c-.127-.18-.267-.307-.368-.52c-.033-.073-.08-.194-.027-.274c.014-.054.042-.075.094-.09c.088-.072.335.022.422.062c.247.1.455.194.662.334c.094.066.195.193.315.226h.14c.214.047.455.014.655.073c.355.114.675.28.962.46a5.95 5.95 0 0 1 2.085 2.286c.08.154.115.295.188.455c.14.33.313.663.455.982c.14.315.275.636.476.897c.1.14.502.213.682.286c.133.06.34.115.46.188c.23.14.454.3.67.454c.11.076.443.243.463.378"/></svg> Data</h3>
+      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273c.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333c-.04-.047-.046-.094-.08-.14c-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a51 51 0 0 0-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a73 73 0 0 0-.195 4.41H0q.083-2.95.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095q.363 3.024.428 5.53zm4.017-4.08q-.567 3.069-1.492 4.46q-.723 1.074-1.583 1.073q-.228 0-.566-.138v-.494q.166.026.386.026q.402 0 .647-.222q.295-.27.295-.605q0-.233-.23-.944L6.23 14.615h.91l.727 2.36q.247.804.205 1.123q.6-1.598.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5q.136-.113.255-.25q.649-.76.648-2.253q0-2.745-2.155-2.746q-1.056 0-1.65.697q-.646.762-.646 2.245q-.001 1.459.574 2.14q.524.615 1.583.615q.396 0 .725-.098l1.325.772l.36-.622zM15.5 17.588q-.337-.541-.337-1.736q0-2.09 1.27-2.09q.666 0 .977.5q.336.543.336 1.723q0 2.107-1.27 2.108q-.667 0-.978-.5zm-1.658-.425q0 .706-.516 1.156q-.514.45-1.384.45c-.543 0-1.064-.172-1.573-.515l.237-.476q.656.329 1.19.328q.498 0 .783-.22a.75.75 0 0 0 .3-.615c0-.33-.23-.61-.648-.845c-.388-.213-1.163-.657-1.163-.657c-.422-.307-.632-.636-.632-1.177q0-.674.47-1.085q.471-.416 1.22-.415q.769 0 1.4.41l-.213.476a2.7 2.7 0 0 0-1.064-.23q-.425 0-.654.206a.69.69 0 0 0-.248.524c0 .328.234.61.666.85c.393.215 1.187.67 1.187.67c.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188c-.1.04-.26.04-.274.167c.055.053.063.14.11.214c.08.134.218.313.346.407q.208.167.427.31c.26.16.555.255.81.416c.145.094.293.213.44.313c.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214c-.067-.067-.134-.127-.2-.193a3.2 3.2 0 0 0-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106c.227-.06.435-.047.67-.106q.16-.042.32-.094v-.06c-.12-.12-.21-.283-.334-.395a9 9 0 0 0-1.104-.823c-.21-.134-.476-.22-.697-.334c-.08-.04-.214-.06-.26-.127c-.12-.146-.19-.34-.275-.514a18 18 0 0 1-.547-1.163c-.12-.262-.193-.523-.34-.763c-.69-1.137-1.437-1.826-2.586-2.5c-.247-.14-.543-.2-.856-.274c-.167-.008-.334-.02-.5-.027c-.11-.047-.216-.174-.31-.235c-.38-.24-1.364-.76-1.644-.072c-.18.434.267.862.422 1.082c.115.153.26.328.34.5c.047.116.06.235.107.356c.106.294.207.622.347.897c.073.14.153.287.247.413c.054.073.146.107.167.227c-.094.136-.1.334-.154.5c-.24.757-.146 1.693.194 2.25c.107.166.362.534.703.393c.3-.12.234-.5.32-.835c.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555c.206.328.566.668.867.895c.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.5 3.5 0 0 1-.35-.4a9 9 0 0 1-.747-1.218c-.11-.21-.202-.436-.29-.643c-.04-.08-.04-.2-.107-.24c-.1.146-.247.273-.32.453c-.127.288-.14.642-.188 1.01c-.027.007-.014 0-.027.014c-.214-.052-.287-.274-.367-.46c-.2-.475-.233-1.238-.06-1.785c.047-.14.247-.582.167-.716c-.042-.127-.174-.2-.247-.303a2.5 2.5 0 0 1-.24-.427c-.16-.374-.24-.788-.414-1.162c-.08-.173-.22-.354-.334-.513c-.127-.18-.267-.307-.368-.52c-.033-.073-.08-.194-.027-.274c.014-.054.042-.075.094-.09c.088-.072.335.022.422.062c.247.1.455.194.662.334c.094.066.195.193.315.226h.14c.214.047.455.014.655.073c.355.114.675.28.962.46a5.95 5.95 0 0 1 2.085 2.286c.08.154.115.295.188.455c.14.33.313.663.455.982c.14.315.275.636.476.897c.1.14.502.213.682.286c.133.06.34.115.46.188c.23.14.454.3.67.454c.11.076.443.243.463.378"/></svg> <span data-id="Data" data-en="Data">Data</span></h3>
       <ul class="skills__list">
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273c.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333c-.04-.047-.046-.094-.08-.14c-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a51 51 0 0 0-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a73 73 0 0 0-.195 4.41H0q.083-2.95.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095q.363 3.024.428 5.53zm4.017-4.08q-.567 3.069-1.492 4.46q-.723 1.074-1.583 1.073q-.228 0-.566-.138v-.494q.166.026.386.026q.402 0 .647-.222q.295-.27.295-.605q0-.233-.23-.944L6.23 14.615h.91l.727 2.36q.247.804.205 1.123q.6-1.598.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5q.136-.113.255-.25q.649-.76.648-2.253q0-2.745-2.155-2.746q-1.056 0-1.65.697q-.646.762-.646 2.245q-.001 1.459.574 2.14q.524.615 1.583.615q.396 0 .725-.098l1.325.772l.36-.622zM15.5 17.588q-.337-.541-.337-1.736q0-2.09 1.27-2.09q.666 0 .977.5q.336.543.336 1.723q0 2.107-1.27 2.108q-.667 0-.978-.5zm-1.658-.425q0 .706-.516 1.156q-.514.45-1.384.45c-.543 0-1.064-.172-1.573-.515l.237-.476q.656.329 1.19.328q.498 0 .783-.22a.75.75 0 0 0 .3-.615c0-.33-.23-.61-.648-.845c-.388-.213-1.163-.657-1.163-.657c-.422-.307-.632-.636-.632-1.177q0-.674.47-1.085q.471-.416 1.22-.415q.769 0 1.4.41l-.213.476a2.7 2.7 0 0 0-1.064-.23q-.425 0-.654.206a.69.69 0 0 0-.248.524c0 .328.234.61.666.85c.393.215 1.187.67 1.187.67c.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188c-.1.04-.26.04-.274.167c.055.053.063.14.11.214c.08.134.218.313.346.407q.208.167.427.31c.26.16.555.255.81.416c.145.094.293.213.44.313c.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214c-.067-.067-.134-.127-.2-.193a3.2 3.2 0 0 0-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106c.227-.06.435-.047.67-.106q.16-.042.32-.094v-.06c-.12-.12-.21-.283-.334-.395a9 9 0 0 0-1.104-.823c-.21-.134-.476-.22-.697-.334c-.08-.04-.214-.06-.26-.127c-.12-.146-.19-.34-.275-.514a18 18 0 0 1-.547-1.163c-.12-.262-.193-.523-.34-.763c-.69-1.137-1.437-1.826-2.586-2.5c-.247-.14-.543-.2-.856-.274c-.167-.008-.334-.02-.5-.027c-.11-.047-.216-.174-.31-.235c-.38-.24-1.364-.76-1.644-.072c-.18.434.267.862.422 1.082c.115.153.26.328.34.5c.047.116.06.235.107.356c.106.294.207.622.347.897c.073.14.153.287.247.413c.054.073.146.107.167.227c-.094.136-.1.334-.154.5c-.24.757-.146 1.693.194 2.25c.107.166.362.534.703.393c.3-.12.234-.5.32-.835c.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555c.206.328.566.668.867.895c.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.5 3.5 0 0 1-.35-.4a9 9 0 0 1-.747-1.218c-.11-.21-.202-.436-.29-.643c-.04-.08-.04-.2-.107-.24c-.1.146-.247.273-.32.453c-.127.288-.14.642-.188 1.01c-.027.007-.014 0-.027.014c-.214-.052-.287-.274-.367-.46c-.2-.475-.233-1.238-.06-1.785c.047-.14.247-.582.167-.716c-.042-.127-.174-.2-.247-.303a2.5 2.5 0 0 1-.24-.427c-.16-.374-.24-.788-.414-1.162c-.08-.173-.22-.354-.334-.513c-.127-.18-.267-.307-.368-.52c-.033-.073-.08-.194-.027-.274c.014-.054.042-.075.094-.09c.088-.072.335.022.422.062c.247.1.455.194.662.334c.094.066.195.193.315.226h.14c.214.047.455.014.655.073c.355.114.675.28.962.46a5.95 5.95 0 0 1 2.085 2.286c.08.154.115.295.188.455c.14.33.313.663.455.982c.14.315.275.636.476.897c.1.14.502.213.682.286c.133.06.34.115.46.188c.23.14.454.3.67.454c.11.076.443.243.463.378"/></svg> MySQL 8</span><em>29 products · 16 tables</em></li>
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></g></svg> Schema normalisation (3NF)</span><em>Both projects</em></li>
@@ -675,7 +672,7 @@
       </ul>
     </div>
     <div class="skills__group">
-      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18 16l4-4l-4-4M6 8l-4 4l4 4m8.5-12l-5 16"/></svg> Front end</h3>
+      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18 16l4-4l-4-4M6 8l-4 4l4 4m8.5-12l-5 16"/></svg> <span data-id="Front end" data-en="Front end">Front end</span></h3>
       <ul class="skills__list">
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438zm7.031 9.75l-.232-2.718l10.059.003l.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426l-2.91.804l-2.955-.81l-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443l.744-8.157z"/></svg> HTML5</span><em>Every page</em></li>
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438zm17.09 4.413L5.41 4.41l.213 2.622l10.125.002l-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523l-2.91.804l-2.956-.81l-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53z"/></svg> CSS3</span><em>Every page</em></li>
@@ -685,7 +682,7 @@
       </ul>
     </div>
     <div class="skills__group">
-      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg> Design &amp; 3D</h3>
+      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg> <span data-id="Desain &amp; 3D" data-en="Design &amp; 3D">Desain &amp; 3D</span></h3>
       <ul class="skills__list">
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg> Figma</span><em>5 design files</em></li>
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13l-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18M2.3 2.3l7.286 7.286"/><circle cx="11" cy="11" r="2"/></g></svg> Wireframes &amp; prototypes</span><em>UM-MART · VIAR UM</em></li>
@@ -696,7 +693,7 @@
       </ul>
     </div>
     <div class="skills__group">
-      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18m0-13.5h4m-4 9h4"/></g></svg> Video &amp; IoT</h3>
+      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18m0-13.5h4m-4 9h4"/></g></svg> <span data-id="Video &amp; IoT" data-en="Video &amp; IoT">Video &amp; IoT</span></h3>
       <ul class="skills__list">
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M10.15 8.42a2.9 2.9 0 0 0-1.18-.2a14 14 0 0 0-1.09.02v3.36l.39.02h.53c.39 0 .78-.06 1.15-.18c.32-.09.6-.28.82-.53c.21-.25.31-.59.31-1.03a1.45 1.45 0 0 0-.93-1.46M19.75.3H4.25A4.25 4.25 0 0 0 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3m-7.09 11.65c-.4.56-.96.98-1.61 1.22c-.68.25-1.43.34-2.25.34l-.5-.01l-.43-.01v3.21a.12.12 0 0 1-.11.14H5.82c-.08 0-.12-.04-.12-.13V6.42c0-.07.03-.11.1-.11l.56-.01l.76-.02l.87-.02l.91-.01c.82 0 1.5.1 2.06.31c.5.17.96.45 1.34.82c.32.32.57.71.73 1.14c.15.42.23.85.23 1.3q0 1.29-.6 2.13m6.82-3.15v1.95c0 .08-.05.11-.16.11a4.35 4.35 0 0 0-1.92.37c-.19.09-.37.21-.51.37v5.1c0 .1-.04.14-.13.14h-1.97a.14.14 0 0 1-.16-.12v-5.58l-.01-.75l-.02-.78c0-.23-.02-.45-.04-.68a.1.1 0 0 1 .07-.11h1.78c.1 0 .18.07.2.16a3 3 0 0 1 .13.92c.3-.35.67-.64 1.08-.86a3.1 3.1 0 0 1 1.52-.39c.07-.01.13.04.14.11z"/></svg> Premiere Pro</span><em>Sate Meraja teaser</em></li>
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18m0-13.5h4m-4 9h4"/></g></svg> Editing &amp; grading</span><em>9:16 and 16:9 delivery</em></li>
@@ -710,10 +707,10 @@
 
 <!-- ================= CONTACT ================= -->
 <section class="section section--contact" id="contact">
-  <h2 class="section__title reveal"><span class="mono">05</span>Contact</h2>
+  <h2 class="section__title reveal"><span class="mono">05</span><span data-id="Kontak" data-en="Contact">Kontak</span></h2>
   <p class="section__lede reveal">
     Open to internships, freelance web work and collaboration. The fastest way to reach me is email
-    or WhatsApp — I reply within a day.
+    or WhatsApp  -  I reply within a day.
   </p>
 
   <div class="contact reveal">
@@ -739,7 +736,7 @@
     </a>
   </div>
 
-  <p class="contact__loc mono reveal"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g></svg> Kediri, East Java, Indonesia · UTC+7</p>
+  <p class="contact__loc mono reveal"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g></svg> <span data-id="Kediri, Jawa Timur, Indonesia · UTC+7" data-en="Kediri, East Java, Indonesia · UTC+7">Kediri, Jawa Timur, Indonesia · UTC+7</span></p>
 </section>
 
 </main>
@@ -749,10 +746,10 @@
     <img src="assets/logo/logo-mark.png" alt="" width="26" height="26">
     <span>Rayhan Najib</span>
   </div>
-  <p class="mono">Designed &amp; built by Muhammad Rayhan Najib</p>
+  <p class="mono" data-id="Dirancang &amp; dibangun oleh Muhammad Rayhan Najib" data-en="Designed &amp; built by Muhammad Rayhan Najib">Dirancang &amp; dibangun oleh Muhammad Rayhan Najib</p>
   <p class="mono footer__note">
-    Icons by <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>,
-    <a href="https://simpleicons.org" target="_blank" rel="noopener">Simple Icons</a> and
+    <span data-id="Ikon oleh" data-en="Icons by">Ikon oleh</span> <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>,
+    <a href="https://simpleicons.org" target="_blank" rel="noopener">Simple Icons</a> <span data-id="dan" data-en="and">dan</span>
     <a href="https://iconify.design" target="_blank" rel="noopener">Iconify</a>.
   </p>
 </footer>
