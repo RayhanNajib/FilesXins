@@ -21,3 +21,5 @@ node_modules/
 _build/_auto/
 _build/_auto2/
 _build/_qa/
+__pycache__/
+*.pyc
