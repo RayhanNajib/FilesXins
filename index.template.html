@@ -40,7 +40,7 @@
 <header class="nav" id="nav">
   <a class="nav__brand" href="#top">
     <span class="nav__brand-logo" aria-hidden="true"><img src="assets/logo/logo-mark.png" alt=""></span>
-    <span class="nav__brand-text"><b>Rayhan</b> Najib</span>
+    <span class="nav__brand-text">Rayhan&nbsp;Najib</span>
   </a>
   <nav class="nav__links" aria-label="Section navigation">
     <a href="#about"><span class="nav__num">01</span>About</a>
@@ -62,13 +62,13 @@
   <div class="hero__grid">
 
     <div class="hero__copy reveal">
-      <p class="hero__eyebrow mono">{{icon:lucide:terminal}} web developer · information systems</p>
+      <p class="hero__eyebrow mono">{{icon:lucide:terminal}} web developer</p>
       <h1 class="hero__title">
         Rayhan <span class="neon">Najib</span>
       </h1>
       <p class="hero__role">
-        Information Technology student at Universitas Negeri Malang.
-        I build e-commerce platforms and management systems that ship and get used.
+        Information Technology student at Universitas Negeri Malang. I build e-commerce platforms
+        and management systems that ship and get used.
       </p>
 
       <ul class="hero__facts">
@@ -273,6 +273,8 @@
             <p>16 tables, 6 users and 3 doctor profiles modelled with full role separation.
                A working replacement for the paper process, with printable output at every step.</p>
           </div>
+          <a class="project__demo" href="/site/klinikum/" target="_blank" rel="noopener">
+            {{icon:lucide:play}} Open the KlinikUM interface demo (static, read-only)</a>
           <ul class="project__stack">
             <li>{{icon:logos:laravel}} Laravel 12</li>
             <li>{{icon:simple-icons:php}} PHP 8.2+</li>
@@ -284,7 +286,8 @@
           <ul class="project__links">
             <li><a class="link" href="https://github.com/RayhanNajib/KlinikUM" target="_blank" rel="noopener">
               {{icon:lucide:github}} Source code</a></li>
-            <li><a class="link" href="#contact">{{icon:lucide:mail}} Demo on request</a></li>
+            <li><a class="link" href="/site/klinikum/" target="_blank" rel="noopener">
+              {{icon:lucide:external-link}} Interface demo</a></li>
           </ul>
         </div>
 
@@ -376,7 +379,8 @@
           <div class="project__block">
             <h4 class="mono">Result</h4>
             <p>Five documented design files covering wireframes, component libraries and clickable
-               prototypes. The UM-MART design went into production unchanged in structure.</p>
+               prototypes. The UM-MART design went into production unchanged in structure.
+               Each file is linked directly — open the ones you want to inspect.</p>
           </div>
           <ul class="project__stack">
             <li>{{icon:simple-icons:figma}} Figma</li>
@@ -397,11 +401,28 @@
               {{icon:lucide:external-link}} KKN Design</a></li>
           </ul>
         </div>
-        <div class="project__shots project__shots--certs">
-          <div class="soon-card__cert soon-card__cert--duo" style="grid-column:1/-1">
-            <img src="assets/certs/bootcamp-uiux.webp" alt="UI/UX Design Intensive Camp certificate" loading="lazy">
-            <img src="assets/certs/bootcamp-figma.webp" alt="Figma Camp certificate" loading="lazy">
-          </div>
+        <div class="file-list">
+          <a class="file-card" href="https://www.figma.com/design/zzxG3IjW4QJTRoRDe80iEl/UM-Mart--Copy-" target="_blank" rel="noopener">
+            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
+            <span class="file-card__meta"><b>UM-MART</b><em>e-commerce interface — shipped unchanged</em></span>
+            {{icon:lucide:external-link}}</a>
+          <a class="file-card" href="https://www.figma.com/design/WI6tu8OXGu3SKkPib8LVYc/UI-VIAR-UM" target="_blank" rel="noopener">
+            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
+            <span class="file-card__meta"><b>UI VIAR UM</b><em>campus AR workspace exploration</em></span>
+            {{icon:lucide:external-link}}</a>
+          <a class="file-card" href="https://www.figma.com/design/Lydu6XRZF8IMW8sxO4jwuQ/SMARTIPEN" target="_blank" rel="noopener">
+            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
+            <span class="file-card__meta"><b>SMARTIPEN</b><em>product interface concept</em></span>
+            {{icon:lucide:external-link}}</a>
+          <a class="file-card" href="https://www.figma.com/design/qerg4OzMBf9jaiNZIaDtyQ/KKN-DESIGN" target="_blank" rel="noopener">
+            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
+            <span class="file-card__meta"><b>KKN Design</b><em>village portal layout system</em></span>
+            {{icon:lucide:external-link}}</a>
+          <a class="file-card" href="https://www.figma.com/design/l9SUecPLZFrhvQQzyPIdCw/Projek-Bootcamp-UI-UX" target="_blank" rel="noopener">
+            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
+            <span class="file-card__meta"><b>UI/UX Bootcamp</b><em>research to prototype, end to end</em></span>
+            {{icon:lucide:external-link}}</a>
+          <p class="file-list__note mono">{{icon:lucide:info}} Figma files open in Figma — viewing them needs a free account.</p>
         </div>
       </div>
     </article>
@@ -428,7 +449,7 @@
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>A public itch.io release, with the render gallery being documented for this page.</p>
+            <p>A publicly released build, with the render gallery for this section still being prepared.</p>
           </div>
           <ul class="project__stack">
             <li>{{icon:simple-icons:blender}} Blender</li>
@@ -444,7 +465,7 @@
         </div>
         <div class="project__shots project__shots--certs">
           <div class="soon-card__ph mono">
-            <span>{{icon:lucide:box}} render gallery — in progress</span>
+            <span>{{icon:lucide:box}} Render gallery in preparation</span>
           </div>
         </div>
       </div>
@@ -471,45 +492,46 @@
 <!-- ================= SKILLS ================= -->
 <section class="section" id="stack">
   <h2 class="section__title reveal"><span class="mono">04</span>Skills &amp; tools</h2>
+  <p class="section__lede reveal">Each entry names the technology and the project that proves it — no self-assessed levels.</p>
 
   <div class="skills reveal">
     <div class="skills__group">
       <h3 class="mono">{{icon:lucide:server}} Back end</h3>
       <ul class="skills__list">
-        <li><span>{{icon:simple-icons:php}} PHP 8</span><em>Production</em></li>
-        <li><span>{{icon:logos:laravel}} Laravel 12</span><em>Production</em></li>
-        <li><span>{{icon:vscode-icons:file-type-blade}} Blade templating</span><em>Production</em></li>
-        <li><span>{{icon:simple-icons:composer}} Composer</span><em>Daily use</em></li>
-        <li><span>{{icon:lucide:shield-check}} Auth &amp; RBAC</span><em>Production</em></li>
-        <li><span>{{icon:lucide:cloud}} REST endpoints &amp; OAuth</span><em>Production</em></li>
+        <li><span>{{icon:simple-icons:php}} PHP 8</span><em>UM-MART · KlinikUM</em></li>
+        <li><span>{{icon:logos:laravel}} Laravel 12</span><em>KlinikUM</em></li>
+        <li><span>{{icon:vscode-icons:file-type-blade}} Blade templating</span><em>KlinikUM</em></li>
+        <li><span>{{icon:simple-icons:composer}} Composer</span><em>UM-MART · KlinikUM</em></li>
+        <li><span>{{icon:lucide:shield-check}} Auth &amp; RBAC</span><em>KlinikUM · 3 roles</em></li>
+        <li><span>{{icon:lucide:cloud}} REST endpoints &amp; OAuth</span><em>UM-MART</em></li>
       </ul>
     </div>
     <div class="skills__group">
       <h3 class="mono">{{icon:simple-icons:mysql}} Data</h3>
       <ul class="skills__list">
-        <li><span>{{icon:simple-icons:mysql}} MySQL 8</span><em>Production</em></li>
-        <li><span>{{icon:lucide:database}} Schema normalisation (3NF)</span><em>Production</em></li>
-        <li><span>{{icon:lucide:chart-column}} Reporting queries</span><em>Production</em></li>
-        <li><span>{{icon:lucide:file-text}} Excel export</span><em>Production</em></li>
+        <li><span>{{icon:simple-icons:mysql}} MySQL 8</span><em>29 products · 16 tables</em></li>
+        <li><span>{{icon:lucide:database}} Schema normalisation (3NF)</span><em>Both projects</em></li>
+        <li><span>{{icon:lucide:chart-column}} Reporting queries</span><em>UM-MART admin</em></li>
+        <li><span>{{icon:lucide:file-text}} Excel export</span><em>UM-MART admin</em></li>
       </ul>
     </div>
     <div class="skills__group">
       <h3 class="mono">{{icon:lucide:code-2}} Front end</h3>
       <ul class="skills__list">
-        <li><span>{{icon:simple-icons:html5}} HTML5</span><em>Production</em></li>
-        <li><span>{{icon:simple-icons:css3}} CSS3</span><em>Production</em></li>
-        <li><span>{{icon:simple-icons:javascript}} JavaScript</span><em>Production</em></li>
-        <li><span>{{icon:simple-icons:vite}} Vite</span><em>Working</em></li>
-        <li><span>{{icon:simple-icons:apache}} Apache / Laragon</span><em>Daily use</em></li>
+        <li><span>{{icon:simple-icons:html5}} HTML5</span><em>Every page</em></li>
+        <li><span>{{icon:simple-icons:css3}} CSS3</span><em>Every page</em></li>
+        <li><span>{{icon:simple-icons:javascript}} JavaScript</span><em>Cart · filters</em></li>
+        <li><span>{{icon:simple-icons:vite}} Vite</span><em>KlinikUM</em></li>
+        <li><span>{{icon:simple-icons:apache}} Apache / Laragon</span><em>Local stack</em></li>
       </ul>
     </div>
     <div class="skills__group">
       <h3 class="mono">{{icon:simple-icons:figma}} Design &amp; 3D</h3>
       <ul class="skills__list">
-        <li><span>{{icon:simple-icons:figma}} Figma</span><em>Daily use</em></li>
-        <li><span>{{icon:lucide:pen-tool}} Wireframes &amp; prototypes</span><em>Project work</em></li>
-        <li><span>{{icon:simple-icons:blender}} Blender</span><em>Project work</em></li>
-        <li><span>{{icon:simple-icons:git}} Git &amp; GitHub</span><em>Daily use</em></li>
+        <li><span>{{icon:simple-icons:figma}} Figma</span><em>5 design files</em></li>
+        <li><span>{{icon:lucide:pen-tool}} Wireframes &amp; prototypes</span><em>UM-MART · VIAR UM</em></li>
+        <li><span>{{icon:simple-icons:blender}} Blender</span><em>TEXUM on itch.io</em></li>
+        <li><span>{{icon:simple-icons:git}} Git &amp; GitHub</span><em>3 public repos</em></li>
       </ul>
     </div>
   </div>
@@ -554,7 +576,7 @@
 <footer class="footer">
   <div class="footer__brand">
     <img src="assets/logo/logo-mark.png" alt="" width="26" height="26">
-    <span><b>Rayhan Najib</b> · FilesXins</span>
+    <span>Rayhan Najib</span>
   </div>
   <p class="mono">Designed &amp; built by Muhammad Rayhan Najib</p>
   <p class="mono footer__note">

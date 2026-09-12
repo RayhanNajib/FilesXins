@@ -1,0 +1,85 @@
+{
+  "base": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public",
+  "out": "C:/CODE/filesxins-portfolio/site/klinikum",
+  "password": "12345678",
+  "routes": [
+    {
+      "name": "index",
+      "path": "/login",
+      "role": null,
+      "title": "Sign in"
+    },
+    {
+      "name": "register",
+      "path": "/register",
+      "role": null,
+      "title": "Register"
+    },
+    {
+      "name": "dashboard",
+      "path": "/dashboard",
+      "role": "admin",
+      "title": "Dashboard"
+    },
+    {
+      "name": "admin/dokter",
+      "path": "/admin/dokter",
+      "role": "admin",
+      "title": "Doctor management"
+    },
+    {
+      "name": "admin/pasien",
+      "path": "/admin/pasien",
+      "role": "admin",
+      "title": "Patient management"
+    },
+    {
+      "name": "admin/jadwal",
+      "path": "/admin/jadwal",
+      "role": "admin",
+      "title": "Schedule management"
+    },
+    {
+      "name": "admin/pembayaran",
+      "path": "/admin/pembayaran",
+      "role": "admin",
+      "title": "Cashier and payments"
+    },
+    {
+      "name": "dokter/pasien-saya",
+      "path": "/dokter/pasien-saya",
+      "role": "doctor",
+      "title": "My patients"
+    },
+    {
+      "name": "dokter/jadwal-saya",
+      "path": "/dokter/jadwal-saya",
+      "role": "doctor",
+      "title": "My schedule"
+    },
+    {
+      "name": "pasien/dashboard",
+      "path": "/dashboard",
+      "role": "patient",
+      "title": "Patient dashboard"
+    },
+    {
+      "name": "pasien/jadwal",
+      "path": "/pasien/jadwal",
+      "role": "patient",
+      "title": "Find a schedule"
+    },
+    {
+      "name": "pasien/janji-temu",
+      "path": "/pasien/janji-temu",
+      "role": "patient",
+      "title": "My appointments"
+    },
+    {
+      "name": "profile",
+      "path": "/profile",
+      "role": "admin",
+      "title": "Profile"
+    }
+  ]
+}

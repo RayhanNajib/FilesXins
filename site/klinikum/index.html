@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Klinik Pratama UM — interface demo | FilesXins</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="./site/dashboard/index.html">
+<meta name="robots" content="noindex">
+<style>
+  :root{ --bg:#0F172A; --card:#131C33; --line:#1E293B; --ink:#F4F4F4; --ink2:#A7B2CC; --ink3:#8A97B4; --cy:#22D3EE; }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+  .wrap{max-width:860px;margin:0 auto;padding:56px 22px 72px}
+  .eyebrow{font:500 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--cy);margin:0 0 14px}
+  h1{font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.02em;margin:0 0 12px}
+  h1 span{color:var(--cy)}
+  .lede{color:var(--ink2);margin:0 0 30px;max-width:62ch}
+  h2{font-size:15px;font-family:ui-monospace,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink3);margin:34px 0 12px;font-weight:500}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+  a.card{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:10px;
+    background:var(--card);color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s}
+  a.card:hover{border-color:rgba(34,211,238,.55);transform:translateY(-2px)}
+  a.card b{display:block;font-size:14.5px;font-weight:600}
+  a.card em{display:block;font-style:normal;color:var(--ink3);font-size:12px;margin-top:3px;
+    font-family:ui-monospace,Menlo,monospace}
+  .note{margin-top:26px;padding:14px 16px;border-left:2px solid var(--cy);background:rgba(34,211,238,.05);
+    color:var(--ink2);font-size:13.5px;border-radius:0 8px 8px 0}
+  .note b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Case study demo</p>
+  <h1>Klinik Pratama UM <span>— interface demo</span></h1>
+  <p class="lede">
+    Twelve real screens from a Laravel 12 clinic management system, with role-based access control
+    across three separate dashboards. Every page here was captured from the running application
+    against its MySQL database — the layout, data and navigation are the actual system, not a mockup.
+  </p>
+
+  <h2>Administrator</h2>
+  <div class="grid">
+    <a class="card" href="./site/dashboard/index.html"><b>Dashboard</b><em>counts · today's appointments</em></a>
+    <a class="card" href="./site/admin/dokter/index.html"><b>Doctor management</b><em>CRUD · 3 records</em></a>
+    <a class="card" href="./site/admin/pasien/index.html"><b>Patient management</b><em>CRUD · 2 records</em></a>
+    <a class="card" href="./site/admin/jadwal/index.html"><b>Practice schedules</b><em>schedule CRUD</em></a>
+    <a class="card" href="./site/admin/pembayaran/index.html"><b>Cashier &amp; reports</b><em>payments · 4 records</em></a>
+  </div>
+
+  <h2>Doctor</h2>
+  <div class="grid">
+    <a class="card" href="./site/dokter/pasien-saya/index.html"><b>My patients</b><em>appointment queue</em></a>
+    <a class="card" href="./site/dokter/jadwal-saya/index.html"><b>My schedule</b><em>own practice slots</em></a>
+  </div>
+
+  <h2>Patient</h2>
+  <div class="grid">
+    <a class="card" href="./site/pasien/dashboard/index.html"><b>Patient dashboard</b><em>active appointments</em></a>
+    <a class="card" href="./site/pasien/jadwal/index.html"><b>Find a schedule</b><em>doctor availability</em></a>
+    <a class="card" href="./site/pasien/janji-temu/index.html"><b>Appointment history</b><em>3 records</em></a>
+  </div>
+
+  <h2>Public &amp; account</h2>
+  <div class="grid">
+    <a class="card" href="./site/index.html"><b>Sign in</b><em>authentication screen</em></a>
+    <a class="card" href="./site/register/index.html"><b>Patient registration</b><em>public form</em></a>
+    <a class="card" href="./site/profile/index.html"><b>Account settings</b><em>profile · avatar</em></a>
+  </div>
+
+  <p class="note">
+    <b>What this is:</b> Laravel renders every page on the server, so it cannot run on Vercel.
+    These pages were exported as standalone HTML with their CSS inlined and their assets copied.
+    Forms and data writes are disabled — there is no PHP back end behind this deployment.
+    The full stack runs locally against MySQL 8.
+  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+[
+ {
+  "name": "index",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/login",
+  "ok": true,
+  "meta": {
+   "title": "Masuk Sistem | Klinik Pratama UM",
+   "rows": 0,
+   "imgs": 0,
+   "broken": 0
+  },
+  "bytes": 11360
+ },
+ {
+  "name": "register",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/register",
+  "ok": true,
+  "meta": {
+   "title": "Pendaftaran Pasien | Klinik Pratama UM",
+   "rows": 0,
+   "imgs": 0,
+   "broken": 0
+  },
+  "bytes": 13053
+ },
+ {
+  "name": "dashboard",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/dashboard",
+  "ok": true,
+  "meta": {
+   "title": "Dashboard Admin - Klinik Pratama UM",
+   "rows": 0,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 21035
+ },
+ {
+  "name": "admin/dokter",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/admin/dokter",
+  "ok": true,
+  "meta": {
+   "title": "Manajemen Dokter - Klinik Pratama UM",
+   "rows": 3,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 17589
+ },
+ {
+  "name": "admin/pasien",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/admin/pasien",
+  "ok": true,
+  "meta": {
+   "title": "Manajemen Pasien - Klinik Pratama UM",
+   "rows": 2,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 16506
+ },
+ {
+  "name": "admin/jadwal",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/admin/jadwal",
+  "ok": true,
+  "meta": {
+   "title": "Manajemen Jadwal Praktek - Klinik Pratama UM",
+   "rows": 2,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 17880
+ },
+ {
+  "name": "admin/pembayaran",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/admin/pembayaran",
+  "ok": true,
+  "meta": {
+   "title": "Kasir & Laporan - Klinik Pratama UM",
+   "rows": 4,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 18293
+ },
+ {
+  "name": "dokter/pasien-saya",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/dokter/pasien-saya",
+  "ok": true,
+  "meta": {
+   "title": "Pasien Saya - Klinik Pratama UM",
+   "rows": 2,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 18300
+ },
+ {
+  "name": "dokter/jadwal-saya",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/dokter/jadwal-saya",
+  "ok": true,
+  "meta": {
+   "title": "Jadwal Praktek Saya - Klinik Pratama UM",
+   "rows": 1,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 14253
+ },
+ {
+  "name": "pasien/dashboard",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/dashboard",
+  "ok": true,
+  "meta": {
+   "title": "Dashboard Pasien - Klinik Pratama UM",
+   "rows": 0,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 19015
+ },
+ {
+  "name": "pasien/jadwal",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/pasien/jadwal",
+  "ok": true,
+  "meta": {
+   "title": "Cari Jadwal Dokter - Klinik Pratama UM",
+   "rows": 0,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 13494
+ },
+ {
+  "name": "pasien/janji-temu",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/pasien/janji-temu",
+  "ok": true,
+  "meta": {
+   "title": "Riwayat Janji Temu - Klinik Pratama UM",
+   "rows": 3,
+   "imgs": 1,
+   "broken": 0
+  },
+  "bytes": 15118
+ },
+ {
+  "name": "profile",
+  "url": "http://klinik-pratama-um-19-11.test/KLINIK_PRATAMA_UM/public/profile",
+  "ok": true,
+  "meta": {
+   "title": "Pengaturan Akun - Klinik Pratama UM",
+   "rows": 0,
+   "imgs": 2,
+   "broken": 0
+  },
+  "bytes": 16793
+ }
+]

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id"><head><script>window.__CHART__ = {"7days":{"labels":["06 Sep","07 Sep","08 Sep","09 Sep","10 Sep","11 Sep","12 Sep"],"data":[0,0,0,0,0,0,0]},"30days":{"labels":["06 Sep","07 Sep","08 Sep","09 Sep","10 Sep","11 Sep","12 Sep"],"data":[0,0,0,0,0,0,0]},"1year":{"labels":["06 Sep","07 Sep","08 Sep","09 Sep","10 Sep","11 Sep","12 Sep"],"data":[0,0,0,0,0,0,0]},"default":{"labels":["06 Sep","07 Sep","08 Sep","09 Sep","10 Sep","11 Sep","12 Sep"],"data":[0,0,0,0,0,0,0]}};
+(function(){ var f = window.fetch;
+  window.fetch = function(u, o){ var s = String(u);
+    if (s.indexOf("chart-data") !== -1) {
+      var m = s.match(/range=([a-z0-9]+)/i), k = m ? m[1] : "default";
+      var d = window.__CHART__[k] || window.__CHART__.default;
+      return Promise.resolve(new Response(JSON.stringify(d), {status:200,
+        headers:{"Content-Type":"application/json"}})); }
+    return f.apply(this, arguments); };
+  if (window.jQuery) { jQuery.ajaxPrefilter(function(opts, orig, jqXHR){
+    if (String(opts.url).indexOf("chart-data") !== -1) {
+      var m = String(opts.url).match(/range=([a-z0-9]+)/i), k = m ? m[1] : "default";
+      opts.dataType = "json";
+      opts.url = "data:application/json," + encodeURIComponent(JSON.stringify(
+        window.__CHART__[k] || window.__CHART__.default)); } }); }
+})();</script><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2215%22%20fill%3D%22%230F172A%22%20stroke%3D%22%2322D3EE%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M16%208l2.4%205.2L24%2016l-5.6%202.8L16%2024l-2.4-5.2L8%2016l5.6-2.8z%22%20fill%3D%22%2322D3EE%22%2F%3E%3C%2Fsvg%3E">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Akun - Klinik Pratama UM</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style data-src="KLINIK_PRATAMA_UM/public/assets/css/main.css">/* KLINIK_PRATAMA_UM/public/assets/css/main.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+
+    --primary-color: #0066cc; 
+    --primary-hover: #003366;  
+    
+    --accent-gold: #FFD700;
+    --accent-gold-hover: #e6c200;
+    --accent-green: #006B3C;
+    
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --text-muted: #6c757d;
+    
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --bg-hover-light: #e6f0ff; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+
+.btn {
+    padding: 0.65rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    letter-spacing: 0.5px;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+.btn-warning {
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
+}
+.btn-warning:hover {
+    background-color: var(--accent-gold-hover);
+    transform: translateY(-2px);
+}
+.btn-outline-danger {
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+.btn-outline-danger:hover {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+
+.content-card {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-bottom: 25px;
+    border: none;
+}
+
+
+.form-label {
+    color: var(--primary-hover);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+.form-control, .form-select {
+    background: #fdfdfd;
+    border: 1px solid #ced4da;
+    color: #333;
+    border-radius: 8px;
+    padding: 0.75rem 1.1rem;
+    font-size: 0.95rem; 
+}
+.form-control:focus, .form-select:focus {
+    background: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+}
+
+.table-custom {
+    border-collapse: collapse;
+    width: 100%;
+}
+.table-custom thead th {
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 2px solid #e3e6f0;
+}
+.table-custom tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+.table-custom tbody tr:last-child {
+    border-bottom: none;
+}
+.table-custom tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    color: var(--text-dark);
+}</style>
+    <style data-src="KLINIK_PRATAMA_UM/public/assets/css/dashboard.css">/* KLINIK_PRATAMA_UM/public/assets/css/dashboard.css */
+:root {
+    --sidebar-width: 290px; 
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+#wrapper {
+    display: flex;
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: var(--sidebar-width);
+    background: var(--bg-white);
+    color: var(--text-muted);
+    transition: margin 0.25s ease-out;
+    border-right: 1px solid #e3e6f0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.sidebar-heading {
+    padding: 1.75rem 1.25rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    border-bottom: 1px solid #e3e6f0;
+    text-align: center;
+}
+
+.list-group {
+    width: 100%;
+    padding: 1rem 0.75rem; 
+}
+
+.list-group-item {
+    background: var(--bg-white);
+    border: none;
+    color: var(--text-dark);
+    padding: 1.1rem 1.75rem; 
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.1rem; 
+    border-radius: 0.5rem; 
+    transition: all 0.2s ease;
+}
+
+.list-group-item i.fa-fw {
+    margin-right: 15px;
+    width: 22px;
+    text-align: center;
+    font-size: 1.1rem; 
+    color: #b7b9cc;
+}
+
+.list-group-item:hover {
+    background-color: var(--bg-hover-light);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.list-group-item:hover i.fa-fw {
+    color: var(--primary-color);
+}
+
+.list-group-item.active {
+    background-color: var(--bg-hover-light);
+    color: var(--primary-color);
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0, 102, 204, 0.1);
+}
+.list-group-item.active i.fa-fw {
+    color: var(--primary-color);
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+    flex: 1;
+}
+
+.navbar {
+    background-color: var(--bg-white);
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    padding: 1rem 1.5rem;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #858796;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+.navbar .dropdown-menu {
+    border-radius: 0.5rem;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+}
+
+#menu-toggle {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+}
+#menu-toggle:hover {
+    background-color: var(--primary-hover);
+}
+
+.chart-filters .btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.375rem;
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+    border: 1px solid #dee2e6;
+    font-weight: 500;
+}
+.chart-filters .btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: calc(var(--sidebar-width) * -1);
+}
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: calc(var(--sidebar-width) * -1);
+    }
+}</style> 
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+          #demo-banner{position:fixed;left:0;right:0;bottom:0;z-index:99999;
+            background:#0F172A;color:#A7B2CC;font:13px/1.5 Inter,system-ui,sans-serif;
+            padding:9px 16px;text-align:center;border-top:1px solid rgba(34,211,238,.25)}
+          #demo-banner b{color:#22D3EE}
+          body{padding-bottom:44px}
+          [disabled]{cursor:not-allowed!important;opacity:.6}</style></head>
+<body><div id="demo-banner"><b>Static demo</b> — the Laravel back end is not running here, so forms and data writes are disabled. Screens and layout are the real application.</div>
+
+    <div class="d-flex" id="wrapper">
+        
+        <nav id="sidebar-wrapper">
+    <div class="sidebar-heading">
+        <i class="fas fa-clinic-medical me-2"></i> Klinik UM
+    </div>
+
+    <div class="list-group list-group-flush">
+        
+                    
+            <a href="../../index.html" class="list-group-item ">
+                <i class="fas fa-fw fa-chart-line"></i> Dashboard
+            </a>
+            <a href="../../index.html" class="list-group-item ">
+                <i class="fas fa-fw fa-user-doctor"></i> Kelola Dokter
+            </a>
+            <a href="../../index.html" class="list-group-item "> 
+                <i class="fas fa-fw fa-user-injured"></i> Kelola Pasien
+            </a>
+            <a href="../../index.html" class="list-group-item ">
+                <i class="fas fa-fw fa-calendar-alt"></i> Kelola Jadwal
+            </a>
+                        <a href="../../index.html" class="list-group-item ">
+                <i class="fas fa-fw fa-money-bill-wave"></i> Kasir &amp; Pembayaran
+            </a>
+            
+        
+        <hr class="mx-3 my-2" style="border-color: #e0e0e0;">
+
+        <a href="../../index.html" class="list-group-item active">
+            <i class="fas fa-fw fa-cog"></i> Pengaturan Akun
+        </a>
+        
+        <a href="#" class="list-group-item" onclick="event.preventDefault(); document.getElementById('logout-form-sidebar').submit();">
+            <i class="fas fa-fw fa-sign-out-alt"></i> Keluar
+        </a>
+        <form id="logout-form-sidebar" action="javascript:void 0" method="POST" style="display: none;" onsubmit="return false">
+            <input type="hidden" name="_token" value="YJ2dlX1jNuP8kVBlOD6sTHmydlKzqAQ0YNeEJisl" autocomplete="off">        </form>
+
+    </div>
+</nav> 
+        
+        <div id="page-content-wrapper">
+            
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container-fluid">
+
+        <button class="btn btn-primary" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        
+                        <img class="rounded-circle me-2" src="../../KLINIK_PRATAMA_UM/public/storage/avatars/1-1763099735.png" style="height: 30px; width: 30px; object-fit: cover;">
+                        Admin Klinik
+                        
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        
+                        <a class="dropdown-item" href="../../index.html">Profil Saya</a>
+                        <div class="dropdown-divider"></div>
+                        
+                        <a class="dropdown-item" href="../../index.html" onclick="event.preventDefault();
+                                         document.getElementById('logout-form-topbar').submit();">
+                            Keluar (Logout)
+                        </a>
+                        <form id="logout-form-topbar" action="javascript:void 0" method="POST" style="display: none;" onsubmit="return false">
+                            <input type="hidden" name="_token" value="YJ2dlX1jNuP8kVBlOD6sTHmydlKzqAQ0YNeEJisl" autocomplete="off">                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> 
+            
+            <main class="container-fluid p-4 p-md-5"> 
+
+<h1 class="h3 mb-4" style="color: var(--primary-color);">Pengaturan Akun</h1>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="content-card">
+            <h5 class="mb-4">Edit Profil</h5>
+
+            
+            <form action="javascript:void 0" method="POST" enctype="multipart/form-data" onsubmit="return false">
+                <input type="hidden" name="_token" value="YJ2dlX1jNuP8kVBlOD6sTHmydlKzqAQ0YNeEJisl" autocomplete="off">                <input type="hidden" name="_method" value="PATCH">
+                <div class="text-center mb-4">
+                    <img src="../../KLINIK_PRATAMA_UM/public/storage/avatars/1-1763099735.png" alt="Foto Profil" class="img-thumbnail rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                </div>
+
+                <div class="mb-3">
+                    <label for="avatar" class="form-label">Ganti Foto Profil (Opsional)</label>
+                    <input class="form-control " type="file" id="avatar" name="avatar">
+                                    </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="name" name="name" value="Admin Klinik" required="">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" value="admin@klinikum.id" required="">
+                </div>
+
+                <button type="submit" class="btn btn-primary" disabled="disabled" title="Disabled in the static demo — no PHP back end here">Simpan Perubahan</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="content-card">
+            <h5 class="mb-4">Ganti Password</h5>
+            
+            
+            
+            <form action="javascript:void 0" method="POST" onsubmit="return false">
+                <input type="hidden" name="_token" value="YJ2dlX1jNuP8kVBlOD6sTHmydlKzqAQ0YNeEJisl" autocomplete="off">                <input type="hidden" name="_method" value="PATCH">
+                <div class="mb-3">
+                    <label for="current_password" class="form-label">Password Saat Ini</label>
+                    <input type="password" class="form-control" id="current_password" name="current_password" required="">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password Baru</label>
+                    <input type="password" class="form-control" id="password" name="password" required="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="password_confirmation" class="form-label">Konfirmasi Password Baru</label>
+                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required="">
+                </div>
+
+                <button type="submit" class="btn btn-primary" disabled="disabled" title="Disabled in the static demo — no PHP back end here">Ubah Password</button>
+            </form>
+        </div>
+    </div>
+</div>
+ 
+            </main>
+
+        </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        });
+    </script>
+
+        
+
+</body></html>
