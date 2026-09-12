@@ -18,3 +18,4 @@ _build/_icons_src_backup.html
 
 # Node
 node_modules/
+_build/_auto/
