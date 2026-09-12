@@ -188,7 +188,9 @@ main{ position:relative; z-index:2; }
 }
 .btn:hover{ transform:translateY(-2px); }
 .btn svg.ico{ --ico:16px; }
-.btn--primary{ color:var(--on-primary); background:linear-gradient(135deg,var(--primary),var(--second)); box-shadow:var(--glow); }
+/* label sits on the cyan ramp: the far stop must stay light enough that the
+   dark #04141B text keeps AA contrast (cool grey #64748B dropped it to 3.7:1) */
+.btn--primary{ color:var(--on-primary); background:linear-gradient(135deg,var(--primary),var(--primary-d)); box-shadow:var(--glow); }
 .btn--primary:hover{ box-shadow:0 12px 40px rgba(34,211,238,.34), 0 0 70px rgba(100,116,139,.22); }
 .btn--ghost{ border-color:var(--line-2); color:var(--ink); background:rgba(255,255,255,.02); }
 .btn--ghost:hover{ border-color:var(--primary); color:var(--primary); }
