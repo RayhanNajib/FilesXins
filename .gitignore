@@ -7,3 +7,14 @@ assets-manifest.json
 Thumbs.db
 .DS_Store
 .vercel
+
+# Blender / QA scratch (inputs come from the local .blend files; keep the scripts)
+_build/_renders/
+_build/_renders2/
+_build/_figma/
+_build/_need.html
+_build/_icons_src_backup.html
+*.bak
+
+# Node
+node_modules/

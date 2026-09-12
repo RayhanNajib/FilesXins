@@ -517,3 +517,46 @@ main{ position:relative; z-index:2; }
 }
 .project__demo:hover{ background:rgba(34,211,238,.11); border-color:var(--primary); }
 .project__demo svg.ico{ --ico:16px; }
+
+/* ============================================================
+   Video / edit blocks — previews of finished edits
+   ============================================================ */
+.edits{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));
+  gap:.7rem; align-content:start;
+}
+.edit{
+  margin:0; border:1px solid var(--line); border-radius:10px; overflow:hidden;
+  background:var(--plate); display:grid; grid-template-rows:auto auto;
+}
+.edit__v{
+  width:100%; aspect-ratio:9 / 16; max-height:420px; background:#05070c;
+  object-fit:contain; display:block;
+}
+.edit figcaption{
+  display:grid; gap:.15rem; padding:.6rem .7rem; border-top:1px solid var(--line);
+}
+.edit figcaption b{ font-size:.82rem; font-weight:600; color:var(--ink); }
+.edit figcaption em{
+  font-style:normal; font-size:.7rem; color:var(--ink-3); font-family:var(--mono);
+}
+/* the IoT block mixes a portrait clip with two stills */
+.project__shots + .edits,
+.edits + .project__shots{ margin-top:.55rem; }
+
+/* wide (16:9) clips should not be forced into a phone frame */
+.edit__v[data-wide]{ aspect-ratio:16 / 9; max-height:260px; }
+
+/* a non-link note in a links list (keeps the row rhythm without a dead anchor) */
+.link--note{
+  display:inline-flex; align-items:center; gap:.45rem; cursor:default;
+  color:var(--ink-3); border-color:var(--line); border-style:dashed;
+}
+.link--note:hover{ color:var(--ink-3); border-color:var(--line); }
+
+/* small print under a project body */
+.project__note{
+  margin:.55rem 0 0; font-size:.72rem; line-height:1.6; color:var(--ink-3);
+  display:flex; gap:.4rem; align-items:flex-start;
+}
+.project__note .ico{ flex:0 0 auto; margin-top:.15rem; }

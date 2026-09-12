@@ -68,7 +68,8 @@
       </h1>
       <p class="hero__role">
         Information Technology student at Universitas Negeri Malang. I build e-commerce platforms
-        and management systems that ship and get used.
+        and management systems that ship and get used — and design, render and edit the media
+        around them.
       </p>
 
       <ul class="hero__facts">
@@ -86,8 +87,8 @@
       <dl class="hero__stats">
         <div><dt>Shipped apps</dt><dd>3</dd></div>
         <div><dt>Registered IP</dt><dd>2</dd></div>
+        <div><dt>Projects</dt><dd>8</dd></div>
         <div><dt>Certifications</dt><dd>12</dd></div>
-        <div><dt>Design work</dt><dd>5</dd></div>
       </dl>
     </div>
 
@@ -176,7 +177,9 @@
     <button class="chip is-active" data-filter="all">All</button>
     <button class="chip" data-filter="web">Web applications</button>
     <button class="chip" data-filter="live">In production</button>
-    <button class="chip" data-filter="design">Design</button>
+    <button class="chip" data-filter="design">Design &amp; 3D</button>
+    <button class="chip" data-filter="media">Video &amp; media</button>
+    <button class="chip" data-filter="iot">IoT &amp; hardware</button>
   </div>
 
   <div class="projects">
@@ -347,10 +350,11 @@
         </div>
 
         <div class="project__shots">
-          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/thirdparty/nanggungan-home.webp" alt="Village portal homepage" loading="lazy"></button>
-          <button class="shot" data-gallery="nanggungan" data-i="1"><img src="assets/thirdparty/nanggungan-profil-desa.webp" alt="Village profile" loading="lazy"></button>
-          <button class="shot" data-gallery="nanggungan" data-i="2"><img src="assets/thirdparty/nanggungan-pasar-desa.webp" alt="Village market" loading="lazy"></button>
-          <button class="shot" data-gallery="nanggungan" data-i="3"><img src="assets/thirdparty/nanggungan-berita.webp" alt="News and articles" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/projects/desa/MENU_BERANDA_DESA_NANGGUNGAN.webp" alt="Village portal homepage — full page" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="1"><img src="assets/projects/desa/DASHBOARD_ADMIN_DESA_NANGGUNGAN.webp" alt="Admin dashboard" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="2"><img src="assets/projects/desa/MENU_PASAR_DESA_DESA_NANGGUNGAN.webp" alt="Village market" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="3"><img src="assets/projects/desa/MENU_PERATURAN_DESA_NANGGUNGAN.webp" alt="Village regulations" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="4"><img src="assets/projects/desa/PENGATURAN_WEB_DESA_STATISTIK.webp" alt="Statistics settings" loading="lazy"></button>
         </div>
       </div>
     </article>
@@ -379,8 +383,8 @@
           <div class="project__block">
             <h4 class="mono">Result</h4>
             <p>Five documented design files covering wireframes, component libraries and clickable
-               prototypes. The UM-MART design went into production unchanged in structure.
-               Each file is linked directly — open the ones you want to inspect.</p>
+               prototypes — screens below are rendered straight out of the files. The UM-MART design
+               went into production unchanged in structure.</p>
           </div>
           <ul class="project__stack">
             <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg> Figma</li>
@@ -401,72 +405,227 @@
               <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> KKN Design</a></li>
           </ul>
         </div>
-        <div class="file-list">
-          <a class="file-card" href="https://www.figma.com/design/zzxG3IjW4QJTRoRDe80iEl/UM-Mart--Copy-" target="_blank" rel="noopener">
-            <span class="file-card__ico"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg></span>
-            <span class="file-card__meta"><b>UM-MART</b><em>e-commerce interface — shipped unchanged</em></span>
-            <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
-          <a class="file-card" href="https://www.figma.com/design/WI6tu8OXGu3SKkPib8LVYc/UI-VIAR-UM" target="_blank" rel="noopener">
-            <span class="file-card__ico"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg></span>
-            <span class="file-card__meta"><b>UI VIAR UM</b><em>campus AR workspace exploration</em></span>
-            <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
-          <a class="file-card" href="https://www.figma.com/design/Lydu6XRZF8IMW8sxO4jwuQ/SMARTIPEN" target="_blank" rel="noopener">
-            <span class="file-card__ico"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg></span>
-            <span class="file-card__meta"><b>SMARTIPEN</b><em>product interface concept</em></span>
-            <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
-          <a class="file-card" href="https://www.figma.com/design/qerg4OzMBf9jaiNZIaDtyQ/KKN-DESIGN" target="_blank" rel="noopener">
-            <span class="file-card__ico"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg></span>
-            <span class="file-card__meta"><b>KKN Design</b><em>village portal layout system</em></span>
-            <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
-          <a class="file-card" href="https://www.figma.com/design/l9SUecPLZFrhvQQzyPIdCw/Projek-Bootcamp-UI-UX" target="_blank" rel="noopener">
-            <span class="file-card__ico"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg></span>
-            <span class="file-card__meta"><b>UI/UX Bootcamp</b><em>research to prototype, end to end</em></span>
-            <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
-          <p class="file-list__note mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></g></svg> Figma files open in Figma — viewing them needs a free account.</p>
+
+        <div class="project__shots">
+          <button class="shot" data-gallery="figma" data-i="0"><img src="assets/shots/figma-ummart-home.webp" alt="UM-MART homepage design" loading="lazy"></button>
+          <button class="shot" data-gallery="figma" data-i="1"><img src="assets/shots/figma-ummart-components.webp" alt="Component library" loading="lazy"></button>
+          <button class="shot" data-gallery="figma" data-i="2"><img src="assets/shots/figma-viar-concept.webp" alt="UI VIAR UM concept board" loading="lazy"></button>
+          <button class="shot" data-gallery="figma" data-i="3"><img src="assets/shots/figma-smartipen.webp" alt="SMARTIPEN tablet interface" loading="lazy"></button>
+          <button class="shot" data-gallery="figma" data-i="4"><img src="assets/shots/figma-kkn-spanduk.webp" alt="KKN village post sign design" loading="lazy"></button>
         </div>
       </div>
     </article>
 
     <!-- ---------- 3D / BLENDER ---------- -->
-    <article class="project project--compact reveal" data-tags="design">
+    <article class="project reveal" data-tags="design">
       <header class="project__head">
         <span class="project__index mono">05</span>
         <div class="project__heading">
-          <h3 class="project__title">3D &amp; game work <span class="badge"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender</span></h3>
-          <p class="project__sub">Modelling, rigging and rendering — plus a published itch.io build</p>
+          <h3 class="project__title">TEXUM — 3D &amp; game work <span class="badge"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender</span></h3>
+          <p class="project__sub">A fantasy RPG built and released publicly, from models to script</p>
         </div>
       </header>
       <div class="project__body">
         <div class="project__info">
           <div class="project__block">
-            <h4 class="mono">What I work on</h4>
+            <h4 class="mono">Problem</h4>
+            <p>A game needs a world before it needs code: characters, creatures, maps and interface
+               that hold together as one visual language — all authored from scratch.</p>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">What I made</h4>
             <ul class="project__bullets">
-              <li>Character and prop modelling, rigging and rendering in Blender</li>
-              <li>Game systems and mechanics prototyped as playable builds</li>
-              <li><b>TEXUM</b> — a build published publicly on itch.io</li>
-              <li>Asset pipelines that feed both the 3D work and the web interfaces</li>
+              <li><b>20 hand-built maps</b> plus a full UI set — menus, status, item, battle and mini-game screens</li>
+              <li><b>8 creature models</b> and 4 character designs with front/side turnaround sheets</li>
+              <li><b>A 16-page bilingual script</b> (Indonesian and English) covering the story and cutscene directions</li>
+              <li><b>Released publicly on itch.io</b> with a trailer, so the build is playable by anyone</li>
+              <li>Separately: hard-surface props and interiors — PC build, keyboard, classroom, laboratory, product mock-ups</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>A publicly released build, with the render gallery for this section still being prepared.</p>
+            <p>A finished, published game build with its own story world — <b>documented and playable</b>,
+               not a still frame. Everything below is my own render or game asset.</p>
           </div>
           <ul class="project__stack">
-            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender</li>
-            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7l8.7 5l8.7-5M12 22V12"/></g></svg> Hard-surface modelling</li>
-            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 11h4M8 9v4m7-1h.01M18 10h.01m-.69-5H6.68a4 4 0 0 0-3.978 3.59l-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258q-.01-.075-.017-.151A4 4 0 0 0 17.32 5"/></svg> Game systems</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender 4.1</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7l8.7 5l8.7-5M12 22V12"/></g></svg> Modelling &amp; hard-surface</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></g></svg> Level design</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 22a1 1 0 0 1 0-20a10 9 0 0 1 10 9a5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></g></svg> Texturing</li>
             <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4m2-2h-4"/><circle cx="4" cy="20" r="2"/></g></svg> Rendering</li>
           </ul>
           <ul class="project__links">
-            <li><a class="link" href="https://filesxinss.itch.io/texum" target="_blank" rel="noopener">
-              <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> TEXUM on itch.io</a></li>
-            <li><a class="link" href="#contact"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect width="20" height="16" x="2" y="4" rx="2"/></g></svg> Request render gallery</a></li>
+            <li><a class="link" href="https://youtu.be/baYgIYsq3VU" target="_blank" rel="noopener">
+              <svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg> Watch the trailer</a></li>
+            <li><span class="link link--note"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 11h4M8 9v4m7-1h.01M18 10h.01m-.69-5H6.68a4 4 0 0 0-3.978 3.59l-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258q-.01-.075-.017-.151A4 4 0 0 0 17.32 5"/></svg> Playable build on itch.io — store link on request</span></li>
           </ul>
         </div>
-        <div class="project__shots project__shots--certs">
-          <div class="soon-card__ph mono">
-            <span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7l8.7 5l8.7-5M12 22V12"/></g></svg> Render gallery in preparation</span>
+
+        <div class="project__shots">
+          <button class="shot" data-gallery="texum" data-i="0"><img src="assets/shots/texum-title.webp" alt="TEXUM title screen" loading="lazy"></button>
+          <button class="shot" data-gallery="texum" data-i="1"><img src="assets/shots/texum-gameplay.webp" alt="In-game map" loading="lazy"></button>
+          <button class="shot" data-gallery="texum" data-i="2"><img src="assets/shots/texum-battle.webp" alt="Battle interface" loading="lazy"></button>
+          <button class="shot" data-gallery="texum" data-i="3"><img src="assets/shots/texum-map-06.webp" alt="Hand-built map" loading="lazy"></button>
+          <button class="shot" data-gallery="texum" data-i="4"><img src="assets/shots/texum-mockup.webp" alt="TEXUM trailer mockup" loading="lazy"></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- BLENDER RENDERS ---------- -->
+    <article class="project project--compact reveal" data-tags="design">
+      <header class="project__head">
+        <span class="project__index mono">06</span>
+        <div class="project__heading">
+          <h3 class="project__title">3D renders &amp; product models <span class="badge"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender</span></h3>
+          <p class="project__sub">Hard-surface modelling, interiors and product visualisation</p>
+        </div>
+      </header>
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">What these are</h4>
+            <ul class="project__bullets">
+              <li><b>PC build &amp; cooling</b> — component-accurate hard-surface models</li>
+              <li><b>Classroom &amp; laboratory</b> — full interior scenes with lighting</li>
+              <li><b>Product mock-ups</b> — Smartipen internals, packaging and print covers</li>
+              <li><b>Props</b> — keyboard, nail clipper, chain weapon, mascot character</li>
+            </ul>
           </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>Every image here is rendered out of my own <b>.blend</b> files. The two hardest scenes —
+               Smartipen and the classroom — were shot by hand in Blender: their cameras sit inside
+               the geometry, so the portfolio shows the renders I framed myself.</p>
+          </div>
+          <ul class="project__stack">
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7l8.7 5l8.7-5M12 22V12"/></g></svg> Hard-surface</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8m-2 4v-3.96v3.15M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></g></svg> Product shots</li>
+          </ul>
+        </div>
+        <div class="project__shots">
+          <button class="shot" data-gallery="wsblender" data-i="0"><img src="assets/shots/ws-blender-pc.webp" alt="Blender workspace modelling the PC build" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="0"><img src="assets/shots/blender-pc.webp" alt="PC build model" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="1"><img src="assets/shots/blender-classroom.webp" alt="Classroom interior" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="2"><img src="assets/shots/blender-smartipen-detail.webp" alt="Smartipen product render" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="3"><img src="assets/shots/blender-lab-um.webp" alt="Laboratory scene" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="4"><img src="assets/shots/blender-keyboard.webp" alt="Keyboard model" loading="lazy"></button>
+        </div>
+        <p class="project__note mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></g></svg> Renders below come out of the .blend files; the Smartipen and classroom
+           cameras sit inside the geometry, so those two were framed by hand in Blender. Open any tile to see the full set.</p>
+      </div>
+    </article>
+
+    <!-- ---------- VIDEO & MEDIA ---------- -->
+    <article class="project reveal" data-tags="media design">
+      <header class="project__head">
+        <span class="project__index mono">07</span>
+        <div class="project__heading">
+          <h3 class="project__title">Video editing &amp; media production <span class="badge"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M10.15 8.42a2.9 2.9 0 0 0-1.18-.2a14 14 0 0 0-1.09.02v3.36l.39.02h.53c.39 0 .78-.06 1.15-.18c.32-.09.6-.28.82-.53c.21-.25.31-.59.31-1.03a1.45 1.45 0 0 0-.93-1.46M19.75.3H4.25A4.25 4.25 0 0 0 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3m-7.09 11.65c-.4.56-.96.98-1.61 1.22c-.68.25-1.43.34-2.25.34l-.5-.01l-.43-.01v3.21a.12.12 0 0 1-.11.14H5.82c-.08 0-.12-.04-.12-.13V6.42c0-.07.03-.11.1-.11l.56-.01l.76-.02l.87-.02l.91-.01c.82 0 1.5.1 2.06.31c.5.17.96.45 1.34.82c.32.32.57.71.73 1.14c.15.42.23.85.23 1.3q0 1.29-.6 2.13m6.82-3.15v1.95c0 .08-.05.11-.16.11a4.35 4.35 0 0 0-1.92.37c-.19.09-.37.21-.51.37v5.1c0 .1-.04.14-.13.14h-1.97a.14.14 0 0 1-.16-.12v-5.58l-.01-.75l-.02-.78c0-.23-.02-.45-.04-.68a.1.1 0 0 1 .07-.11h1.78c.1 0 .18.07.2.16a3 3 0 0 1 .13.92c.3-.35.67-.64 1.08-.86a3.1 3.1 0 0 1 1.52-.39c.07-.01.13.04.14.11z"/></svg> Premiere Pro</span></h3>
+          <p class="project__sub">Trailers, learning media and print design — edited, graded and delivered</p>
+        </div>
+      </header>
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">What I produced</h4>
+            <ul class="project__bullets">
+              <li><b>Sate Meraja teaser</b> — vertical 9:16 food trailer, fully cut, paced and graded</li>
+              <li><b>Learning media video</b> — merged CapCut and Premiere Pro edits for coursework</li>
+              <li><b>Motion logo ident</b> — animated logo for the KKN village programme</li>
+              <li><b>Print &amp; identity</b> — posters, banners and packaging designed in Photoshop</li>
+            </ul>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>Delivered pieces that were actually published — a public trailer, a programme ident and
+               printed material. Each clip below is a short excerpt; the frames are real output from
+               the edit timeline.</p>
+          </div>
+          <ul class="project__stack">
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M10.15 8.42a2.9 2.9 0 0 0-1.18-.2a14 14 0 0 0-1.09.02v3.36l.39.02h.53c.39 0 .78-.06 1.15-.18c.32-.09.6-.28.82-.53c.21-.25.31-.59.31-1.03a1.45 1.45 0 0 0-.93-1.46M19.75.3H4.25A4.25 4.25 0 0 0 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3m-7.09 11.65c-.4.56-.96.98-1.61 1.22c-.68.25-1.43.34-2.25.34l-.5-.01l-.43-.01v3.21a.12.12 0 0 1-.11.14H5.82c-.08 0-.12-.04-.12-.13V6.42c0-.07.03-.11.1-.11l.56-.01l.76-.02l.87-.02l.91-.01c.82 0 1.5.1 2.06.31c.5.17.96.45 1.34.82c.32.32.57.71.73 1.14c.15.42.23.85.23 1.3q0 1.29-.6 2.13m6.82-3.15v1.95c0 .08-.05.11-.16.11a4.35 4.35 0 0 0-1.92.37c-.19.09-.37.21-.51.37v5.1c0 .1-.04.14-.13.14h-1.97a.14.14 0 0 1-.16-.12v-5.58l-.01-.75l-.02-.78c0-.23-.02-.45-.04-.68a.1.1 0 0 1 .07-.11h1.78c.1 0 .18.07.2.16a3 3 0 0 1 .13.92c.3-.35.67-.64 1.08-.86a3.1 3.1 0 0 1 1.52-.39c.07-.01.13.04.14.11z"/></svg> Premiere Pro</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9.85 8.42c-.37-.15-.77-.21-1.18-.2c-.26 0-.49 0-.68.01c-.2-.01-.34 0-.41.01v3.36c.14.01.27.02.39.02h.53c.39 0 .78-.06 1.15-.18c.32-.09.6-.28.82-.53c.21-.25.31-.59.31-1.03c.01-.31-.07-.62-.23-.89a1.45 1.45 0 0 0-.7-.57M19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.899c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3m-7.391 11.65c-.399.56-.959.98-1.609 1.22c-.68.25-1.43.34-2.25.34c-.24 0-.4 0-.5-.01s-.24-.01-.43-.01v3.209c.01.07-.04.131-.11.141H5.52c-.08 0-.12-.041-.12-.131V6.42c0-.07.03-.11.1-.11c.17 0 .33 0 .56-.01c.24-.01.49-.01.76-.02s.56-.01.87-.02s.61-.01.91-.01c.82 0 1.5.1 2.06.31c.5.17.96.45 1.34.82c.32.32.57.71.73 1.14c.149.42.229.85.229 1.3q.002 1.29-.6 2.13m7.091 3.89c-.28.4-.671.709-1.12.891c-.49.209-1.09.318-1.811.318c-.459 0-.91-.039-1.359-.129c-.35-.061-.7-.17-1.02-.32c-.07-.039-.121-.109-.111-.189v-1.74c0-.029.011-.07.041-.09c.029-.02.06-.01.09.01c.39.23.8.391 1.24.49c.379.1.779.15 1.18.15c.38 0 .65-.051.83-.141c.16-.07.27-.24.27-.42c0-.141-.08-.27-.24-.4c-.16-.129-.489-.279-.979-.471c-.51-.18-.979-.42-1.42-.719a2.6 2.6 0 0 1-.761-.85a2.16 2.16 0 0 1-.229-1.021c0-.43.12-.84.341-1.21c.25-.4.619-.72 1.049-.92c.469-.239 1.059-.349 1.769-.349c.41 0 .83.03 1.24.09c.3.04.59.12.86.23c.039.01.08.05.1.09c.01.04.02.08.02.12v1.63c0 .04-.02.08-.05.1c-.09.02-.14.02-.18 0c-.3-.16-.62-.27-.96-.34c-.37-.08-.74-.13-1.12-.13c-.2-.01-.41.02-.601.07c-.129.03-.24.1-.31.2c-.05.08-.08.18-.08.27s.04.18.101.26c.09.11.209.2.34.27c.229.12.47.23.709.33c.541.18 1.061.43 1.541.73c.33.209.6.49.789.83c.16.318.24.67.23 1.029c.011.471-.129.94-.389 1.331"/></svg> Photoshop</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18m0-13.5h4m-4 9h4"/></g></svg> Editing &amp; grading</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8m-2 4v-3.96v3.15M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></g></svg> Vertical 9:16</li>
+          </ul>
+        </div>
+        <div class="edits">
+          <figure class="edit reveal">
+            <video class="edit__v" src="assets/video/teaser-sate-meraja.mp4" poster="assets/video/posters/teaser-sate-meraja.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>Sate Meraja — teaser</b><em>Food trailer, 1080×1920, cut in Premiere Pro</em></figcaption>
+          </figure>
+          <figure class="edit reveal">
+            <video class="edit__v" src="assets/video/texum-mockup.mp4" poster="assets/video/posters/texum-mockup.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>TEXUM — trailer</b><em>Game trailer cut</em></figcaption>
+          </figure>
+          <figure class="edit reveal">
+            <video class="edit__v" src="assets/video/revisi-media-pembelajaran.mp4" poster="assets/video/posters/revisi-media-pembelajaran.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>Learning media</b><em>CapCut + Premiere Pro edit</em></figcaption>
+          </figure>
+          <figure class="edit reveal">
+            <video class="edit__v" data-wide src="assets/video/intro-logo-kkn.mp4" poster="assets/video/posters/intro-logo-kkn.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>KKN logo ident</b><em>Animated programme ident</em></figcaption>
+          </figure>
+        </div>
+        <div class="project__shots">
+          <button class="shot" data-gallery="wsmedia" data-i="0"><img src="assets/shots/ws-premiere-sate-meraja.webp" alt="Premiere Pro timeline for the Sate Meraja teaser" loading="lazy"></button>
+          <button class="shot" data-gallery="wsmedia" data-i="1"><img src="assets/shots/ws-premiere-member.webp" alt="Premiere Pro multi-clip sequence" loading="lazy"></button>
+          <button class="shot" data-gallery="wsmedia" data-i="2"><img src="assets/shots/ws-premiere-logo-edit.webp" alt="Premiere Pro logo ident keyframes" loading="lazy"></button>
+          <button class="shot" data-gallery="wsmedia" data-i="3"><img src="assets/shots/ws-photoshop-design.webp" alt="Photoshop workspace with a print layout" loading="lazy"></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- IOT ---------- -->
+    <article class="project reveal" data-tags="iot design">
+      <header class="project__head">
+        <span class="project__index mono">08</span>
+        <div class="project__heading">
+          <h3 class="project__title">IoT &amp; embedded <span class="badge badge--live"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m15.477 12.89l1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></g></svg> Registered IP</span></h3>
+          <p class="project__sub">Smart Rakaat — a prayer counter using ESP32, ultrasound and audio</p>
+        </div>
+      </header>
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">Problem</h4>
+            <p>Tracking how many rakaat you have prayed means counting in your head, and losing count
+               mid-prayer. Nothing on the market does it without a phone.</p>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">What I built</h4>
+            <ul class="project__bullets">
+              <li><b>ESP32 firmware</b> — HC-SR04 ultrasound detects the bowing and prostration motion</li>
+              <li><b>Movement logic</b> — a prostration sequence increments the rakaat counter</li>
+              <li><b>SSD1306 OLED</b> shows current rakaat against the target; DFPlayer gives audio cues</li>
+              <li><b>Built-in Wi-Fi access point</b> with a web page to set 2, 3 or 4 rakaat and reset</li>
+              <li><b>Circuit drawn in Fritzing</b>, plus a second project: a radar object-detection sensor</li>
+            </ul>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>A working device and <b>a registered intellectual-property certificate</b> for the
+               design. Firmware, schematic and enclosure were all made for it.</p>
+          </div>
+          <ul class="project__stack">
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.926 19.324a7.6 7.6 0 0 0-2.983-6.754a7.44 7.44 0 0 0-3.828-1.554a.697.697 0 0 1-.606-.731a.674.674 0 0 1 .743-.617a8.97 8.97 0 0 1 8 9.805a8 8 0 0 1-.298 1.542l1.989.56a11 11 0 0 0 1.714-.651a12 12 0 0 0 .217-2.343A12.57 12.57 0 0 0 7.212 6.171a5.5 5.5 0 0 0-2 0a4.35 4.35 0 0 0-2.16 1.337a4.274 4.274 0 0 0 1.909 6.856a10 10 0 0 0 1.074.195a4.01 4.01 0 0 1 3.337 3.954a3.97 3.97 0 0 1-.64 2.16l1.371.88a10 10 0 0 0 2.057.342a7.5 7.5 0 0 0 .754-2.628m.16 4.73A13.073 13.073 0 0 1 .001 10.983A12.98 12.98 0 0 1 3.83 1.737l.743.697a12.067 12.067 0 0 0 0 17.141a12.067 12.067 0 0 0 17.141 0l.697.697a12.97 12.97 0 0 1-9.336 3.726M24 10.993A10.993 10.993 0 0 0 12.949 0c-.389 0-.766 0-1.143.057l-.252.732a18.91 18.91 0 0 1 11.588 11.576l.731-.263c0-.366.069-.732.069-1.143m-1.269 5.165A17.53 17.53 0 0 0 7.818 1.27a11 11 0 0 0-2.457 1.77v1.635A13.92 13.92 0 0 1 19.268 18.57h1.634a11.7 11.7 0 0 0 1.771-2.446M7.92 17.884a1.691 1.691 0 1 1-1.69-1.691a1.69 1.69 0 0 1 1.69 1.691"/></svg> ESP32</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16.247 7.761a6 6 0 0 1 0 8.478m2.828-11.306a10 10 0 0 1 0 14.134m-14.15 0a10 10 0 0 1 0-14.134m2.828 11.306a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></g></svg> HC-SR04 ultrasound</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 20v2m0-20v2m5 16v2m0-20v2M2 12h2m-2 5h2M2 7h2m16 5h2m-2 5h2M20 7h2M7 20v2M7 2v2"/><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="8" height="8" x="8" y="8" rx="1"/></g></svg> Embedded C++</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h.01M2 8.82a15 15 0 0 1 20 0M5 12.859a10 10 0 0 1 14 0m-10.5 3.57a5 5 0 0 1 7 0"/></svg> Wi-Fi web control</li>
+            <li><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M11 9h4a2 2 0 0 0 2-2V3"/><circle cx="9" cy="9" r="2"/><path d="M7 21v-4a2 2 0 0 1 2-2h4"/><circle cx="15" cy="15" r="2"/></g></svg> Fritzing</li>
+          </ul>
+          <ul class="project__links">
+            <li><span class="link link--note"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"/></g></svg> Firmware, schematic and enclosure documented — files on request</span></li>
+          </ul>
+        </div>
+        <div class="edits">
+          <figure class="edit reveal">
+            <video class="edit__v" data-wide src="assets/video/iot-smart-rakaat-demo.mp4" poster="assets/video/posters/iot-smart-rakaat-demo.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>Smart Rakaat in use</b><em>Live counting demonstration</em></figcaption>
+          </figure>
+          <button class="shot" data-gallery="iot" data-i="0"><img src="assets/shots/ws-fritzing-rakaat.webp" alt="Circuit schematic drawn in Fritzing" loading="lazy"></button>
+          <button class="shot" data-gallery="iot" data-i="1"><img src="assets/shots/iot-rakaat-device.webp" alt="Assembled Smart Rakaat device" loading="lazy"></button>
+          <button class="shot" data-gallery="iot" data-i="2"><img src="assets/shots/iot-device-photo.webp" alt="Device in operation" loading="lazy"></button>
         </div>
       </div>
     </article>
@@ -530,8 +689,20 @@
       <ul class="skills__list">
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491M12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539m-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019c1.705 0 3.093-1.376 3.093-3.068v-2.97zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49m-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019z"/></svg> Figma</span><em>5 design files</em></li>
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13l-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18M2.3 2.3l7.286 7.286"/><circle cx="11" cy="11" r="2"/></g></svg> Wireframes &amp; prototypes</span><em>UM-MART · VIAR UM</em></li>
-        <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender</span><em>TEXUM on itch.io</em></li>
+        <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.42 3.42 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79c.592.5.983 1.206 1.028 2.005c.045.823-.285 1.586-.865 2.153a3.4 3.4 0 0 1-2.374.938a3.4 3.4 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.4 7.4 0 0 0 1.593 2.757a8.2 8.2 0 0 0 2.787 2.001a8.95 8.95 0 0 0 3.66.76a9 9 0 0 0 3.657-.772a8.3 8.3 0 0 0 2.785-2.01a7.4 7.4 0 0 0 1.592-2.762a7 7 0 0 0 .25-3.074a7.1 7.1 0 0 0-1.016-2.779a7.8 7.8 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002c-.547.382-.609 1.015-.123 1.415l-.001.001l3.126 2.543l-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172c-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01l-8.62 6.617l-.034.025c-.813.622-1.075 1.658-.563 2.313c.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55c-1.47.004-2.827-.552-3.797-1.538a4.5 4.5 0 0 1-1.036-1.622a4.28 4.28 0 0 1 .282-3.519a4.7 4.7 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185c1.256-.002 2.455.41 3.398 1.175c.48.391.87.854 1.152 1.367a4.3 4.3 0 0 1 .522 1.706a4.2 4.2 0 0 1-.239 1.811a4.5 4.5 0 0 1-1.035 1.626"/></svg> Blender</span><em>TEXUM · 20 maps</em></li>
+        <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7l8.7 5l8.7-5M12 22V12"/></g></svg> Hard-surface modelling</span><em>PC · classroom · products</em></li>
+        <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9.85 8.42c-.37-.15-.77-.21-1.18-.2c-.26 0-.49 0-.68.01c-.2-.01-.34 0-.41.01v3.36c.14.01.27.02.39.02h.53c.39 0 .78-.06 1.15-.18c.32-.09.6-.28.82-.53c.21-.25.31-.59.31-1.03c.01-.31-.07-.62-.23-.89a1.45 1.45 0 0 0-.7-.57M19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.899c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3m-7.391 11.65c-.399.56-.959.98-1.609 1.22c-.68.25-1.43.34-2.25.34c-.24 0-.4 0-.5-.01s-.24-.01-.43-.01v3.209c.01.07-.04.131-.11.141H5.52c-.08 0-.12-.041-.12-.131V6.42c0-.07.03-.11.1-.11c.17 0 .33 0 .56-.01c.24-.01.49-.01.76-.02s.56-.01.87-.02s.61-.01.91-.01c.82 0 1.5.1 2.06.31c.5.17.96.45 1.34.82c.32.32.57.71.73 1.14c.149.42.229.85.229 1.3q.002 1.29-.6 2.13m7.091 3.89c-.28.4-.671.709-1.12.891c-.49.209-1.09.318-1.811.318c-.459 0-.91-.039-1.359-.129c-.35-.061-.7-.17-1.02-.32c-.07-.039-.121-.109-.111-.189v-1.74c0-.029.011-.07.041-.09c.029-.02.06-.01.09.01c.39.23.8.391 1.24.49c.379.1.779.15 1.18.15c.38 0 .65-.051.83-.141c.16-.07.27-.24.27-.42c0-.141-.08-.27-.24-.4c-.16-.129-.489-.279-.979-.471c-.51-.18-.979-.42-1.42-.719a2.6 2.6 0 0 1-.761-.85a2.16 2.16 0 0 1-.229-1.021c0-.43.12-.84.341-1.21c.25-.4.619-.72 1.049-.92c.469-.239 1.059-.349 1.769-.349c.41 0 .83.03 1.24.09c.3.04.59.12.86.23c.039.01.08.05.1.09c.01.04.02.08.02.12v1.63c0 .04-.02.08-.05.1c-.09.02-.14.02-.18 0c-.3-.16-.62-.27-.96-.34c-.37-.08-.74-.13-1.12-.13c-.2-.01-.41.02-.601.07c-.129.03-.24.1-.31.2c-.05.08-.08.18-.08.27s.04.18.101.26c.09.11.209.2.34.27c.229.12.47.23.709.33c.541.18 1.061.43 1.541.73c.33.209.6.49.789.83c.16.318.24.67.23 1.029c.011.471-.129.94-.389 1.331"/></svg> Photoshop</span><em>Print &amp; packaging</em></li>
         <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19l2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63L10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></svg> Git &amp; GitHub</span><em>3 public repos</em></li>
+      </ul>
+    </div>
+    <div class="skills__group">
+      <h3 class="mono"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18m0-13.5h4m-4 9h4"/></g></svg> Video &amp; IoT</h3>
+      <ul class="skills__list">
+        <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M10.15 8.42a2.9 2.9 0 0 0-1.18-.2a14 14 0 0 0-1.09.02v3.36l.39.02h.53c.39 0 .78-.06 1.15-.18c.32-.09.6-.28.82-.53c.21-.25.31-.59.31-1.03a1.45 1.45 0 0 0-.93-1.46M19.75.3H4.25A4.25 4.25 0 0 0 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3m-7.09 11.65c-.4.56-.96.98-1.61 1.22c-.68.25-1.43.34-2.25.34l-.5-.01l-.43-.01v3.21a.12.12 0 0 1-.11.14H5.82c-.08 0-.12-.04-.12-.13V6.42c0-.07.03-.11.1-.11l.56-.01l.76-.02l.87-.02l.91-.01c.82 0 1.5.1 2.06.31c.5.17.96.45 1.34.82c.32.32.57.71.73 1.14c.15.42.23.85.23 1.3q0 1.29-.6 2.13m6.82-3.15v1.95c0 .08-.05.11-.16.11a4.35 4.35 0 0 0-1.92.37c-.19.09-.37.21-.51.37v5.1c0 .1-.04.14-.13.14h-1.97a.14.14 0 0 1-.16-.12v-5.58l-.01-.75l-.02-.78c0-.23-.02-.45-.04-.68a.1.1 0 0 1 .07-.11h1.78c.1 0 .18.07.2.16a3 3 0 0 1 .13.92c.3-.35.67-.64 1.08-.86a3.1 3.1 0 0 1 1.52-.39c.07-.01.13.04.14.11z"/></svg> Premiere Pro</span><em>Sate Meraja teaser</em></li>
+        <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18m0-13.5h4m-4 9h4"/></g></svg> Editing &amp; grading</span><em>9:16 and 16:9 delivery</em></li>
+        <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.926 19.324a7.6 7.6 0 0 0-2.983-6.754a7.44 7.44 0 0 0-3.828-1.554a.697.697 0 0 1-.606-.731a.674.674 0 0 1 .743-.617a8.97 8.97 0 0 1 8 9.805a8 8 0 0 1-.298 1.542l1.989.56a11 11 0 0 0 1.714-.651a12 12 0 0 0 .217-2.343A12.57 12.57 0 0 0 7.212 6.171a5.5 5.5 0 0 0-2 0a4.35 4.35 0 0 0-2.16 1.337a4.274 4.274 0 0 0 1.909 6.856a10 10 0 0 0 1.074.195a4.01 4.01 0 0 1 3.337 3.954a3.97 3.97 0 0 1-.64 2.16l1.371.88a10 10 0 0 0 2.057.342a7.5 7.5 0 0 0 .754-2.628m.16 4.73A13.073 13.073 0 0 1 .001 10.983A12.98 12.98 0 0 1 3.83 1.737l.743.697a12.067 12.067 0 0 0 0 17.141a12.067 12.067 0 0 0 17.141 0l.697.697a12.97 12.97 0 0 1-9.336 3.726M24 10.993A10.993 10.993 0 0 0 12.949 0c-.389 0-.766 0-1.143.057l-.252.732a18.91 18.91 0 0 1 11.588 11.576l.731-.263c0-.366.069-.732.069-1.143m-1.269 5.165A17.53 17.53 0 0 0 7.818 1.27a11 11 0 0 0-2.457 1.77v1.635A13.92 13.92 0 0 1 19.268 18.57h1.634a11.7 11.7 0 0 0 1.771-2.446M7.92 17.884a1.691 1.691 0 1 1-1.69-1.691a1.69 1.69 0 0 1 1.69 1.691"/></svg> ESP32 firmware</span><em>Smart Rakaat</em></li>
+        <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 20v2m0-20v2m5 16v2m0-20v2M2 12h2m-2 5h2M2 7h2m16 5h2m-2 5h2M20 7h2M7 20v2M7 2v2"/><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="8" height="8" x="8" y="8" rx="1"/></g></svg> Sensors &amp; actuators</span><em>HC-SR04 · OLED · DFPlayer</em></li>
+        <li><span><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M11 9h4a2 2 0 0 0 2-2V3"/><circle cx="9" cy="9" r="2"/><path d="M7 21v-4a2 2 0 0 1 2-2h4"/><circle cx="15" cy="15" r="2"/></g></svg> Fritzing schematics</span><em>Smart Rakaat · radar</em></li>
       </ul>
     </div>
   </div>

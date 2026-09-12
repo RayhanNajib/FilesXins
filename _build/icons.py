@@ -40,6 +40,8 @@ ICONS = [
     "lucide:pen-tool", "lucide:monitor-smartphone", "lucide:circle-check",
     "lucide:lock", "lucide:zap", "lucide:menu", "lucide:x", "lucide:chevron-left",
     "lucide:chevron-right", "lucide:search", "lucide:clock", "lucide:calendar-check",
+    "lucide:cpu", "lucide:radio", "lucide:wifi", "lucide:film", "lucide:circuit-board",
+    "lucide:play", "lucide:info",
     # --- technology marks --------------------------------------------------
     "simple-icons:php", "simple-icons:mysql", "simple-icons:javascript",
     "simple-icons:html5", "simple-icons:css3", "simple-icons:figma",
@@ -47,15 +49,34 @@ ICONS = [
     "simple-icons:whatsapp", "simple-icons:googlechrome",
     "simple-icons:adobephotoshop", "simple-icons:composer",
     "simple-icons:apache", "simple-icons:vite",
+    "simple-icons:adobepremierepro", "simple-icons:espressif",
     "logos:laravel", "vscode-icons:file-type-blade",
 ]
+
+
+def wanted():
+    """Icon keys the ICONS list and the template together ask for.
+
+    Scanning the template keeps the cache honest: adding {{icon:...}} to the HTML
+    must not silently ship a blank box because a hard-coded list was not updated.
+    """
+    keys = list(ICONS)
+    try:
+        html = open(TEMPLATE, encoding="utf-8").read()
+    except OSError:
+        return keys
+    for m in re.finditer(r"\{\{icon:([^}]+)\}\}", html):
+        key = m.group(1).split("|", 1)[0].strip()
+        if key and key not in keys:
+            keys.append(key)
+    return keys
 
 
 def fetch(force=False):
     cache = {}
     if os.path.exists(CACHE):
         cache = json.load(open(CACHE, encoding="utf-8"))
-    missing = [i for i in ICONS if i not in cache]
+    missing = [i for i in wanted() if i not in cache]
     for key in missing:
         setname, name = key.split(":", 1)
         url = f"https://api.iconify.design/{setname}/{name}.svg"

@@ -68,7 +68,8 @@
       </h1>
       <p class="hero__role">
         Information Technology student at Universitas Negeri Malang. I build e-commerce platforms
-        and management systems that ship and get used.
+        and management systems that ship and get used — and design, render and edit the media
+        around them.
       </p>
 
       <ul class="hero__facts">
@@ -86,8 +87,8 @@
       <dl class="hero__stats">
         <div><dt>Shipped apps</dt><dd>3</dd></div>
         <div><dt>Registered IP</dt><dd>2</dd></div>
+        <div><dt>Projects</dt><dd>8</dd></div>
         <div><dt>Certifications</dt><dd>12</dd></div>
-        <div><dt>Design work</dt><dd>5</dd></div>
       </dl>
     </div>
 
@@ -176,7 +177,9 @@
     <button class="chip is-active" data-filter="all">All</button>
     <button class="chip" data-filter="web">Web applications</button>
     <button class="chip" data-filter="live">In production</button>
-    <button class="chip" data-filter="design">Design</button>
+    <button class="chip" data-filter="design">Design &amp; 3D</button>
+    <button class="chip" data-filter="media">Video &amp; media</button>
+    <button class="chip" data-filter="iot">IoT &amp; hardware</button>
   </div>
 
   <div class="projects">
@@ -347,10 +350,11 @@
         </div>
 
         <div class="project__shots">
-          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/thirdparty/nanggungan-home.webp" alt="Village portal homepage" loading="lazy"></button>
-          <button class="shot" data-gallery="nanggungan" data-i="1"><img src="assets/thirdparty/nanggungan-profil-desa.webp" alt="Village profile" loading="lazy"></button>
-          <button class="shot" data-gallery="nanggungan" data-i="2"><img src="assets/thirdparty/nanggungan-pasar-desa.webp" alt="Village market" loading="lazy"></button>
-          <button class="shot" data-gallery="nanggungan" data-i="3"><img src="assets/thirdparty/nanggungan-berita.webp" alt="News and articles" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="0"><img src="assets/projects/desa/MENU_BERANDA_DESA_NANGGUNGAN.webp" alt="Village portal homepage — full page" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="1"><img src="assets/projects/desa/DASHBOARD_ADMIN_DESA_NANGGUNGAN.webp" alt="Admin dashboard" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="2"><img src="assets/projects/desa/MENU_PASAR_DESA_DESA_NANGGUNGAN.webp" alt="Village market" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="3"><img src="assets/projects/desa/MENU_PERATURAN_DESA_NANGGUNGAN.webp" alt="Village regulations" loading="lazy"></button>
+          <button class="shot" data-gallery="nanggungan" data-i="4"><img src="assets/projects/desa/PENGATURAN_WEB_DESA_STATISTIK.webp" alt="Statistics settings" loading="lazy"></button>
         </div>
       </div>
     </article>
@@ -379,8 +383,8 @@
           <div class="project__block">
             <h4 class="mono">Result</h4>
             <p>Five documented design files covering wireframes, component libraries and clickable
-               prototypes. The UM-MART design went into production unchanged in structure.
-               Each file is linked directly — open the ones you want to inspect.</p>
+               prototypes — screens below are rendered straight out of the files. The UM-MART design
+               went into production unchanged in structure.</p>
           </div>
           <ul class="project__stack">
             <li>{{icon:simple-icons:figma}} Figma</li>
@@ -401,72 +405,227 @@
               {{icon:lucide:external-link}} KKN Design</a></li>
           </ul>
         </div>
-        <div class="file-list">
-          <a class="file-card" href="https://www.figma.com/design/zzxG3IjW4QJTRoRDe80iEl/UM-Mart--Copy-" target="_blank" rel="noopener">
-            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
-            <span class="file-card__meta"><b>UM-MART</b><em>e-commerce interface — shipped unchanged</em></span>
-            {{icon:lucide:external-link}}</a>
-          <a class="file-card" href="https://www.figma.com/design/WI6tu8OXGu3SKkPib8LVYc/UI-VIAR-UM" target="_blank" rel="noopener">
-            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
-            <span class="file-card__meta"><b>UI VIAR UM</b><em>campus AR workspace exploration</em></span>
-            {{icon:lucide:external-link}}</a>
-          <a class="file-card" href="https://www.figma.com/design/Lydu6XRZF8IMW8sxO4jwuQ/SMARTIPEN" target="_blank" rel="noopener">
-            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
-            <span class="file-card__meta"><b>SMARTIPEN</b><em>product interface concept</em></span>
-            {{icon:lucide:external-link}}</a>
-          <a class="file-card" href="https://www.figma.com/design/qerg4OzMBf9jaiNZIaDtyQ/KKN-DESIGN" target="_blank" rel="noopener">
-            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
-            <span class="file-card__meta"><b>KKN Design</b><em>village portal layout system</em></span>
-            {{icon:lucide:external-link}}</a>
-          <a class="file-card" href="https://www.figma.com/design/l9SUecPLZFrhvQQzyPIdCw/Projek-Bootcamp-UI-UX" target="_blank" rel="noopener">
-            <span class="file-card__ico">{{icon:simple-icons:figma}}</span>
-            <span class="file-card__meta"><b>UI/UX Bootcamp</b><em>research to prototype, end to end</em></span>
-            {{icon:lucide:external-link}}</a>
-          <p class="file-list__note mono">{{icon:lucide:info}} Figma files open in Figma — viewing them needs a free account.</p>
+
+        <div class="project__shots">
+          <button class="shot" data-gallery="figma" data-i="0"><img src="assets/shots/figma-ummart-home.webp" alt="UM-MART homepage design" loading="lazy"></button>
+          <button class="shot" data-gallery="figma" data-i="1"><img src="assets/shots/figma-ummart-components.webp" alt="Component library" loading="lazy"></button>
+          <button class="shot" data-gallery="figma" data-i="2"><img src="assets/shots/figma-viar-concept.webp" alt="UI VIAR UM concept board" loading="lazy"></button>
+          <button class="shot" data-gallery="figma" data-i="3"><img src="assets/shots/figma-smartipen.webp" alt="SMARTIPEN tablet interface" loading="lazy"></button>
+          <button class="shot" data-gallery="figma" data-i="4"><img src="assets/shots/figma-kkn-spanduk.webp" alt="KKN village post sign design" loading="lazy"></button>
         </div>
       </div>
     </article>
 
     <!-- ---------- 3D / BLENDER ---------- -->
-    <article class="project project--compact reveal" data-tags="design">
+    <article class="project reveal" data-tags="design">
       <header class="project__head">
         <span class="project__index mono">05</span>
         <div class="project__heading">
-          <h3 class="project__title">3D &amp; game work <span class="badge">{{icon:simple-icons:blender}} Blender</span></h3>
-          <p class="project__sub">Modelling, rigging and rendering — plus a published itch.io build</p>
+          <h3 class="project__title">TEXUM — 3D &amp; game work <span class="badge">{{icon:simple-icons:blender}} Blender</span></h3>
+          <p class="project__sub">A fantasy RPG built and released publicly, from models to script</p>
         </div>
       </header>
       <div class="project__body">
         <div class="project__info">
           <div class="project__block">
-            <h4 class="mono">What I work on</h4>
+            <h4 class="mono">Problem</h4>
+            <p>A game needs a world before it needs code: characters, creatures, maps and interface
+               that hold together as one visual language — all authored from scratch.</p>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">What I made</h4>
             <ul class="project__bullets">
-              <li>Character and prop modelling, rigging and rendering in Blender</li>
-              <li>Game systems and mechanics prototyped as playable builds</li>
-              <li><b>TEXUM</b> — a build published publicly on itch.io</li>
-              <li>Asset pipelines that feed both the 3D work and the web interfaces</li>
+              <li><b>20 hand-built maps</b> plus a full UI set — menus, status, item, battle and mini-game screens</li>
+              <li><b>8 creature models</b> and 4 character designs with front/side turnaround sheets</li>
+              <li><b>A 16-page bilingual script</b> (Indonesian and English) covering the story and cutscene directions</li>
+              <li><b>Released publicly on itch.io</b> with a trailer, so the build is playable by anyone</li>
+              <li>Separately: hard-surface props and interiors — PC build, keyboard, classroom, laboratory, product mock-ups</li>
             </ul>
           </div>
           <div class="project__block">
             <h4 class="mono">Result</h4>
-            <p>A publicly released build, with the render gallery for this section still being prepared.</p>
+            <p>A finished, published game build with its own story world — <b>documented and playable</b>,
+               not a still frame. Everything below is my own render or game asset.</p>
           </div>
           <ul class="project__stack">
-            <li>{{icon:simple-icons:blender}} Blender</li>
-            <li>{{icon:lucide:box}} Hard-surface modelling</li>
-            <li>{{icon:lucide:gamepad-2}} Game systems</li>
+            <li>{{icon:simple-icons:blender}} Blender 4.1</li>
+            <li>{{icon:lucide:box}} Modelling &amp; hard-surface</li>
+            <li>{{icon:lucide:layers}} Level design</li>
+            <li>{{icon:lucide:palette}} Texturing</li>
             <li>{{icon:lucide:sparkles}} Rendering</li>
           </ul>
           <ul class="project__links">
-            <li><a class="link" href="https://filesxinss.itch.io/texum" target="_blank" rel="noopener">
-              {{icon:lucide:external-link}} TEXUM on itch.io</a></li>
-            <li><a class="link" href="#contact">{{icon:lucide:mail}} Request render gallery</a></li>
+            <li><a class="link" href="https://youtu.be/baYgIYsq3VU" target="_blank" rel="noopener">
+              {{icon:lucide:play}} Watch the trailer</a></li>
+            <li><span class="link link--note">{{icon:lucide:gamepad-2}} Playable build on itch.io — store link on request</span></li>
           </ul>
         </div>
-        <div class="project__shots project__shots--certs">
-          <div class="soon-card__ph mono">
-            <span>{{icon:lucide:box}} Render gallery in preparation</span>
+
+        <div class="project__shots">
+          <button class="shot" data-gallery="texum" data-i="0"><img src="assets/shots/texum-title.webp" alt="TEXUM title screen" loading="lazy"></button>
+          <button class="shot" data-gallery="texum" data-i="1"><img src="assets/shots/texum-gameplay.webp" alt="In-game map" loading="lazy"></button>
+          <button class="shot" data-gallery="texum" data-i="2"><img src="assets/shots/texum-battle.webp" alt="Battle interface" loading="lazy"></button>
+          <button class="shot" data-gallery="texum" data-i="3"><img src="assets/shots/texum-map-06.webp" alt="Hand-built map" loading="lazy"></button>
+          <button class="shot" data-gallery="texum" data-i="4"><img src="assets/shots/texum-mockup.webp" alt="TEXUM trailer mockup" loading="lazy"></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- BLENDER RENDERS ---------- -->
+    <article class="project project--compact reveal" data-tags="design">
+      <header class="project__head">
+        <span class="project__index mono">06</span>
+        <div class="project__heading">
+          <h3 class="project__title">3D renders &amp; product models <span class="badge">{{icon:simple-icons:blender}} Blender</span></h3>
+          <p class="project__sub">Hard-surface modelling, interiors and product visualisation</p>
+        </div>
+      </header>
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">What these are</h4>
+            <ul class="project__bullets">
+              <li><b>PC build &amp; cooling</b> — component-accurate hard-surface models</li>
+              <li><b>Classroom &amp; laboratory</b> — full interior scenes with lighting</li>
+              <li><b>Product mock-ups</b> — Smartipen internals, packaging and print covers</li>
+              <li><b>Props</b> — keyboard, nail clipper, chain weapon, mascot character</li>
+            </ul>
           </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>Every image here is rendered out of my own <b>.blend</b> files. The two hardest scenes —
+               Smartipen and the classroom — were shot by hand in Blender: their cameras sit inside
+               the geometry, so the portfolio shows the renders I framed myself.</p>
+          </div>
+          <ul class="project__stack">
+            <li>{{icon:simple-icons:blender}} Blender</li>
+            <li>{{icon:lucide:box}} Hard-surface</li>
+            <li>{{icon:lucide:monitor-smartphone}} Product shots</li>
+          </ul>
+        </div>
+        <div class="project__shots">
+          <button class="shot" data-gallery="wsblender" data-i="0"><img src="assets/shots/ws-blender-pc.webp" alt="Blender workspace modelling the PC build" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="0"><img src="assets/shots/blender-pc.webp" alt="PC build model" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="1"><img src="assets/shots/blender-classroom.webp" alt="Classroom interior" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="2"><img src="assets/shots/blender-smartipen-detail.webp" alt="Smartipen product render" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="3"><img src="assets/shots/blender-lab-um.webp" alt="Laboratory scene" loading="lazy"></button>
+          <button class="shot" data-gallery="renders" data-i="4"><img src="assets/shots/blender-keyboard.webp" alt="Keyboard model" loading="lazy"></button>
+        </div>
+        <p class="project__note mono">{{icon:lucide:info}} Renders below come out of the .blend files; the Smartipen and classroom
+           cameras sit inside the geometry, so those two were framed by hand in Blender. Open any tile to see the full set.</p>
+      </div>
+    </article>
+
+    <!-- ---------- VIDEO & MEDIA ---------- -->
+    <article class="project reveal" data-tags="media design">
+      <header class="project__head">
+        <span class="project__index mono">07</span>
+        <div class="project__heading">
+          <h3 class="project__title">Video editing &amp; media production <span class="badge">{{icon:simple-icons:adobepremierepro}} Premiere Pro</span></h3>
+          <p class="project__sub">Trailers, learning media and print design — edited, graded and delivered</p>
+        </div>
+      </header>
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">What I produced</h4>
+            <ul class="project__bullets">
+              <li><b>Sate Meraja teaser</b> — vertical 9:16 food trailer, fully cut, paced and graded</li>
+              <li><b>Learning media video</b> — merged CapCut and Premiere Pro edits for coursework</li>
+              <li><b>Motion logo ident</b> — animated logo for the KKN village programme</li>
+              <li><b>Print &amp; identity</b> — posters, banners and packaging designed in Photoshop</li>
+            </ul>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>Delivered pieces that were actually published — a public trailer, a programme ident and
+               printed material. Each clip below is a short excerpt; the frames are real output from
+               the edit timeline.</p>
+          </div>
+          <ul class="project__stack">
+            <li>{{icon:simple-icons:adobepremierepro}} Premiere Pro</li>
+            <li>{{icon:simple-icons:adobephotoshop}} Photoshop</li>
+            <li>{{icon:lucide:film}} Editing &amp; grading</li>
+            <li>{{icon:lucide:monitor-smartphone}} Vertical 9:16</li>
+          </ul>
+        </div>
+        <div class="edits">
+          <figure class="edit reveal">
+            <video class="edit__v" src="assets/video/teaser-sate-meraja.mp4" poster="assets/video/posters/teaser-sate-meraja.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>Sate Meraja — teaser</b><em>Food trailer, 1080×1920, cut in Premiere Pro</em></figcaption>
+          </figure>
+          <figure class="edit reveal">
+            <video class="edit__v" src="assets/video/texum-mockup.mp4" poster="assets/video/posters/texum-mockup.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>TEXUM — trailer</b><em>Game trailer cut</em></figcaption>
+          </figure>
+          <figure class="edit reveal">
+            <video class="edit__v" src="assets/video/revisi-media-pembelajaran.mp4" poster="assets/video/posters/revisi-media-pembelajaran.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>Learning media</b><em>CapCut + Premiere Pro edit</em></figcaption>
+          </figure>
+          <figure class="edit reveal">
+            <video class="edit__v" data-wide src="assets/video/intro-logo-kkn.mp4" poster="assets/video/posters/intro-logo-kkn.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>KKN logo ident</b><em>Animated programme ident</em></figcaption>
+          </figure>
+        </div>
+        <div class="project__shots">
+          <button class="shot" data-gallery="wsmedia" data-i="0"><img src="assets/shots/ws-premiere-sate-meraja.webp" alt="Premiere Pro timeline for the Sate Meraja teaser" loading="lazy"></button>
+          <button class="shot" data-gallery="wsmedia" data-i="1"><img src="assets/shots/ws-premiere-member.webp" alt="Premiere Pro multi-clip sequence" loading="lazy"></button>
+          <button class="shot" data-gallery="wsmedia" data-i="2"><img src="assets/shots/ws-premiere-logo-edit.webp" alt="Premiere Pro logo ident keyframes" loading="lazy"></button>
+          <button class="shot" data-gallery="wsmedia" data-i="3"><img src="assets/shots/ws-photoshop-design.webp" alt="Photoshop workspace with a print layout" loading="lazy"></button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- IOT ---------- -->
+    <article class="project reveal" data-tags="iot design">
+      <header class="project__head">
+        <span class="project__index mono">08</span>
+        <div class="project__heading">
+          <h3 class="project__title">IoT &amp; embedded <span class="badge badge--live">{{icon:lucide:award}} Registered IP</span></h3>
+          <p class="project__sub">Smart Rakaat — a prayer counter using ESP32, ultrasound and audio</p>
+        </div>
+      </header>
+      <div class="project__body">
+        <div class="project__info">
+          <div class="project__block">
+            <h4 class="mono">Problem</h4>
+            <p>Tracking how many rakaat you have prayed means counting in your head, and losing count
+               mid-prayer. Nothing on the market does it without a phone.</p>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">What I built</h4>
+            <ul class="project__bullets">
+              <li><b>ESP32 firmware</b> — HC-SR04 ultrasound detects the bowing and prostration motion</li>
+              <li><b>Movement logic</b> — a prostration sequence increments the rakaat counter</li>
+              <li><b>SSD1306 OLED</b> shows current rakaat against the target; DFPlayer gives audio cues</li>
+              <li><b>Built-in Wi-Fi access point</b> with a web page to set 2, 3 or 4 rakaat and reset</li>
+              <li><b>Circuit drawn in Fritzing</b>, plus a second project: a radar object-detection sensor</li>
+            </ul>
+          </div>
+          <div class="project__block">
+            <h4 class="mono">Result</h4>
+            <p>A working device and <b>a registered intellectual-property certificate</b> for the
+               design. Firmware, schematic and enclosure were all made for it.</p>
+          </div>
+          <ul class="project__stack">
+            <li>{{icon:simple-icons:espressif}} ESP32</li>
+            <li>{{icon:lucide:radio}} HC-SR04 ultrasound</li>
+            <li>{{icon:lucide:cpu}} Embedded C++</li>
+            <li>{{icon:lucide:wifi}} Wi-Fi web control</li>
+            <li>{{icon:lucide:circuit-board}} Fritzing</li>
+          </ul>
+          <ul class="project__links">
+            <li><span class="link link--note">{{icon:lucide:file-text}} Firmware, schematic and enclosure documented — files on request</span></li>
+          </ul>
+        </div>
+        <div class="edits">
+          <figure class="edit reveal">
+            <video class="edit__v" data-wide src="assets/video/iot-smart-rakaat-demo.mp4" poster="assets/video/posters/iot-smart-rakaat-demo.webp" controls muted playsinline preload="none"></video>
+            <figcaption><b>Smart Rakaat in use</b><em>Live counting demonstration</em></figcaption>
+          </figure>
+          <button class="shot" data-gallery="iot" data-i="0"><img src="assets/shots/ws-fritzing-rakaat.webp" alt="Circuit schematic drawn in Fritzing" loading="lazy"></button>
+          <button class="shot" data-gallery="iot" data-i="1"><img src="assets/shots/iot-rakaat-device.webp" alt="Assembled Smart Rakaat device" loading="lazy"></button>
+          <button class="shot" data-gallery="iot" data-i="2"><img src="assets/shots/iot-device-photo.webp" alt="Device in operation" loading="lazy"></button>
         </div>
       </div>
     </article>
@@ -530,8 +689,20 @@
       <ul class="skills__list">
         <li><span>{{icon:simple-icons:figma}} Figma</span><em>5 design files</em></li>
         <li><span>{{icon:lucide:pen-tool}} Wireframes &amp; prototypes</span><em>UM-MART · VIAR UM</em></li>
-        <li><span>{{icon:simple-icons:blender}} Blender</span><em>TEXUM on itch.io</em></li>
+        <li><span>{{icon:simple-icons:blender}} Blender</span><em>TEXUM · 20 maps</em></li>
+        <li><span>{{icon:lucide:box}} Hard-surface modelling</span><em>PC · classroom · products</em></li>
+        <li><span>{{icon:simple-icons:adobephotoshop}} Photoshop</span><em>Print &amp; packaging</em></li>
         <li><span>{{icon:simple-icons:git}} Git &amp; GitHub</span><em>3 public repos</em></li>
+      </ul>
+    </div>
+    <div class="skills__group">
+      <h3 class="mono">{{icon:lucide:film}} Video &amp; IoT</h3>
+      <ul class="skills__list">
+        <li><span>{{icon:simple-icons:adobepremierepro}} Premiere Pro</span><em>Sate Meraja teaser</em></li>
+        <li><span>{{icon:lucide:film}} Editing &amp; grading</span><em>9:16 and 16:9 delivery</em></li>
+        <li><span>{{icon:simple-icons:espressif}} ESP32 firmware</span><em>Smart Rakaat</em></li>
+        <li><span>{{icon:lucide:cpu}} Sensors &amp; actuators</span><em>HC-SR04 · OLED · DFPlayer</em></li>
+        <li><span>{{icon:lucide:circuit-board}} Fritzing schematics</span><em>Smart Rakaat · radar</em></li>
       </ul>
     </div>
   </div>
