@@ -161,7 +161,7 @@
   /* ---------------------------------------------------------
   Nav
   --------------------------------------------------------- */
-  const nav  = document.getElementById('nav');
+  const nav = document.getElementById('topbar') || document.querySelector('.topbar') || document.querySelector('.nav');
   const links  = document.querySelector('.nav__links');
   const burger = document.querySelector('.nav__burger');
   const bar  = document.getElementById('progressBar');
@@ -175,7 +175,7 @@
   });
 
   const onScroll = () => {
-  nav.classList.toggle('is-stuck', window.scrollY > 24);
+  nav?.classList.toggle('is-stuck', window.scrollY > 24);
   const max = document.documentElement.scrollHeight - window.innerHeight;
   if (bar) bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
   };

@@ -46,7 +46,7 @@ const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 
   await p.click('#langToggle'); await new Promise((x) => setTimeout(x, 350));
   r.afterToggle = await p.evaluate(() => ({ lang: document.documentElement.lang, btn: document.getElementById('langToggle').textContent.trim(),
-    emDash: (document.body.innerText.match(/\u2014/g) || []).length, nav1: document.querySelector('.nav__links a').textContent.trim() }));
+    emDash: (document.body.innerText.match(/\u2014/g) || []).length, nav1: document.querySelector('.nav a')?.textContent.trim() || '' }));
   r.errors = errors; r.failedRequests = failed;
   console.log(label + ' ' + JSON.stringify(r));
   await b.close();
