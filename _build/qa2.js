@@ -230,7 +230,7 @@ const LABEL = process.argv[5] || 'DESKTOP';
     return { p1, p2 };
   })();
 
-  console.log(JSON.stringify({
+  console.log('###QA###' + JSON.stringify({
     label: LABEL, viewport: W + 'x' + H,
     errors: [...new Set(errors)].slice(0, 6),
     failed: [...new Set(bad)].slice(0, 10),

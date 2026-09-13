@@ -8,6 +8,14 @@ for f in sys.argv[1:] or ["DESKTOP", "TABLET", "MOBILE"]:
         print("  (no file)"); continue
     t = open(p, encoding="utf-8", errors="replace").read()
     i = t.find("{")
+    # a non-interactive shell can prepend a banner line; take the last JSON object
+    j = t.rfind('###QA###')
+    if j >= 0:
+        i = j + len('###QA###')
+    else:
+        k = t.rfind('{"label"')
+        if k >= 0:
+            i = k
     if i < 0:
         print("  raw:", t[:300]); continue
     try:
