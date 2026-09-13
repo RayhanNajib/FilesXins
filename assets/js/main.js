@@ -280,7 +280,22 @@
     const avail = Math.max(200, track.clientWidth - gap * (tiles.length - 1));
     const cur = parseFloat(getComputedStyle(track).getPropertyValue('--tile-h')) || 178;
     const need = Math.round((avail / totalRatio) * 0.94);   // 6% headroom = a visible peek
-    track.style.setProperty('--tile-h', Math.max(120, Math.min(Math.max(cur, need), 300)) + 'px');
+    let h = Math.max(120, Math.min(Math.max(cur, need), 300));
+    /* a tall column (long copy beside the rail) must not end in dead space:
+       grow the tiles so the rail section matches the column height. */
+    /* only when the copy and the rail sit SIDE BY SIDE: on narrow screens they
+       stack, and the stacked gap is not dead space to fill with taller tiles. */
+    const card = track.closest('.project');
+    const col = track.closest('.project__media');
+    const info = card?.querySelector('.project__info');
+    const section = track.closest('.project__shots-container') || track.parentElement;
+    if (col && info && section && col.clientWidth > 0) {
+      const ib = info.getBoundingClientRect(), cb = col.getBoundingClientRect();
+      const sideBySide = Math.abs(ib.top - cb.top) < 40 && ib.right <= cb.left + 2;
+      const slack = col.clientHeight - section.clientHeight;
+      if (sideBySide && slack > 40) h = Math.min(h + slack, 520);
+    }
+    track.style.setProperty('--tile-h', h + 'px');
     if (track.dataset.scrollable === undefined) {
       requestAnimationFrame(() => { track.dataset.scrollable = String(track.scrollWidth > track.clientWidth + 4); });
     }
@@ -459,19 +474,19 @@
       certGrid.after(bar);
     }
     bar.innerHTML =
-      '<button class="certs-page-btn certs-prev" type="button"' + (certPage === 1 ? ' disabled' : '') + '>' +
-        '<svg class="ico"><use href="#ico-chevron-left"></use></svg>Sebelumnya</button>' +
-      '<div class="certs-page-dots">' +
+      '<button class="certs-page-btn certs-prev" type="button" aria-label="Halaman sebelumnya"' + (certPage === 1 ? ' disabled' : '') + '>' +
+        '<svg class="ico"><use href="#ico-chevron-left"></use></svg></button>' +
+      '<div class="certs-page-nums">' +
         Array.from({ length: totalPages }).map((_, i) =>
-          '<button class="certs-dot' + (i + 1 === certPage ? ' is-active' : '') + '" type="button" data-page="' + (i + 1) + '" aria-label="Halaman ' + (i + 1) + '"></button>'
+          '<button class="certs-num' + (i + 1 === certPage ? ' is-active' : '') + '" type="button" data-page="' + (i + 1) + '" aria-label="Halaman ' + (i + 1) + '">' + String(i + 1).padStart(2, '0') + '</button>'
         ).join('') +
       '</div>' +
-      '<button class="certs-page-btn certs-next" type="button"' + (certPage === totalPages ? ' disabled' : '') + '>' +
-        '<svg class="ico"><use href="#ico-chevron-right"></use></svg>Berikutnya</button>';
+      '<button class="certs-page-btn certs-next" type="button" aria-label="Halaman berikutnya"' + (certPage === totalPages ? ' disabled' : '') + '>' +
+        '<svg class="ico"><use href="#ico-chevron-right"></use></svg></button>';
 
     bar.querySelector('.certs-prev')?.addEventListener('click', () => { if (certPage > 1) { certPage--; renderCertificates(); } });
     bar.querySelector('.certs-next')?.addEventListener('click', () => { if (certPage < totalPages) { certPage++; renderCertificates(); } });
-    bar.querySelectorAll('.certs-dot').forEach((dot) => dot.addEventListener('click', () => {
+    bar.querySelectorAll('.certs-num, .certs-dot').forEach((dot) => dot.addEventListener('click', () => {
       certPage = Number(dot.dataset.page);
       renderCertificates();
     }));

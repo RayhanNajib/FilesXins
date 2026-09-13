@@ -109,7 +109,9 @@ const LABEL = process.argv[5] || 'DESKTOP';
         cropped: track.scrollWidth > track.clientWidth + 2 ? 'scrolls' : 'fits',
         tileRatio: r && r.height ? +(r.width / r.height).toFixed(2) : 0,
         imgRatio: im && im.naturalWidth ? +(im.naturalWidth / im.naturalHeight).toFixed(2) : 0,
-        overflowingPage: r ? (r.right > window.innerWidth + 4) : false,
+        /* measure the RAIL, not the individual tiles: tiles legitimately extend
+           past the viewport inside a scrolling track. */
+        overflowingPage: (() => { const rb = rail.getBoundingClientRect(); return rb.right > window.innerWidth + 4 || rb.left < -4; })(),
         static: rail.classList.contains('is-static'),
         movedTo: Math.round(track.scrollLeft),
         bandPct: bands.length ? Math.max(...bands) : 0,
@@ -134,7 +136,7 @@ const LABEL = process.argv[5] || 'DESKTOP';
       const emptyTail = Math.round(box.bottom - lastContentBottom);
       const infoH = info ? Math.round(info.getBoundingClientRect().height) : 0;
       const mediaH = media ? Math.round(media.getBoundingClientRect().height) : 0;
-      return { num, containerH, emptyTail, infoH, mediaH, colGap: Math.abs(infoH - mediaH) };
+      return { num, containerH, emptyTail, infoH, mediaH, colSlack: Math.abs(infoH - mediaH) };
     });
 
     R.players = [...document.querySelectorAll('.custom-video-player')].map(v => {
@@ -169,7 +171,7 @@ const LABEL = process.argv[5] || 'DESKTOP';
 
     R.certs = {
       cards: document.querySelectorAll('.cert-card').length,
-      dots: document.querySelectorAll('.certs-dot').length,
+      dots: document.querySelectorAll('.certs-dot, .certs-num').length,
       navBtns: [...document.querySelectorAll('.certs-page-btn')].map(b => b.textContent.trim() + '/' + (b.querySelector('use') ? 'icon' : 'NO-ICON')),
       count: document.getElementById('certCount')?.textContent || '',
       cardsWithIcons: [...document.querySelectorAll('.cert-card .cert-card__kind use')].filter(u => {
