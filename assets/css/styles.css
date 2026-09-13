@@ -1188,6 +1188,10 @@ img.brand__logo{ object-fit:cover; background:transparent; color:inherit; font-s
 /* one-column layout: a lone player must fill the roll copy column leaves dead space at the bottom. */
 @t__videos-grid{ align-items:start; }
   .project__videos-grid > .custom-video-player{ max-width:100%; width:100%; }
+/* IoT radar demo: a single portrait clip in a full-width block grows to ~970px tall on
+   desktop, far taller than its source (1080x1920 shown at 547 wide = 971). Cap the
+   frame at the source's own presentation size so it matches the Video Editing block. */
+.project__videos-grid .custom-video-player.video-portrait:only-child{ max-width:min(300px,100%); }
   .video-portrait{ max-width:min(300px,100%); }
   .custom-video-player.video-wide{ max-width:100%; }
 }
