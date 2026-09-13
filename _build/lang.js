@@ -53,11 +53,11 @@ const EXPECT_EN_CARD08 = 'A working device and a registered intellectual-propert
   console.log('\n--- assertions (ID default, EN restores the original) ---');
   const checks = [
     ['c04 EN', norm(en.c04), 'UM-MART - the e-commerce interface this portfolio deploys as a live demo'],
-    ['c06 EN', norm(en.c06), 'PC build & cooling - component-accurate hard-surface models'],
-    ['c07 EN', norm(en.c07), 'Sate Meraja teaser - vertical 9:16 food trailer, fully cut, paced and graded'],
+    ['c06 EN', norm(en.c06), 'Build PC & Pendingin - model hard-surface presisi komponen'],
+    ['c07 EN', norm(en.c07), 'Teaser Sate Meraja - trailer kuliner vertikal 9:16, dipotong penuh, ditata tempo, dan digrading'],
     ['c04 ID', norm(id.c04), 'UM-MART - antarmuka e-commerce yang portfolio ini tampilkan sebagai demo live'],
-    ['c05 EN', norm(en.c05sub), 'A fantasy RPG built and released publicly, from models to script'],
-    ['c05 ID', norm(id.c05sub), 'RPG fantasi yang dibangun dan dirilis publik, dari model sampai naskah'],
+    ['c05 EN', norm(en.c05sub), 'Pengembangan Game RPG Fantasi 3D & 2D - RPG Maker MZ & Asset Blender'],
+    ['c05 ID', norm(id.c05sub), 'Pengembangan Game RPG Fantasi 3D & 2D - RPG Maker MZ & Asset Blender'],
   ];
   for (const [name, got, want] of checks) console.log(`  ${want === got ? 'PASS' : 'FAIL'} ${name}: "${got}"`);
   const joined = (a, b) => !/[a-z][A-Z]|- [a-z]|\w-\w/.test((a || '') + (b || '')) && !/-\s\s|-\w/.test((a||''));

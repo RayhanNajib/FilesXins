@@ -24,216 +24,102 @@
   --------------------------------------------------------- */
   const GALLERIES = {
   ummart: [
-  ['assets/shots/ummart-home.webp',  'Storefront - banners, promotions and product grid'],
-  ['assets/shots/ummart-shop.webp',  'Catalogue - category browsing and filter combinations'],
-  ['assets/shots/ummart-checkout.webp',  'Checkout - contact and shipping details'],
-  ['assets/shots/ummart-payment-ovo.webp',  'Payment flow - OVO (GoPay, DANA and card use the same flow)'],
-  ['assets/shots/ummart-order-complete.webp', 'Order confirmation - receipt summary'],
-  ['assets/shots/ummart-transactions.webp',  'Customer transaction history'],
-  ['assets/shots/ummart-invoice.webp',  'Printable invoice'],
-  ['assets/shots/ummart-admin-dashboard.webp','Admin dashboard - statistics, charts, CRUD and Excel export'],
-  ['assets/shots/ummart-contact.webp',  'Contact page'],
-  ['assets/shots/ummart-about.webp',  'About page'],
-  ['assets/shots/ummart-login.webp',  'Authentication - password and Google Sign-In'],
+    ['assets/shots/ummart-home.webp', 'Storefront - merchandise & kafe kopi UM Mart'],
+    ['assets/shots/ummart-shop.webp', 'Katalog Produk - kategori, filter & pencarian'],
+    ['assets/shots/ummart-checkout.webp', 'Formulir Checkout & Alamat'],
+    ['assets/shots/ummart-payment-ovo.webp', 'Integrasi Pembayaran OVO & E-Wallet'],
+    ['assets/shots/ummart-order-complete.webp', 'Konfirmasi Pesanan & Ringkasan Resi'],
+    ['assets/shots/ummart-transactions.webp', 'Riwayat Transaksi Pelanggan'],
+    ['assets/shots/ummart-invoice.webp', 'Cetak Invoice Resmi'],
+    ['assets/shots/ummart-admin-dashboard.webp', 'Dashboard Admin BPUDA - Grafik & CRUD'],
+    ['assets/shots/ummart-contact.webp', 'Halaman Kontak & Bantuan'],
+    ['assets/shots/ummart-about.webp', 'Informasi Unit Usaha UM Mart'],
+    ['assets/shots/ummart-login.webp', 'Autentikasi Ganda (Password & Google OAuth)'],
   ],
   klinik: [
-  ['assets/shots/klinik-login.webp',  'Sign in - Klinik Pratama UM'],
-  ['assets/shots/klinik-dashboard-admin.webp', 'Admin dashboard - counters and quick actions'],
-  ['assets/shots/klinik-admin-dokter.webp',  'Admin - doctor management'],
-  ['assets/shots/klinik-admin-jadwal.webp',  'Admin - practice schedule management'],
-  ['assets/shots/klinik-admin-pembayaran.webp','Admin - cashier and payment reports'],
-  ['assets/shots/klinik-dokter-pasien.webp',  'Doctor - appointment queue'],
-  ['assets/shots/klinik-dokter-jadwal.webp',  'Doctor - own practice schedule'],
-  ['assets/shots/klinik-pasien-jadwal.webp',  'Patient portal - browse doctor schedules'],
-  ['assets/shots/klinik-pasien-janji.webp',  'Patient portal - appointment history'],
-  ['assets/shots/klinik-register.webp',  'Patient registration'],
+    ['assets/shots/klinik-login.webp', 'Portal Masuk Sistem Klinik Pratama UM'],
+    ['assets/shots/klinik-dashboard-admin.webp', 'Dashboard Manajemen Klinik - Ringkasan Layanan'],
+    ['assets/shots/klinik-admin-dokter.webp', 'Manajemen Data Dokter Umum & Gigi'],
+    ['assets/shots/klinik-admin-jadwal.webp', 'Pengaturan Jadwal Praktik Dokter'],
+    ['assets/shots/klinik-admin-pembayaran.webp', 'Kasir & Laporan Transaksi Berobat'],
+    ['assets/shots/klinik-dokter-pasien.webp', 'Antrean & Rekam Medis Dokter'],
+    ['assets/shots/klinik-dokter-jadwal.webp', 'Jadwal Praktik Per Dokter'],
+    ['assets/shots/klinik-pasien-jadwal.webp', 'Informasi Jadwal Poli Umum, Gigi & KIA'],
+    ['assets/shots/klinik-pasien-janji.webp', 'Booking & Riwayat Berobat Pasien'],
+    ['assets/shots/klinik-register.webp', 'Pendaftaran Akun Pasien Baru'],
   ],
   nanggungan: [
-  ['assets/projects/desa/MENU_BERANDA_DESA_NANGGUNGAN.webp', 'Homepage - village profile, news and services (full page)'],
-  ['assets/projects/desa/DASHBOARD_ADMIN_DESA_NANGGUNGAN.webp', 'Admin dashboard - village staff'],
-  ['assets/projects/desa/MENU_PASAR_DESA_DESA_NANGGUNGAN.webp', 'Village market - local sellers and products'],
-  ['assets/projects/desa/MENU_PERATURAN_DESA_NANGGUNGAN.webp', 'Village regulations - public documents'],
-  ['assets/projects/desa/PENGATURAN_WEB_DESA_STATISTIK.webp', 'Site settings - population statistics'],
-  ['assets/projects/desa/AKUN_PRODUK_UMKM.webp', 'UMKM product management'],
-  ['assets/projects/desa/DASHBOARD_AKUN_ANGGOTA.webp', 'Member dashboard'],
-  ['assets/projects/desa/DASHBOARD_AKUN_UMKM.webp', 'UMKM seller dashboard'],
-  ['assets/projects/desa/DASHBOARD_PENJUALAN_AKUN_UMKM.webp', 'UMKM sales report'],
-  ['assets/projects/desa/MENU_BERITA_DESA_ADMIN.webp', 'Admin - news management'],
-  ['assets/projects/desa/MENU_BERITA_DESA_NANNGUNGAN.webp', 'News list - published articles'],
-  ['assets/projects/desa/MENU_EDIT_BERITA_DESA_ADMIN.webp', 'Admin - edit article'],
-  ['assets/projects/desa/MENU_EDIT_PERATURAN_DESA_ADMIN.webp', 'Admin - edit regulation'],
-  ['assets/projects/desa/MENU_ISI_BERITA_DESA_NANGGUNGAN.webp', 'Article page - full text and media'],
-  ['assets/projects/desa/MENU_ISI_UMKM_DESA_NANGGUNGAN.webp', 'UMKM detail - local business page'],
-  ['assets/projects/desa/MENU_LOGIN_DESA_NANGGUNGAN.webp', 'Login - staff and UMKM accounts'],
-  ['assets/projects/desa/MENU_PERATURAN_DESA_ADMIN.webp', 'Admin - regulation management'],
-  ['assets/projects/desa/MENU_PROFIL_AKUN.webp', 'Account profile'],
-  ['assets/projects/desa/MENU_PROFIL_AND_SEJARAH_DESA_NANGGUNGAN.webp', 'Village profile and history'],
-  ['assets/projects/desa/MENU_VERIFIKASI_PRODUK_UMKM_ADMIN.webp', 'Admin - UMKM product verification'],
-  ['assets/projects/desa/PENGATURAN_WEB_3_PILAR_DESA.webp', 'Site settings - the village\'s three pillars'],
-  ['assets/projects/desa/PENGATURAN_WEB_APARATUR_DESA.webp', 'Site settings - village officials'],
-  ['assets/projects/desa/PENGATURAN_WEB_KONTAK_AND_LOKASI.webp', 'Site settings - contact and location'],
-  ['assets/projects/desa/PENGATURAN_WEB_PROFIL_AND_SEJARAH_DESA.webp', 'Site settings - profile and history'],
-  ['assets/projects/desa/PENGATURAN_WEB_VIDEO_YOUTUBE.webp', 'Site settings - embedded video'],
-  ['assets/projects/desa/desa_izin.webp', 'Field visit - permission letter handover to the village office'],
-  ['assets/projects/desa/desa_wawancara.webp', 'Field visit - collecting the village\'s data requirements'],
+    ['assets/projects/desa/MENU_BERANDA_DESA_NANGGUNGAN.webp', 'Halaman Utama Portal Nanggungan Digdaya'],
+    ['assets/projects/desa/DASHBOARD_ADMIN_DESA_NANGGUNGAN.webp', 'Dashboard Admin Staf Desa'],
+    ['assets/projects/desa/MENU_PASAR_DESA_DESA_NANGGUNGAN.webp', 'Pasar Desa Online - Produk UMKM Lokal'],
+    ['assets/projects/desa/MENU_PERATURAN_DESA_NANGGUNGAN.webp', 'Dokumen Transparansi & Peraturan Desa'],
+    ['assets/projects/desa/PENGATURAN_WEB_DESA_STATISTIK.webp', 'Statistik Kependudukan & Wilayah Desa'],
+    ['assets/projects/desa/AKUN_PRODUK_UMKM.webp', 'Manajemen Katalog Produk UMKM Desa'],
+    ['assets/projects/desa/DASHBOARD_AKUN_UMKM.webp', 'Dashboard Pelaku Usaha Desa'],
+    ['assets/projects/desa/MENU_BERITA_DESA_NANNGUNGAN.webp', 'Warta & Pengumuman Resmi Desa'],
+    ['assets/projects/desa/MENU_PROFIL_AND_SEJARAH_DESA_NANGGUNGAN.webp', 'Profil Sejarah & Potensi Desa Nanggungan'],
   ],
   figma: [
-  ['assets/shots/figma-ummart-home.webp',  'UM-MART - homepage design'],
-  ['assets/shots/figma-ummart-shop.webp',  'UM-MART - shop and catalogue'],
-  ['assets/shots/figma-ummart-components.webp',  'UM-MART - component library'],
-  ['assets/shots/figma-ummart-checkout.webp',  'UM-MART - checkout flow'],
-  ['assets/shots/figma-viar-concept.webp',  'UI VIAR UM - concept and design board'],
-  ['assets/shots/figma-smartipen.webp',  'SMARTIPEN - tablet interface'],
-  ['assets/shots/figma-kkn-spanduk.webp',  'KKN - village post signage'],
+    ['assets/shots/figma-ummart-home.webp', 'UM-MART - Antarmuka E-Commerce Kampus'],
+    ['assets/shots/figma-ummart-shop.webp', 'UM-MART - Layout Katalog & Filter'],
+    ['assets/shots/figma-ummart-components.webp', 'UM-MART - Sistem Komponen UI'],
+    ['assets/shots/figma-ummart-checkout.webp', 'UM-MART - Desain Alur Checkout'],
+    ['assets/shots/figma-viar-concept.webp', 'UI VIAR UM - Game AR Media Pembelajaran Anak TKJ (Unity Engine)'],
+    ['assets/shots/figma-smartipen.webp', 'Konsep meniru gaya poster ala instagram UM'],
+    ['assets/shots/figma-kkn-spanduk.webp', 'Desain banner KKN nanggungan UM BBM 2026'],
   ],
   texum: [
-  ['assets/shots/texum-title.webp',  'Title screen'],
-  ['assets/shots/texum-gameplay.webp',  'In-game map - gameplay interface'],
-  ['assets/shots/texum-battle.webp',  'Battle interface'],
-  ['assets/shots/texum-menu-status.webp',  'Status menu'],
-  ['assets/shots/texum-map-06.webp',  'Hand-built map (of 20)'],
-  ['assets/shots/texum-map-11.webp',  'Hand-built map (of 20)'],
-  ['assets/shots/texum-map-19.webp',  'Hand-built map (of 20)'],
-  ['assets/shots/texum-enemy-phoenix.webp',  'Creature - Phoenix'],
-  ['assets/shots/texum-enemy-chimera.webp',  'Creature - Chimera'],
-  ['assets/shots/texum-enemy-orc.webp',  'Creature - Orc'],
-  ['assets/shots/texum-enemy-marias.webp',  'Creature - Marias'],
-  ['assets/shots/texum-icons.webp',  'Icon set'],
-  ['assets/shots/texum-mockup.webp',  'Trailer mockup'],
-  ],
-  renders: [
-  ['assets/shots/blender-pc.webp',  'PC build - hard-surface model'],
-  ['assets/shots/blender-classroom.webp',  'Classroom interior scene'],
-  ['assets/shots/blender-smartipen.webp',  'Smartipen - internals'],
-  ['assets/shots/blender-smartipen-detail.webp', 'Smartipen - product detail'],
-  ['assets/shots/blender-lab-um.webp',  'Laboratory scene'],
-  ['assets/shots/blender-keyboard.webp',  'Keyboard model'],
-  ['assets/shots/blender-gunting-kuku.webp',  'Nail clipper - edit mode'],
-  ['assets/shots/blender-cooler.webp',  'Cooling assembly'],
-  ['assets/shots/blender-maskot-um.webp',  'Campus mascot character'],
-  ['assets/shots/blender-sate-meraja.webp',  'Sate Meraja - turntable render'],
-  ['assets/shots/blender-smart-rakaat.webp',  'Smart Rakaat - device model'],
-  ['assets/shots/blender-animation.webp',  'Animation scene'],
-  ['assets/shots/blender-chain-weapon.webp',  'Chain weapon prop'],
-  ['assets/shots/blender-magnifier.webp',  'Magnifier render'],
-  ['assets/shots/blender-plane.webp',  'Aircraft render'],
-  ['assets/shots/blender-render-plate.webp',  'Studio render'],
-  ['assets/shots/blender-mockup-cover.webp',  'Mockup - cover'],
+    ['assets/shots/texum-title.webp', 'Layar Judul Game TEXUM (RPG Maker MZ)'],
+    ['assets/shots/texum-gameplay.webp', 'Gameplay & Eksplorasi Peta RPG'],
+    ['assets/shots/texum-battle.webp', 'Sistem Pertarungan Turn-Based RPG'],
+    ['assets/shots/texum-menu-status.webp', 'Antarmuka Menu Status & Item Karakter'],
+    ['assets/shots/texum-map-06.webp', 'Peta 3D World (1 dari 20 Peta Buatan Tangan)'],
+    ['assets/shots/texum-enemy-phoenix.webp', 'Desain Karakter & Monster - Phoenix'],
+    ['assets/shots/texum-mockup.webp', 'Mockup Rilis Game TEXUM'],
   ],
   wsblender: [
-  ['assets/shots/ws-blender-pc.webp',  'Blender workspace - hard-surface modelling'],
-  ['assets/shots/ws-blender-keyboard.webp',  'Blender workspace - keyboard in edit mode'],
-  ['assets/shots/ws-blender-gunting-kuku.webp',  'Blender workspace - product detail pass'],
-  ['assets/shots/ws-blender-smartrakaat.webp',  'Blender workspace - Smart Rakaat enclosure'],
+    ['assets/shots/Workspace Blender MyPC.png', 'Workspace Blender - Pemodelan PC Desktop'],
+    ['assets/shots/Workspace Blender Classroom XII MIPA 1.png', 'Workspace Blender - Desain Kelas XII MIPA 1'],
+    ['assets/shots/Workspace Blender Cooler Blackshark Pro 2.png', 'Workspace Blender - Pemodelan Cooler Blackshark Pro 2'],
+    ['assets/shots/Workspace Blender Cutting Nail.png', 'Workspace Blender - Pemodelan Gunting Kuku'],
+    ['assets/shots/Workspace Blender Hand Sanitizer.png', 'Workspace Blender - Pemodelan Hand Sanitizer'],
+    ['assets/shots/Workspace Blender Keyboard HP GK 100.png', 'Workspace Blender - Pemodelan Keyboard HP GK 100'],
+    ['assets/shots/Workspace Concept Smart Rakaat.png', 'Workspace Blender - Konsep Casing Smart Rakaat'],
+    ['assets/shots/Workspace Keycaps Blender.jpg', 'Workspace Blender - Pemodelan Keycaps Mechanical Keyboard'],
+    ['assets/shots/Workspace Model 3D Cakra.jpg', 'Workspace Blender - Pemodelan Ikon Cakra UM 3D'],
+  ],
+  renders: [
+    ['assets/shots/Project Render Blender Classroom XII MIPA 1.png', 'Output Render Blender - Interior Ruang Kelas XII MIPA 1'],
+    ['assets/shots/Project Render Blender Concept SMART RAKAAT.png', 'Output Render Blender - Konsep Casing Perangkat Smart Rakaat'],
+    ['assets/shots/Project Render Blender Cutting Nail.png', 'Output Render Blender - Produk Gunting Kuku 3D'],
+    ['assets/shots/Project Render Blender Hand Sanitizer.png', 'Output Render Blender - Botol Hand Sanitizer 3D'],
+    ['assets/shots/Project Render Blender Keyboard HP GK 100.PNG', 'Output Render Blender - Mechanical Keyboard HP GK 100'],
   ],
   wsmedia: [
-  ['assets/shots/ws-premiere-sate-meraja.webp',  'Premiere Pro timeline - Sate Meraja teaser'],
-  ['assets/shots/ws-premiere-member.webp',  'Premiere Pro - multi-clip sequence'],
-  ['assets/shots/ws-premiere-logo-edit.webp',  'Premiere Pro - logo ident keyframes'],
-  ['assets/shots/ws-photoshop-design.webp',  'Photoshop workspace - print layout'],
+    ['assets/shots/Workspace Intro KKN Logo Premiere pro.png', 'Workspace Premiere Pro - Editing Motion Intro Logo KKN Kelompok H'],
+    ['assets/shots/Workspace Editing Teaser Logo Meraja Premiere pro.png', 'Workspace Premiere Pro - Timeline Editing Teaser Logo Meraja'],
+    ['assets/shots/Workspace Editing TrailerLogo Meraja Premiere pro.png', 'Workspace Premiere Pro - Timeline Editing Trailer Sate Meraja'],
+    ['assets/shots/Project Edit Poster With Photoshop.png', 'Workspace Photoshop - Desain Poster Media Pembelajaran & Promosi'],
   ],
   iot: [
-  ['assets/shots/ws-fritzing-rakaat.webp',  'Circuit schematic - drawn in Fritzing'],
-  ['assets/shots/iot-rakaat-device.webp',  'Assembled Smart Rakaat device'],
-  ['assets/shots/iot-device-photo.webp',  'Device in operation'],
-  ['assets/shots/ws-blender-smartrakaat.webp',  'Enclosure modelled in Blender'],
+    ['assets/shots/Skema Rangkaian SMART RAKAAT FRITIZING.png', 'Skema Rangkaian Elektronika Smart Rakaat (Fritzing)'],
+    ['assets/shots/Project Render Blender Concept SMART RAKAAT.png', 'Model 3D Casing Perangkat Smart Rakaat (Blender)'],
   ],
-  };
+};
 
   /* ---------------------------------------------------------
   Certificates - 12 documents, each with the capability it
   evidences. Sorted strongest first (IP registrations, then
   campus awards, then certified courses).
   --------------------------------------------------------- */
-  const CERTS = [
-  { img:'assets/certs/hki-um-mart.webp', kind:'hki', label:'Intellectual property',
-  title:'Registered IP - UM-MART e-commerce platform',
-  issuer:'Ministry of Law of Indonesia (Kemenkumham)',
-  evidences:'Original software authorship. Verifies that the UM-MART catalogue, cart, payment and admin systems are my own work.' },
+  
+  
 
-  { img:'assets/certs/hki-smart-rakaat.webp', kind:'hki', label:'Intellectual property',
-  title:'Registered IP - Smart Rakaat',
-  issuer:'Ministry of Law of Indonesia (Kemenkumham)',
-  evidences:'Product innovation and hardware-software integration, from concept through to a registered design.' },
-
-  { img:'assets/certs/asisten-lab.webp', kind:'award', label:'Campus appointment',
-  title:'Laboratory Teaching Assistant',
-  issuer:'Universitas Negeri Malang · even semester 2025/2026',
-  evidences:'Selected to teach and assess a laboratory course - technical depth plus the ability to explain it.' },
-
-  { img:'assets/certs/pkm.webp', kind:'award', label:'National programme',
-  title:'Program Kreativitas Mahasiswa (PKM)',
-  issuer:'National student creativity programme · 2025',
-  evidences:'Competitive national selection: research proposal writing and team-based project delivery.' },
-
-  { img:'assets/certs/pkkmb.webp', kind:'award', label:'Campus award',
-  title:'PKKMB Universitas Negeri Malang',
-  issuer:'Campus orientation programme · 2024',
-  evidences:'Campus-level recognition during new-student orientation.' },
-
-  { img:'assets/certs/cisco-ite.webp', kind:'course', label:'Vendor certification',
-  title:'IT Essentials',
-  issuer:'Cisco Networking Academy',
-  evidences:'Hardware, operating systems, networking and security fundamentals - the infrastructure layer under my web work.' },
-
-  { img:'assets/certs/bootcamp-uiux.webp', kind:'course', label:'Bootcamp',
-  title:'UI/UX Design Intensive Camp',
-  issuer:'Intensive programme',
-  evidences:'User research, wireframing, design systems and prototyping. Directly applied in the Figma project on this page.' },
-
-  { img:'assets/certs/bootcamp-figma.webp', kind:'course', label:'Bootcamp',
-  title:'Figma Camp',
-  issuer:'Design tooling programme',
-  evidences:'Components, auto-layout and interactive prototypes - the tool I design every interface in.' },
-
-  { img:'assets/certs/bootcamp-excel.webp', kind:'course', label:'Certified course',
-  title:'Data Visualization with Microsoft Excel',
-  issuer:'MySkill',
-  evidences:'Spreadsheet analysis and chart design, applied to the admin reporting and Excel export in UM-MART.' },
-
-  { img:'assets/certs/diklat-nasional.webp', kind:'course', label:'National training',
-  title:'Diklat Nasional',
-  issuer:'National training programme · 2025',
-  evidences:'Structured national-level training beyond the standard curriculum.' },
-
-  { img:'assets/certs/ukbing.webp', kind:'course', label:'Language training',
-  title:'English Proficiency Training (UKBING)',
-  issuer:'Universitas Negeri Malang',
-  evidences:'English reading and writing at a level sufficient for technical documentation and international sources.' },
-
-  { img:'assets/certs/webinar-iot.webp', kind:'course', label:'Technical webinar',
-  title:'IoT with Raspberry Pi',
-  issuer:'Technical webinar',
-  evidences:'Embedded computing and sensor integration - the hardware side of the Smart Rakaat work.' },
-  ];
 
   /* ---------------------------------------------------------
   Certificate grid
   --------------------------------------------------------- */
-  const grid = document.getElementById('certGrid');
-  if (grid) {
-  const frag = document.createDocumentFragment();
-  CERTS.forEach((c, i) => {
-  const b = document.createElement('button');
-  b.className = 'cert-card';
-  b.type = 'button';
-  b.dataset.gallery = 'certs';
-  b.dataset.i = String(i);
-  b.innerHTML =
-  '<div class="cert-card__img">' +
-  '<span class="cert-card__kind" data-k="' + c.kind + '">' + (ICON[c.kind] || '') + c.label + '</span>' +
-  '<img src="' + c.img + '" alt="' + c.title + '" loading="lazy">' +
-  '</div>' +
-  '<div class="cert-card__meta">' +
-  '<h3>' + c.title + '</h3>' +
-  '<p>' + c.evidences + '</p>' +
-  '<span class="cert-card__src">' + c.issuer + '</span>' +
-  '</div>';
-  frag.appendChild(b);
-  });
-  grid.appendChild(frag);
-  GALLERIES.certs = CERTS.map((c) => [c.img, c.title + ' - ' + c.issuer]);
-  }
+  
 
   /* ---------------------------------------------------------
   Lightbox
@@ -387,3 +273,321 @@
 
   setLanguage(currentLang);
 })();
+
+
+
+/* ---------------------------------------------------------
+Certificate Pagination & Dynamic Filter Render
+--------------------------------------------------------- */
+
+  const CERTS = [
+  { img:'assets/certs/hki-um-mart.webp', kind:'hki', label:'Kekayaan Intelektual',
+    title:'Sertifikat HKI Registered - UM-MART Platform E-Commerce',
+    issuer:'Kementerian Hukum & HAM RI (Kemenkumham)',
+    evidences:'Hak Cipta Perangkat Lunak Resmi UM-MART (Sistem Katalog, Keranjang, Kasir & Admin).' },
+
+  { img:'assets/certs/hki-smart-rakaat.webp', kind:'hki', label:'Kekayaan Intelektual',
+    title:'Sertifikat HKI Registered - Smart Rakaat IoT',
+    issuer:'Kementerian Hukum & HAM RI (Kemenkumham)',
+    evidences:'Hak Cipta Perangkat IoT Alat Penghitung Rakaat Salat Otomatis Berbasis ESP32.' },
+
+  { img:'assets/certs/asisten-lab.webp', kind:'award', label:'Penugasan Kampus',
+    title:'Asisten Laboratorium Komputer',
+    issuer:'Departemen Teknik Elektro & Informatika UM (Genap 2025/2026)',
+    evidences:'Penugasan mengajar & mendampingi praktikum mahasiswa di laboratorium komputer.' },
+
+  { img:'assets/certs/cisco-ite.webp', kind:'course', label:'Sertifikasi Vendor',
+    title:'Cisco Networking Academy - IT Essentials',
+    issuer:'Cisco Systems International',
+    evidences:'Kompetensi hardware komputer, sistem operasi, jaringan dasar, dan keamanan IT.' },
+
+  { img:'assets/certs/pkm.webp', kind:'award', label:'Program Nasional',
+    title:'Program Kreativitas Mahasiswa (PKM)',
+    issuer:'Kemendikbudristek / Kemenristekdikti RI',
+    evidences:'Seleksi proposal PKM inovasi teknologi hardware & perangkat cerdas disgrafia.' },
+
+  { img:'assets/certs/bootcamp-uiux.webp', kind:'course', label:'Bootcamp',
+    title:'UI/UX Design Intensive Camp',
+    issuer:'Intensive Bootcamp Program',
+    evidences:'Kompetensi riset pengguna, wireframing, sistem UI, dan pembuatan prototipe interaktif.' },
+
+  { img:'assets/certs/bootcamp-figma.webp', kind:'course', label:'Bootcamp',
+    title:'Figma Design Camp',
+    issuer:'Design Tooling Certification',
+    evidences:'Penguasaan fitur Figma advance: auto-layout, komponen UI, & prototipe.' },
+
+  { img:'assets/certs/bootcamp-excel.webp', kind:'course', label:'Kursus Bersertifikat',
+    title:'Data Visualization with Microsoft Excel',
+    issuer:'MySkill Certification',
+    evidences:'Analisis data spreadsheet dan pembuatan grafik visualisasi statistik admin.' },
+
+  { img:'assets/certs/workshop-ai.webp', kind:'course', label:'Workshop',
+    title:'Workshop Generative AI & Technology',
+    issuer:'Penyelenggara Workshop Teknologi',
+    evidences:'Pemanfaatan kecerdasan buatan untuk akselerasi alur kerja pengembangan IT.' },
+
+  { img:'assets/certs/workshop-iot.webp', kind:'course', label:'Workshop',
+    title:'Workshop Internet of Things (IoT)',
+    issuer:'Workshop Pembelajaran IoT',
+    evidences:'Pengembangan sistem embedded, mikrokontroler, dan pengiriman data sensor.' },
+
+  { img:'assets/certs/workshop-plc.webp', kind:'course', label:'Workshop',
+    title:'Workshop Automation & PLC',
+    issuer:'Pelatihan Otomasi Industri',
+    evidences:'Dasar pemograman logika kontroler otomatisasi dan sistem kontrol.' },
+
+  { img:'assets/certs/workshop-cendekia.webp', kind:'course', label:'Workshop',
+    title:'Workshop Cendekia Menulis Karya Ilmiah',
+    issuer:'Forum Cendekia Akademik',
+    evidences:'Keterampilan penyusunan karya ilmiah dan publikasi teknis.' },
+
+  { img:'assets/certs/webinar-iot.webp', kind:'course', label:'Webinar',
+    title:'Webinar IoT dengan Raspberry Pi',
+    issuer:'Webinar Nasional IoT',
+    evidences:'Integrasi Raspberry Pi, sistem Linux embedded, dan komunikasi sensor jarak jauh.' },
+
+  { img:'assets/certs/webinar-gemapedia.webp', kind:'course', label:'Webinar',
+    title:'Webinar Nasional Pendidikan - GEMAPEDIA',
+    issuer:'UKM GEMAPEDIA Universitas Negeri Malang',
+    evidences:'Partisipasi webinar nasional penguatan inovasi pendidikan inklusif.' },
+
+  { img:'assets/certs/webinar-mdgb.webp', kind:'course', label:'Webinar',
+    title:'Webinar MDGB Kuliah Bestari UM',
+    issuer:'Majelis Dewan Guru Besar UM',
+    evidences:'Wawasan akademik kepemimpinan dan inovasi sains teknologi.' },
+
+  { img:'assets/certs/webinar-politik.webp', kind:'course', label:'Webinar',
+    title:'Seminar Nasional Ilmu Politik',
+    issuer:'Fakultas Ilmu Sosial Universitas Negeri Malang',
+    evidences:'Partisipasi seminar akademik nasional tata kelola dan analisis isu publik.' },
+
+  { img:'assets/certs/webinar-ppkn.webp', kind:'course', label:'Webinar',
+    title:'Webinar Nasional PPKN FIS UM',
+    issuer:'Fakultas Ilmu Sosial Universitas Negeri Malang',
+    evidences:'Partisipasi webinar penguatan wawasan kebangsaan & etika digital.' },
+
+  { img:'assets/certs/diklat-nasional.webp', kind:'course', label:'Diklat',
+    title:'Diklat Nasional Pengembangan Kompetensi',
+    issuer:'Program Diklat Nasional 2025',
+    evidences:'Pengembangan kapasitas diri, kepemimpinan, dan kerja sama tim.' },
+
+  { img:'assets/certs/ldk-positron.webp', kind:'award', label:'Pelatihan Organisasi',
+    title:'Pelatihan LDK Positron 2024',
+    issuer:'Himpunan Mahasiswa / Organisasi Kampus UM',
+    evidences:'Latihan Dasar Kepemimpinan (LDK) penguatan manajemen organisasi kampus.' },
+
+  { img:'assets/certs/pemira-2024.webp', kind:'award', label:'Kepanitiaan Kampus',
+    title:'Sertifikat Pemilu Raya (PEMIRA) 2024',
+    issuer:'Panitia Pemira Universitas Negeri Malang',
+    evidences:'Keterlibatan aktif dalam suksesi demokrasi mahasiswa kampus UM 2024.' },
+
+  { img:'assets/certs/pemira-2025.webp', kind:'award', label:'Kepanitiaan Kampus',
+    title:'Sertifikat Pemilu Raya (PEMIRA) 2025',
+    issuer:'Panitia Pemira Universitas Negeri Malang',
+    evidences:'Keterlibatan aktif dalam suksesi demokrasi mahasiswa kampus UM 2025.' },
+
+  { img:'assets/certs/pkkmb.webp', kind:'award', label:'Penghargaan Kampus',
+    title:'PKKMB Universitas Negeri Malang',
+    issuer:'Panitia Orientation Kampus UM 2024',
+    evidences:'Kelulusan & penghargaan partisipasi orientasi mahasiswa baru UM.' },
+
+  { img:'assets/certs/ukbing.webp', kind:'course', label:'Pelatihan Bahasa',
+    title:'English Proficiency Training (UKBING)',
+    issuer:'Balai Bahasa Universitas Negeri Malang',
+    evidences:'Kompetensi membaca, mendengarkan, dan menulis dokumentasi teknis Bahasa Inggris.' },
+];
+
+  
+
+
+  
+
+  let currentCertPage = 1;
+const CERTS_PER_PAGE = 6;
+let currentCertFilter = 'all';
+
+const renderCertificates = () => {
+  const grid = document.querySelector('.certs');
+  if (!grid) return;
+  
+  let filtered = CERTS;
+  if (currentCertFilter !== 'all') {
+    filtered = CERTS.filter(c => c.kind === currentCertFilter);
+  }
+  
+  const totalPages = Math.max(1, Math.ceil(filtered.length / CERTS_PER_PAGE));
+  if (currentCertPage > totalPages) currentCertPage = totalPages;
+  
+  const startIdx = (currentCertPage - 1) * CERTS_PER_PAGE;
+  const pageItems = filtered.slice(startIdx, startIdx + CERTS_PER_PAGE);
+  
+  grid.innerHTML = pageItems.map((c, i) => `
+    <button class="cert-card reveal is-in" data-cert-idx="${CERTS.indexOf(c)}">
+      <div class="cert-card__img">
+        <img src="${c.img}" alt="${c.title}" loading="lazy">
+        <span class="cert-card__kind" data-k="${c.kind}">
+          <svg class="ico"><use href="#ico-${c.kind === 'hki' ? 'award' : (c.kind === 'award' ? 'circle-check' : 'book-open')}"></use></svg>
+          ${c.label}
+        </span>
+      </div>
+      <div class="cert-card__meta">
+        <h3>${c.title}</h3>
+        <p>${c.evidences}</p>
+        <span class="cert-card__src">${c.issuer}</span>
+      </div>
+    </button>
+  `).join('');
+  
+  let paginBar = document.querySelector('.certs-pagination-bar');
+  if (!paginBar) {
+    paginBar = document.createElement('div');
+    paginBar.className = 'certs-pagination-bar';
+    grid.after(paginBar);
+  }
+  
+  paginBar.innerHTML = `
+    <div class="certs-page-info">
+      Halaman ${currentCertPage} dari ${totalPages} (${filtered.length} Sertifikat)
+    </div>
+    <div class="certs-page-nav">
+      <button class="certs-page-btn certs-prev" ${currentCertPage === 1 ? 'disabled' : ''}>
+        <svg class="ico"><use href="#ico-chevron-left"></use></svg> Prev
+      </button>
+      <div class="certs-page-dots">
+        ${Array.from({length: totalPages}).map((_, idx) => `
+          <span class="certs-dot ${idx + 1 === currentCertPage ? 'is-active' : ''}" data-page="${idx + 1}"></span>
+        `).join('')}
+      </div>
+      <button class="certs-page-btn certs-next" ${currentCertPage === totalPages ? 'disabled' : ''}>
+        Next <svg class="ico"><use href="#ico-chevron-right"></use></svg>
+      </button>
+    </div>
+  `;
+  
+  paginBar.querySelector('.certs-prev')?.addEventListener('click', () => {
+    if (currentCertPage > 1) {
+      currentCertPage--;
+      renderCertificates();
+    }
+  });
+  paginBar.querySelector('.certs-next')?.addEventListener('click', () => {
+    if (currentCertPage < totalPages) {
+      currentCertPage++;
+      renderCertificates();
+    }
+  });
+  paginBar.querySelectorAll('.certs-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      currentCertPage = Number(dot.dataset.page);
+      renderCertificates();
+    });
+  });
+  
+  grid.querySelectorAll('.cert-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const idx = Number(card.dataset.certIdx);
+      const cert = CERTS[idx];
+      if (cert) openLightboxSingle(cert.img, `${cert.title} — ${cert.issuer}`);
+    });
+  });
+};
+
+/* Helper for single image lightbox */
+const openLightboxSingle = (imgUrl, caption) => {
+  const box = document.getElementById('lightbox');
+  if (!box) return;
+  const imgEl = box.querySelector('.lightbox__img');
+  const capEl = box.querySelector('.lightbox__caption');
+  if (imgEl) imgEl.src = imgUrl;
+  if (capEl) capEl.textContent = caption;
+  box.hidden = false;
+  box.classList.add('is-open');
+};
+
+/* ---------------------------------------------------------
+Custom Video Player Handler
+--------------------------------------------------------- */
+const setupCustomVideoPlayers = () => {
+  document.querySelectorAll('.custom-video-player').forEach(player => {
+    const video = player.querySelector('video');
+    const playBtn = player.querySelector('.v-play');
+    const progress = player.querySelector('.v-progress');
+    const timeDisplay = player.querySelector('.v-time');
+    const muteBtn = player.querySelector('.v-mute');
+    const volume = player.querySelector('.v-volume');
+    const fullBtn = player.querySelector('.v-fullscreen');
+    
+    if (!video) return;
+    
+    const formatTime = (sec) => {
+      if (isNaN(sec) || !isFinite(sec)) return '0:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    };
+    
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    }
+    video.addEventListener('play', () => {
+      if (playBtn) playBtn.innerHTML = '<svg class="ico"><use href="#ico-pause"></use></svg>';
+    });
+    video.addEventListener('pause', () => {
+      if (playBtn) playBtn.innerHTML = '<svg class="ico"><use href="#ico-play"></use></svg>';
+    });
+    
+    video.addEventListener('timeupdate', () => {
+      if (progress && video.duration) {
+        progress.value = (video.currentTime / video.duration) * 100;
+      }
+      if (timeDisplay) {
+        timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+      }
+    });
+    
+    if (progress) {
+      progress.addEventListener('input', () => {
+        if (video.duration) {
+          video.currentTime = (progress.value / 100) * video.duration;
+        }
+      });
+    }
+    
+    if (muteBtn) {
+      muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        muteBtn.innerHTML = video.muted ? 
+          '<svg class="ico"><use href="#ico-volume-x"></use></svg>' : 
+          '<svg class="ico"><use href="#ico-volume-2"></use></svg>';
+      });
+    }
+    if (volume) {
+      volume.addEventListener('input', () => {
+        video.volume = volume.value / 100;
+        video.muted = (video.volume === 0);
+      });
+    }
+    
+    if (fullBtn) {
+      fullBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          player.requestFullscreen().catch(err => console.log(err));
+        } else {
+          document.exitFullscreen().catch(err => console.log(err));
+        }
+      });
+    }
+  });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderCertificates();
+  setupCustomVideoPlayers();
+});
+
