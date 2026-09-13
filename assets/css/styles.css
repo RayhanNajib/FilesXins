@@ -688,7 +688,6 @@ main{ position:relative; z-index:2; }
   z-index: 10;
   opacity: 0.95;
   transition: opacity 0.3s var(--ease);
-  backdrop-filter: blur(8px);
 }
 .custom-video-player:hover .video-controls {
   opacity: 1;
@@ -834,7 +833,6 @@ main{ position:relative; z-index:2; }
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  backdrop-filter: blur(8px);
   transition: all 0.2s;
 }
 .lightbox__prev { left: 1rem; }
@@ -1221,3 +1219,10 @@ img.brand__logo{ object-fit:cover; background:transparent; color:inherit; font-s
   .video-portrait{ max-width:min(300px,100%); }
   .custom-video-player.video-wide{ max-width:100%; }
 }
+
+/* The controls overlay must not defeat the player's rounding: backdrop-filter on a
+   child disables the parent's overflow clipping in Chrome, which squares off the
+   bottom corners while the top stays round. Rounded corners are the requirement. */
+.video-controls{ border-bottom-left-radius:inherit; border-bottom-right-radius:inherit; }
+.custom-video-player video{ border-radius:inherit; }
+.custom-video-player.video-wide video{ border-radius:12px; }
