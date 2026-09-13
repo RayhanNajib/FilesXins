@@ -1,593 +1,515 @@
 /* ============================================================
   FilesXins - Rayhan Najib
-  Interactions: reveal on scroll, nav state, project filter,
-  lightbox galleries and the certificate grid.
+  Interactions: reveal on scroll, topbar state, self-scrolling
+  preview rails, fullscreen media lightbox, custom video player,
+  certificate pagination and the ID/EN language switch.
 
-  Every certificate entry states what the document verifies and
-  which capability it evidences - the ATS-friendly framing.
-  Icons are inlined by _build/icons.py so they follow currentColor.
+  Order matters: every const is declared before the function that
+  reads it. Icon symbols (#ico-*) are defined once in index.html
+  and referenced here with <use href="#...">, so this file never
+  depends on an external sprite request.
   ============================================================ */
 (() => {
   'use strict';
 
   /* ---------------------------------------------------------
-  Inline icon helper (Lucide, ISC licence)
-  --------------------------------------------------------- */
-  const ICON = {
-  badge:  '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>',
-  award:  '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>',
-  course: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>',
-  };
+     Certificates: each entry states the document, the issuer,
+     and the capability it evidences.
+     --------------------------------------------------------- */
+  const CERTS = [
+    { img: 'assets/certs/hki-um-mart.webp', kind: 'hki', label: 'Kekayaan Intelektual',
+      title: 'HKI Registered - UM-MART Platform E-Commerce',
+      issuer: 'Kementerian Hukum & HAM RI',
+      evidences: 'Hak cipta perangkat lunak UM-MART: katalog, keranjang, kasir, dan panel admin.' },
+    { img: 'assets/certs/hki-smart-rakaat.webp', kind: 'hki', label: 'Kekayaan Intelektual',
+      title: 'HKI Registered - Smart Rakaat IoT',
+      issuer: 'Kementerian Hukum & HAM RI',
+      evidences: 'Hak cipta perangkat IoT penghitung rakaat otomatis berbasis ESP32.' },
+    { img: 'assets/certs/asisten-lab.webp', kind: 'award', label: 'Penugasan Kampus',
+      title: 'Asisten Laboratorium Komputer',
+      issuer: 'Departemen Teknik Elektro & Informatika UM (Genap 2025/2026)',
+      evidences: 'Mendampingi praktikum mahasiswa dan mengelola perangkat laboratorium komputer.' },
+    { img: 'assets/certs/pkm.webp', kind: 'award', label: 'Program Nasional',
+      title: 'Program Kreativitas Mahasiswa (PKM)',
+      issuer: 'Kemendikbudristek RI',
+      evidences: 'Proposal PKM inovasi perangkat cerdas untuk anak disgrafia.' },
+    { img: 'assets/certs/ldk-positron.webp', kind: 'award', label: 'Pelatihan Organisasi',
+      title: 'Latihan Dasar Kepemimpinan Positron 2024',
+      issuer: 'Himpunan Mahasiswa Universitas Negeri Malang',
+      evidences: 'Penguatan manajemen organisasi dan kepemimpinan tim.' },
+    { img: 'assets/certs/pemira-2024.webp', kind: 'award', label: 'Kepanitiaan Kampus',
+      title: 'Pemilu Raya (PEMIRA) 2024',
+      issuer: 'Panitia Pemira Universitas Negeri Malang',
+      evidences: 'Keterlibatan dalam suksesi demokrasi mahasiswa kampus.' },
+    { img: 'assets/certs/pemira-2025.webp', kind: 'award', label: 'Kepanitiaan Kampus',
+      title: 'Pemilu Raya (PEMIRA) 2025',
+      issuer: 'Panitia Pemira Universitas Negeri Malang',
+      evidences: 'Keterlibatan dalam suksesi demokrasi mahasiswa kampus.' },
+    { img: 'assets/certs/pkkmb.webp', kind: 'award', label: 'Penghargaan Kampus',
+      title: 'PKKMB Universitas Negeri Malang',
+      issuer: 'Panitia Orientasi Kampus UM',
+      evidences: 'Kelulusan dan partisipasi orientasi mahasiswa baru.' },
+    { img: 'assets/certs/cisco-ite.webp', kind: 'course', label: 'Sertifikasi Vendor',
+      title: 'Cisco Networking Academy - IT Essentials',
+      issuer: 'Cisco Systems International',
+      evidences: 'Kompetensi hardware, sistem operasi, jaringan dasar, dan keamanan IT.' },
+    { img: 'assets/certs/bootcamp-uiux.webp', kind: 'course', label: 'Bootcamp',
+      title: 'UI/UX Design Intensive Camp',
+      issuer: 'Intensive Bootcamp Program',
+      evidences: 'Riset pengguna, wireframing, sistem UI, dan prototipe interaktif.' },
+    { img: 'assets/certs/bootcamp-figma.webp', kind: 'course', label: 'Bootcamp',
+      title: 'Figma Design Camp',
+      issuer: 'Design Tooling Certification',
+      evidences: 'Auto-layout, komponen UI, design token, dan prototipe Figma.' },
+    { img: 'assets/certs/bootcamp-excel.webp', kind: 'course', label: 'Kursus Bersertifikat',
+      title: 'Data Visualization with Microsoft Excel',
+      issuer: 'MySkill Certification',
+      evidences: 'Analisis data spreadsheet dan visualisasi statistik.' },
+    { img: 'assets/certs/workshop-ai.webp', kind: 'course', label: 'Workshop',
+      title: 'Workshop Generative AI & Technology',
+      issuer: 'Penyelenggara Workshop Teknologi',
+      evidences: 'Pemanfaatan kecerdasan buatan untuk akselerasi alur kerja pengembangan.' },
+    { img: 'assets/certs/workshop-iot.webp', kind: 'course', label: 'Workshop',
+      title: 'Workshop Internet of Things (IoT)',
+      issuer: 'Workshop Pembelajaran IoT',
+      evidences: 'Sistem embedded, mikrokontroler, dan pengiriman data sensor.' },
+    { img: 'assets/certs/workshop-plc.webp', kind: 'course', label: 'Workshop',
+      title: 'Workshop Automation & PLC',
+      issuer: 'Pelatihan Otomasi Industri',
+      evidences: 'Dasar pemrograman logika kontroler otomatisasi industri.' },
+    { img: 'assets/certs/workshop-cendekia.webp', kind: 'course', label: 'Workshop',
+      title: 'Workshop Cendekia Menulis Karya Ilmiah',
+      issuer: 'Forum Cendekia Akademik',
+      evidences: 'Penyusunan karya ilmiah dan publikasi teknis.' },
+    { img: 'assets/certs/webinar-iot.webp', kind: 'course', label: 'Webinar',
+      title: 'Webinar IoT dengan Raspberry Pi',
+      issuer: 'Webinar Nasional IoT',
+      evidences: 'Integrasi Raspberry Pi, Linux embedded, dan komunikasi sensor.' },
+    { img: 'assets/certs/webinar-gemapedia.webp', kind: 'course', label: 'Webinar',
+      title: 'Webinar Nasional Pendidikan - GEMAPEDIA',
+      issuer: 'UKM GEMAPEDIA Universitas Negeri Malang',
+      evidences: 'Penguatan inovasi pendidikan inklusif.' },
+    { img: 'assets/certs/webinar-mdgb.webp', kind: 'course', label: 'Webinar',
+      title: 'Webinar MDGB Kuliah Bestari UM',
+      issuer: 'Majelis Dewan Guru Besar UM',
+      evidences: 'Wawasan akademik kepemimpinan dan inovasi sains teknologi.' },
+    { img: 'assets/certs/webinar-politik.webp', kind: 'course', label: 'Webinar',
+      title: 'Seminar Nasional Ilmu Politik',
+      issuer: 'Fakultas Ilmu Sosial Universitas Negeri Malang',
+      evidences: 'Seminar akademik nasional tata kelola dan analisis isu publik.' },
+    { img: 'assets/certs/webinar-ppkn.webp', kind: 'course', label: 'Webinar',
+      title: 'Webinar Nasional PPKN FIS UM',
+      issuer: 'Fakultas Ilmu Sosial Universitas Negeri Malang',
+      evidences: 'Penguatan wawasan kebangsaan dan etika digital.' },
+    { img: 'assets/certs/diklat-nasional.webp', kind: 'course', label: 'Diklat',
+      title: 'Diklat Nasional Pengembangan Kompetensi',
+      issuer: 'Program Diklat Nasional',
+      evidences: 'Pengembangan kapasitas diri, kepemimpinan, dan kerja sama tim.' },
+    { img: 'assets/certs/ukbing.webp', kind: 'course', label: 'Pelatihan Bahasa',
+      title: 'English Proficiency Training (UKBING)',
+      issuer: 'Balai Bahasa Universitas Negeri Malang',
+      evidences: 'Membaca, mendengarkan, dan menulis dokumentasi teknis Bahasa Inggris.' },
+  ];
+
+  const CERT_ICON = { hki: 'ico-award', award: 'ico-circle-check', course: 'ico-book-open' };
+  const CERTS_PER_PAGE = 6;
+  let certPage = 1;
+  let certFilter = 'all';
 
   /* ---------------------------------------------------------
-  Galleries
-  --------------------------------------------------------- */
-  const GALLERIES = {
-  ummart: [
-    ['assets/shots/ummart-home.webp', 'Storefront - merchandise & kafe kopi UM Mart'],
-    ['assets/shots/ummart-shop.webp', 'Katalog Produk - kategori, filter & pencarian'],
-    ['assets/shots/ummart-checkout.webp', 'Formulir Checkout & Alamat'],
-    ['assets/shots/ummart-payment-ovo.webp', 'Integrasi Pembayaran OVO & E-Wallet'],
-    ['assets/shots/ummart-order-complete.webp', 'Konfirmasi Pesanan & Ringkasan Resi'],
-    ['assets/shots/ummart-transactions.webp', 'Riwayat Transaksi Pelanggan'],
-    ['assets/shots/ummart-invoice.webp', 'Cetak Invoice Resmi'],
-    ['assets/shots/ummart-admin-dashboard.webp', 'Dashboard Admin BPUDA - Grafik & CRUD'],
-    ['assets/shots/ummart-contact.webp', 'Halaman Kontak & Bantuan'],
-    ['assets/shots/ummart-about.webp', 'Informasi Unit Usaha UM Mart'],
-    ['assets/shots/ummart-login.webp', 'Autentikasi Ganda (Password & Google OAuth)'],
-  ],
-  klinik: [
-    ['assets/shots/klinik-login.webp', 'Portal Masuk Sistem Klinik Pratama UM'],
-    ['assets/shots/klinik-dashboard-admin.webp', 'Dashboard Manajemen Klinik - Ringkasan Layanan'],
-    ['assets/shots/klinik-admin-dokter.webp', 'Manajemen Data Dokter Umum & Gigi'],
-    ['assets/shots/klinik-admin-jadwal.webp', 'Pengaturan Jadwal Praktik Dokter'],
-    ['assets/shots/klinik-admin-pembayaran.webp', 'Kasir & Laporan Transaksi Berobat'],
-    ['assets/shots/klinik-dokter-pasien.webp', 'Antrean & Rekam Medis Dokter'],
-    ['assets/shots/klinik-dokter-jadwal.webp', 'Jadwal Praktik Per Dokter'],
-    ['assets/shots/klinik-pasien-jadwal.webp', 'Informasi Jadwal Poli Umum, Gigi & KIA'],
-    ['assets/shots/klinik-pasien-janji.webp', 'Booking & Riwayat Berobat Pasien'],
-    ['assets/shots/klinik-register.webp', 'Pendaftaran Akun Pasien Baru'],
-  ],
-  nanggungan: [
-    ['assets/projects/desa/MENU_BERANDA_DESA_NANGGUNGAN.webp', 'Halaman Utama Portal Nanggungan Digdaya'],
-    ['assets/projects/desa/DASHBOARD_ADMIN_DESA_NANGGUNGAN.webp', 'Dashboard Admin Staf Desa'],
-    ['assets/projects/desa/MENU_PASAR_DESA_DESA_NANGGUNGAN.webp', 'Pasar Desa Online - Produk UMKM Lokal'],
-    ['assets/projects/desa/MENU_PERATURAN_DESA_NANGGUNGAN.webp', 'Dokumen Transparansi & Peraturan Desa'],
-    ['assets/projects/desa/PENGATURAN_WEB_DESA_STATISTIK.webp', 'Statistik Kependudukan & Wilayah Desa'],
-    ['assets/projects/desa/AKUN_PRODUK_UMKM.webp', 'Manajemen Katalog Produk UMKM Desa'],
-    ['assets/projects/desa/DASHBOARD_AKUN_UMKM.webp', 'Dashboard Pelaku Usaha Desa'],
-    ['assets/projects/desa/MENU_BERITA_DESA_NANNGUNGAN.webp', 'Warta & Pengumuman Resmi Desa'],
-    ['assets/projects/desa/MENU_PROFIL_AND_SEJARAH_DESA_NANGGUNGAN.webp', 'Profil Sejarah & Potensi Desa Nanggungan'],
-  ],
-  figma: [
-    ['assets/shots/figma-ummart-home.webp', 'UM-MART - Antarmuka E-Commerce Kampus'],
-    ['assets/shots/figma-ummart-shop.webp', 'UM-MART - Layout Katalog & Filter'],
-    ['assets/shots/figma-ummart-components.webp', 'UM-MART - Sistem Komponen UI'],
-    ['assets/shots/figma-ummart-checkout.webp', 'UM-MART - Desain Alur Checkout'],
-    ['assets/shots/figma-viar-concept.webp', 'UI VIAR UM - Game AR Media Pembelajaran Anak TKJ (Unity Engine)'],
-    ['assets/shots/figma-smartipen.webp', 'Konsep meniru gaya poster ala instagram UM'],
-    ['assets/shots/figma-kkn-spanduk.webp', 'Desain banner KKN nanggungan UM BBM 2026'],
-  ],
-  texum: [
-    ['assets/shots/texum-title.webp', 'Layar Judul Game TEXUM (RPG Maker MZ)'],
-    ['assets/shots/texum-gameplay.webp', 'Gameplay & Eksplorasi Peta RPG'],
-    ['assets/shots/texum-battle.webp', 'Sistem Pertarungan Turn-Based RPG'],
-    ['assets/shots/texum-menu-status.webp', 'Antarmuka Menu Status & Item Karakter'],
-    ['assets/shots/texum-map-06.webp', 'Peta 3D World (1 dari 20 Peta Buatan Tangan)'],
-    ['assets/shots/texum-enemy-phoenix.webp', 'Desain Karakter & Monster - Phoenix'],
-    ['assets/shots/texum-mockup.webp', 'Mockup Rilis Game TEXUM'],
-  ],
-  wsblender: [
-    ['assets/shots/Workspace Blender MyPC.png', 'Workspace Blender - Pemodelan PC Desktop'],
-    ['assets/shots/Workspace Blender Classroom XII MIPA 1.png', 'Workspace Blender - Desain Kelas XII MIPA 1'],
-    ['assets/shots/Workspace Blender Cooler Blackshark Pro 2.png', 'Workspace Blender - Pemodelan Cooler Blackshark Pro 2'],
-    ['assets/shots/Workspace Blender Cutting Nail.png', 'Workspace Blender - Pemodelan Gunting Kuku'],
-    ['assets/shots/Workspace Blender Hand Sanitizer.png', 'Workspace Blender - Pemodelan Hand Sanitizer'],
-    ['assets/shots/Workspace Blender Keyboard HP GK 100.png', 'Workspace Blender - Pemodelan Keyboard HP GK 100'],
-    ['assets/shots/Workspace Concept Smart Rakaat.png', 'Workspace Blender - Konsep Casing Smart Rakaat'],
-    ['assets/shots/Workspace Keycaps Blender.jpg', 'Workspace Blender - Pemodelan Keycaps Mechanical Keyboard'],
-    ['assets/shots/Workspace Model 3D Cakra.jpg', 'Workspace Blender - Pemodelan Ikon Cakra UM 3D'],
-  ],
-  renders: [
-    ['assets/shots/Project Render Blender Classroom XII MIPA 1.png', 'Output Render Blender - Interior Ruang Kelas XII MIPA 1'],
-    ['assets/shots/Project Render Blender Concept SMART RAKAAT.png', 'Output Render Blender - Konsep Casing Perangkat Smart Rakaat'],
-    ['assets/shots/Project Render Blender Cutting Nail.png', 'Output Render Blender - Produk Gunting Kuku 3D'],
-    ['assets/shots/Project Render Blender Hand Sanitizer.png', 'Output Render Blender - Botol Hand Sanitizer 3D'],
-    ['assets/shots/Project Render Blender Keyboard HP GK 100.PNG', 'Output Render Blender - Mechanical Keyboard HP GK 100'],
-  ],
-  wsmedia: [
-    ['assets/shots/Workspace Intro KKN Logo Premiere pro.png', 'Workspace Premiere Pro - Editing Motion Intro Logo KKN Kelompok H'],
-    ['assets/shots/Workspace Editing Teaser Logo Meraja Premiere pro.png', 'Workspace Premiere Pro - Timeline Editing Teaser Logo Meraja'],
-    ['assets/shots/Workspace Editing TrailerLogo Meraja Premiere pro.png', 'Workspace Premiere Pro - Timeline Editing Trailer Sate Meraja'],
-    ['assets/shots/Project Edit Poster With Photoshop.png', 'Workspace Photoshop - Desain Poster Media Pembelajaran & Promosi'],
-  ],
-  iot: [
-    ['assets/shots/Skema Rangkaian SMART RAKAAT FRITIZING.png', 'Skema Rangkaian Elektronika Smart Rakaat (Fritzing)'],
-    ['assets/shots/Project Render Blender Concept SMART RAKAAT.png', 'Model 3D Casing Perangkat Smart Rakaat (Blender)'],
-  ],
-};
+     Galleries are read from the DOM: every rail track declares
+     its gallery, so a gallery can never be defined but unused
+     (or used but undefined).
+     --------------------------------------------------------- */
+  const GALLERIES = {};
+  document.querySelectorAll('.rail__track[data-gallery]').forEach((track) => {
+    const name = track.dataset.gallery;
+    const items = [...track.querySelectorAll('.shot')].map((fig) => {
+      const img = fig.querySelector('img');
+      const cap = fig.querySelector('figcaption');
+      return [img ? img.getAttribute('src') : '', cap ? cap.textContent.trim().replace(/\s+/g, ' ') : ''];
+    }).filter((it) => it[0]);
+    if (items.length) GALLERIES[name] = items;
+  });
+  GALLERIES.certs = CERTS.map((c) => [c.img, c.title + ' - ' + c.issuer]);
 
   /* ---------------------------------------------------------
-  Certificates - 12 documents, each with the capability it
-  evidences. Sorted strongest first (IP registrations, then
-  campus awards, then certified courses).
-  --------------------------------------------------------- */
-  
-  
-
-
-  /* ---------------------------------------------------------
-  Certificate grid
-  --------------------------------------------------------- */
-  
-
-  /* ---------------------------------------------------------
-  Lightbox
-  --------------------------------------------------------- */
-  const lb  = document.getElementById('lightbox');
+     Lightbox - one gallery cursor, keyboard + swipe aware
+     --------------------------------------------------------- */
+  const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
   const lbCap = document.getElementById('lightboxCap');
-  let current = { group: null, i: 0 };
+  let cursor = { group: null, i: 0 };
+  let lastFocus = null;
 
-  const render = () => {
-  const g = GALLERIES[current.group];
-  if (!g) return;
-  const [src, cap] = g[current.i];
-  lbImg.src = src;
-  lbImg.alt = cap || '';
-  lbCap.textContent = (cap || '') + '  ·  ' + (current.i + 1) + '/' + g.length;
+  const paint = () => {
+    const g = GALLERIES[cursor.group];
+    if (!g || !lbImg) return;
+    const [src, cap] = g[cursor.i];
+    lbImg.src = src;
+    lbImg.alt = cap || '';
+    if (lbCap) lbCap.textContent = (cap || '') + '  ·  ' + (cursor.i + 1) + '/' + g.length;
   };
-  const open  = (group, i) => { current = { group, i }; render(); lb.hidden = false; document.body.style.overflow = 'hidden'; };
-  const close = () => { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; };
-  const step  = (d) => { const g = GALLERIES[current.group]; current.i = (current.i + d + g.length) % g.length; render(); };
+  const openLb = (group, i) => {
+    if (!lb || !GALLERIES[group]) return;
+    lastFocus = document.activeElement;
+    cursor = { group, i: Math.max(0, Math.min(i, GALLERIES[group].length - 1)) };
+    paint();
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.lightbox__close')?.focus();
+  };
+  const closeLb = () => {
+    if (!lb) return;
+    lb.hidden = true;
+    if (lbImg) lbImg.src = '';
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+  const stepLb = (d) => {
+    const g = GALLERIES[cursor.group];
+    if (!g) return;
+    cursor.i = (cursor.i + d + g.length) % g.length;
+    paint();
+  };
 
   document.addEventListener('click', (e) => {
-  const trigger = e.target.closest('[data-gallery]');
-  if (trigger) { open(trigger.dataset.gallery, Number(trigger.dataset.i || 0)); return; }
+    const trig = e.target.closest('[data-gallery]');
+    if (trig) {
+      const shot = trig.closest('.shot');
+      if (shot) { openLb(trig.dataset.gallery, Number(shot.dataset.i || 0)); return; }
+      if (trig.dataset.i !== undefined) { openLb(trig.dataset.gallery, Number(trig.dataset.i)); return; }
+    }
+    const cert = e.target.closest('.cert-card');
+    if (cert && cert.dataset.certIdx !== undefined) {
+      openLb('certs', Number(cert.dataset.certIdx));
+      return;
+    }
   });
+
   if (lb) {
-  lb.querySelector('.lightbox__close').addEventListener('click', close);
-  lb.querySelector('.lightbox__nav--prev').addEventListener('click', () => step(-1));
-  lb.querySelector('.lightbox__nav--next').addEventListener('click', () => step(1));
-  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
-  document.addEventListener('keydown', (e) => {
-  if (lb.hidden) return;
-  if (e.key === 'Escape') close();
-  if (e.key === 'ArrowLeft') step(-1);
-  if (e.key === 'ArrowRight') step(1);
-  });
+    lb.querySelector('.lightbox__close')?.addEventListener('click', closeLb);
+    lb.querySelector('.lightbox__nav--prev')?.addEventListener('click', () => stepLb(-1));
+    lb.querySelector('.lightbox__nav--next')?.addEventListener('click', () => stepLb(1));
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', (e) => {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') closeLb();
+      else if (e.key === 'ArrowLeft') stepLb(-1);
+      else if (e.key === 'ArrowRight') stepLb(1);
+    });
+    let sx = null;
+    lb.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+      if (sx === null) return;
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 45) stepLb(dx < 0 ? 1 : -1);
+      sx = null;
+    }, { passive: true });
   }
 
   /* ---------------------------------------------------------
-  Nav
-  --------------------------------------------------------- */
-  const nav = document.getElementById('topbar') || document.querySelector('.topbar') || document.querySelector('.nav');
-  const links  = document.querySelector('.nav__links');
-  const burger = document.querySelector('.nav__burger');
-  const bar  = document.getElementById('progressBar');
-
-  burger?.addEventListener('click', () => {
-  const isOpen = links.classList.toggle('is-open');
-  burger.setAttribute('aria-expanded', String(isOpen));
-  });
-  links?.addEventListener('click', (e) => {
-  if (e.target.closest('a')) { links.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); }
-  });
+     Topbar: stuck state, mobile menu
+     --------------------------------------------------------- */
+  const topbar = document.getElementById('topbar');
+  const navPanel = topbar ? topbar.querySelector('.nav') : null;
+  const burger = document.getElementById('navBurger');
 
   const onScroll = () => {
-  nav?.classList.toggle('is-stuck', window.scrollY > 24);
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  if (bar) bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    if (topbar) topbar.classList.toggle('is-stuck', window.scrollY > 24);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------------------------------------------------------
-  Cursor glow (pointer devices only)
-  --------------------------------------------------------- */
-  const glow = document.querySelector('.cursor-glow');
-  if (glow && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
-  let x = innerWidth / 2, y = innerHeight / 2, tx = x, ty = y;
-  addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
-  (function loop() {
-  x += (tx - x) * 0.09; y += (ty - y) * 0.09;
-  glow.style.transform = 'translate(' + x + 'px, ' + y + 'px) translate(-50%,-50%)';
-  requestAnimationFrame(loop);
-  })();
-  } else if (glow) { glow.style.display = 'none'; }
+  burger?.addEventListener('click', () => {
+    const open = navPanel?.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(Boolean(open)));
+  });
+  navPanel?.addEventListener('click', (e) => {
+    if (e.target.closest('a')) {
+      navPanel.classList.remove('is-open');
+      burger?.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   /* ---------------------------------------------------------
-  Reveal on scroll
-  --------------------------------------------------------- */
+     Reveal on scroll
+     --------------------------------------------------------- */
   const revealables = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver((entries) => {
-  entries.forEach((en) => {
-  if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
-  });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-  revealables.forEach((el, i) => { el.style.transitionDelay = Math.min(i % 4, 3) * 70 + 'ms'; io.observe(el); });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    revealables.forEach((el) => io.observe(el));
   } else {
-  revealables.forEach((el) => el.classList.add('is-in'));
+    revealables.forEach((el) => el.classList.add('is-in'));
   }
 
   /* ---------------------------------------------------------
-  Project filtering
-  --------------------------------------------------------- */
-  const chips = document.querySelectorAll('.chip[data-filter]');
-  chips.forEach((chip) => chip.addEventListener('click', () => {
-  chips.forEach((c) => c.classList.toggle('is-active', c === chip));
-  const f = chip.dataset.filter;
-  document.querySelectorAll('[data-tags]').forEach((el) => {
-  const match = f === 'all' || el.dataset.tags.split(' ').includes(f);
-  el.style.display = match ? '' : 'none';
-  });
+     Self-scrolling rails: one preview per block, no empty track.
+     Auto-scroll pauses on hover, focus, touch and when off-screen.
+     --------------------------------------------------------- */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* fit every rail once its shots have real dimensions */
+  const railTracks = () => [...document.querySelectorAll('[data-rail] .rail__track')];
+  const fitAll = () => railTracks().forEach((t) => { t.dataset.scrollable = undefined; fitRail(t); });
+  window.addEventListener('load', fitAll);
+  window.addEventListener('resize', () => { clearTimeout(window.__railT); window.__railT = setTimeout(fitAll, 180); });
+  railTracks().forEach((t) => [...t.querySelectorAll('img')].forEach((i) => {
+    if (i.complete) return;
+    i.addEventListener('load', () => fitAll(), { once: true });
   }));
+  setTimeout(fitAll, 350);
 
-  /* ---------------------------------------------------------
-  Horizontal scroll for workspace shots
-  --------------------------------------------------------- */
-  document.querySelectorAll('.shots-scroll').forEach((wrap) => {
-  const strip = wrap.querySelector('.project__shots');
-  const prev = wrap.querySelector('.shots-scroll__btn--prev');
-  const next = wrap.querySelector('.shots-scroll__btn--next');
-  const step = () => {
-  const tile = strip?.querySelector('.shot');
-  const w = tile ? tile.getBoundingClientRect().width + 8 : 280;
-  return Math.max(160, Math.round(w));
-  };
-  const sync = () => {
-  if (!strip) return;
-  const max = strip.scrollWidth - strip.clientWidth;
-  wrap.classList.toggle('is-static', max <= 2);
-  prev && (prev.disabled = strip.scrollLeft <= 2);
-  next && (next.disabled = strip.scrollLeft >= max - 2);
-  };
-  prev?.addEventListener('click', () => strip?.scrollBy({ left: -step(), behavior: 'smooth' }));
-  next?.addEventListener('click', () => strip?.scrollBy({ left: step(), behavior: 'smooth' }));
-  strip?.addEventListener('scroll', sync, { passive: true });
-  window.addEventListener('resize', sync);
-  sync();
-  });
-
-  /* ---------------------------------------------------------
-  i18n (ID / EN language toggle)
-  --------------------------------------------------------- */
-  const langToggle = document.getElementById('langToggle');
-  let currentLang = localStorage.getItem('lang') || 'id';
-
-  const setLanguage = (lang) => {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  if (langToggle) langToggle.textContent = lang === 'id' ? 'EN' : 'ID';
-  document.querySelectorAll('[data-id][data-en]').forEach((el) => {
-  el.textContent = lang === 'en' ? el.dataset.en : el.dataset.id;
-  });
+  /* The row must fill the container: pick the tile height that makes the
+     widest tile set cover the track, so a rail never ends in empty space. */
+  const fitRail = (track) => {
+    const tiles = [...track.querySelectorAll('.shot')];
+    if (!tiles.length) return;
+    const imgs = tiles.map((t) => t.querySelector('img'));
+    let ratios = imgs.map((i) => (i && i.naturalWidth && i.naturalHeight ? i.naturalWidth / i.naturalHeight : 0));
+    tiles.forEach((t, idx) => {
+      if (t.classList.contains('shot--video')) ratios[idx] = 16 / 9;
+      else if (!ratios[idx]) ratios[idx] = 16 / 9;
+    });
+    const totalRatio = ratios.reduce((a, b) => a + b, 0);
+    const gap = 0.6 * 16;                       // .rail__track gap in px
+    const avail = Math.max(200, track.clientWidth - gap * (tiles.length - 1));
+    const cur = parseFloat(getComputedStyle(track).getPropertyValue('--tile-h')) || 178;
+    const need = Math.round((avail / totalRatio) * 0.94);   // 6% headroom = a visible peek
+    track.style.setProperty('--tile-h', Math.max(120, Math.min(Math.max(cur, need), 300)) + 'px');
+    if (track.dataset.scrollable === undefined) {
+      requestAnimationFrame(() => { track.dataset.scrollable = String(track.scrollWidth > track.clientWidth + 4); });
+    }
   };
 
-  langToggle?.addEventListener('click', () => {
-  const nextLang = currentLang === 'id' ? 'en' : 'id';
-  localStorage.setItem('lang', nextLang);
-  setLanguage(nextLang);
-  });
+  document.querySelectorAll('[data-rail]').forEach((rail) => {
+    const track = rail.querySelector('.rail__track');
+    if (!track) return;
+    const prev = rail.querySelector('.rail__btn--prev');
+    const next = rail.querySelector('.rail__btn--next');
 
-  setLanguage(currentLang);
-})();
+    let timer = null;
+    let dir = 1;
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
 
+    const tileStep = () => {
+      const t = track.querySelector('.shot');
+      return t ? Math.round(t.getBoundingClientRect().width + 10) : 300;
+    };
+    const sync = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      rail.classList.toggle('is-static', max <= 2);
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max - 2;
+    };
 
+    prev?.addEventListener('click', () => { stop(); track.scrollBy({ left: -tileStep(), behavior: 'smooth' }); });
+    next?.addEventListener('click', () => { stop(); track.scrollBy({ left: tileStep(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
 
-/* ---------------------------------------------------------
-Certificate Pagination & Dynamic Filter Render
---------------------------------------------------------- */
+    if (reduceMotion) return;
 
-  const CERTS = [
-  { img:'assets/certs/hki-um-mart.webp', kind:'hki', label:'Kekayaan Intelektual',
-    title:'Sertifikat HKI Registered - UM-MART Platform E-Commerce',
-    issuer:'Kementerian Hukum & HAM RI (Kemenkumham)',
-    evidences:'Hak Cipta Perangkat Lunak Resmi UM-MART (Sistem Katalog, Keranjang, Kasir & Admin).' },
+    const start = () => { if (!timer) timer = setInterval(tick, 4200); };
+    const tick = () => {
+      if (document.hidden || !rail.isConnected) return;
+      const max = track.scrollWidth - track.clientWidth;
+      if (max <= 2) return;
+      if (dir === 1 && track.scrollLeft >= max - 2) dir = -1;
+      else if (dir === -1 && track.scrollLeft <= 2) dir = 1;
+      track.scrollBy({ left: dir * tileStep(), behavior: 'smooth' });
+    };
 
-  { img:'assets/certs/hki-smart-rakaat.webp', kind:'hki', label:'Kekayaan Intelektual',
-    title:'Sertifikat HKI Registered - Smart Rakaat IoT',
-    issuer:'Kementerian Hukum & HAM RI (Kemenkumham)',
-    evidences:'Hak Cipta Perangkat IoT Alat Penghitung Rakaat Salat Otomatis Berbasis ESP32.' },
+    rail.addEventListener('pointerenter', stop);
+    rail.addEventListener('pointerdown', stop);
+    rail.addEventListener('focusin', stop);
+    rail.addEventListener('touchstart', stop, { passive: true });
+    rail.addEventListener('pointerleave', start);
+    rail.addEventListener('focusout', start);
 
-  { img:'assets/certs/asisten-lab.webp', kind:'award', label:'Penugasan Kampus',
-    title:'Asisten Laboratorium Komputer',
-    issuer:'Departemen Teknik Elektro & Informatika UM (Genap 2025/2026)',
-    evidences:'Penugasan mengajar & mendampingi praktikum mahasiswa di laboratorium komputer.' },
-
-  { img:'assets/certs/cisco-ite.webp', kind:'course', label:'Sertifikasi Vendor',
-    title:'Cisco Networking Academy - IT Essentials',
-    issuer:'Cisco Systems International',
-    evidences:'Kompetensi hardware komputer, sistem operasi, jaringan dasar, dan keamanan IT.' },
-
-  { img:'assets/certs/pkm.webp', kind:'award', label:'Program Nasional',
-    title:'Program Kreativitas Mahasiswa (PKM)',
-    issuer:'Kemendikbudristek / Kemenristekdikti RI',
-    evidences:'Seleksi proposal PKM inovasi teknologi hardware & perangkat cerdas disgrafia.' },
-
-  { img:'assets/certs/bootcamp-uiux.webp', kind:'course', label:'Bootcamp',
-    title:'UI/UX Design Intensive Camp',
-    issuer:'Intensive Bootcamp Program',
-    evidences:'Kompetensi riset pengguna, wireframing, sistem UI, dan pembuatan prototipe interaktif.' },
-
-  { img:'assets/certs/bootcamp-figma.webp', kind:'course', label:'Bootcamp',
-    title:'Figma Design Camp',
-    issuer:'Design Tooling Certification',
-    evidences:'Penguasaan fitur Figma advance: auto-layout, komponen UI, & prototipe.' },
-
-  { img:'assets/certs/bootcamp-excel.webp', kind:'course', label:'Kursus Bersertifikat',
-    title:'Data Visualization with Microsoft Excel',
-    issuer:'MySkill Certification',
-    evidences:'Analisis data spreadsheet dan pembuatan grafik visualisasi statistik admin.' },
-
-  { img:'assets/certs/workshop-ai.webp', kind:'course', label:'Workshop',
-    title:'Workshop Generative AI & Technology',
-    issuer:'Penyelenggara Workshop Teknologi',
-    evidences:'Pemanfaatan kecerdasan buatan untuk akselerasi alur kerja pengembangan IT.' },
-
-  { img:'assets/certs/workshop-iot.webp', kind:'course', label:'Workshop',
-    title:'Workshop Internet of Things (IoT)',
-    issuer:'Workshop Pembelajaran IoT',
-    evidences:'Pengembangan sistem embedded, mikrokontroler, dan pengiriman data sensor.' },
-
-  { img:'assets/certs/workshop-plc.webp', kind:'course', label:'Workshop',
-    title:'Workshop Automation & PLC',
-    issuer:'Pelatihan Otomasi Industri',
-    evidences:'Dasar pemograman logika kontroler otomatisasi dan sistem kontrol.' },
-
-  { img:'assets/certs/workshop-cendekia.webp', kind:'course', label:'Workshop',
-    title:'Workshop Cendekia Menulis Karya Ilmiah',
-    issuer:'Forum Cendekia Akademik',
-    evidences:'Keterampilan penyusunan karya ilmiah dan publikasi teknis.' },
-
-  { img:'assets/certs/webinar-iot.webp', kind:'course', label:'Webinar',
-    title:'Webinar IoT dengan Raspberry Pi',
-    issuer:'Webinar Nasional IoT',
-    evidences:'Integrasi Raspberry Pi, sistem Linux embedded, dan komunikasi sensor jarak jauh.' },
-
-  { img:'assets/certs/webinar-gemapedia.webp', kind:'course', label:'Webinar',
-    title:'Webinar Nasional Pendidikan - GEMAPEDIA',
-    issuer:'UKM GEMAPEDIA Universitas Negeri Malang',
-    evidences:'Partisipasi webinar nasional penguatan inovasi pendidikan inklusif.' },
-
-  { img:'assets/certs/webinar-mdgb.webp', kind:'course', label:'Webinar',
-    title:'Webinar MDGB Kuliah Bestari UM',
-    issuer:'Majelis Dewan Guru Besar UM',
-    evidences:'Wawasan akademik kepemimpinan dan inovasi sains teknologi.' },
-
-  { img:'assets/certs/webinar-politik.webp', kind:'course', label:'Webinar',
-    title:'Seminar Nasional Ilmu Politik',
-    issuer:'Fakultas Ilmu Sosial Universitas Negeri Malang',
-    evidences:'Partisipasi seminar akademik nasional tata kelola dan analisis isu publik.' },
-
-  { img:'assets/certs/webinar-ppkn.webp', kind:'course', label:'Webinar',
-    title:'Webinar Nasional PPKN FIS UM',
-    issuer:'Fakultas Ilmu Sosial Universitas Negeri Malang',
-    evidences:'Partisipasi webinar penguatan wawasan kebangsaan & etika digital.' },
-
-  { img:'assets/certs/diklat-nasional.webp', kind:'course', label:'Diklat',
-    title:'Diklat Nasional Pengembangan Kompetensi',
-    issuer:'Program Diklat Nasional 2025',
-    evidences:'Pengembangan kapasitas diri, kepemimpinan, dan kerja sama tim.' },
-
-  { img:'assets/certs/ldk-positron.webp', kind:'award', label:'Pelatihan Organisasi',
-    title:'Pelatihan LDK Positron 2024',
-    issuer:'Himpunan Mahasiswa / Organisasi Kampus UM',
-    evidences:'Latihan Dasar Kepemimpinan (LDK) penguatan manajemen organisasi kampus.' },
-
-  { img:'assets/certs/pemira-2024.webp', kind:'award', label:'Kepanitiaan Kampus',
-    title:'Sertifikat Pemilu Raya (PEMIRA) 2024',
-    issuer:'Panitia Pemira Universitas Negeri Malang',
-    evidences:'Keterlibatan aktif dalam suksesi demokrasi mahasiswa kampus UM 2024.' },
-
-  { img:'assets/certs/pemira-2025.webp', kind:'award', label:'Kepanitiaan Kampus',
-    title:'Sertifikat Pemilu Raya (PEMIRA) 2025',
-    issuer:'Panitia Pemira Universitas Negeri Malang',
-    evidences:'Keterlibatan aktif dalam suksesi demokrasi mahasiswa kampus UM 2025.' },
-
-  { img:'assets/certs/pkkmb.webp', kind:'award', label:'Penghargaan Kampus',
-    title:'PKKMB Universitas Negeri Malang',
-    issuer:'Panitia Orientation Kampus UM 2024',
-    evidences:'Kelulusan & penghargaan partisipasi orientasi mahasiswa baru UM.' },
-
-  { img:'assets/certs/ukbing.webp', kind:'course', label:'Pelatihan Bahasa',
-    title:'English Proficiency Training (UKBING)',
-    issuer:'Balai Bahasa Universitas Negeri Malang',
-    evidences:'Kompetensi membaca, mendengarkan, dan menulis dokumentasi teknis Bahasa Inggris.' },
-];
-
-  
-
-
-  
-
-  let currentCertPage = 1;
-const CERTS_PER_PAGE = 6;
-let currentCertFilter = 'all';
-
-const renderCertificates = () => {
-  const grid = document.querySelector('.certs');
-  if (!grid) return;
-  
-  let filtered = CERTS;
-  if (currentCertFilter !== 'all') {
-    filtered = CERTS.filter(c => c.kind === currentCertFilter);
-  }
-  
-  const totalPages = Math.max(1, Math.ceil(filtered.length / CERTS_PER_PAGE));
-  if (currentCertPage > totalPages) currentCertPage = totalPages;
-  
-  const startIdx = (currentCertPage - 1) * CERTS_PER_PAGE;
-  const pageItems = filtered.slice(startIdx, startIdx + CERTS_PER_PAGE);
-  
-  grid.innerHTML = pageItems.map((c, i) => `
-    <button class="cert-card reveal is-in" data-cert-idx="${CERTS.indexOf(c)}">
-      <div class="cert-card__img">
-        <img src="${c.img}" alt="${c.title}" loading="lazy">
-        <span class="cert-card__kind" data-k="${c.kind}">
-          <svg class="ico"><use href="#ico-${c.kind === 'hki' ? 'award' : (c.kind === 'award' ? 'circle-check' : 'book-open')}"></use></svg>
-          ${c.label}
-        </span>
-      </div>
-      <div class="cert-card__meta">
-        <h3>${c.title}</h3>
-        <p>${c.evidences}</p>
-        <span class="cert-card__src">${c.issuer}</span>
-      </div>
-    </button>
-  `).join('');
-  
-  let paginBar = document.querySelector('.certs-pagination-bar');
-  if (!paginBar) {
-    paginBar = document.createElement('div');
-    paginBar.className = 'certs-pagination-bar';
-    grid.after(paginBar);
-  }
-  
-  paginBar.innerHTML = `
-    <div class="certs-page-info">
-      Halaman ${currentCertPage} dari ${totalPages} (${filtered.length} Sertifikat)
-    </div>
-    <div class="certs-page-nav">
-      <button class="certs-page-btn certs-prev" ${currentCertPage === 1 ? 'disabled' : ''}>
-        <svg class="ico"><use href="#ico-chevron-left"></use></svg> Prev
-      </button>
-      <div class="certs-page-dots">
-        ${Array.from({length: totalPages}).map((_, idx) => `
-          <span class="certs-dot ${idx + 1 === currentCertPage ? 'is-active' : ''}" data-page="${idx + 1}"></span>
-        `).join('')}
-      </div>
-      <button class="certs-page-btn certs-next" ${currentCertPage === totalPages ? 'disabled' : ''}>
-        Next <svg class="ico"><use href="#ico-chevron-right"></use></svg>
-      </button>
-    </div>
-  `;
-  
-  paginBar.querySelector('.certs-prev')?.addEventListener('click', () => {
-    if (currentCertPage > 1) {
-      currentCertPage--;
-      renderCertificates();
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) start(); else stop(); });
+      }, { threshold: 0.14 }).observe(rail);
+    } else {
+      start();
     }
   });
-  paginBar.querySelector('.certs-next')?.addEventListener('click', () => {
-    if (currentCertPage < totalPages) {
-      currentCertPage++;
-      renderCertificates();
-    }
-  });
-  paginBar.querySelectorAll('.certs-dot').forEach(dot => {
-    dot.addEventListener('click', () => {
-      currentCertPage = Number(dot.dataset.page);
-      renderCertificates();
-    });
-  });
-  
-  grid.querySelectorAll('.cert-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const idx = Number(card.dataset.certIdx);
-      const cert = CERTS[idx];
-      if (cert) openLightboxSingle(cert.img, `${cert.title} — ${cert.issuer}`);
-    });
-  });
-};
 
-/* Helper for single image lightbox */
-const openLightboxSingle = (imgUrl, caption) => {
-  const box = document.getElementById('lightbox');
-  if (!box) return;
-  const imgEl = box.querySelector('.lightbox__img');
-  const capEl = box.querySelector('.lightbox__caption');
-  if (imgEl) imgEl.src = imgUrl;
-  if (capEl) capEl.textContent = caption;
-  box.hidden = false;
-  box.classList.add('is-open');
-};
+  /* ---------------------------------------------------------
+     Custom video player (Media Chrome style, own controls)
+     --------------------------------------------------------- */
+  const fmt = (sec) => {
+    if (!isFinite(sec) || isNaN(sec) || sec < 0) return '0:00';
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  };
 
-/* ---------------------------------------------------------
-Custom Video Player Handler
---------------------------------------------------------- */
-const setupCustomVideoPlayers = () => {
-  document.querySelectorAll('.custom-video-player').forEach(player => {
+  document.querySelectorAll('.custom-video-player').forEach((player) => {
     const video = player.querySelector('video');
+    if (!video) return;
     const playBtn = player.querySelector('.v-play');
     const progress = player.querySelector('.v-progress');
-    const timeDisplay = player.querySelector('.v-time');
+    const timeEl = player.querySelector('.v-time');
     const muteBtn = player.querySelector('.v-mute');
     const volume = player.querySelector('.v-volume');
     const fullBtn = player.querySelector('.v-fullscreen');
-    
-    if (!video) return;
-    
-    const formatTime = (sec) => {
-      if (isNaN(sec) || !isFinite(sec)) return '0:00';
-      const m = Math.floor(sec / 60);
-      const s = Math.floor(sec % 60);
-      return `${m}:${s < 10 ? '0' : ''}${s}`;
+
+    const label = player.dataset.label;
+
+    const toggle = () => {
+      if (video.paused) video.play().catch(() => {}); else video.pause();
     };
-    
-    if (playBtn) {
-      playBtn.addEventListener('click', () => {
-        if (video.paused) {
-          video.play();
-        } else {
-          video.pause();
-        }
-      });
-    }
+    playBtn?.addEventListener('click', toggle);
+    video.addEventListener('click', toggle);
+
     video.addEventListener('play', () => {
+      player.classList.add('is-playing');
       if (playBtn) playBtn.innerHTML = '<svg class="ico"><use href="#ico-pause"></use></svg>';
     });
     video.addEventListener('pause', () => {
+      player.classList.remove('is-playing');
       if (playBtn) playBtn.innerHTML = '<svg class="ico"><use href="#ico-play"></use></svg>';
     });
-    
-    video.addEventListener('timeupdate', () => {
-      if (progress && video.duration) {
-        progress.value = (video.currentTime / video.duration) * 100;
-      }
-      if (timeDisplay) {
-        timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+
+    const syncTime = () => {
+      if (progress && video.duration) progress.value = (video.currentTime / video.duration) * 100;
+      if (timeEl) timeEl.textContent = fmt(video.currentTime) + ' / ' + fmt(video.duration);
+    };
+    video.addEventListener('timeupdate', syncTime);
+    video.addEventListener('loadedmetadata', syncTime);
+    if (label && timeEl) timeEl.textContent = '0:00 / 0:00';
+
+    progress?.addEventListener('input', () => {
+      if (video.duration) video.currentTime = (progress.value / 100) * video.duration;
+    });
+
+    const paintVolume = () => {
+      if (!muteBtn) return;
+      muteBtn.innerHTML = (video.muted || video.volume === 0)
+        ? '<svg class="ico"><use href="#ico-volume-x"></use></svg>'
+        : '<svg class="ico"><use href="#ico-volume-2"></use></svg>';
+    };
+    muteBtn?.addEventListener('click', () => {
+      video.muted = !video.muted;
+      if (!video.muted && video.volume === 0) { video.volume = 1; if (volume) volume.value = 100; }
+      paintVolume();
+    });
+    volume?.addEventListener('input', () => {
+      video.volume = Number(volume.value) / 100;
+      video.muted = video.volume === 0;
+      paintVolume();
+    });
+    paintVolume();
+
+    fullBtn?.addEventListener('click', () => {
+      const target = player.requestFullscreen ? player : video;
+      if (!document.fullscreenElement) {
+        (target.requestFullscreen || target.webkitRequestFullscreen || (() => {})).call(target);
+      } else {
+        (document.exitFullscreen || (() => {})).call(document);
       }
     });
-    
-    if (progress) {
-      progress.addEventListener('input', () => {
-        if (video.duration) {
-          video.currentTime = (progress.value / 100) * video.duration;
-        }
-      });
-    }
-    
-    if (muteBtn) {
-      muteBtn.addEventListener('click', () => {
-        video.muted = !video.muted;
-        muteBtn.innerHTML = video.muted ? 
-          '<svg class="ico"><use href="#ico-volume-x"></use></svg>' : 
-          '<svg class="ico"><use href="#ico-volume-2"></use></svg>';
-      });
-    }
-    if (volume) {
-      volume.addEventListener('input', () => {
-        video.volume = volume.value / 100;
-        video.muted = (video.volume === 0);
-      });
-    }
-    
-    if (fullBtn) {
-      fullBtn.addEventListener('click', () => {
-        if (!document.fullscreenElement) {
-          player.requestFullscreen().catch(err => console.log(err));
-        } else {
-          document.exitFullscreen().catch(err => console.log(err));
-        }
-      });
-    }
   });
-};
 
-document.addEventListener('DOMContentLoaded', () => {
+  /* ---------------------------------------------------------
+     Certificate grid: filter chips, pagination, dots
+     --------------------------------------------------------- */
+  const certGrid = document.getElementById('certGrid');
+  const certCount = document.getElementById('certCount');
+  const certFilters = document.getElementById('certFilters');
+
+  const renderCertificates = () => {
+    if (!certGrid) return;
+    const filtered = certFilter === 'all' ? CERTS : CERTS.filter((c) => c.kind === certFilter);
+    const totalPages = Math.max(1, Math.ceil(filtered.length / CERTS_PER_PAGE));
+    if (certPage > totalPages) certPage = totalPages;
+    const start = (certPage - 1) * CERTS_PER_PAGE;
+    const pageItems = filtered.slice(start, start + CERTS_PER_PAGE);
+
+    certGrid.innerHTML = pageItems.map((c) => {
+      const idx = CERTS.indexOf(c);
+      return '<button class="cert-card" type="button" data-cert-idx="' + idx + '">' +
+        '<div class="cert-card__img">' +
+          '<img src="' + c.img + '" alt="' + c.title + '" loading="lazy" decoding="async">' +
+          '<span class="cert-card__kind" data-k="' + c.kind + '">' +
+            '<svg class="ico"><use href="#' + CERT_ICON[c.kind] + '"></use></svg>' + c.label +
+          '</span>' +
+        '</div>' +
+        '<div class="cert-card__meta">' +
+          '<h3>' + c.title + '</h3>' +
+          '<p>' + c.evidences + '</p>' +
+          '<span class="cert-card__src">' + c.issuer + '</span>' +
+        '</div>' +
+      '</button>';
+    }).join('');
+
+    if (certCount) certCount.textContent = filtered.length + ' sertifikat · halaman ' + certPage + '/' + totalPages;
+
+    let bar = document.querySelector('.certs-pagination-bar');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.className = 'certs-pagination-bar';
+      certGrid.after(bar);
+    }
+    bar.innerHTML =
+      '<button class="certs-page-btn certs-prev" type="button"' + (certPage === 1 ? ' disabled' : '') + '>' +
+        '<svg class="ico"><use href="#ico-chevron-left"></use></svg>Sebelumnya</button>' +
+      '<div class="certs-page-dots">' +
+        Array.from({ length: totalPages }).map((_, i) =>
+          '<button class="certs-dot' + (i + 1 === certPage ? ' is-active' : '') + '" type="button" data-page="' + (i + 1) + '" aria-label="Halaman ' + (i + 1) + '"></button>'
+        ).join('') +
+      '</div>' +
+      '<button class="certs-page-btn certs-next" type="button"' + (certPage === totalPages ? ' disabled' : '') + '>' +
+        '<svg class="ico"><use href="#ico-chevron-right"></use></svg>Berikutnya</button>';
+
+    bar.querySelector('.certs-prev')?.addEventListener('click', () => { if (certPage > 1) { certPage--; renderCertificates(); } });
+    bar.querySelector('.certs-next')?.addEventListener('click', () => { if (certPage < totalPages) { certPage++; renderCertificates(); } });
+    bar.querySelectorAll('.certs-dot').forEach((dot) => dot.addEventListener('click', () => {
+      certPage = Number(dot.dataset.page);
+      renderCertificates();
+    }));
+  };
+
+  certFilters?.addEventListener('click', (e) => {
+    const chip = e.target.closest('[data-certfilter]');
+    if (!chip) return;
+    certFilters.querySelectorAll('[data-certfilter]').forEach((c) => c.classList.toggle('is-active', c === chip));
+    certFilter = chip.dataset.certfilter;
+    certPage = 1;
+    renderCertificates();
+  });
+
+  /* ---------------------------------------------------------
+     Language switch: ID (default) / EN
+     --------------------------------------------------------- */
+  const langBtn = document.getElementById('langToggle');
+  const langCode = document.getElementById('langCode');
+  let lang = 'id';
+  try { lang = localStorage.getItem('lang') || 'id'; } catch (err) { lang = 'id'; }
+
+  const setLanguage = (next) => {
+    lang = next === 'en' ? 'en' : 'id';
+    document.documentElement.lang = lang;
+    if (langCode) langCode.textContent = lang.toUpperCase();
+    document.querySelectorAll('[data-id][data-en]').forEach((el) => {
+      const value = lang === 'en' ? el.dataset.en : el.dataset.id;
+      if (value !== undefined) el.textContent = value;
+    });
+    try { localStorage.setItem('lang', lang); } catch (err) { /* storage blocked */ }
+  };
+
+  langBtn?.addEventListener('click', () => setLanguage(lang === 'id' ? 'en' : 'id'));
+  setLanguage(lang);
+
+  /* ---------------------------------------------------------
+     Boot
+     --------------------------------------------------------- */
   renderCertificates();
-  setupCustomVideoPlayers();
-});
-
+})();
