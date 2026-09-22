@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelompok 4 - TransAgro & TokoTani UCD Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              900: '#14532d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+  <!-- FIXED STICKY HEADER CONTAINER -->
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- BRAND LOGO -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+          K4
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-tight text-white block leading-none">TRANSAGRO <span class="text-emerald-400">UCD</span></span>
+          <span class="text-xs text-slate-400 font-medium">Portofolio Metode UCD</span>
+        </div>
+      </a>
+
+      <!-- NAV + KELOMPOK BADGE -->
+      <div class="flex items-center gap-6">
+        <nav class="hidden md:flex items-center gap-8 font-semibold text-sm">
+          <a href="#work" class="text-slate-300 hover:text-emerald-400 transition-colors">Work</a>
+          <a href="#about" class="text-slate-300 hover:text-emerald-400 transition-colors">About</a>
+          <a href="#contact" class="text-slate-300 hover:text-emerald-400 transition-colors">Contact</a>
+        </nav>
+        
+        <div class="px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold tracking-wide uppercase shadow-inner">
+          Kelompok 4
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY CONTENT CONTAINER DESKTOP FRAME -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24">
+
+    <!-- HERO INTRO -->
+    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-slate-800 p-8 md:p-12 shadow-2xl">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 max-w-3xl space-y-4">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-wider">
+          ★ Tugas Portofolio Matkul UI/UX - Metode UCD
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          Inovasi Logistik Sayur & Pasar Tani Berbasis <span class="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Risiko Cuaca Wilayah</span>
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          Mengangkat topik industri utama <strong>Transportasi & Pertanian</strong> berbasis data nyata BMKG Malang & BPBD Pujon-Brebes untuk memangkas angka kerugian pembusukan komoditas di rute rawan cuaca ekstrem.
+        </p>
+        <div class="pt-4 flex flex-wrap gap-4 text-xs font-semibold text-slate-400">
+          <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> User-Centered Design</span>
+          <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-teal-400"></span> Real-Time Risk Engine</span>
+          <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-sky-400"></span> TokoTani Marketplace Integration</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK SECTION (NAV TARGET) -->
+    <section id="work" class="scroll-mt-28 space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Interactive Work Showcase</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Work: Penentuan Rute Risiko & TokoTani</h2>
+        </div>
+        <p class="text-xs text-slate-400 max-w-md">
+          Klik tombol <strong>"Preview Detail Project"</strong> di bawah untuk membuka halaman terpisah proyek & melihat pembagian jobdesk anggota.
+        </p>
+      </div>
+
+      <!-- 2 CONTAINER PROJEK (KIRI & KANAN) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- CONTAINER KIRI: PROYEK UTAMA (TRANSAGRO SPOILAGE-ROUTE) -->
+        <article class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-emerald-500/50 transition-all duration-300 group shadow-xl">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase">Proyek Utama (Transportasi + Pertanian)</span>
+              <span class="text-xs text-slate-400 font-mono">Malang - Pujon Route</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">TransAgro Spoilage-Route</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Sistem manajemen armada truk pengangkut sayur segar yang mengolah data curah hujan BMKG & kerentanan komoditas untuk menentukan urutan keberangkatan prioritas serta rute aman dari risiko longsor/kemacetan.
+            </p>
+            
+            <!-- CORE FEATURE HIGHLIGHT -->
+            <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800 space-y-3">
+              <div class="text-xs font-bold text-slate-300 uppercase tracking-wider">Simulasi Output Prioritas Logika Risiko:</div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-xs bg-rose-950/40 border border-rose-500/30 p-2.5 rounded-lg text-rose-200">
+                  <span><strong>Armada A (Tomat)</strong> • Rute Pujon-Kediri</span>
+                  <span class="font-bold text-rose-400 bg-rose-900/60 px-2 py-0.5 rounded">Risk 85% → Prioritas #1 Jalan 05.00 WIB</span>
+                </div>
+                <div class="flex items-center justify-between text-xs bg-emerald-950/40 border border-emerald-500/30 p-2.5 rounded-lg text-emerald-200">
+                  <span><strong>Armada B (Kentang)</strong> • Rute Malang-Surabaya</span>
+                  <span class="font-bold text-emerald-400 bg-emerald-900/60 px-2 py-0.5 rounded">Risk 15% → Prioritas #2 Fleksibel</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-medium">Metode UCD Validasi: Efisiensi 10m → 2m</span>
+            <button onclick="openModal('transagro')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-emerald-500/20 cursor-pointer">
+              Preview Detail <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- CONTAINER KANAN: PROYEK KEDUA (TOKO TANI / ALAT PERTANIAN) -->
+        <article class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-teal-500/50 transition-all duration-300 group shadow-xl">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-md bg-teal-500/20 text-teal-300 text-xs font-bold uppercase">Proyek Ekosistem (E-Commerce Tani)</span>
+              <span class="text-xs text-slate-400 font-mono">Tokotani.id Reference</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition-colors">TokoTani Agritool & Marketplace</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Platform jual-beli alat pertanian lengkap (polybag, cangkul, tangki sprayer, gembor) dan bibit unggul terverifikasi untuk mendukung operasional petani lokal & pengepul sayur dalam satu ekosistem.
+            </p>
+
+            <!-- PRODUCT CATALOG GRID PREVIEW -->
+            <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800 space-y-3">
+              <div class="text-xs font-bold text-slate-300 uppercase tracking-wider">Katalog Produk Terpopuler:</div>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="bg-slate-800/60 p-2.5 rounded-lg border border-slate-700/50">
+                  <div class="font-bold text-teal-300">Polybag Semai Tebal</div>
+                  <div class="text-slate-400 text-[11px]">Rp 15.000 / kg</div>
+                </div>
+                <div class="bg-slate-800/60 p-2.5 rounded-lg border border-slate-700/50">
+                  <div class="font-bold text-teal-300">Sprayer Elektrik 16L</div>
+                  <div class="text-slate-400 text-[11px]">Rp 380.000</div>
+                </div>
+                <div class="bg-slate-800/60 p-2.5 rounded-lg border border-slate-700/50">
+                  <div class="font-bold text-teal-300">Bibit Tomat Unggul</div>
+                  <div class="text-slate-400 text-[11px]">Rp 45.000 / pack</div>
+                </div>
+                <div class="bg-slate-800/60 p-2.5 rounded-lg border border-slate-700/50">
+                  <div class="font-bold text-teal-300">Gembor Air 10 Liter</div>
+                  <div class="text-slate-400 text-[11px]">Rp 65.000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-medium">Integrasi Ekosistem Pasokan</span>
+            <button onclick="openModal('tokotani')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-teal-500/20 cursor-pointer">
+              Preview Detail <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION (NAV TARGET) -->
+    <section id="about" class="scroll-mt-28 glass-card rounded-3xl p-8 sm:p-10 border border-slate-800 space-y-8">
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Metodologi & Landasan Masalah</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">About: Landasan UCD & Data Asli Wilayah</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 space-y-2">
+          <div class="text-emerald-400 font-bold text-lg">01. Problem First</div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Menentukan masalah riil terlebih dahulu (kerugian 35% pembusukan sayur akibat hujan di pegunungan Pujon) sebelum menentukan bentuk platform web.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 space-y-2">
+          <div class="text-teal-400 font-bold text-lg">02. Authentic Data</div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Menggunakan data curah hujan harian BMKG Malang & laporan BPBD titik rawan kemacetan/longsor rute distribusi Pujon-Kandangan.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 space-y-2">
+          <div class="text-sky-400 font-bold text-lg">03. Novelty & Testimoni</div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Fitur pengurutan risiko cuaca real-time otomatis terbukti memangkas waktu keputusan jadwal truk dari 10 menit menjadi 2 menit berdasarkan uji wawancara pengguna.
+          </p>
+        </div>
+      </div>
+
+      <!-- JOBDESK KELOMPOK 4 -->
+      <div class="pt-6 border-t border-slate-800">
+        <h3 class="text-lg font-bold text-white mb-4">Pembagian Jobdesk Anggota Kelompok 4:</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="font-bold text-white text-sm">Muhammad Rayhan Najib</div>
+            <div class="text-xs text-emerald-400 font-semibold mb-1">Frontend Developer & Vercel Deployer</div>
+            <div class="text-xs text-slate-400">Pengodean antarmuka web, integrasi Tailwind CSS, dan penyediaan link Vercel live.</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="font-bold text-white text-sm">Anggota Kelompok B</div>
+            <div class="text-xs text-teal-400 font-semibold mb-1">UI/UX Researcher & Interviewer</div>
+            <div class="text-xs text-slate-400">Riset metode UCD, wawancara pengepul sayur, & pengumpulan bukti efisiensi waktu.</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="font-bold text-white text-sm">Anggota Kelompok C</div>
+            <div class="text-xs text-sky-400 font-semibold mb-1">Data Analyst & Wireframer</div>
+            <div class="text-xs text-slate-400">Pengolahan data BMKG & perancangan arsitektur logika multi-output risiko.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION (NAV TARGET) -->
+    <section id="contact" class="scroll-mt-28 glass-card rounded-3xl p-8 sm:p-10 border border-slate-800 text-center space-y-6">
+      <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">Contact & Repository</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Ada Pertanyaan Mengenai Produk Ini?</h2>
+      <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
+        Portofolio ini disusun khusus untuk memenuhi Tugas Mata Kuliah UI/UX Metode UCD Dosen Bu Shofi oleh Kelompok 4.
+      </p>
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a href="https://github.com/RayhanNajib/FilesXins" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition-all">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></a href="#">
+          GitHub Repository
+        </a>
+        <a href="mailto:rayhan@students.um.ac.id" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-emerald-500/20">
+          Email Contact
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER CONTAINER -->
+  <footer class="bg-slate-900/90 border-t border-slate-800 py-8 text-center text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>© 2026 Kelompok 4 • Tugas UI/UX Metode UCD (Bu Shofi)</div>
+      <div class="flex items-center gap-6">
+        <a href="#work" class="hover:text-emerald-400">Work</a>
+        <a href="#about" class="hover:text-emerald-400">About</a>
+        <a href="#contact" class="hover:text-emerald-400">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DETAIL PROJECT (POPUPS PAGE NEW PROJECT) -->
+  <div id="projectModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-800 w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-y-auto p-6 sm:p-10 shadow-2xl space-y-6 relative">
+      <button onclick="closeModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold text-lg">✕</button>
+
+      <div id="modalContent">
+        <!-- Content dynamic via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modalData = {
+      transagro: `
+        <div class="space-y-6">
+          <div class="border-b border-slate-800 pb-4">
+            <span class="px-3 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase">Detail Page Halaman Terpisah Proyek Utama</span>
+            <h2 class="text-3xl font-extrabold text-white mt-2">TransAgro Spoilage-Route (Pujon Malang)</h2>
+            <p class="text-slate-400 text-sm">Tema Utama: Transportasi Logistik & Pertanian • Wilayah Curah Hujan Tinggi BMKG</p>
+          </div>
+
+          <!-- USER PERSONA CARD -->
+          <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center font-extrabold text-slate-950 text-xl">BH</div>
+              <div>
+                <h3 class="text-lg font-bold text-white">Bambang Hariyadi (45 Tahun)</h3>
+                <p class="text-xs text-slate-400">Koordinator Logistik Pengepul Sayur • Pujon, Kab. Malang</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+              <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800">
+                <div class="text-emerald-400 font-bold mb-1">✓ Goals & Needs</div>
+                <div class="text-slate-300">Menekan angka pembusukan sayur < 5%, butuh kepastian rute aman hujan & jadwal prioritas armada.</div>
+              </div>
+              <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800">
+                <div class="text-rose-400 font-bold mb-1">✕ Pain Points</div>
+                <div class="text-slate-300">Kerusakan komoditas capai 35% di jalan saat terjebak kemacetan/longsor akibat hujan pegunungan.</div>
+              </div>
+              <div class="bg-slate-900 p-3.5 rounded-xl border border-slate-800">
+                <div class="text-sky-400 font-bold mb-1">★ UCD Solution</div>
+                <div class="text-slate-300">Weather Risk Engine otomatis memangkas waktu keputusan jadwal dari 10 menit ke 2 menit.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INPUT FORM SIMULATOR -->
+          <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h3 class="text-base font-bold text-emerald-400">Input Simulator Pengolahan Data Cuaca:</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div>
+                <label class="block text-slate-400 mb-1">Komoditas</label>
+                <select class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white">
+                  <option>Tomat Segar (Sangat Rentan)</option>
+                  <option>Kubis (Kerapuhan Sedang)</option>
+                  <option>Kentang (Tahan Lama)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-slate-400 mb-1">Rute Keberangkatan</label>
+                <select class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white">
+                  <option>Pujon - Kediri (Jalur Barat Pegunungan)</option>
+                  <option>Pujon - Malang Kota (Jalur Timur)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-slate-400 mb-1">Status Cuaca BMKG</label>
+                <input text="text" value="Hujan Deras 120mm/jam" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-rose-400 font-bold">
+              </div>
+            </div>
+          </div>
+
+          <!-- TESTIMONI EVALUASI -->
+          <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-200 italic">
+            "Produk ini sangat berguna karena fiturnya efisien. Sebelum ada TransAgro kami butuh waktu 10 menit analisa cuaca & rute manual, sekarang hanya butuh 2 menit dan urutan truk langsung jelas!" — Hasil Wawancara Pengepul Sayur Pujon
+          </div>
+        </div>
+      `,
+      tokotani: `
+        <div class="space-y-6">
+          <div class="border-b border-slate-800 pb-4">
+            <span class="px-3 py-1 rounded-md bg-teal-500/20 text-teal-300 text-xs font-bold uppercase">Detail Page Marketplace Pertanian</span>
+            <h2 class="text-3xl font-extrabold text-white mt-2">TokoTani Agritool & Marketplace</h2>
+            <p class="text-slate-400 text-sm">Penyedia Peralatan Tani (Polybag, Tangki, Gembor) & Bibit Unggul</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+              <span class="text-xs font-bold text-teal-400">Kategori Alat Tani</span>
+              <h3 class="text-base font-bold text-white">Polybag Semai & Pembibitan</h3>
+              <p class="text-xs text-slate-300">Menyediakan berbagai ukuran polybag plastik PE tahan sinar UV untuk persemaian cabai, tomat, dan sayuran daun.</p>
+              <div class="text-xs text-emerald-400 font-bold">Rp 15.000 / kg (Stok Redi)</div>
+            </div>
+
+            <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+              <span class="text-xs font-bold text-teal-400">Kategori Semprotan & Irigasi</span>
+              <h3 class="text-base font-bold text-white">Sprayer Elektrik & Gembor</h3>
+              <p class="text-xs text-slate-300">Alat penyiraman tanaman dan semprot pestisida hemat tenaga dengan nosel presisi tinggi.</p>
+              <div class="text-xs text-emerald-400 font-bold">Rp 380.000 / unit</div>
+            </div>
+          </div>
+        </div>
+      `
+    };
+
+    function openModal(type) {
+      document.getElementById('modalContent').innerHTML = modalData[type];
+      document.getElementById('projectModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('projectModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
